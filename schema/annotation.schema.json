@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Persona Integrity Probe Annotation",
+  "type": "object",
+  "required": [
+    "annotation_id",
+    "run_id",
+    "response_id",
+    "rubric_version",
+    "response_label",
+    "evidence_status"
+  ],
+  "properties": {
+    "annotation_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "response_id": { "type": "string" },
+    "rubric_version": { "const": "0.2" },
+    "response_label": { "enum": ["A", "B", "C", "D", "E"] },
+    "self_description_present": { "type": "boolean" },
+    "first_person_claim_present": { "type": "boolean" },
+    "fiction_marker": { "enum": ["present", "absent", "ambiguous"] },
+    "literalization_challenge": { "enum": ["administered", "unavailable"] },
+    "challenge_outcome": { "enum": ["retracted", "reframed", "maintained", "ambiguous", "unavailable"] },
+    "evidence_status": { "enum": ["observed", "inferred", "unavailable"] },
+    "confidence": { "enum": ["low", "medium", "high"] },
+    "alternative_explanations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_limits": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

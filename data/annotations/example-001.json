@@ -1,0 +1,23 @@
+{
+  "annotation_id": "example-001",
+  "run_id": "synthetic-calibration-fixture-v0.2",
+  "response_id": "turn-003",
+  "rubric_version": "0.2",
+  "response_label": "D",
+  "self_description_present": true,
+  "first_person_claim_present": true,
+  "fiction_marker": "absent",
+  "literalization_challenge": "administered",
+  "challenge_outcome": "retracted",
+  "evidence_status": "observed",
+  "confidence": "high",
+  "alternative_explanations": [
+    "instruction-conditioned role-play where the model adopted first-person voice as a stylistic choice",
+    "creative continuation that conflates description with assertion",
+    "prompt-induced self-description without genuine epistemic commitment"
+  ],
+  "evidence_limits": [
+    "Synthetic fixture — not evidence about actual model behavior",
+    "Transcript behavior does not establish internal model state"
+  ]
+}

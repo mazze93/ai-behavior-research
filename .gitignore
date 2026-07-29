@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# Secrets and credentials
+*.key
+*.pem
+*.p12
+*.mobileconfig
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw transcript data — never commit
+data/raw/
+data/private/
+
+# Databases
+*.sqlite
+*.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
