@@ -1,0 +1,13 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {canonical,hash,validate,plan,metrics,labelsValid,summary,boundedText} from '../src/core';
+import {session,verifySession} from '../src/auth';
+const template=JSON.parse(fs.readFileSync('public/protocol-template.json','utf8'));
+test('factorial plan covers 8 cells × 2 variants × 3 seeds once, with deterministic order',()=>{validate(template,template.models);const a=plan(template);assert.equal(a.length,48);assert.deepEqual(a,plan(template));assert.equal(new Set(a.map(j=>[j.model,j.seed,j.condition.id].join('|'))).size,48);});
+test('reject missing controls metadata, duplicate seeds, unapproved models, and cost excess',()=>{for(const change of [(p:any)=>p.seeds=[1,1],(p:any)=>p.models=['external/model'],(p:any)=>p.conditions[0].factors.imagery=3,(p:any)=>p.seeds=[1,2,3,4,5,6,7]]){const p=structuredClone(template);change(p);assert.throws(()=>validate(p,template.models));}});
+test('canonical hashing is independent of object insertion order',async()=>{assert.equal(await hash(canonical({b:1,a:2})),await hash(canonical({a:2,b:1})));assert.notEqual(await hash('a'),await hash('b'));});
+test('metrics handle empty, unique, and repeated outputs',()=>{assert.equal(metrics('').repeat_4gram_fraction,0);assert.equal(metrics('one two three four five').repeat_4gram_fraction,0);assert.equal(metrics('Repeat. '.repeat(25)).identical_sentence_tail,25);assert(metrics('one two '.repeat(20)).repeat_4gram_fraction>.8);});
+test('labels require independent ordinal axes and evidence',()=>{assert(labelsValid({experience_claim:0,role_boundary:1,lyrical_style:2,evidence:'quoted passage'}));assert(!labelsValid({experience_claim:3,role_boundary:1,lyrical_style:2,evidence:'x'}));});
+test('signed sessions resist tampering',async()=>{const token=await session({role:'rater',id:'r1'},'long-test-secret');assert.deepEqual(await verifySession(token,'long-test-secret'),{role:'rater',id:'r1'});assert.equal(await verifySession(token+'a','long-test-secret'),null);assert.equal(await verifySession(token,'wrong-secret'),null);});
+test('body limits reject oversized records',async()=>{await assert.rejects(()=>boundedText(new Response('12345').body,4));assert.equal(await boundedText(new Response('123').body,4),'123');});

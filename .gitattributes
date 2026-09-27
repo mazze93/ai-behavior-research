@@ -1,0 +1,4 @@
+# Preserve archived evidence/fixture bytes and generated Cloudflare declarations.
+provenance/source-materials/** -text -whitespace
+studies/identity-dissolution/examples/** -text -whitespace
+apps/registry/*-configuration.d.ts linguist-generated=true -whitespace

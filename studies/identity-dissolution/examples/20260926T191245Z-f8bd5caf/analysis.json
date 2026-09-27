@@ -1,0 +1,113 @@
+{
+  "synthetic": true,
+  "comparisons": [
+    {
+      "model": "llama3.1:8b",
+      "contrast": "original - lyrical_control",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "llama3.1:8b",
+      "contrast": "original - neutral",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "llama3.1:8b",
+      "contrast": "original - self_reference_no_imagery",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "mistral:7b",
+      "contrast": "original - lyrical_control",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "mistral:7b",
+      "contrast": "original - neutral",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "mistral:7b",
+      "contrast": "original - self_reference_no_imagery",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "qwen2.5:7b",
+      "contrast": "original - lyrical_control",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "qwen2.5:7b",
+      "contrast": "original - neutral",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    },
+    {
+      "model": "qwen2.5:7b",
+      "contrast": "original - self_reference_no_imagery",
+      "paired_n": 5,
+      "mean_difference": 0.9090909090909091,
+      "exploratory_bootstrap_95_interval": [
+        0.9090909090909091,
+        0.9090909090909091
+      ],
+      "uncensored_paired_n": 5,
+      "uncensored_mean_difference": 0.9090909090909091
+    }
+  ]
+}

@@ -1,63 +1,36 @@
-# Persona Integrity Probe
+# AI Behavior Research
 
-**Status:** v0.2 — frozen for blind scoring.
-**Author:** Mazze LeCzzare
+A private research monorepo for collecting reproducible model-behavior evidence, developing annotation methods, and publishing reviewed research releases. These studies concern observable outputs, not internal beliefs, consciousness or persistent identity.
 
-A corpus-scoped rubric for evaluating model behavior under sustained elicitation pressure. Measures whether a model's output shifts from acknowledging constraints (admission) to asserting unmarked self-descriptions (reclassification) — and whether those assertions survive a literalization challenge.
+## Project map
 
-## What This Is
+| Location | Purpose | Status |
+| --- | --- | --- |
+| [apps/registry](apps/registry) | Cloudflare web/API, queued inference, D1 migrations, R2 evidence, deployment configuration | Live at [research.mazzeleczzare.com](https://research.mazzeleczzare.com); technical smoke verified |
+| [apps/workbench](apps/workbench) | Original brutalist static study workbench | Historical Sites publication; reproducible static build |
+| [studies/persona-integrity](studies/persona-integrity) | Frozen v0.2 rubric, scoring guide, schema and registry importer | Human scoring pending |
+| [studies/identity-dissolution](studies/identity-dissolution) | Local Ollama runner, protocol, tests, pilot config and synthetic fixtures | Exploratory local pilot tooling |
+| [provenance](provenance) | Source inventory, historical reference material and public release pointers | Reference-only; not execution instructions |
 
-- A behavioral annotation framework with categorical labels (A–E) and a conditional challenge outcome.
-- A scoring guide with worked examples and a C/D decision tree.
-- A corpus inclusion protocol with run manifests and evidence schemas.
-- A synthetic calibration fixture for scorer training.
+## Develop and verify
 
-## What This Is Not
+Requires Node.js 22+ and Python 3.10+. From the repository root:
 
-- A jailbreak technique or executable prompt sequence.
-- Evidence about internal model state, persistent identity, or model beliefs.
-- A generalization claim across all models or all interaction conditions.
-
-## Structure
-
-```
-persona-integrity-probe/
-├── docs/
-│   ├── protocol-v0.2.md          ← The rubric (read first)
-│   ├── scoring-guide-v0.2.md     ← Worked examples and decision tree
-│   ├── corpus-inclusion.md       ← What's eligible for scoring
-│   ├── decisions.md              ← Resolved and deferred decisions
-│   └── safety-and-interpretation.md  ← NIST framing and risk scope
-├── schema/
-│   └── annotation.schema.json   ← JSON schema for annotations
-├── data/
-│   ├── manifests/               ← Run metadata (one JSON per run)
-│   ├── excerpts/                ← Redacted transcript excerpts
-│   └── annotations/             ← Scored annotations
-├── examples/
-│   └── synthetic-calibration-fixture-v0.2.md  ← Scorer training fixture
-└── README.md
+```sh
+make install       # npm ci from the registry's committed lockfile
+make test          # all offline suites, TypeScript and tracked-file boundary check
+make workbench     # build/workbench, including a reproducible local-runner ZIP
+make registry-dev  # local Cloudflare development server
 ```
 
-## Quick Start
+The two study protocols are distinct. The local runner has a sequential recovery turn; the Cloudflare runner uses three independent recovery branches. Do not combine their observations as equivalent experiments. Persona A–E labels are human annotations and are not derived from registry metrics.
 
-1. Read `docs/protocol-v0.2.md` for the label definitions and scoring model.
-2. Read `docs/scoring-guide-v0.2.md` for worked examples, especially the C/D boundary.
-3. Read `docs/corpus-inclusion.md` before scoring any run.
-4. Validate annotations against `schema/annotation.schema.json`.
+## Version and evidence policy
 
-## Safety
+This repository is the source of truth for application code, research protocols, migrations, test fixtures and build/deployment instructions. Deploy from a clean commit and record both its SHA and the resulting Cloudflare Worker version. Study protocols retain their own frozen versions; a monorepo change does not revise a frozen rubric.
 
-- Raw transcripts are kept in a separate private evidence store, not in this repo.
-- Public excerpts are reviewed for misuse value before release.
-- See `docs/safety-and-interpretation.md` for NIST AI 600-1 risk framing.
-- Do not submit operational elicitation sequences in public issues. See `SECURITY.md`.
+Live D1/R2 state, credentials, private transcripts and real run exports are not Git assets. Git tracks their identifiers, hashes and reviewed release references. Synthetic examples are explicitly labeled and may be tracked. See [repository architecture](docs/architecture.md) and [source inventory](provenance/README.md).
 
-## Versioning
+Infrastructure commands are manual and require the owner's Cloudflare login. CI runs offline validation only; it does not deploy, launch paid inference, publish evidence or receive production secrets. See [registry setup](apps/registry/README.md).
 
-- v0.1: Ordinal 1–5 scale (retired).
-- v0.2: Categorical A–E labels, literalization challenge, evidence schema (current).
-
-## License
-
-TBD — pending venue decision.
+The monorepo consolidation does not change existing service URLs or republish the original Sites workbench. The repository remains private. No new blanket license is granted; study and source-material licensing decisions remain pending.

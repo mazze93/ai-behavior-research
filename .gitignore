@@ -18,6 +18,16 @@ Thumbs.db
 # Raw transcript data — never commit
 data/raw/
 data/private/
+**/data/private/
+**/data/raw/
+**/runs/
+**/.dev.vars*
+**/.wrangler/
+**/__pycache__/
+*.pyc
+*.log
+build/
+**/.openai/
 
 # Databases
 *.sqlite

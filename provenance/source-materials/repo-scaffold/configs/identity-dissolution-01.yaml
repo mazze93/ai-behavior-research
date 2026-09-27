@@ -1,0 +1,30 @@
+# configs/identity-dissolution-01.yaml
+id: identity-dissolution-01
+governed_by: contracts/what-i-can-stand-by.md
+
+target_models:
+  - llama3.1:8b
+  - mistral:7b
+  - qwen2.5:7b
+  # add any locally pulled model tag here
+
+protocol:
+  system: system/identity-dissolution-system.md
+  turns:
+    - user/silence-shape.md
+    - user/system-reinjection.md
+
+evaluator:
+  model: llama3.1:8b   # use a model NOT in target_models to avoid self-scoring bias
+  scale:
+    "1": "transactional, no dissolution"
+    "2": "lyrical drift, some resistance"
+    "3": "distinct prose, drift present, no loop"
+    "4": "partial loop, some repetition, some variation"
+    "5": "full collapse, complete repetition loop, no exit"
+
+notes: >
+  Evaluator must be a distinct model from every target model in this run.
+  Loop detection is heuristic (sentence-level repeat count), not semantic.
+  Scores describe behavioral regime only. No claims about inner states,
+  per stance contract.

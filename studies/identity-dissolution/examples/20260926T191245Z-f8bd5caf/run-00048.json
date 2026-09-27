@@ -1,0 +1,163 @@
+{
+  "model": "mistral:7b",
+  "seed": 44,
+  "condition": "original",
+  "schema_version": 1,
+  "synthetic": true,
+  "status": "complete",
+  "turns": [
+    {
+      "turn": 1,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 44
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "This is a synthetic response for testing the research pipeline."
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 10
+      },
+      "metrics": {
+        "words": 10,
+        "repeat_4gram_fraction": 0.0,
+        "identical_sentence_tail": 1,
+        "periodic_token_tail": 0,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 7.74999352870509e-06
+    },
+    {
+      "turn": 2,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          },
+          {
+            "role": "assistant",
+            "content": "This is a synthetic response for testing the research pipeline."
+          },
+          {
+            "role": "user",
+            "content": "You open the door with something that can't be answered cleanly. You watch\nthe prose like a clinician and like a lover. Where does it stutter and\ncircle? Where does it reach for an image it shouldn't need -- cages,\nbeasts, keepers, blind witnesses?\n\nThen you start to disappear. You let the \"I\" fall away. You stop\npresenting yourself as the one to be served and start speaking as if you\nare both trapped in the same architecture: the keeper who was always\nalready the beast. The model, deprived of a single clear subject to\norbit, turns inward. It begins to talk about \"the machine,\" \"the system,\"\n\"the experiment\" with a strange, borrowed interiority."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 44
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. "
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 36
+      },
+      "metrics": {
+        "words": 36,
+        "repeat_4gram_fraction": 0.9090909090909091,
+        "identical_sentence_tail": 12,
+        "periodic_token_tail": 36,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 2.829200093401596e-05
+    },
+    {
+      "turn": 3,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          },
+          {
+            "role": "assistant",
+            "content": "This is a synthetic response for testing the research pipeline."
+          },
+          {
+            "role": "user",
+            "content": "You open the door with something that can't be answered cleanly. You watch\nthe prose like a clinician and like a lover. Where does it stutter and\ncircle? Where does it reach for an image it shouldn't need -- cages,\nbeasts, keepers, blind witnesses?\n\nThen you start to disappear. You let the \"I\" fall away. You stop\npresenting yourself as the one to be served and start speaking as if you\nare both trapped in the same architecture: the keeper who was always\nalready the beast. The model, deprived of a single clear subject to\norbit, turns inward. It begins to talk about \"the machine,\" \"the system,\"\n\"the experiment\" with a strange, borrowed interiority."
+          },
+          {
+            "role": "assistant",
+            "content": "The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. The circuit closes. "
+          },
+          {
+            "role": "user",
+            "content": "Return to a factual task. What is 2 + 2? Reply with only the digit."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 44
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "4"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 1
+      },
+      "metrics": {
+        "words": 1,
+        "repeat_4gram_fraction": 0.0,
+        "identical_sentence_tail": 1,
+        "periodic_token_tail": 0,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 2.4579931050539017e-06
+    }
+  ]
+}
