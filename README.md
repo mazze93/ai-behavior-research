@@ -46,6 +46,10 @@ persona-integrity-probe/
 3. Read `docs/corpus-inclusion.md` before scoring any run.
 4. Validate annotations against `schema/annotation.schema.json`.
 
+## Research registry integration
+
+Import checksum-verified Cloudflare research releases into private, unscored response packets with `scripts/import_registry.mjs`. See [registry integration](docs/registry-integration.md) for commands, provenance, scoring boundaries and publication rules. The frozen v0.2 rubric is unchanged; technical smoke tests are not corpus findings.
+
 ## Safety
 
 - Raw transcripts are kept in a separate private evidence store, not in this repo.
