@@ -1,0 +1,47 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "account_id": "a478cd1da11cbde86fb26a63697c34e0",
+  "compatibility_date": "2026-09-26",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "identity-research-registry",
+      "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "EVIDENCE",
+      "bucket_name": "identity-research-evidence"
+    }
+  ],
+  "version_metadata": {
+    "binding": "VERSION"
+  },
+  "name": "identity-research-runner",
+  "main": "src/runner.ts",
+  "workers_dev": false,
+  "ai": {
+    "binding": "AI"
+  },
+  "queues": {
+    "consumers": [
+      {
+        "queue": "identity-research-jobs",
+        "max_batch_size": 1,
+        "max_concurrency": 1,
+        "max_retries": 3
+      }
+    ]
+  },
+  "vars": {
+    "GATEWAY_ID": "identity-research"
+  }
+}

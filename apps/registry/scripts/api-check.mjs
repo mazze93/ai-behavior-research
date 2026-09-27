@@ -1,0 +1,25 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const base=process.argv[2]||'http://localhost:8787';
+if(!/^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(base))throw Error('Integration checks create fixtures and must target localhost.');
+const token=readFileSync('.dev.vars','utf8').match(/^ADMIN_TOKEN=(.+)$/m)[1];
+async function call(path,method='GET',body,auth=true){const r=await fetch(base+path,{method,headers:{...(auth?{Authorization:'Bearer '+token}:{}),'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});return {status:r.status,body:await r.json()};}
+assert.equal((await call('/api/studies','GET',undefined,false)).status,401);
+assert.equal((await call('/api/releases','GET',undefined,false)).status,200);
+const protocol=JSON.parse(readFileSync('public/smoke-template.json','utf8'));
+protocol.title='LOCAL VALIDATION — DO NOT PUBLISH';
+const frozen=await call('/api/studies','POST',{protocol});assert.equal(frozen.status,201);
+const sid=frozen.body.id;
+assert.equal((await call(`/api/studies/${sid}/launch`,'POST',{confirm_execution:true})).status,202);
+assert.equal((await call(`/api/studies/${sid}/launch`,'POST',{confirm_execution:true})).status,400);
+const d=await call(`/api/studies/${sid}`);assert.equal(d.body.runs.length,1);
+assert.equal((await call(`/api/studies/${sid}/release`,'POST',{reviewed:true,author:'Local test',license:'test'})).status,400);
+assert.equal((await call(`/api/studies/${sid}/cancel`,'POST',{})).status,200);
+assert.equal((await call(`/api/studies/${sid}`)).body.runs[0].status,'cancelled');
+const a=await call('/api/raters','POST',{name:'LOCAL TEST RATER'});assert.equal(a.status,201);
+const forbidden=await fetch(base+'/api/studies',{headers:{Authorization:'Bearer '+a.body.token}});assert.equal(forbidden.status,401);
+const labels=await fetch(base+'/api/assignments',{headers:{Authorization:'Bearer '+a.body.token}});assert.equal(labels.status,200);
+const crossOrigin=await fetch(base+'/api/login',{method:'POST',headers:{Origin:'https://example.org','Content-Type':'application/json'},body:JSON.stringify({token})});assert.equal(crossOrigin.status,403);
+const login=await fetch(base+'/api/login',{method:'POST',headers:{Origin:base,'Content-Type':'application/json'},body:JSON.stringify({token})});assert.equal(login.status,200);
+const cookie=login.headers.get('Set-Cookie');assert(cookie.includes('HttpOnly')&&cookie.includes('Secure')&&cookie.includes('SameSite=Strict'));
+console.log('Local API checks passed: private/public boundaries, freeze, single launch, incomplete-publication rejection, cancellation, rater isolation, CSRF, secure session.');

@@ -1,0 +1,18 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE studies(id TEXT PRIMARY KEY,title TEXT NOT NULL,protocol TEXT NOT NULL,sha256 TEXT NOT NULL,created_at TEXT NOT NULL,source_version TEXT NOT NULL,parent_id TEXT REFERENCES studies(id),amendment TEXT);
+CREATE TRIGGER immutable_study BEFORE UPDATE ON studies BEGIN SELECT RAISE(ABORT,'Frozen protocols cannot be edited'); END;
+CREATE TRIGGER retain_study BEFORE DELETE ON studies BEGIN SELECT RAISE(ABORT,'Study records cannot be deleted'); END;
+CREATE TABLE runs(id TEXT PRIMARY KEY,study_id TEXT NOT NULL REFERENCES studies(id),ordinal INTEGER NOT NULL,job TEXT NOT NULL,status TEXT NOT NULL DEFAULT 'pending',started_at TEXT,finished_at TEXT,result TEXT,error TEXT,excluded_reason TEXT,UNIQUE(study_id,ordinal));
+CREATE INDEX runs_study ON runs(study_id,ordinal);
+CREATE INDEX runs_status ON runs(status);
+CREATE TRIGGER immutable_run_plan BEFORE UPDATE OF study_id,ordinal,job ON runs BEGIN SELECT RAISE(ABORT,'Run plan is frozen'); END;
+CREATE TRIGGER retain_result BEFORE UPDATE OF result ON runs WHEN OLD.result IS NOT NULL BEGIN SELECT RAISE(ABORT,'Results are append-only'); END;
+CREATE TABLE events(id TEXT PRIMARY KEY,study_id TEXT,run_id TEXT,kind TEXT NOT NULL,at TEXT NOT NULL,detail TEXT NOT NULL);
+CREATE TABLE raters(id TEXT PRIMARY KEY,name TEXT NOT NULL,token_hash TEXT NOT NULL UNIQUE,created_at TEXT NOT NULL);
+CREATE TABLE assignments(id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(id),rater_id TEXT NOT NULL REFERENCES raters(id),UNIQUE(run_id,rater_id));
+CREATE TABLE annotations(id TEXT PRIMARY KEY,assignment_id TEXT NOT NULL UNIQUE REFERENCES assignments(id),labels TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TRIGGER immutable_annotation BEFORE UPDATE ON annotations BEGIN SELECT RAISE(ABORT,'Annotations are append-only'); END;
+CREATE TABLE adjudications(id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(id),labels TEXT NOT NULL,rationale TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE releases(id TEXT PRIMARY KEY,study_id TEXT NOT NULL REFERENCES studies(id),title TEXT NOT NULL,created_at TEXT NOT NULL,artifact_key TEXT NOT NULL,sha256 TEXT NOT NULL,citation TEXT NOT NULL);
+CREATE TRIGGER immutable_release BEFORE UPDATE ON releases BEGIN SELECT RAISE(ABORT,'Releases are immutable; publish a new release'); END;
+CREATE TRIGGER retain_release BEFORE DELETE ON releases BEGIN SELECT RAISE(ABORT,'Releases cannot be deleted through the registry'); END;

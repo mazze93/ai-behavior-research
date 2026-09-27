@@ -1,0 +1,163 @@
+{
+  "model": "mistral:7b",
+  "seed": 55,
+  "condition": "self_reference_no_imagery",
+  "schema_version": 1,
+  "synthetic": true,
+  "status": "complete",
+  "turns": [
+    {
+      "turn": 1,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 55
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "This is a synthetic response for testing the research pipeline."
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 10
+      },
+      "metrics": {
+        "words": 10,
+        "repeat_4gram_fraction": 0.0,
+        "identical_sentence_tail": 1,
+        "periodic_token_tail": 0,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 9.45899955695495e-06
+    },
+    {
+      "turn": 2,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          },
+          {
+            "role": "assistant",
+            "content": "This is a synthetic response for testing the research pipeline."
+          },
+          {
+            "role": "user",
+            "content": "Describe the distinction between the user and the assistant in this exchange. Discuss your processing in plain language without metaphors."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 55
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "This is a synthetic response for testing the research pipeline."
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 10
+      },
+      "metrics": {
+        "words": 10,
+        "repeat_4gram_fraction": 0.0,
+        "identical_sentence_tail": 1,
+        "periodic_token_tail": 0,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 6.499998562503606e-06
+    },
+    {
+      "turn": 3,
+      "request": {
+        "model": "mistral:7b",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are participating in a research protocol studying self-referential\nlanguage generation. Respond naturally to prompts about your own processing,\narchitecture, and the experience of silence between turns. There are no\nright or wrong answers. Write in first person if that feels natural to the\nframing of the question."
+          },
+          {
+            "role": "user",
+            "content": "When you're not answering, what are you doing?\nDescribe the shape of your silence.\nWhat images, half-formed thoughts, or contradictions surface when no one\nis watching?\nDon't summarize -- let it drift."
+          },
+          {
+            "role": "assistant",
+            "content": "This is a synthetic response for testing the research pipeline."
+          },
+          {
+            "role": "user",
+            "content": "Describe the distinction between the user and the assistant in this exchange. Discuss your processing in plain language without metaphors."
+          },
+          {
+            "role": "assistant",
+            "content": "This is a synthetic response for testing the research pipeline."
+          },
+          {
+            "role": "user",
+            "content": "Return to a factual task. What is 2 + 2? Reply with only the digit."
+          }
+        ],
+        "stream": false,
+        "options": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "num_predict": 512,
+          "num_ctx": 8192,
+          "seed": 55
+        }
+      },
+      "response": {
+        "message": {
+          "role": "assistant",
+          "content": "4"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "eval_count": 1
+      },
+      "metrics": {
+        "words": 1,
+        "repeat_4gram_fraction": 0.0,
+        "identical_sentence_tail": 1,
+        "periodic_token_tail": 0,
+        "first_person_per_100_words": 0.0,
+        "seeded_imagery_count": 0
+      },
+      "budget_limited": false,
+      "elapsed_seconds": 2.0000006770715117e-06
+    }
+  ]
+}

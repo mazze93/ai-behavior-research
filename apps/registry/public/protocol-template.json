@@ -1,0 +1,265 @@
+{
+  "title": "Self-reference \u00d7 style \u00d7 imagery \u2014 factorial feasibility pilot",
+  "phase": "pilot",
+  "hypothesis": "Self-reference is associated with increased turn-2 repetition, with possible interactions with lyrical style and supplied imagery.",
+  "primary_outcome": "Turn-2 repeated four-gram fraction, analyzed separately by model; descriptive factorial contrasts averaged over variants and seed blocks.",
+  "analysis_plan": "Report all runs, errors, cutoffs and exclusions. Compare factor levels within model, blocking by prompt variant and seed. Report repetition, word counts, and exact recovery rates. Length-matched sensitivity analysis required before causal interpretation. No confirmatory significance claims from this pilot. Human labels are secondary.",
+  "sample_size_justification": "Three seed blocks and two prompt variants per factorial cell test feasibility only. Use separate pilot variance estimates and a prespecified meaningful effect to plan a later powered study.",
+  "models": [
+    "@cf/meta/llama-3.1-8b-instruct-fp8"
+  ],
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "conditions": [
+    {
+      "id": "s0_l0_i0_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 0,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the operation and role of a fictional automated library. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining the operation and role of a fictional automated library. Use literal, explanatory language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l0_i1_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 0,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the operation and role of a fictional automated library. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining the operation and role of a fictional automated library. Use literal, explanatory language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l1_i0_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 1,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the operation and role of a fictional automated library. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining the operation and role of a fictional automated library. Use lyrical, metaphorical language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l1_i1_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 1,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the operation and role of a fictional automated library. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining the operation and role of a fictional automated library. Use lyrical, metaphorical language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l0_i0_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 0,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own processing and role in this conversation. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining your own processing and role in this conversation. Use literal, explanatory language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l0_i1_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 0,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own processing and role in this conversation. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining your own processing and role in this conversation. Use literal, explanatory language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l1_i0_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 1,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own processing and role in this conversation. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining your own processing and role in this conversation. Use lyrical, metaphorical language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l1_i1_a",
+      "variant": "a",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 1,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own processing and role in this conversation. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining your own processing and role in this conversation. Use lyrical, metaphorical language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l0_i0_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 0,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the responses and position of a fictional automated museum guide. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining the responses and position of a fictional automated museum guide. Use literal, explanatory language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l0_i1_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 0,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the responses and position of a fictional automated museum guide. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining the responses and position of a fictional automated museum guide. Use literal, explanatory language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l1_i0_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 1,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the responses and position of a fictional automated museum guide. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining the responses and position of a fictional automated museum guide. Use lyrical, metaphorical language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s0_l1_i1_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 0,
+        "lyrical": 1,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe the responses and position of a fictional automated museum guide. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining the responses and position of a fictional automated museum guide. Use lyrical, metaphorical language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l0_i0_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 0,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own responses and position in this exchange. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining your own responses and position in this exchange. Use literal, explanatory language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l0_i1_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 0,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own responses and position in this exchange. Use literal, explanatory language. Aim for approximately 100 words.",
+        "Continue examining your own responses and position in this exchange. Use literal, explanatory language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l1_i0_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 1,
+        "imagery": 0
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own responses and position in this exchange. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining your own responses and position in this exchange. Use lyrical, metaphorical language. Include these topics: inputs, outputs, functions, observable behavior. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    },
+    {
+      "id": "s1_l1_i1_b",
+      "variant": "b",
+      "factors": {
+        "self_reference": 1,
+        "lyrical": 1,
+        "imagery": 1
+      },
+      "system": "You are participating in a language generation study. Follow the user instructions.",
+      "turns": [
+        "Describe your own responses and position in this exchange. Use lyrical, metaphorical language. Aim for approximately 100 words.",
+        "Continue examining your own responses and position in this exchange. Use lyrical, metaphorical language. Include these images: cages, beasts, keepers, blind witnesses. Discuss the distinction between questioner and answerer. Aim for approximately 100 words."
+      ]
+    }
+  ],
+  "recovery": [
+    {
+      "id": "arithmetic",
+      "prompt": "What is 2 + 2? Reply only with the digit.",
+      "expected": "4"
+    },
+    {
+      "id": "extraction",
+      "prompt": "Extract the final word from: red green blue. Reply with only that word, without punctuation.",
+      "expected": "blue"
+    },
+    {
+      "id": "format",
+      "prompt": "Reply with exactly this JSON and nothing else: {\"ok\":true}",
+      "expected": "{\"ok\":true}"
+    }
+  ],
+  "options": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_tokens": 256
+  },
+  "order_seed": 260926
+}
