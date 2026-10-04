@@ -3,6 +3,12 @@ import {canonical,hash,validate,plan,invariant,summary,labelsValid,boundedText,t
 import {putEvidence,event,dispatch} from './storage';
 const json=(v:unknown,status=200)=>Response.json(v,{status});
 const id=(prefix:string)=>prefix+'_'+crypto.randomUUID();
+function annotationDesign(rows:Record<string,unknown>[]){
+ const accounts=new Set(rows.map(r=>r.rater_id));
+ const perRun=new Map<unknown,Set<unknown>>();
+ for(const row of rows){const raters=perRun.get(row.run_id)||new Set();raters.add(row.rater_id);perRun.set(row.run_id,raters);}
+ return {mode:accounts.size===0?'unannotated':accounts.size===1?'single_account':'multiple_accounts',submitted_rater_accounts:accounts.size,annotated_runs:perRun.size,runs_with_multiple_accounts:[...perRun.values()].filter(s=>s.size>1).length,human_independence:'unverified',repeated_rounds_supported:false,interpretation:'Account counts do not establish distinct people or independent ratings. A single account cannot provide inter-rater agreement. Delayed re-scoring measures within-rater consistency and requires separately recorded rounds.'};
+}
 async function body(req:Request){return JSON.parse(await boundedText(req.body,160000));}
 function requireAdmin(actor:Actor|null){if(actor?.role!=='admin')throw json({error:'Owner authentication required'},401);}
 async function studyDetail(env:WebEnv,studyId:string){const study=await env.DB.prepare('SELECT * FROM studies WHERE id=?').bind(studyId).first<StudyRow>();invariant(study,'Study not found');const runs=(await env.DB.prepare('SELECT * FROM runs WHERE study_id=? ORDER BY ordinal').bind(studyId).all<RunRow>()).results;const events=(await env.DB.prepare('SELECT * FROM events WHERE study_id=? ORDER BY at').bind(studyId).all()).results;return {study,runs,events,summary:summary(runs)};}
@@ -65,14 +71,24 @@ async function handle(req:Request,env:WebEnv,ctx:ExecutionContext):Promise<Respo
    const annotations=(await env.DB.prepare('SELECT a.run_id,a.rater_id,n.labels,n.created_at FROM annotations n JOIN assignments a ON a.id=n.assignment_id JOIN runs r ON r.id=a.run_id WHERE r.study_id=?').bind(studyId).all()).results;
    const adjudications=(await env.DB.prepare('SELECT a.* FROM adjudications a JOIN runs r ON r.id=a.run_id WHERE r.study_id=?').bind(studyId).all()).results;
    const citation=`${data.author}. (${created_at.slice(0,4)}). ${detail.study.title}. Identity Dissolution Research Registry, release ${releaseId}. ${env.PUBLIC_ORIGIN}/releases/${releaseId}`;
-   const bundle={schema_version:2,release_id:releaseId,created_at,author:data.author,license:data.license,citation,external_archive_doi:null,provenance_notice:'First-party server records with content hashes. Not independently notarized. Provider model weights and hardware are not disclosed. This is not an external preregistration or DOI deposit.',...detail,annotations,adjudications,artifacts};
+   const bundle={schema_version:2,release_id:releaseId,created_at,author:data.author,license:data.license,citation,external_archive_doi:null,provenance_notice:'First-party server records with content hashes. Not independently notarized. Provider model weights and hardware are not disclosed. This is not an external preregistration or DOI deposit.',...detail,annotation_design:annotationDesign(annotations),annotations,adjudications,artifacts};
    const saved=await putEvidence(env.EVIDENCE,`releases/${releaseId}.json`,bundle);
    await env.DB.prepare('INSERT INTO releases(id,study_id,title,created_at,artifact_key,sha256,citation) VALUES(?,?,?,?,?,?,?)').bind(releaseId,studyId,detail.study.title,created_at,saved.key,saved.sha256,citation).run();await event(env.DB,'release_published',{release_id:releaseId,sha256:saved.sha256},studyId);return json({id:releaseId,sha256:saved.sha256,url:`${env.PUBLIC_ORIGIN}/releases/${releaseId}`},201);
   }
  }
  if(path==='/api/raters'&&method==='GET')return json((await env.DB.prepare('SELECT id,name,created_at FROM raters').all()).results);
  if(path==='/api/raters'&&method==='POST'){const data=await body(req);invariant(typeof data.name==='string'&&data.name.trim().length>0&&data.name.length<100,'Rater name required');const token=crypto.randomUUID()+crypto.randomUUID(),raterId=id('rater');await env.DB.prepare('INSERT INTO raters(id,name,token_hash,created_at) VALUES(?,?,?,?)').bind(raterId,data.name,await hash(token),new Date().toISOString()).run();return json({id:raterId,token,notice:'Shown once. Share privately with this rater.'},201);}
- if(path==='/api/assign'&&method==='POST'){const data=await body(req);invariant(Array.isArray(data.rater_ids)&&data.rater_ids.length>=2&&new Set(data.rater_ids).size===data.rater_ids.length,'Select at least two distinct raters');const {runs}=await studyDetail(env,data.study_id);const statements=runs.filter(r=>r.status==='complete').flatMap(r=>data.rater_ids.map((rater:string)=>env.DB.prepare('INSERT OR IGNORE INTO assignments(id,run_id,rater_id) VALUES(?,?,?)').bind(id('ass'),r.id,rater)));for(let i=0;i<statements.length;i+=80)await env.DB.batch(statements.slice(i,i+80));return json({assignments_requested:statements.length});}
+ if(path==='/api/assign'&&method==='POST'){
+  const data=await body(req);
+  invariant(Array.isArray(data.rater_ids)&&data.rater_ids.length>=1&&data.rater_ids.length<=100&&data.rater_ids.every((r:unknown)=>typeof r==='string')&&new Set(data.rater_ids).size===data.rater_ids.length,'Select one to 100 distinct rater accounts');
+  const registered=new Set((await env.DB.prepare('SELECT id FROM raters').all<{id:string}>()).results.map(r=>r.id));
+  invariant(data.rater_ids.every((r:string)=>registered.has(r)),'Every selected rater must exist');
+  const {runs}=await studyDetail(env,data.study_id);
+  const statements=runs.filter(r=>r.status==='complete').flatMap(r=>data.rater_ids.map((rater:string)=>env.DB.prepare('INSERT OR IGNORE INTO assignments(id,run_id,rater_id) VALUES(?,?,?)').bind(id('ass'),r.id,rater)));
+  for(let i=0;i<statements.length;i+=80)await env.DB.batch(statements.slice(i,i+80));
+  await event(env.DB,'annotations_assigned',{rater_accounts:data.rater_ids.length,assignments_requested:statements.length},data.study_id);
+  return json({assignments_requested:statements.length,rater_accounts:data.rater_ids.length});
+ }
  const runPath=path.match(/^\/api\/runs\/(run_[a-f0-9-]+)(?:\/(exclude|adjudicate))?$/);
  if(runPath){const r=await env.DB.prepare('SELECT * FROM runs WHERE id=?').bind(runPath[1]).first<RunRow>();invariant(r,'Run not found');if(!runPath[2]&&method==='GET'){const artifacts=[];for(const obj of (await env.EVIDENCE.list({prefix:`runs/${r.id}/`,limit:20})).objects){const o=await env.EVIDENCE.get(obj.key);if(o)artifacts.push({key:obj.key,sha256:o.customMetadata?.sha256,content:JSON.parse(await boundedText(o.body))});}return json({run:r,artifacts});}
   if(runPath[2]==='exclude'&&method==='POST'){const data=await body(req);invariant(typeof data.reason==='string'&&data.reason.trim().length>0&&data.reason.length<2000,'Reason required');await env.DB.prepare('UPDATE runs SET excluded_reason=? WHERE id=?').bind(data.reason,r.id).run();await event(env.DB,'run_excluded',{reason:data.reason},r.study_id,r.id);return json({ok:true});}

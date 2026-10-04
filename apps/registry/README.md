@@ -42,7 +42,7 @@ The custom domain is added explicitly; do not remove an unrelated wildcard domai
 2. Freeze the complete protocol. Changing it requires a new study with an amendment link.
 3. Launch the frozen plan. Review the displayed upper token budget; gateway calls can incur charges. No automatic inference fallback is configured. Requests bypass cache.
 4. Inspect every result, failure, cutoff flag, and raw artifact. Unknown termination metadata stays unknown. Three recovery tasks independently branch from turn 2.
-5. Create at least two actual rater accounts, share their tokens privately, and assign completed outputs. Calibrate on separate examples. Rater submissions and later adjudications remain distinct.
+5. Create one rater account for solo work; add collaborators when available and share their tokens privately. Assign completed outputs. New releases record contributing account counts, which do not establish human independence. A solo score cannot establish inter-rater agreement. Repeated annotation rounds are not yet supported; do not use a second account to imply a second person. Calibrate on separate examples. Rater submissions and later adjudications remain distinct.
 6. Review the complete study and explicitly publish a frozen release. Draft data is not exposed publicly.
 7. Download the release bundle and run `python3 analysis.py RELEASE.json` using the script at `/analysis.py`. The script verifies the repeated-four-gram metric against raw response content and calculates descriptive matched factorial differences.
 
