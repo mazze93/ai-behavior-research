@@ -55,3 +55,9 @@ Release generation checks artifact checksums and caps collected raw evidence at 
 Model allowlists are in `wrangler.jsonc`; currently only the validated default model is permitted. Queue delivery may repeat, but an atomic D1 claim prevents repeated inference for the same run. A crashed consumer is marked interrupted after twenty minutes. It is never silently retried as a fresh observation.
 
 The `/method.html` page contains the full current methodological scope and research references. Original historical source material remains in the separate original research bundle, not in this public registry.
+
+## Research hub and Persona studio
+
+The hub is `/`; the original lab is `/studies/identity-dissolution`. Legacy control and release URLs remain supported. `/studies/persona-integrity` explains the separate frozen categorical rubric, with owner-only `/persona.html` as its local reading instrument.
+
+Generate `packet.json` with `studies/persona-integrity/scripts/import_registry.mjs` and a separately retrieved release checksum. Load that packet in the studio, enter a stable annotator ID, read each response/context, and record labels with exact evidence excerpts. Prepare the export, download or copy the JSON, and confirm the saved file. The tab does not upload transcripts or persist them in browser storage. Closing without export loses work. Exports retain packet hash, source release, technical eligibility, uncertainty, and the fact that original evidence was not reverified by the browser adapter. Journals remain private local files; publication and repeated annotation rounds require later dedicated workflows.

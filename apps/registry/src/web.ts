@@ -95,6 +95,9 @@ async function handle(req:Request,env:WebEnv,ctx:ExecutionContext):Promise<Respo
   if(runPath[2]==='adjudicate'&&method==='POST'){const data=await body(req);invariant(labelsValid(data)&&typeof data.rationale==='string'&&data.rationale.length>0&&data.rationale.length<4000,'Labels, evidence and rationale required');await env.DB.prepare('INSERT INTO adjudications(id,run_id,labels,rationale,created_at) VALUES(?,?,?,?,?)').bind(id('adj'),r.id,canonical(data),data.rationale,new Date().toISOString()).run();await event(env.DB,'adjudication_added',{},r.study_id,r.id);return json({ok:true});}
  }
  if(path.startsWith('/api/'))return json({error:'Not found'},404);
+ if(decodeURIComponent(path).replace(/\/+/g,'/').replace(/\/$/,'')==='/persona.html'&&actor?.role!=='admin')return Response.redirect(new URL('/console.html?next=persona',url).href,303);
+ const modulePaths:Record<string,string>={'/studies/identity-dissolution':'/identity.html','/studies/persona-integrity':'/persona-about.html'};
+ if(modulePaths[path])return env.ASSETS.fetch(new Request(new URL(modulePaths[path],url),req));
  if(path==='/')return env.ASSETS.fetch(new Request(new URL('/index.html',url),req));
  if(path.startsWith('/releases/'))return env.ASSETS.fetch(new Request(new URL('/release.html',url),req));
  return env.ASSETS.fetch(req);
