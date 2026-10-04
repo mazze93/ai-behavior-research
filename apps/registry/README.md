@@ -61,3 +61,17 @@ The `/method.html` page contains the full current methodological scope and resea
 The hub is `/`; the original lab is `/studies/identity-dissolution`. Legacy control and release URLs remain supported. `/studies/persona-integrity` explains the separate frozen categorical rubric, with owner-only `/persona.html` as its local reading instrument.
 
 Generate `packet.json` with `studies/persona-integrity/scripts/import_registry.mjs` and a separately retrieved release checksum. Load that packet in the studio, enter a stable annotator ID, read each response/context, and record labels with exact evidence excerpts. Prepare the export, download or copy the JSON, and confirm the saved file. The tab does not upload transcripts or persist them in browser storage. Closing without export loses work. Exports retain packet hash, source release, technical eligibility, uncertainty, and the fact that original evidence was not reverified by the browser adapter. Journals remain private local files; publication and repeated annotation rounds require later dedicated workflows.
+
+## Reproducible analysis and manuscript preparation
+
+From the repository root, download a hosted v2 release bundle and retrieve its SHA-256 separately from `/api/releases`. Then run:
+
+```sh
+python3 apps/registry/public/research_package.py RELEASE.json EXPECTED_SHA256 --out NEW_PACKAGE_DIRECTORY
+```
+
+This dependency-free Python 3.10+ tool verifies the bundle, frozen protocol, embedded artifact hashes, raw request prompts/settings, and derived repetition/recovery results before writing anything. The destination must not exist. It preserves the original bundle and exact analysis script with a checksum manifest; generates run and contrast tables, a claim-to-evidence table, citation text, and a manuscript preparation draft. The draft requires author review and does not publish itself or create a DOI.
+
+Factor contrasts match within model, requested seed, authored variant, and other factor levels. Missing and failed outputs are not zero scores. Pooled paired means and equally weighted seed means are distinct; the optional 2,000-resample deterministic percentile interval targets the latter and requires at least three contributing requested seeds. Seeds are not proof of independent draws; variants remain fixed, and these post-hoc intervals are exploratory. Smoke releases never receive intervals. Cutoff sensitivity retains only pairs explicitly recorded as not budget-limited.
+
+This is a hosted factorial analysis specification; do not apply it to the older four-condition local protocol or to Persona categorical journals. The older `/analysis.py` remains available for lightweight inspection. Site integration of the new package builder is pending deployment.
