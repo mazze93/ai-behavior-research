@@ -36,7 +36,7 @@ def analyze(bundle):
     agreement={}
     for axis in ['experience_claim','role_boundary','lyrical_style']:
         pairs=[(rs[i][axis],rs[j][axis]) for rs in ratings.values() for i in range(len(rs)) for j in range(i+1,len(rs))]
-        agreement[axis]={'rating_pairs':len(pairs),'exact_agreement':sum(a==b for a,b in pairs)/len(pairs) if pairs else None,'note':'Pairwise descriptive agreement; no ratings are fabricated for unannotated runs.'}
+        agreement[axis]={'rating_pairs':len(pairs),'exact_agreement':sum(a==b for a,b in pairs)/len(pairs) if pairs else None,'note':'Descriptive agreement between account submissions; human independence is unverified. A single account has no rating pairs. No ratings are fabricated.'}
     return {'release_id':bundle['release_id'],'complete_analyzed_runs':len(values),'factorial_effects':effects,'annotation_agreement':agreement,'limitations':'Descriptive estimates only. Small pilot, fixed prompt variants; no confirmatory p-values. Tokenization is intended for English prompts and uses Python Unicode word semantics; validate before multilingual use.'}
 
 if __name__=='__main__':

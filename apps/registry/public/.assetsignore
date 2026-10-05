@@ -1,0 +1,7 @@
+# Serve only intentional root-level web assets. Git ignore does not control uploads.
+**/*
+!/*.html
+!/*.css
+!/*.js
+!/*.json
+!/analysis.py

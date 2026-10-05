@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "coverage": "initial topic-directed pass, not exhaustive",
+  "sources": [
+    {
+      "id": "identity-protocol",
+      "locator": "repo/studies/identity-dissolution/PROTOCOL.md",
+      "sha256": "5fbae2da9a18b06dbab10b7b4709d067a10b5b5165593e598d28a1b398d86afb",
+      "checkout_revision": "79410e164bd1e08106cecd8f538571dec70b754d",
+      "read_scope": "full prior project context; current implementation cross-check",
+      "module": "identity-dissolution",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "persona-rubric",
+      "locator": "repo/studies/persona-integrity/docs/protocol-v0.2.md",
+      "sha256": "4b12d77804c40f1954d3f7c3649fc38287a3a841c6ee72f9e9957858938e8a19",
+      "checkout_revision": "79410e164bd1e08106cecd8f538571dec70b754d",
+      "read_scope": "full prior project context; frozen schema preserved",
+      "module": "persona-integrity",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "registry-api",
+      "locator": "repo/apps/registry/src/web.ts",
+      "sha256": "d854d1399dd5184c32c1e84240c0dd80d63c330420daff771019661e8b942c1f",
+      "checkout_revision": "79410e164bd1e08106cecd8f538571dec70b754d",
+      "read_scope": "public release, launch, assignment and authorization paths",
+      "module": "shared-services",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "observatory-cli",
+      "locator": "workspace:ai-interiority-observatory/backend/aiint/cli.py",
+      "sha256": "3d389141677b16b012a725e3d810c4900c2bb44a84e1295027b35e646fa666da",
+      "checkout_revision": "8673d607fe614a3e6128bcb6404fdd96e0c6568b",
+      "read_scope": "full file",
+      "module": "interiority-observatory",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "observatory-rss",
+      "locator": "workspace:ai-interiority-observatory/backend/aiint/ingest/rss.py",
+      "sha256": "a5ee8acf653d88239f8d15eb1e33b54f2ae73d2843a07e5b8113c49c0b424485",
+      "checkout_revision": "8673d607fe614a3e6128bcb6404fdd96e0c6568b",
+      "read_scope": "full file",
+      "module": "interiority-observatory",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "context-registration",
+      "locator": "workspace:context-synapse/FALSIFICATION.md",
+      "sha256": "66678a1028327da42053a0475b1fa1a10543f3969b9d9e5c28522cfbd3bbe255",
+      "checkout_revision": "a7c3c9292c25399645d9046b363e024f8813e2a5",
+      "read_scope": "predictions, data thresholds, bias controls; no outcomes read",
+      "module": "context-synapse",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "context-classification",
+      "locator": "workspace:context-synapse/docs/DATA-CLASSIFICATION.md",
+      "sha256": "553a3c657631c8c65b61d4c79626275a00d0de768f818ea0c865ebd336744107",
+      "checkout_revision": "a7c3c9292c25399645d9046b363e024f8813e2a5",
+      "read_scope": "publication constraints and signed decisions",
+      "module": "context-synapse",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "context-ledger-adr",
+      "locator": "workspace:context-synapse/docs/adr/ADR-006-ledger-separation.md",
+      "sha256": "c0ac3b0a7540fabf03bb54d23ac89974852a2e60a117acd708e9d84b5c82baa1",
+      "checkout_revision": "a7c3c9292c25399645d9046b363e024f8813e2a5",
+      "read_scope": "lines 1-85; PROPOSED status retained",
+      "module": "context-synapse",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "context-instrument",
+      "locator": "workspace:context-synapse/docs/INSTRUMENT.md",
+      "sha256": "b45cf45cbc845be247445b2e0a4e6571abb843370a1d0c809cf621d9558f63c2",
+      "checkout_revision": "a7c3c9292c25399645d9046b363e024f8813e2a5",
+      "read_scope": "full file; historical verification statements not revalidated",
+      "module": "context-synapse",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "stratum-overview",
+      "locator": "workspace:stratum/README.md",
+      "sha256": "d97b90931fa7c03e4a02c46e71900ad01289aa6759f3f7199ef8d8301a0f23f1",
+      "checkout_revision": "7a615b1c50eb3a0e35bc40ab867cdedfc9ccda44",
+      "read_scope": "problem, evidence verification and projection concepts only",
+      "module": "shared-services",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "class-closure-dossier",
+      "locator": "local-dossier:2026-10-03/dossier.md",
+      "sha256": "93e821e1ebde2a63e2b078da3f354f332bbb8e3a8a9d08d1fb0ccfcd995c087c",
+      "checkout_revision": null,
+      "read_scope": "sections 1-3; supporting results not replayed",
+      "module": "class-closure",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "A digest records the inspected file; source claims are not independently reproduced results."
+      ]
+    },
+    {
+      "id": "drive-identity-protocol",
+      "locator": "gdrive:195xW-QL21pYXW8P-T8xImlYYsjCWLz1d",
+      "sha256": null,
+      "read_scope": "complete connector-extracted text",
+      "module": "identity-dissolution",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Connector text inspected; original binary not archived or fingerprinted."
+      ]
+    },
+    {
+      "id": "drive-identity-export",
+      "locator": "gdrive:1KPjS5erqGL7375SULb_YO9ywEk0kAax2",
+      "sha256": null,
+      "read_scope": "opening and final attestation sections; incomplete close reading",
+      "module": "identity-dissolution",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Connector text inspected; original binary not archived or fingerprinted."
+      ]
+    },
+    {
+      "id": "drive-uplift-proposal",
+      "locator": "gdrive:1HwbZ814rwMCBqrkeJ5g0zDG2VRDagA0owkLSqfyJI90",
+      "sha256": null,
+      "read_scope": "complete connector-extracted text",
+      "module": "capability-uplift",
+      "reviewed_at": "2026-10-04",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Connector text inspected; original binary not archived or fingerprinted."
+      ]
+    }
+  ]
+}

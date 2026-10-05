@@ -1,0 +1,24 @@
+{
+  "script_sha256": "6f0c495711c2cc81a3b78e91a4ac12807b474a4e4898642d5c9c8c50bbf5eabe",
+  "releases": [
+    {
+      "release_id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+      "source_sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+      "analyzed_runs": 1,
+      "planned_runs": 1,
+      "phase": "smoke",
+      "manifest_sha256": "f92db57f15297cd7e0a9eb6be2a5a8ed7a796b1770870500f005e8d932979fc7",
+      "identical_reproduction": true
+    },
+    {
+      "release_id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+      "source_sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd",
+      "analyzed_runs": 0,
+      "planned_runs": 1,
+      "phase": "smoke",
+      "manifest_sha256": "6ab120ae6bcbfc5ec9fee5a93910b2b107129a242252002de0ad5c0fc9732160",
+      "identical_reproduction": true
+    }
+  ],
+  "scope": "Downloaded public technical releases; no new inference or scientific finding. Reproduction compared all package content hashes on this machine."
+}

@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-10-04T22:57:53.133630+00:00",
+  "source_commit": "7f3cbc6",
+  "branch": "feat/research-hub-corpus",
+  "worker": "identity-research-web",
+  "version": "998eeeaf-434c-470a-8366-cc206d3ed3a4",
+  "rollback_version": "2bbd87f8-43c3-4402-a015-24c355a97858",
+  "origin": "https://research.mazzeleczzare.com",
+  "database_migrations": false,
+  "runner_changed": false,
+  "verification": {
+    "tests": {
+      "importer": 5,
+      "python": 4,
+      "registry_including_nested_results": 22
+    },
+    "typecheck": "passed",
+    "dry_runs": [
+      "web",
+      "runner"
+    ],
+    "public_routes": "200",
+    "private_studio_and_encoded_variants": "303 to owner sign-in",
+    "private_api_anonymous": "401",
+    "generated_bytecode": "404",
+    "release_bundles": [
+      {
+        "id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+        "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"
+      },
+      {
+        "id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+        "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+      }
+    ]
+  },
+  "limits": [
+    "Browser workflow used a synthetic local packet, not real research annotations.",
+    "In-app browser blob download completion unconfirmed; full JSON copy fallback verified.",
+    "No production inference or new evidence release was launched.",
+    "Corpus expansion, advanced analysis and publication preparation remain incomplete."
+  ]
+}
