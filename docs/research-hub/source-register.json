@@ -194,6 +194,62 @@
       "limitations": [
         "Connector text inspected; original binary not archived or fingerprinted."
       ]
+    },
+    {
+      "id": "rustpress-README.md",
+      "locator": "https://github.com/mazze93/rustpress/blob/fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa/README.md",
+      "sha256": "5e8051e345f7d22c707939095829919c1407cedc2679bd74a65802c041690873",
+      "checkout_revision": "fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa",
+      "read_scope": "full",
+      "module": "publication",
+      "reviewed_at": "2026-10-08",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Historical release statements are not current-state proof; runtime bridge compatibility checked separately."
+      ]
+    },
+    {
+      "id": "rustpress-HANDOFF.md",
+      "locator": "https://github.com/mazze93/rustpress/blob/fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa/HANDOFF.md",
+      "sha256": "7ba00b835dd36a2b1ee34586d0c1a98c67ce59e6ceaed07721f82878ed26451e",
+      "checkout_revision": "fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa",
+      "read_scope": "full",
+      "module": "publication",
+      "reviewed_at": "2026-10-08",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Historical release statements are not current-state proof; runtime bridge compatibility checked separately."
+      ]
+    },
+    {
+      "id": "rustpress-src-content.rs",
+      "locator": "https://github.com/mazze93/rustpress/blob/fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa/src/content.rs",
+      "sha256": "e3078d8b599a6e1bb51bd76bfd8135ecfbf7ac147c8c08f2e5f80232f4b80c87",
+      "checkout_revision": "fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa",
+      "read_scope": "frontmatter, asset, HTML and URL policy; complete compile implementation including generated index; validate_pressed signature",
+      "module": "publication",
+      "reviewed_at": "2026-10-08",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Historical release statements are not current-state proof; runtime bridge compatibility checked separately."
+      ]
+    },
+    {
+      "id": "rustpress-src-main.rs",
+      "locator": "https://github.com/mazze93/rustpress/blob/fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa/src/main.rs",
+      "sha256": "8b08b56886bdd14ddb80780387f60965841754e77aa00b8c3f9ed8be66dc7e98",
+      "checkout_revision": "fbca30d018a5d8f0b38d2f2e3f30989424d9d0aa",
+      "read_scope": "full CLI definition and dispatch",
+      "module": "publication",
+      "reviewed_at": "2026-10-08",
+      "evidence_type": "source-inspected",
+      "publication": "private-register-only",
+      "limitations": [
+        "Historical release statements are not current-state proof; runtime bridge compatibility checked separately."
+      ]
     }
   ]
 }
