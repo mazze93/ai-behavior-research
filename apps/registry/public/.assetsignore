@@ -17,3 +17,6 @@
 !/explorers/rel_*/explorer.css
 !/explorers/rel_*/explorer.js
 !/explorers/rel_*/view-manifest.json
+!/robots.txt
+!/sitemap.xml
+!/llms.txt

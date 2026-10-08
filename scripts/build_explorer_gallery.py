@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+from gallery_inputs import renderer_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('research_package', ROOT/'apps/registry/public/research_package.py')
@@ -40,6 +41,8 @@ def build(manifest_path, source_dir, destination, binary):
             package=work/(row['id']+'-package')
             report=analysis.build_package(raw,row['sha256'],package)
             subprocess.run([str(Path(binary).resolve()),str(package),row['sha256'],str(gallery/row['id'])],check=True,capture_output=True,text=True)
+            view=analysis.parse((gallery/row['id']/'view-manifest.json').read_text())
+            analysis.require(view.get('renderer_source_sha256')==renderer_hash(),'Renderer binary is stale; rebuild with Cargo')
             index.append(dict(row,title=bundle['study']['title'],phase=report['phase'],analyzed_runs=report['analyzed_runs'],planned_runs=report['planned_runs'],href=f"/explorers/{row['id']}/index.html"))
         (gallery/'index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n')
         cards=''.join('<article class="card"><h2>'+html.escape(r['title'])+'</h2><p>'+html.escape(r['phase'])+' · '+str(r['analyzed_runs'])+' analyzed / '+str(r['planned_runs'])+' planned</p><p class="hash">'+r['sha256']+'</p><p><a href="'+r['href']+'">Open visual evidence →</a> · <a href="/releases/'+r['id']+'">Original release</a></p></article>' for r in index)

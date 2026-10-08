@@ -373,3 +373,18 @@ mod tests {
 }
 
 pub mod render;
+
+/// Fingerprint the actual compile-time inputs, not files read beside a stale binary.
+pub fn compiled_source_hash() -> String {
+    let sources: &[&[u8]] = &[
+        include_bytes!("lib.rs"),
+        include_bytes!("main.rs"),
+        include_bytes!("render.rs"),
+        include_bytes!("shell.html"),
+        include_bytes!("view.css"),
+        include_bytes!("view.js"),
+        include_bytes!("../Cargo.toml"),
+        include_bytes!("../Cargo.lock"),
+    ];
+    hash(&sources.concat())
+}
