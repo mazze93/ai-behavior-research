@@ -41,3 +41,5 @@ build/
 
 # Rust build outputs
 **/target/
+# Generated public explorer gallery (reproduced from pinned public releases)
+apps/registry/public/explorers/

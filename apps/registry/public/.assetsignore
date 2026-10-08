@@ -6,3 +6,14 @@
 !/*.json
 !/analysis.py
 !/research_package.py
+# Explicit generated gallery only; no source bundles or Python packages.
+!/explorers/
+!/explorers/rel_*/
+!/explorers/index.html
+!/explorers/index.json
+!/explorers/build-manifest.json
+!/explorers/rel_*/index.html
+!/explorers/rel_*/contrasts.svg
+!/explorers/rel_*/explorer.css
+!/explorers/rel_*/explorer.js
+!/explorers/rel_*/view-manifest.json
