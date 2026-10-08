@@ -1,0 +1,20 @@
+[tools]
+node = "26.10.0"
+python = "3.14.8"
+
+[tasks.setup]
+run = "make install"
+
+[tasks.check]
+run = "make test"
+
+[tasks.bundle]
+dir = "apps/registry"
+run = "npx --no-install wrangler deploy --config wrangler.jsonc --dry-run"
+
+[tasks.dev]
+run = "make registry-dev"
+
+[tasks.deploy]
+dir = "apps/registry"
+run = "npx --no-install wrangler deploy --config wrangler.jsonc"

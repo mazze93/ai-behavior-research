@@ -74,4 +74,10 @@ This dependency-free Python 3.10+ tool verifies the bundle, frozen protocol, emb
 
 Factor contrasts match within model, requested seed, authored variant, and other factor levels. Missing and failed outputs are not zero scores. Pooled paired means and equally weighted seed means are distinct; the optional 2,000-resample deterministic percentile interval targets the latter and requires at least three contributing requested seeds. Seeds are not proof of independent draws; variants remain fixed, and these post-hoc intervals are exploratory. Smoke releases never receive intervals. Cutoff sensitivity retains only pairs explicitly recorded as not budget-limited.
 
-This is a hosted factorial analysis specification; do not apply it to the older four-condition local protocol or to Persona categorical journals. The older `/analysis.py` remains available for lightweight inspection. Site integration of the new package builder is pending deployment.
+This is a hosted factorial analysis specification; do not apply it to the older four-condition local protocol or to Persona categorical journals. The older `/analysis.py` remains available for lightweight inspection. The analysis desk at `/prepare.html` selects a public release and generates checksum-bound download and reproduction commands. Release pages link to that exact selection. Computation remains local.
+
+## Reproducible shipping
+
+The root `mise.toml` declares the verified Node 26.10.0 and Python 3.14.8 runtimes. From the repository root, use `mise install`, `mise run setup`, `mise run check`, and `mise run bundle`. `mise run dev` starts the local instrument; `mise run deploy` deploys the web Worker using the lockfile CLI. CI runs the same checks with pinned runtime versions and immutable action revisions, without production secrets. Deployment remains an explicit operator action.
+
+The sharp 0.35.5 override addresses GHSA-wq5f-xc86-pv6w in Wrangler's development dependency tree. Keep the override until the upstream locked dependency includes the patch. This is dependency remediation, not a demonstrated production exploit. No credentials or Access policies were provisioned as part of the analysis-desk shipment.
