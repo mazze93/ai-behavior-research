@@ -1,0 +1,29 @@
+{
+  "source_revision": "e7499aff367dad1d74dc951fa60912039312bb65",
+  "worker_version": "f466d6a4-d518-4e86-b0c5-52bf237fdd03",
+  "rollback_version": "998eeeaf-434c-470a-8366-cc206d3ed3a4",
+  "public_and_private_checks": {
+    "/prepare.html": 200,
+    "/research_package.py": 200,
+    "/persona.html": 303,
+    "/%70ersona.html": 303,
+    "/api/studies": 401,
+    "/.assetsignore": 404,
+    "/__pycache__/analysis.cpython-314.pyc": 404
+  },
+  "authenticated_owner_verified": true,
+  "authenticated_studio_status": 200,
+  "bindings_preserved": true,
+  "public_script_matches_source": true,
+  "evidence": [
+    {
+      "release_id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+      "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"
+    },
+    {
+      "release_id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+      "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+    }
+  ],
+  "scope": "Read-only probes; no new model inference or evidence publication. Existing owner token used only for same-origin GETs without redirects; values not recorded."
+}
