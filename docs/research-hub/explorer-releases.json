@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "origin": "https://research.mazzeleczzare.com",
+  "releases": [
+    {"id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642", "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"},
+    {"id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271", "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"}
+  ]
+}
