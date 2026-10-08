@@ -38,3 +38,6 @@ build/
 .idea/
 *.swp
 *~
+
+# Rust build outputs
+**/target/
