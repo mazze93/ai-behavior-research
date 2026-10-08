@@ -63,7 +63,7 @@ pub fn html(p: &Package) -> String {
     let r = &p.report;
     let mut out = String::from(include_str!("shell.html"));
     out.push_str(&format!("<p class=eyebrow>Identity Dissolution / evidence explorer / {}</p><h1>Read the<br><em>evidence.</em></h1><div class=spectrum></div><p class=deck>From experimental coverage to individual records. Every colored cell has a source; every gap stays visible.</p><div class=scope><strong>{}</strong><p>Source and report file consistency checked by Rust. Statistics and raw response metrics are not independently recomputed here. No models were called.</p></div><p class=hash>Release {}<br>Source SHA-256 {}<br>Analysis SHA-256 {}<br>Analysis {}</p>",escape(&r.phase),if r.phase=="smoke"{"Technical smoke evidence only. No research findings."}else{"Post-hoc exploratory analysis. Review limitations before interpretation."},escape(&r.release_id),p.source_hash,p.analysis_hash,escape(&r.analysis_version)));
-    write!(out,"<div class=inventory><p><b>{}</b>planned</p><p><b>{}</b>recorded</p><p><b>{}</b>analyzed</p><p><b>{}</b>excluded</p><p><b>{}</b>missing records</p></div><section><h2>01 / Coverage & records</h2><p>Rows are authored conditions; columns are requested seeds. Color encodes reported repetition among complete, included runs. Gray cells carry their execution or exclusion status. Seed labels do not establish independent draws.</p><label for=model>Model view</label><select id=model><option value=all>All models</option>",r.planned_runs,r.recorded_runs,r.analyzed_runs,r.excluded_runs,r.missing_run_records).unwrap();
+    write!(out,"<div class=inventory><p><b>{}</b>planned</p><p><b>{}</b>recorded</p><p><b>{}</b>analyzed</p><p><b>{}</b>excluded</p><p><b>{}</b>missing records</p></div><section><h2>01 / Coverage & records</h2><p>Rows are authored conditions; columns are requested seeds. Color encodes reported repetition among complete, included runs in 0.01-wide bins; numeric labels retain three decimals. Gray cells carry their execution or exclusion status. Seed labels do not establish independent draws.</p><label for=model>Model view</label><select id=model><option value=all>All models</option>",r.planned_runs,r.recorded_runs,r.analyzed_runs,r.excluded_runs,r.missing_run_records).unwrap();
     let models = p.protocol["models"].as_array().unwrap();
     for (i, m) in models.iter().enumerate() {
         write!(
@@ -107,15 +107,15 @@ pub fn html(p: &Package) -> String {
                     } else {
                         escape(&run.status)
                     };
-                    let style = if included {
+                    let class = if included {
                         format!(
-                            "style=\"--hue:{}\"",
-                            145.0 - 145.0 * run.repetition.unwrap()
+                            "included heat-{}",
+                            (run.repetition.unwrap() * 100.0).round() as u32
                         )
                     } else {
-                        String::new()
+                        "unavailable".into()
                     };
-                    write!(out,"<td><a class=\"cell {}\" {style} href=\"#run-{index}\" aria-label=\"{}, seed {}, {}: {}\">{label}</a></td>",if included{"included"}else{"unavailable"},escape(condition),seed,escape(name),label).unwrap();
+                    write!(out,"<td><a class=\"cell {class}\" href=\"#run-{index}\" aria-label=\"{}, seed {}, {}: {}\">{label}</a></td>",escape(condition),seed,escape(name),label).unwrap();
                 } else {
                     out.push_str("<td><span class=\"cell unavailable\">Missing</span></td>");
                 }
@@ -153,6 +153,21 @@ pub fn html(p: &Package) -> String {
             .unwrap();
         write!(out,"<details id=run-{i}><summary>{} · {} · seed {} · {} · {}</summary><p>Excluded: {}. Budget-limited: {}. Words: {}.</p><pre tabindex=0>{}</pre></details>",escape(&run.run_id),escape(&run.model),run.seed,escape(&run.condition),escape(&run.status),escape(run.excluded_reason.as_deref().unwrap_or("No")),run.budget_limited.map_or("Unknown",|b|if b{"Yes"}else{"No"}),run.words.map_or("Missing".into(),|w|w.to_string()),escape(&serde_json::to_string_pretty(original).unwrap())).unwrap();
     }
-    write!(out,"</section><section class=scope><h2>Interpretation limits</h2><p>{}</p><p>File hashes establish consistency, not notarization. The Rust reader validates structure and identities; reproduce the reviewed Python analysis before using this report in a publication.</p></section><footer>Evidence explorer {} · No network requests · Review source content before sharing this folder.</footer></main><script>{}</script></body></html>",escape(&r.limitations),env!("CARGO_PKG_VERSION"),include_str!("view.js")).unwrap();
+    write!(out,"</section><section class=scope><h2>Interpretation limits</h2><p>{}</p><p>File hashes establish consistency, not notarization. The Rust reader validates structure and identities; reproduce the reviewed Python analysis before using this report in a publication.</p></section><footer>Evidence explorer {} · No model calls · Review source content before sharing this folder.</footer></main><script src=explorer.js></script></body></html>",escape(&r.limitations),env!("CARGO_PKG_VERSION")).unwrap();
     out
+}
+
+/// External assets preserve the registry's strict same-origin CSP.
+pub const JAVASCRIPT: &str = include_str!("view.js");
+pub fn css() -> String {
+    let mut css = String::from(include_str!("view.css"));
+    for bin in 0..=100 {
+        writeln!(
+            css,
+            ".heat-{bin}{{--hue:{}}}",
+            145.0 - 1.45 * f64::from(bin)
+        )
+        .unwrap();
+    }
+    css
 }
