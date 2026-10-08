@@ -12,6 +12,7 @@ function show(){
  document.getElementById('bundle-link').href=`/api/releases/${row.id}/bundle`;
  const origin=location.origin;
  document.getElementById('commands').textContent=`curl --fail --show-error --output ${row.id}.json '${origin}/api/releases/${row.id}/bundle' &&\ncurl --fail --show-error --output research_package.py '${origin}/research_package.py' &&\npython3 research_package.py ${row.id}.json ${row.sha256} --out package`;
+ document.getElementById('explorer-commands').textContent=`cargo run --release --locked --manifest-path /path/to/ai-behavior-research/tools/evidence-explorer/Cargo.toml -- /path/to/package ${row.sha256} /path/to/new-explorer`;
  selection.hidden=false;
  status.textContent='Published snapshot selected. Inspect its phase and exclusions before interpreting the generated package.';
 }
