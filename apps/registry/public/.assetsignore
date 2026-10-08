@@ -5,3 +5,4 @@
 !/*.js
 !/*.json
 !/analysis.py
+!/research_package.py
