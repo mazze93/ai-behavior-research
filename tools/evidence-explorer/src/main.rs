@@ -11,7 +11,7 @@ fn main() -> Result<()> {
     let html = render::html(&package);
     let svg = render::figure(&package);
     let css = render::css();
-    let manifest = serde_json::json!({"renderer_version":env!("CARGO_PKG_VERSION"),"source_sha256":package.source_hash,"analysis_sha256":package.analysis_hash,"analysis_version":package.report.analysis_version,"release_id":package.report.release_id,"scope":"all models; unfiltered","verification":"file consistency and report structure; statistics not recomputed","files":{"index.html":hash(html.as_bytes()),"contrasts.svg":hash(svg.as_bytes()),"explorer.css":hash(css.as_bytes()),"explorer.js":hash(render::JAVASCRIPT.as_bytes())}});
+    let manifest = serde_json::json!({"renderer_version":env!("CARGO_PKG_VERSION"),"renderer_source_sha256":evidence_explorer::compiled_source_hash(),"source_sha256":package.source_hash,"analysis_sha256":package.analysis_hash,"analysis_version":package.report.analysis_version,"release_id":package.report.release_id,"scope":"all models; unfiltered","verification":"file consistency and report structure; statistics not recomputed","files":{"index.html":hash(html.as_bytes()),"contrasts.svg":hash(svg.as_bytes()),"explorer.css":hash(css.as_bytes()),"explorer.js":hash(render::JAVASCRIPT.as_bytes())}});
     let destination = Path::new(&args[2]);
     fs::create_dir(destination)?;
     fs::write(destination.join("index.html"), html)?;

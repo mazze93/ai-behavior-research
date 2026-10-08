@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT/'apps/registry/tests_python'))
 from test_research_package import fixture, m
 sys.path.insert(0, str(ROOT/'scripts'))
 from build_explorer_gallery import build
+from check_explorer_gallery import check
 BINARY = ROOT/'tools/evidence-explorer/target/debug/evidence-explorer'
 
 class ExplorerRoundtrip(unittest.TestCase):
@@ -24,11 +25,26 @@ class ExplorerRoundtrip(unittest.TestCase):
             config={'schema_version':1,'origin':'https://research.mazzeleczzare.com','releases':[{'id':'rel_aaaa','sha256':digest}]}
             manifest=root/'releases.json';manifest.write_text(json.dumps(config))
             rows=build(manifest,sources,root/'gallery',BINARY)
+            self.assertEqual(check(root/'gallery',manifest),8)
+            with self.assertRaises(ValueError):check(root/'missing',manifest)
             self.assertEqual(rows[0]['phase'],'smoke')
             self.assertFalse((root/'gallery/private.json').exists())
             self.assertFalse((root/'gallery/rel_aaaa/source.json').exists())
             proof=json.loads((root/'gallery/build-manifest.json').read_text())
             for name,sha in proof['files'].items():self.assertEqual(m.sha((root/'gallery'/name).read_bytes()),sha)
+            extra=root/'gallery/rel_aaaa/private.json';extra.write_text('unselected')
+            with self.assertRaises(ValueError):check(root/'gallery',manifest)
+            extra.unlink()
+            page=root/'gallery/rel_aaaa/index.html';original=page.read_bytes();page.write_bytes(original+b'changed')
+            with self.assertRaises(ValueError):check(root/'gallery',manifest)
+            page.write_bytes(original)
+            viewpath=root/'gallery/rel_aaaa/view-manifest.json';saved=viewpath.read_bytes();view=json.loads(saved)
+            view['renderer_source_sha256']='0'*64;viewpath.write_text(json.dumps(view))
+            proofpath=root/'gallery/build-manifest.json';savedproof=proofpath.read_bytes()
+            proof['files']['rel_aaaa/view-manifest.json']=m.sha(viewpath.read_bytes());proofpath.write_text(json.dumps(proof))
+            with self.assertRaisesRegex(ValueError,'Stale compiled renderer'):check(root/'gallery',manifest)
+            viewpath.write_bytes(saved);proofpath.write_bytes(savedproof)
+            self.assertEqual(check(root/'gallery',manifest),8)
             with self.assertRaises(FileExistsError):build(manifest,sources,root/'gallery',BINARY)
             config['releases'][0]['sha256']='0'*64;manifest.write_text(json.dumps(config))
             with self.assertRaises(ValueError):build(manifest,sources,root/'bad',BINARY)

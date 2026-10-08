@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /console.html
+Disallow: /persona.html
+Disallow: /review.html
+Disallow: /api/
+Sitemap: https://research.mazzeleczzare.com/sitemap.xml

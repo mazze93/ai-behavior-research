@@ -1,0 +1,57 @@
+{
+  "gateway": {
+    "status": "403",
+    "success": false,
+    "error_codes": [
+      10000
+    ]
+  },
+  "domains": {
+    "status": "200",
+    "success": true,
+    "error_codes": [],
+    "research_routes": [
+      {
+        "hostname": "research.mazzeleczzare.com",
+        "service": "identity-research-web",
+        "zone_id": "079152b5ccf928169ecbfb1d98d5ccf3"
+      }
+    ]
+  },
+  "zone": {
+    "status": "200",
+    "success": true,
+    "error_codes": [],
+    "zones": [
+      {
+        "id": "079152b5ccf928169ecbfb1d98d5ccf3",
+        "name": "mazzeleczzare.com",
+        "status": "active"
+      }
+    ]
+  },
+  "zone_settings": {
+    "ssl": {
+      "status": "403",
+      "value": null,
+      "error_codes": [
+        9109
+      ]
+    },
+    "min_tls_version": {
+      "status": "403",
+      "value": null,
+      "error_codes": [
+        9109
+      ]
+    },
+    "security_level": {
+      "status": "403",
+      "value": null,
+      "error_codes": [
+        9109
+      ]
+    }
+  },
+  "scope": "Read-only Cloudflare API audit using existing Wrangler OAuth. 403 means inaccessible, not absent or secure. No token values or returned error bodies recorded."
+}

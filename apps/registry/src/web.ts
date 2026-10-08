@@ -1,3 +1,4 @@
+import {responsePolicy} from './response-policy';
 import {authenticate,authenticateToken,session,type Actor} from './auth';
 import {canonical,hash,validate,plan,invariant,summary,labelsValid,boundedText,type Protocol,type RunRow,type StudyRow} from './core';
 import {putEvidence,event,dispatch} from './storage';
@@ -103,6 +104,6 @@ async function handle(req:Request,env:WebEnv,ctx:ExecutionContext):Promise<Respo
  return env.ASSETS.fetch(req);
 }
 export default {
- async fetch(req:Request,env:WebEnv,ctx:ExecutionContext){let response:Response;try{response=await handle(req,env,ctx);}catch(e){response=e instanceof Response?e:json({error:e instanceof Error?e.message:'Request failed'},400);}const r=new Response(response.body,response);r.headers.set('X-Content-Type-Options','nosniff');r.headers.set('Referrer-Policy','no-referrer');r.headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");r.headers.set('Cache-Control','no-store');return r;},
+ async fetch(req:Request,env:WebEnv,ctx:ExecutionContext){let response:Response;try{response=await handle(req,env,ctx);}catch(e){response=e instanceof Response?e:json({error:e instanceof Error?e.message:'Request failed'},400);}return responsePolicy(req,response);},
  async scheduled(_event:ScheduledController,env:WebEnv){await env.DB.prepare("UPDATE runs SET status='interrupted',finished_at=?,error='Worker did not finish; inspect preserved call artifacts. No automatic inference retry.' WHERE status='running' AND started_at < ?").bind(new Date().toISOString(),new Date(Date.now()-20*60000).toISOString()).run();await dispatch(env);}
 } satisfies ExportedHandler<WebEnv>;
