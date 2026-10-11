@@ -1,0 +1,35 @@
+{
+  "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+  "transport": "Loopback Ollama API, existing local gemma4 model; no cloud review agents",
+  "source_revision": "77d3db8945111961351c6c84153959aec6336240",
+  "reviews": [
+    {
+      "lane": "headers",
+      "source_file": "apps/registry/src/response-policy.ts",
+      "model": "gemma4:latest",
+      "candidate_only": true,
+      "format_valid": true,
+      "response": "SUSPECT | `r.headers.set('Cache-Control',cacheable?'public, max-age=300':'no-store');` | If `cacheable` is true, the `Cache-Control` header is set to `public, max-age=300`, which might be too permissive if the asset content changes frequently but the path pattern matches.\nSUSPECT | `const asset=/^\\/[a-z][a-z0-9-]*\\.(css|js)$/.test(path)||/^\\/explorers\\/rel_[a-f0-9-]+\\/(explorer\\.(css|js)|contrasts\\.svg)$/.test(path);` | The regex for assets is too broad and doesn't account for potential path traversal or directory structure issues, potentially marking non-public assets as cacheable.\nSUSPECT | `const cacheable=asset&&['GET','HEAD'].includes(req.method)&&r.status===200&&!req.headers.has('Authorization')&&!req.headers.has('Cookie')&&!r.headers.has('Set-Cookie');` | The check `!r.headers.has('Set-Cookie')` is insufficient to prevent caching when the response body itself might contain sensitive headers or data that should prevent caching, even if `Set-Cookie` isn't explicitly set by this function.",
+      "prompt_eval_count": 536,
+      "eval_count": 296
+    },
+    {
+      "lane": "agent-guide",
+      "source_file": "apps/registry/public/llms.txt",
+      "model": "gemma4:latest",
+      "candidate_only": true,
+      "format_valid": true,
+      "response": "SUSPECT | \"Reading public evidence does not grant permission to launch experiments, spend inference budget, annotate as a human, change records or publish.\" | This statement, while intended to limit scope, is phrased as a warning against actions (\"does not grant permission\") rather than a definitive technical block, potentially misleading an agent into believing that *any* interaction with the provided links could be interpreted as an authorization to \"change records\" if the underlying system logic is not perfectly understood.",
+      "prompt_eval_count": 501,
+      "eval_count": 97
+    }
+  ],
+  "verification": [
+    "Five-minute presentation asset caching is intentional and bounded; not a demonstrated failure.",
+    "Both asset regexes are anchored; neither admits slash traversal. Static assets are allowlisted; private APIs route through authentication and are excluded from asset caching.",
+    "Authorization, Cookie, Set-Cookie and non-200 responses disable caching. No concrete sensitive response path was identified by the model.",
+    "llms.txt expressly grants no authority and states that it is not an authentication control. Private API checks independently returned 401."
+  ],
+  "confirmed_defects": [],
+  "scope": "Candidate generation only; two targeted response-policy tests and live authorization/cache probes supply independent evidence, not a comprehensive security audit."
+}
