@@ -62,13 +62,13 @@ class HuggingFaceExportTests(unittest.TestCase):
             contrasts = [json.loads(r) for r in (out/'data/rel_aaaa/contrasts.jsonl').read_text().splitlines()]
             self.assertTrue(all(r['bootstrap_95_lower'] is None and r['technical_only'] for r in contrasts))
 
-    def test_card_configs_resolve_and_preserve_unlicensed_state(self):
+    def test_card_configs_and_scoped_license_preserve_source_terms(self):
         bundle = fixture('smoke'); bundle['license'] = '<script>untrusted</script>\n---'
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); selection, source = self.prepare(root,bundle)
             out = root/'export'; exporter.export(selection,source,out)
             card = (out/'README.md').read_text(); metadata = json.loads(card.split('---\n',2)[1])
-            self.assertNotIn('license',metadata)
+            self.assertEqual(metadata['license'],'cc-by-4.0')
             self.assertNotIn('<script>',card); self.assertIn('&lt;script&gt;',card)
             self.assertIn('Persona Integrity',card)
             for config in metadata['configs']:
@@ -79,6 +79,10 @@ class HuggingFaceExportTests(unittest.TestCase):
             self.assertIsNone(provenance['hub_revision'])
             self.assertEqual(provenance['publication_status'],'local_draft_not_uploaded')
             self.assertEqual(provenance['redistribution_review'],'required')
+            self.assertEqual(provenance['export_license'],'cc-by-4.0')
+            self.assertTrue(provenance['source_terms_unmodified'])
+            self.assertIn('does not\nrelicense the original evidence bundles',(out/'LICENSE.md').read_text())
+            self.assertIn('private source repository and its code are outside',(out/'LICENSE.md').read_text())
 
     def test_bad_selection_or_rehashed_wrong_metrics_write_nothing(self):
         for change in ('hash','traversal','duplicate','metric','wrong_release','wrong_origin'):

@@ -18,6 +18,32 @@ spec.loader.exec_module(research)
 ORIGIN = 'https://research.mazzeleczzare.com'
 VERSION = 'identity-hub-export-v1'
 MAX_BYTES = 20_000_000
+EXPORT_LICENSE = 'cc-by-4.0'
+LICENSE_NOTICE = '''# Export license and scope
+
+Copyright and database rights, to the extent held, in this dataset projection and
+its authored documentation are licensed by Mazze LeCzzare under Creative Commons
+Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Give appropriate credit to Mazze LeCzzare, retain the license link and source
+release identifiers, and indicate changes. Attribution does not imply endorsement.
+Suggested citation: Mazze LeCzzare, Identity Dissolution evidence projection,
+with the release ID, source SHA-256 and analysis version in provenance.json.
+
+This grant covers only rights controlled by the licensor in the exported tables,
+dataset organization and authored documentation. It does not assert ownership
+of facts, public-domain material, provider names or model identifiers. It does not
+relicense the original evidence bundles, third-party text, model weights, or
+provider terms quoted in provenance.json and the dataset card. Those retain
+their recorded terms. No raw model-output text is included in this projection.
+No additional permission to use third-party material is granted by this notice.
+
+The private source repository and its code are outside this license grant.
+No warranty of third-party rights clearance is supplied. See the legal code for
+the license terms, limitations and disclaimer of warranties.
+'''
 
 
 def encoded(value):
@@ -116,15 +142,19 @@ def export(selection_path, source_dir, destination):
                   'analysis_script_sha256':research.sha(Path(research.__file__).read_bytes()),
                   'exporter_script_sha256':research.sha(Path(__file__).read_bytes()),
                   'publication_status':'local_draft_not_uploaded', 'redistribution_review':'required',
+                  'export_license':EXPORT_LICENSE,
+                  'license_scope':'rights-controlled projection and authored documentation; see LICENSE.md',
+                  'source_terms_unmodified':True,
                   'hub_repository':None, 'hub_revision':None,
                   'selection_sha256':research.sha(selection_bytes),
                   'limitations':research.LIMITS}
     files['provenance.json'] = encoded(provenance)
-    metadata = {'pretty_name':'Identity Dissolution — evidence snapshots',
+    files['LICENSE.md'] = LICENSE_NOTICE.encode('utf-8')
+    metadata = {'pretty_name':'Identity Dissolution — evidence snapshots', 'license':EXPORT_LICENSE,
                 'tags':['tabular','ai-behavior','research-evidence'], 'configs':configs}
     # JSON is a YAML-compatible subset: exact data paths, no arbitrary YAML interpolation.
     card = '---\n'+encoded(metadata).decode()+'---\n\n# Identity Dissolution evidence snapshots\n\n'
-    card += ('**Local draft; not uploaded. Redistribution and source terms require review.**\n\n'
+    card += ('**Local draft; not uploaded. CC BY 4.0 applies to rights-controlled projection and documentation only; see LICENSE.md.**\n\n'
              'These tables are a projection of explicitly selected canonical releases. '
              'Each release has separate runs and contrasts configurations with an `observations` split. '
              'They are not training/test partitions. Do not pool successive releases as independent observations.\n\n'
@@ -134,8 +164,11 @@ def export(selection_path, source_dir, destination):
         card += (f"- [{r['release_id']}]({r['canonical_release_url']}): `{r['source_sha256']}`; "
                  f"phase `{r['phase']}`; {r['analyzed_runs']} analyzed / {r['planned_runs']} planned. "
                  f"Recorded source terms: <code>{license_text}</code>.\n")
-    card += ('\nNo additional reuse license is granted by this export. Public readability does not establish '
-             'redistribution permission. No machine-readable open license or DOI is invented.\n\n'
+    card += ('\nThe export projection and authored documentation are licensed under '
+             '[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) to the extent of rights held by '
+             'Mazze LeCzzare. Original source terms above remain unchanged. Third-party material, model '
+             'weights and provider terms are excluded from this grant; no rights over bare facts are asserted. '
+             'Read [LICENSE.md](LICENSE.md) for scope and attribution. No DOI is claimed.\n\n'
              '## Read the tables\n\n'
              'Runs has one row per planned model/seed/condition. `status=missing` has no run ID and null '
              'metrics; it is distinct from failed, pending, interrupted, cancelled, and measured zero. '
