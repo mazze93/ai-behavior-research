@@ -1,0 +1,262 @@
+{
+  "checked_at": "2026-10-09T00:04:45.206157+00:00",
+  "routes": {
+    "/explorers/index.html": {
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": false,
+      "worker_byte_exact": true,
+      "public_sha256": "0ef1c364bc028a7bf898d8fd6da6ef4c279a100c23939b70649a594dfd1ed329",
+      "worker_sha256": "548b9d7f2635e07e37a2e6dfccf0164c8177dc029e63fb00b0aba0b7bf798425"
+    },
+    "/prepare.html": {
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": false,
+      "worker_byte_exact": true,
+      "public_sha256": "b3cfb2e99fe34d44a40932c75767ec172ca33d7dc5db8b332ca21618fb43ce9d",
+      "worker_sha256": "1f11818ee24ae2ec25ce3feb07c2b5c3366bf7bd6f57ab5fcba6bf7d36a4e4b6"
+    },
+    "/robots.txt": {
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": false,
+      "worker_byte_exact": true,
+      "public_sha256": "a74eedd33748daa92b0ff04ae02af9ea63ca65275d64061e87c78dd722c694f0",
+      "worker_sha256": "ae8fe917c86540e7d354c9e00eebcd281070acb7c48a4b7474b32b0d7008c002"
+    },
+    "/llms.txt": {
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": true
+    },
+    "/sitemap.xml": {
+      "status": 200,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": true
+    },
+    "/hub.css": {
+      "status": 200,
+      "headers": {
+        "cache-control": "public, max-age=300",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": null
+      },
+      "public_byte_exact": true
+    },
+    "/persona.html": {
+      "status": 303,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    },
+    "/%70ersona.html": {
+      "status": 303,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    },
+    "/api/studies": {
+      "status": 401,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    },
+    "/.assetsignore": {
+      "status": 404,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    },
+    "/__pycache__/analysis.cpython-314.pyc": {
+      "status": 404,
+      "headers": {
+        "cache-control": "no-store",
+        "strict-transport-security": "max-age=2592000",
+        "referrer-policy": "same-origin",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+        "x-robots-tag": "noindex, nofollow"
+      }
+    }
+  },
+  "gallery": {
+    "index.html": {
+      "expected_sha256": "548b9d7f2635e07e37a2e6dfccf0164c8177dc029e63fb00b0aba0b7bf798425",
+      "public_byte_exact": false,
+      "worker_byte_exact": true
+    },
+    "index.json": {
+      "expected_sha256": "9398867c28336ba2fee7b53297a5d8d40eda6360f889705d3a366215f66274f8",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.svg": {
+      "expected_sha256": "eba2ffbd5bf11a4182f4671aa2b4e5809cea8183791c0779db3dafbcfd5fae1b",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.css": {
+      "expected_sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.js": {
+      "expected_sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+      "expected_sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547",
+      "public_byte_exact": false,
+      "worker_byte_exact": true
+    },
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271/view-manifest.json": {
+      "expected_sha256": "4335a9f85a4b8336d0eeff0f8af95c1fd1f01c79de0d5670a03ff379cec8af5c",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.svg": {
+      "expected_sha256": "222fa858bd72bb68cdeb88195eb590c52b0f68909aa71ebd2f1eef787892dc25",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.css": {
+      "expected_sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.js": {
+      "expected_sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    },
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+      "expected_sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78",
+      "public_byte_exact": false,
+      "worker_byte_exact": true
+    },
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/view-manifest.json": {
+      "expected_sha256": "1b2d7c73a1aa4fead505547edc3b6c0dd4133cc53c4935d8bb0b3e9ee6516ee3",
+      "public_byte_exact": true,
+      "worker_byte_exact": true
+    }
+  },
+  "evidence": [
+    {
+      "release_id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+      "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"
+    },
+    {
+      "release_id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+      "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+    }
+  ],
+  "build_manifest_public_byte_exact": true,
+  "authenticated_owner_verified": true,
+  "bindings_preserved": true,
+  "deployed_versions": [
+    {
+      "version_id": "4675df84-1858-4e8e-a198-6b5ca6811fa2",
+      "percentage": 100
+    }
+  ],
+  "source_revision": "77d3db8945111961351c6c84153959aec6336240",
+  "worker_version": "4675df84-1858-4e8e-a198-6b5ca6811fa2",
+  "rollback_version": "f466d6a4-d518-4e86-b0c5-52bf237fdd03",
+  "build_manifest": {
+    "schema_version": 1,
+    "release_manifest_sha256": "540648fa67aba36a1fc2a63a6a99ae3bbcf0eb9a3d5658b4b7bc36df884c3d39",
+    "analysis_script_sha256": "6f0c495711c2cc81a3b78e91a4ac12807b474a4e4898642d5c9c8c50bbf5eabe",
+    "builder_script_sha256": "857fac5c15b64fbe3d9ecfd6910a0744adb92de4dd3a55ec2a8c3aa422cfdac7",
+    "files": {
+      "index.html": "548b9d7f2635e07e37a2e6dfccf0164c8177dc029e63fb00b0aba0b7bf798425",
+      "index.json": "9398867c28336ba2fee7b53297a5d8d40eda6360f889705d3a366215f66274f8",
+      "rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.svg": "eba2ffbd5bf11a4182f4671aa2b4e5809cea8183791c0779db3dafbcfd5fae1b",
+      "rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.css": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.js": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547",
+      "rel_4cf968d3-f45f-496e-8270-84ce6af56271/view-manifest.json": "4335a9f85a4b8336d0eeff0f8af95c1fd1f01c79de0d5670a03ff379cec8af5c",
+      "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.svg": "222fa858bd72bb68cdeb88195eb590c52b0f68909aa71ebd2f1eef787892dc25",
+      "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.css": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.js": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78",
+      "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/view-manifest.json": "1b2d7c73a1aa4fead505547edc3b6c0dd4133cc53c4935d8bb0b3e9ee6516ee3"
+    }
+  },
+  "ci_runs": [
+    37862309495,
+    37862277790
+  ],
+  "browser_checks": {
+    "successful_smoke": true,
+    "cell_opens_source_disclosure": true,
+    "failed_smoke_labeled_failed": true,
+    "observed_error_logs": []
+  },
+  "limits": [
+    "Custom-domain HTML includes edge-injected WebMCP/challenge scripts; exact HTML was verified through the existing workers.dev hostname.",
+    "Cloudflare prepends managed crawler directives to robots.txt. The authored directives remain present.",
+    "Observed custom-domain HSTS is max-age=2592000 and Referrer-Policy is same-origin; these differ from the Worker policy. Zone administration returned 403, so no zone policy changes were made.",
+    "API gateway administration returned 403; configured identity-research gateway was preserved, not newly provisioned or administratively verified.",
+    "Read-only production probes; no new experiment inference, schema changes, or evidence publications. Local Gemma review is development activity, not research evidence."
+  ]
+}

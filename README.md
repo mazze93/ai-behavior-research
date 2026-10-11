@@ -34,3 +34,7 @@ Live D1/R2 state, credentials, private transcripts and real run exports are not 
 Infrastructure commands are manual and require the owner's Cloudflare login. CI runs offline validation only; it does not deploy, launch paid inference, publish evidence or receive production secrets. See [registry setup](apps/registry/README.md).
 
 The monorepo consolidation does not change existing service URLs or republish the original Sites workbench. The repository remains private. No new blanket license is granted; study and source-material licensing decisions remain pending.
+
+## Share and reproduce evidence
+
+The [Rust evidence explorer](tools/evidence-explorer) renders source-linked coverage and effect views. The [RustPress bridge](docs/research-hub/rustpress-integration.md) prepares a reviewed editorial brief. The [Hugging Face exporter](docs/research-hub/huggingface-integration.md) prepares dataset cards and release-specific JSONL tables from explicitly selected, checksum-verified public evidence, with CC BY 4.0 for rights-controlled projections/documentation and explicit third-party exclusions. The source bundles and private repository code are not relicensed. These offline exports do not run models or publish automatically. Hub write access and live Viewer readback remain pending; no public mirror is claimed.
