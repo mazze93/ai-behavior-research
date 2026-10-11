@@ -1,0 +1,45 @@
+{
+  "source_revision": "4de15c15e6c3b9b2f7f5e6699c140e0c88807a30",
+  "exporter_scripts_match_revision": true,
+  "manifest_sha256": "01f593472c727f81adf970eecdfb8f168ed8d8dd844ba5a10a3a0429b8ba8dea",
+  "manifest": {
+    "schema_version": 1,
+    "exporter": "identity-hub-export-v1",
+    "publication_status": "local_draft_not_uploaded",
+    "files": {
+      "README.md": "34ac77214730dbdbdd524435416fa464f8e3f933f16b6ca1dae66a3e27dfd637",
+      "data/rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.jsonl": "6fb1a30b9d6f086949acb33df92a3a20e9541dccd1baf96b2c3a2d070a8e8fae",
+      "data/rel_4cf968d3-f45f-496e-8270-84ce6af56271/runs.jsonl": "0dbf354cf92c7b2749dc90840c84ec08231f41400947d7cd325eeff48d8dc0db",
+      "data/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.jsonl": "f496a953a6293b2c7e41b82cc53460c84bde80d02265e13962720b88e6463f3e",
+      "data/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/runs.jsonl": "1c8bb2d1552f6e362158d1ac936153c71594c7a22a877778b004b34d496c3d34",
+      "provenance.json": "ceba1fda02e1ac21ca0bedbe1eafa9cc8f10984bced2f09527ad2bff22812ad1"
+    }
+  },
+  "release_sources": [
+    {
+      "id": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+      "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+      "phase": "smoke",
+      "recorded_license": "No additional reuse license granted; underlying model terms apply."
+    },
+    {
+      "id": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+      "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd",
+      "phase": "smoke",
+      "recorded_license": "No additional reuse license granted; underlying model terms apply."
+    }
+  ],
+  "configuration_count": 4,
+  "output_file_count": 7,
+  "local_validation": "All output hashes checked; successful smoke projects complete/0.0/included, failed smoke projects failed/null/excluded from analysis. Five new tests pass; complete Python suite has 16 passing tests.",
+  "ci_run": 38111258321,
+  "hub_upload_performed": false,
+  "hub_viewer_ingestion_verified": false,
+  "hub_namespace_readback": "mazzeleczzare",
+  "hub_repository_write_scope_present": false,
+  "limitations": [
+    "No additional reuse license granted by either selected release.",
+    "This is an offline data projection, not an archival replacement or hosted mirror.",
+    "Persona annotations require a separate reviewed adapter."
+  ]
+}
