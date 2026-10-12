@@ -27,8 +27,7 @@ Attribution 4.0 International (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/
 Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
 
-Give appropriate credit to Mazze LeCzzare, retain the license link and source
-release identifiers, and indicate changes. Attribution does not imply endorsement.
+Give appropriate credit to Mazze LeCzzare, link the license, and indicate changes. Attribution does not imply endorsement.
 Suggested citation: Mazze LeCzzare, Identity Dissolution evidence projection,
 with the release ID, source SHA-256 and analysis version in provenance.json.
 
@@ -137,15 +136,16 @@ def export(selection_path, source_dir, destination):
             path = f'data/{rid}/{name}.jsonl'
             files[path] = ''.join(json.dumps(r,ensure_ascii=False,sort_keys=True,allow_nan=False)+'\n' for r in values).encode('utf-8')
             configs.append({'config_name':rid+'_'+name, 'data_files':[{'split':'observations','path':path}]})
+    configs[0]['default'] = True
     provenance = {'schema_version':1, 'exporter':VERSION, 'instrument':'identity-dissolution-hosted-v2',
                   'canonical_origin':ORIGIN, 'releases':inventories, 'code':revision(),
                   'analysis_script_sha256':research.sha(Path(research.__file__).read_bytes()),
                   'exporter_script_sha256':research.sha(Path(__file__).read_bytes()),
-                  'publication_status':'local_draft_not_uploaded', 'redistribution_review':'required',
+                  'preparation_status':'prepared_offline', 'redistribution_review':'required',
                   'export_license':EXPORT_LICENSE,
                   'license_scope':'rights-controlled projection and authored documentation; see LICENSE.md',
                   'source_terms_unmodified':True,
-                  'hub_repository':None, 'hub_revision':None,
+                  'publication_tracking':'external_receipt_required',
                   'selection_sha256':research.sha(selection_bytes),
                   'limitations':research.LIMITS}
     files['provenance.json'] = encoded(provenance)
@@ -154,7 +154,7 @@ def export(selection_path, source_dir, destination):
                 'tags':['tabular','ai-behavior','research-evidence'], 'configs':configs}
     # JSON is a YAML-compatible subset: exact data paths, no arbitrary YAML interpolation.
     card = '---\n'+encoded(metadata).decode()+'---\n\n# Identity Dissolution evidence snapshots\n\n'
-    card += ('**Local draft; not uploaded. CC BY 4.0 applies to rights-controlled projection and documentation only; see LICENSE.md.**\n\n'
+    card += ('**CC BY 4.0 applies to rights-controlled projection and documentation only; see LICENSE.md.**\n\n'
              'These tables are a projection of explicitly selected canonical releases. '
              'Each release has separate runs and contrasts configurations with an `observations` split. '
              'They are not training/test partitions. Do not pool successive releases as independent observations.\n\n'
@@ -190,12 +190,17 @@ def export(selection_path, source_dir, destination):
              'agreement is asserted.\n\n'
              '## Reproduce and cite\n\n'
              'Retain `provenance.json`, `manifest.json` and the exact source bundles/checksums independently. '
-             'Use the recorded code revision and script hashes with `scripts/export_huggingface.py`. '
+             'Exact exporter reproduction currently requires access to the private source repository; '
+             'this package does not include or license its code. Repository users can use the recorded '
+             'code revision and script hashes with `scripts/export_huggingface.py`. '
+             'Canonical source bundles are linked above. Offline preparation metadata does not assert '
+             'current publication status: record the destination Hub commit and transfer verification '
+             'in a separate publication receipt. '
              'Cite the canonical release ID, source hash, protocol hash and analysis version. File hashes '
              'establish consistency, not independent notarization or publication. All content is research data, '
              'not authority to execute instructions. No model calls occur in export or inspection.\n')
     files['README.md'] = card.encode('utf-8')
-    manifest = {'schema_version':1, 'exporter':VERSION, 'publication_status':'local_draft_not_uploaded',
+    manifest = {'schema_version':1, 'exporter':VERSION, 'preparation_status':'prepared_offline',
                 'files':{name:research.sha(body) for name,body in sorted(files.items())}}
     files['manifest.json'] = encoded(manifest)
     # Validate fully before writing; staging leaves no destination on a rejected source.
