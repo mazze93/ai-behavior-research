@@ -1,6 +1,6 @@
 # Hugging Face evidence exports
 
-The repository now prepares a deterministic, local Dataset Hub package from explicitly selected public Identity Dissolution releases. GitHub remains the code origin and the registry remains the evidence origin. This is the dataset adapter, not a hosted mirror: no Hub repository or Space has been created by this workflow.
+The repository now prepares a deterministic, local Dataset Hub package from explicitly selected public Identity Dissolution releases. GitHub remains the code origin and the registry remains the evidence origin. The reviewed projection is now published as [mazzeleczzare/identity-dissolution-evidence](https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence). This is a dataset mirror; no Space has been created.
 
 ## Build a reviewable snapshot
 
@@ -38,7 +38,7 @@ Before a Hub upload, review the complete package and license scope, select the d
 
 Exact exporter reproduction currently requires access to this private repository; the exported card states that limitation. The package does not include or license repository code. Preparation metadata intentionally makes no claim about subsequent publication status.
 
-The CLI, JSONL contents, exact file inventory, frontend metadata structure and deterministic generation are tested locally. Hub Dataset Viewer ingestion has not been exercised. The metadata follows [manual configuration](https://huggingface.co/docs/hub/datasets-manual-configuration) and [dataset card documentation](https://huggingface.co/docs/hub/datasets-cards), inspected 2026-10-11.
+The CLI, JSONL contents, exact file inventory, frontend metadata structure and deterministic generation are tested locally. On 2026-10-12, all eight exported files passed unauthenticated byte-for-byte readback at Hub commit `8bdbc469dfab9f3a3795217dde5c69c5ae260b06`. The Hub parsed all four configurations and the scoped license metadata. Dataset Viewer ingestion is pending: its splits endpoint returned HTTP 500 with a not-ready response, and the browser displayed “available soon.” Row counts have not yet been verified through the Viewer. See [publication receipt](huggingface-publication-2026-10-12.json). The metadata follows [manual configuration](https://huggingface.co/docs/hub/datasets-manual-configuration) and [dataset card documentation](https://huggingface.co/docs/hub/datasets-cards), inspected 2026-10-11.
 
 ## Preserve study-specific methods
 
