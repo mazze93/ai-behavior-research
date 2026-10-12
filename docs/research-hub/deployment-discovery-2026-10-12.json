@@ -1,0 +1,29 @@
+{
+  "source_commit": "7acc167",
+  "version": "d70c1367-04de-45a4-a187-18af17d58c81",
+  "traffic_percent": 100,
+  "rollback_version": "4675df84-1858-4e8e-a198-6b5ca6811fa2",
+  "changed_assets": [
+    "index.html",
+    "prepare.html",
+    "llms.txt"
+  ],
+  "validation": {
+    "registry_tests_passed": 24,
+    "typecheck": "passed",
+    "wrangler_dry_run": "passed",
+    "gallery_assets_verified": 13,
+    "custom_domain_browser": "sharing section rendered with correct links",
+    "custom_domain_python": "403 Cloudflare error 1010",
+    "workers_dev": {
+      "health": 200,
+      "prepare": 200,
+      "llms": 200,
+      "persona_unauthenticated": 303,
+      "studies_unauthenticated": 401,
+      "responses_no_store": true
+    }
+  },
+  "hugging_face_viewer": "splits endpoint still not ready; publication byte checks recorded separately",
+  "bindings": "D1, R2, queue, assets, version metadata and variables preserved; no configuration edits"
+}
