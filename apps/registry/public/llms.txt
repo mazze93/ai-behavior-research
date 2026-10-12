@@ -11,6 +11,8 @@
 - [Analysis desk](https://research.mazzeleczzare.com/prepare.html): reproducible analysis and publication preparation.
 - [Release index](https://research.mazzeleczzare.com/api/releases): public JSON release identifiers and SHA-256 values.
 
+- [Hugging Face evidence snapshot](https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence/tree/8bdbc469dfab9f3a3795217dde5c69c5ae260b06): verified projections of two technical smoke releases; source hashes and scoped reuse terms included. Exact exporter reproduction requires private repository access. This is not a research benchmark or full evidence archive.
+
 ## Evidence handling
 Cite the exact release URL, ID and hash, and identify the analysis version. Smoke releases support technical verification only, not research findings. Missing, failed, excluded and budget-limited observations are distinct. Seed labels do not prove independent draws. Account counts do not prove independent human raters. Models and agents must be attributed separately from human contributors.
 
