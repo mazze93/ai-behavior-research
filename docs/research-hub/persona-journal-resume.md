@@ -1,0 +1,9 @@
+# Resume a Persona annotation journal
+
+Load the exact original registry packet in the private Persona studio, then select the saved annotation journal. The browser checks its packet SHA-256, release identity, rubric, response membership, stable annotator ID, annotation IDs/timestamps, supporting excerpts and provenance declarations before replacing any state. Existing schema-v1 exports without a parent hash remain supported. Invalid journals leave the current session intact.
+
+Resume continues the same scoring session. Recorded responses stay locked; the first unscored response opens. New exports preserve prior annotation IDs and timestamps and include `resumed_from_sha256`, the SHA-256 of the exact resumed journal bytes. Keep that parent file with the new export. The link records file identity; it is not a signature, proof of authorship, or independent timestamp. A structurally valid edited journal cannot be distinguished from an authentic one without independently preserved hashes.
+
+This is not repeat-rating or reliability analysis. It does not conceal old labels, assign a new round, prove human independence, compare raters or change the frozen A–E rubric. Original release verification remains the importer's responsibility. Files stay local; no persistence service or upload is added.
+
+Validation on 2026-10-12: all 26 registry tests and TypeScript checks passed. A synthetic two-response packet was loaded through the browser, its one-record journal resumed, and the second response scored. The resulting export was independently checked: the first annotation was unchanged, the parent checksum matched the saved input, and two records were present. Synthetic labels are UI fixtures, not human research observations. Production deployment is not yet verified for this slice.
