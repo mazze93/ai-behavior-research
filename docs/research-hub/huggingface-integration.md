@@ -1,6 +1,6 @@
 # Hugging Face evidence exports
 
-The repository now prepares a deterministic, local Dataset Hub package from explicitly selected public Identity Dissolution releases. GitHub remains the code origin and the registry remains the evidence origin. This is the dataset adapter, not a hosted mirror: no Hub repository or Space has been created by this workflow.
+The repository now prepares a deterministic, local Dataset Hub package from explicitly selected public Identity Dissolution releases. GitHub remains the code origin and the registry remains the evidence origin. The reviewed projection is now published as [mazzeleczzare/identity-dissolution-evidence](https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence). This is a dataset mirror; no Space has been created.
 
 ## Build a reviewable snapshot
 
@@ -17,10 +17,10 @@ The destination must not already exist. No dependencies beyond Python's standard
 
 The package contains:
 
-- `README.md`: dataset card with exact JSONL paths in YAML-compatible JSON frontmatter; one runs and one contrasts configuration per release, each using an `observations` split.
+- `README.md`: dataset card with exact JSONL paths in YAML-compatible JSON frontmatter; one runs and one contrasts configuration per release, each using an `observations` split. The first selected release’s runs configuration is the default.
 - `data/RELEASE_ID/runs.jsonl`: one row per planned cell, including missing records. Status, exclusion and analysis inclusion stay separate. Metrics remain null when unavailable.
 - `data/RELEASE_ID/contrasts.jsonl`: model-specific paired contrasts, seed counts, missing pairs, cutoff sensitivity and interval endpoints. Smoke releases never acquire intervals.
-- `provenance.json`: canonical URLs, release/protocol hashes, recorded license text, analysis/exporter hashes, Git HEAD and whether those scripts match HEAD, and explicit unpublished status.
+- `provenance.json`: canonical URLs, release/protocol hashes, recorded license text, analysis/exporter hashes, Git HEAD and whether those scripts match HEAD, and immutable offline preparation status. A separate publication receipt must record the actual Hub revision and transfer verification.
 - `manifest.json`: hashes of every other exported file. Keep its hash independently if using it to check a transfer. These are consistency checks, not signatures.
 - `LICENSE.md`: user-approved CC BY 4.0 grant covering rights controlled by Mazze LeCzzare in the projected tables, dataset organization and authored documentation. Original bundles, third-party material and repository code are excluded.
 
@@ -36,7 +36,9 @@ Both currently selected releases state: “No additional reuse license granted; 
 
 Before a Hub upload, review the complete package and license scope, select the destination repository and obtain write access. Upload only the reviewed export directory, never this private monorepo. After upload, record the actual Hub commit and verify every file against the local manifest at that pinned revision. Then inspect Dataset Viewer configurations and row counts. Do not set a mirror URL or claim a successful publication before that readback.
 
-The CLI, JSONL contents, exact file inventory, frontend metadata structure and deterministic generation are tested locally. Hub Dataset Viewer ingestion has not been exercised. The metadata follows [manual configuration](https://huggingface.co/docs/hub/datasets-manual-configuration) and [dataset card documentation](https://huggingface.co/docs/hub/datasets-cards), inspected 2026-10-11.
+Exact exporter reproduction currently requires access to this private repository; the exported card states that limitation. The package does not include or license repository code. Preparation metadata intentionally makes no claim about subsequent publication status.
+
+The CLI, JSONL contents, exact file inventory, frontend metadata structure and deterministic generation are tested locally. On 2026-10-12, all eight exported files passed unauthenticated byte-for-byte readback at Hub commit `8bdbc469dfab9f3a3795217dde5c69c5ae260b06`. The Hub parsed all four configurations and the scoped license metadata. Dataset Viewer ingestion is pending: its splits endpoint returned HTTP 500 with a not-ready response, and the browser displayed “available soon.” Row counts have not yet been verified through the Viewer. See [publication receipt](huggingface-publication-2026-10-12.json). The metadata follows [manual configuration](https://huggingface.co/docs/hub/datasets-manual-configuration) and [dataset card documentation](https://huggingface.co/docs/hub/datasets-cards), inspected 2026-10-11.
 
 ## Preserve study-specific methods
 

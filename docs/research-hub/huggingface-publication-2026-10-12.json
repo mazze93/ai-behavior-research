@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-12T08:34:01.572548+00:00",
+  "repository": "mazzeleczzare/identity-dissolution-evidence",
+  "hub_revision": "8bdbc469dfab9f3a3795217dde5c69c5ae260b06",
+  "source_commit": "c41835ce9a5d35aacd772a54de03566f664cf4fd",
+  "public_unauthenticated_readback": true,
+  "files_sha256": {
+    "LICENSE.md": "4505c15f082ce478987d2524d31d6be16fdee6cba55be30f0441de7c31b1b5f0",
+    "README.md": "dc5b75d2a9e4df16fb19383e4a4f7b13c2ab959720f7951df20b1a44699d30d7",
+    "data/rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.jsonl": "6fb1a30b9d6f086949acb33df92a3a20e9541dccd1baf96b2c3a2d070a8e8fae",
+    "data/rel_4cf968d3-f45f-496e-8270-84ce6af56271/runs.jsonl": "0dbf354cf92c7b2749dc90840c84ec08231f41400947d7cd325eeff48d8dc0db",
+    "data/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.jsonl": "f496a953a6293b2c7e41b82cc53460c84bde80d02265e13962720b88e6463f3e",
+    "data/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/runs.jsonl": "1c8bb2d1552f6e362158d1ac936153c71594c7a22a877778b004b34d496c3d34",
+    "manifest.json": "615fb6c853d28114d31032528b69f5a562d9d65ac534782d6d7474365b3d0f44",
+    "provenance.json": "9ca1ffb5c6b2a2198f6893aa5d408bd42ac52ee2f9d71be78aea6cf02bbe55d0"
+  },
+  "extra_hub_files": [
+    ".gitattributes"
+  ],
+  "viewer": {
+    "status": "pending",
+    "splits_http_status": 500,
+    "message": "The server is busier than usual and the response is not ready yet. Please retry later.",
+    "card_configs_parsed": 4,
+    "row_ingestion_verified": false
+  },
+  "scope": "Two technical smoke releases; no research result or DOI claimed; private exporter code not distributed."
+}
