@@ -1,0 +1,23 @@
+{
+  "family": "Basteleur",
+  "designer": "Keussel",
+  "foundry": "Velvetyne",
+  "source": "https://gitlab.com/velvetyne/basteleur",
+  "source_revision": "f32302d63d46e9b996f329648b0f2df01c9190f5",
+  "license": "SIL Open Font License 1.1",
+  "modified": false,
+  "files": {
+    "Basteleur-Bold.woff2": {
+      "bytes": 48040,
+      "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af"
+    },
+    "Basteleur-Moonlight.woff2": {
+      "bytes": 44820,
+      "sha256": "9517a47c65fcdb75c82fa138130593f86deda1b977b98f5bd9738a352802e64a"
+    },
+    "Basteleur-OFL.txt": {
+      "bytes": 4495,
+      "sha256": "bf7e42d235d42957d4d081f3416c49354cc1fb21580d86ee0cf0136a58199b51"
+    }
+  }
+}

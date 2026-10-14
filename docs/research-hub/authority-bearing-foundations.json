@@ -1,0 +1,34 @@
+{
+  "authority": {
+    "repository": "https://github.com/mazze93/Research",
+    "revision": "5b202054dabc6530d4953093c7fa925cd4ae427a",
+    "read_files": {
+      "README.md": "1844947ba8d25b7c99e6c35dbf48875b59d4773352f97a9f46f157286b2ab70b",
+      "preregistration.md": "4a9d2148037ed1ee7bd09954baec292418b48fc9e9a35a3f3148fb7cf6905841",
+      "research.yaml": "dd5caa0b176979130508a96f8e12c69df0890a48f3f3d1ea8119673066fd6367",
+      "protocol/freeze.yaml": "595b3871efff65c18eb73128a2c6f9087fde8465e058edd40416fe1f06880e07",
+      "protocol/scoring.yaml": "549130830860e4714af7455ce9ec4bcd42bf2fe1ae537356756c86fabc865a73",
+      "graph/ledger.yml": "c42946bd7eade6f2e4bc516a8c5034d01a5552c5a47413a51f6f27d3c6c7fc12"
+    },
+    "status": "protocol unfrozen; C0/C0p pilot harness; C1/C2 planned; independent human annotation required"
+  },
+  "bearing": {
+    "source_repository": "https://github.com/mazze93/intentional-fragility",
+    "source_revision": "807a1ee",
+    "canonical_port_repository": "https://github.com/mazze93/Research",
+    "port_revision": "456fe42",
+    "scope": "Accepted default fold; full engine port incomplete"
+  },
+  "visual_guide": "visual-guide-authority-bearing.html",
+  "inspiration": {
+    "queries": 3,
+    "selected_sources": [
+      "https://www.monotype.com/resources/expertise/how-whitney-uses-type-build-identity-around-art",
+      "https://diaart.org/exhibition/exhibitions-projects/robert-irwin-exhibition/",
+      "https://www.sfmoma.org/exhibition/take-your-time/"
+    ],
+    "font_queries": 2,
+    "font_source": "https://velvetyne.fr/fonts/basteleur/"
+  },
+  "public_module_ui": "Not implemented in this foundation slice; guide diagrams are illustrative."
+}

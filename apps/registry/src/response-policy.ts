@@ -1,7 +1,8 @@
 /** Cache only public presentation assets; evidence, HTML and credentials stay no-store. */
 export function responsePolicy(req:Request,response:Response):Response{
  const r=new Response(response.body,response),url=new URL(req.url),path=url.pathname;
- const asset=/^\/[a-z][a-z0-9-]*\.(css|js)$/.test(path)||/^\/explorers\/rel_[a-f0-9-]+\/(explorer\.(css|js)|contrasts\.svg)$/.test(path);
+ const font=/^\/fonts\/Basteleur-(Bold|Moonlight)\.woff2$/.test(path);
+ const asset=font||/^\/[a-z][a-z0-9-]*\.(css|js)$/.test(path)||/^\/explorers\/rel_[a-f0-9-]+\/(explorer\.(css|js)|contrasts\.svg)$/.test(path);
  const cacheable=asset&&['GET','HEAD'].includes(req.method)&&r.status===200&&!req.headers.has('Authorization')&&!req.headers.has('Cookie')&&!r.headers.has('Set-Cookie');
  r.headers.set('Cache-Control',cacheable?'public, max-age=300':'no-store');
  r.headers.set('X-Content-Type-Options','nosniff');
