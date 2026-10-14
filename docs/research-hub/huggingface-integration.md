@@ -45,3 +45,7 @@ The CLI, JSONL contents, exact file inventory, frontend metadata structure and d
 This adapter supports hosted Identity schema v2 only. Persona Integrity journals remain private local exports; they must not be passed through this adapter. A Persona adapter needs a separately reviewed release with its categorical response labels, challenge availability, excerpts, alternative explanations, actor attribution and repeated-round provenance. It must not map A–E onto a numeric severity scale or infer inter-rater agreement from account counts.
 
 The common primitives are explicit source selection, validation, typed projection, provenance, review, and verified publication. The data models and science remain study-specific. A later Space can reuse the Rust explorer over reviewed public artifacts without placing owner controls or experiment credentials on Hugging Face.
+
+## Viewer verification, 2026-10-14
+
+The Viewer now serves all four configurations with no pending or failed splits. Every row (1 run and 3 contrast rows per release, eight rows total) was compared with the JSONL at unchanged Hub revision `8bdbc469dfab9f3a3795217dde5c69c5ae260b06`; counts and values match exactly. See [Viewer verification](huggingface-viewer-2026-10-14.json). The prior publication receipt remains an accurate historical record of the then-pending state.
