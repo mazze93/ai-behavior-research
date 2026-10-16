@@ -26,7 +26,12 @@ input and production publication remain outside the verified perimeter.
 - [x] Default branch, existing signatures, tags/releases and source boundaries inspected.
 - [x] README, visual, metadata rollback record and next-validation table prepared.
 - [x] Full offline suites, image/link checks and source-change perimeter passed.
-- [ ] Commit and push documentation; wait for exact-commit CI.
-- [ ] Signed annotated tag, GitHub prerelease and attachment readback.
+- [x] Commit and push documentation; exact-commit CI passed.
+- [x] Signed annotated tag, GitHub prerelease and attachment/source-archive readback.
 
 Resume with docs/releases/validation-2026-10-16.json; candidate v0.1.0-rc.1.
+
+Publication receipt: docs/releases/publication-2026-10-16.json. The signed tag
+remains on the validated source checkpoint; this later record documents actual
+GitHub verification and independent download comparisons. No remaining release
+publication work. Study limitations remain in the release readiness record.

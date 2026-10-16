@@ -1,0 +1,125 @@
+{
+  "recorded_at": "2026-10-16T10:28:28.235816+00:00",
+  "repository": "mazze93/ai-behavior-research",
+  "tag": "v0.1.0-rc.1",
+  "tag_object": "79adda52066063bad96e816943a6e6f5984d02a3",
+  "source_commit": "aee386ece625436ce6cbb23fe870ef97c7733162",
+  "source_tree": "cb6246c3e15048b354742af7c930771a09d93a66",
+  "github_tag_verification": {
+    "verified": true,
+    "reason": "valid"
+  },
+  "local_tag_verification": "git verify-tag passed with the configured trusted signer",
+  "release": {
+    "id": 414826454,
+    "url": "https://github.com/mazze93/ai-behavior-research/releases/tag/v0.1.0-rc.1",
+    "published_at": "2026-10-16T10:25:56Z",
+    "prerelease": true,
+    "draft": false
+  },
+  "manifest_sha256": "81410463a683ce52f8f65a51abd5ceb8bcc7193d3317316ac935f53e2b01e385",
+  "assets": [
+    {
+      "name": "ci-watch.log",
+      "id": 646972251,
+      "size": 72,
+      "sha256": "6ea4cc099d7532e32446b3f0fd44b2ec95eed90b4170bd0c440427b7d27268d2",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "deployment-dry-run.log",
+      "id": 646972281,
+      "size": 1676,
+      "sha256": "c01c82913c4a97a03a317b58d304b5a22437e26f9b52d30e6469f792e44a46ed",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "docs-check.log",
+      "id": 646972248,
+      "size": 210,
+      "sha256": "31773e985288dc2b7f31e0da980bbfa7cb864b38c9cdccead7dbadddef82ac95",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "landing-manifest.json",
+      "id": 646972283,
+      "size": 3225,
+      "sha256": "7d4e4347af07452e63527b748c7f8ed69ebaa8f21fb4be1a081ea4811add1d5d",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "landing-preview.jpg",
+      "id": 646972284,
+      "size": 57726,
+      "sha256": "d4579000e1ab925b1fcb14500c82f4aa8095aca95a33d66573937468111a7d9b",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "release-verification.json",
+      "id": 646972257,
+      "size": 3627,
+      "sha256": "7a287de30dd0b332001512ab153e3b2eef49c1c4f47c92321bc7d7f5b0140e6d",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "id": 646972250,
+      "size": 677,
+      "sha256": "81410463a683ce52f8f65a51abd5ceb8bcc7193d3317316ac935f53e2b01e385",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "tests-attempt-1.log",
+      "id": 646972282,
+      "size": 8356,
+      "sha256": "364c03dcbadcf5ba96e58719c41866a1c769872f4694a1ce52781be6a3ccb902",
+      "downloaded_bytes_equal_local": true
+    },
+    {
+      "name": "tests.log",
+      "id": 646972255,
+      "size": 9436,
+      "sha256": "acb0f87a350ca779834f55625380eea9edc73333091f40a7af9d2da5572c379e",
+      "downloaded_bytes_equal_local": true
+    }
+  ],
+  "source_archive": {
+    "file_count": 281,
+    "all_content_hashes_equal_local_tag_archive": true,
+    "ignored_private_environment_and_cache_directories_absent": true,
+    "downloaded_archive_sha256": "b73c013a834097b6b5c57aedeb7ba43698cc46a70dac1d17602ebcf777582f1d",
+    "note": "Compressed archive hash describes this download only. The signed Git tree identifies the source; regenerated ZIP bytes are not promised identical."
+  },
+  "readme": {
+    "tagged_content_matches": true,
+    "blob_sha": "ac81dd83719dd265138e85d4a20b8707a570c192",
+    "visual_included": true
+  },
+  "ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 38886795883,
+      "headSha": "aee386ece625436ce6cbb23fe870ef97c7733162",
+      "name": "Research omnibus",
+      "status": "completed",
+      "url": "https://github.com/mazze93/ai-behavior-research/actions/runs/38886795883",
+      "jobs": [
+        {
+          "name": "rust-explorer",
+          "conclusion": "success",
+          "url": "https://github.com/mazze93/ai-behavior-research/actions/runs/38886795883/job/116926388777"
+        },
+        {
+          "name": "verify",
+          "conclusion": "success",
+          "url": "https://github.com/mazze93/ai-behavior-research/actions/runs/38886795883/job/116926389310"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "No new model calls, trial data, protocol freeze or production deployment",
+    "Actual physical touch-device validation remains unverified"
+  ],
+  "publication_note": "Recorded after publication in a follow-up documentation commit; not retroactively inserted into or used to move the published tag."
+}

@@ -15,3 +15,7 @@
 4. Confirm `release-verification.json` names the same commit and tree as the tag. Check out that tag and follow the repository's documented checks.
 
 Do not move a published tag or replace a validation receipt silently. Corrections receive a new version and explicit supersession notes. GitHub's generated source archives exclude ignored/untracked local data; their compressed bytes are not covered by the attached manifest. This release does not change any study's separately named freeze tag or deploy a service.
+
+## Published checkpoint
+
+The [2026-10-16 publication receipt](publication-2026-10-16.json) records the GitHub tag/release identities, signature verification, all attachment readbacks and the complete source-archive comparison. It was recorded after publication; the original signed tag remains unchanged.
