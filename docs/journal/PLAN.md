@@ -45,3 +45,11 @@ The private publishing revision lives in intentional-fragility; private reviews
 and transcripts do not become public assets. Build/stage and dry-run before any
 deployment; verify public bytes, navigation and owner guards afterwards.
 Rollback is the current production version 2a0ddd68-f483-44e8-b4e6-442d1da5361b.
+
+## 2026-10-16 — cloudflare-repo-ship recheck
+
+Reconcile merged PR #13 with production before considering another deployment.
+Scope: README, shipping audit/receipt and existing journal files only. Fresh
+source comparison confirms merged d42feaf and live 21a096e have identical
+application/staging content. Preserve production ccc9e98b; documentation rollback
+is a follow-up revert. Keep the companion private book draft PR open.

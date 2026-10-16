@@ -10,6 +10,8 @@ The research site, private study instruments and evidence registry for **observa
 
 [Research ethics](https://research.mazzeleczzare.com/ethics.html) · [Selected method audit](https://research.mazzeleczzare.com/method-audit.html). Deployed from `21a096e` on 2026-10-16; [production verification](docs/research-hub/ethics-deployment-2026-10-16.json). These distinguish conduct commitments, implementation limits and software verification from empirical findings.
 
+[Merged-source shipping audit and next validations](docs/research-hub/shipping-audit-2026-10-16.md): production matches merged PR #13; fresh checks passed without a redundant deployment.
+
 ## What is here
 
 | Surface | Scope and evidence |
