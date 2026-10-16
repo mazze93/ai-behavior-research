@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-16T14:26:23.853155+00:00",
+  "request": "User-invoked workspace:ship; publish the reviewed site and verify live behavior",
+  "source_commit": "aee386ece625436ce6cbb23fe870ef97c7733162",
+  "signed_tag": "v0.1.0-rc.1",
+  "worker": "identity-research-web",
+  "account_id": "a478cd1da11cbde86fb26a63697c34e0",
+  "origin": "https://research.mazzeleczzare.com",
+  "rollback_version": "ea04804c-200d-4c6c-889f-7e2c063b9aa3",
+  "rollback_traffic_percent": 100,
+  "rollback_command": "npx --no-install wrangler rollback ea04804c-200d-4c6c-889f-7e2c063b9aa3 --config wrangler.jsonc --message \"Restore previous reviewed site\" --yes",
+  "rollback_scope": "Worker code/assets only; connected resources/data are not rolled back",
+  "rollback_reference": "https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/",
+  "preflight": {
+    "working_tree": "clean",
+    "release_and_current_main_ci": "passed; same executable source",
+    "current_live_browser": "Earlier design observed before deployment",
+    "configured_plain_variables_match_current_version": true,
+    "binding_descriptors": [
+      {
+        "name": "ADMIN_TOKEN",
+        "type": "secret_text"
+      },
+      {
+        "name": "ALLOWED_MODELS",
+        "type": "plain_text"
+      },
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb",
+        "id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb",
+        "name": "DB",
+        "type": "d1"
+      },
+      {
+        "bucket_name": "identity-research-evidence",
+        "name": "EVIDENCE",
+        "type": "r2_bucket"
+      },
+      {
+        "name": "GATEWAY_ID",
+        "type": "plain_text"
+      },
+      {
+        "name": "JOBS",
+        "queue_name": "identity-research-jobs",
+        "type": "queue"
+      },
+      {
+        "name": "PUBLIC_ORIGIN",
+        "type": "plain_text"
+      },
+      {
+        "name": "SESSION_SECRET",
+        "type": "secret_text"
+      },
+      {
+        "name": "VERSION",
+        "type": "version_metadata"
+      }
+    ],
+    "authentication": "Wrangler OAuth; configured account present; token values not recorded"
+  },
+  "scope": "Web Worker and assets only; no runner, database migration, secret rotation, model calls, protocol freeze or private-evidence publication",
+  "validation": "Use exact tagged source; fresh staging/asset guard and dry-run; verify deployed health/version, public bytes, access boundaries and browser interactions",
+  "documentation_scope": [
+    "README.md",
+    "docs/journal/*",
+    "docs/research-hub/deployment-landing-2026-10-16.json",
+    "docs/research-hub/visuals/production-landing-2026-10-16*.jpg"
+  ]
+}

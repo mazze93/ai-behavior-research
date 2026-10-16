@@ -25,3 +25,11 @@ keyboard, pointer, reduced-motion, narrow-width and static fallback boundaries.
 ## 2026-10-16 — verified repository release
 
 User requested signed/verified tags, GitHub releases, clearer descriptions, tighter READMEs and visuals for mazze93/ai-behavior-research. Scope: root README, source/release documentation, a visual/source map and validation records; metadata and v0.1.0-rc.1 GitHub prerelease. Assumption checked: no existing tags/releases; current origin/main is a692219c45172ad409664d96de03e2302b7c0741. Preserve protocol freeze state, visibility, private data and open implementation PRs. Roll back documentation with a follow-up revert; metadata's previous values are recorded. Never move a published tag.
+
+## 2026-10-16 — workspace:ship production follow-through
+
+Deploy signed v0.1.0-rc.1 / aee386e as the existing web Worker, after fresh
+staging and deployment dry-run. Exact scope is in the shipping plan. Current
+production and rollback version ea04804c is independently read back. Reconcile
+remote bindings/variables, verify live assets and browser interactions, then
+record the production receipt and update stale deployment status in the README.
