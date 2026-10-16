@@ -1,0 +1,34 @@
+{
+  "generator": "Astro static landing + stage_landing.py",
+  "source_inputs": {
+    "apps/landing/package.json": "07bf017378ec245364dd43af045fc04f6c8c23275f9591493cd58aecf98e9eb7",
+    "apps/landing/package-lock.json": "1272534c312f732cf16a0bb9d586ff0b7d42aa9698247622d31ed45cea91bf8a",
+    "apps/landing/astro.config.mjs": "85fb3d1d191ac6f83be1c29cc464965fe82f01fd0d93966a8c9f551935b0439c",
+    "apps/landing/tsconfig.json": "e196c41d5366edcbe50512213e8672976f2dc4a140619b85d417d936f02f8234",
+    "apps/landing/src/components/SpectralFold.tsx": "12d989071cb7f109e3957984b1942ea3f6314ce4f6e60c6becaa7a43c3520e6d",
+    "apps/landing/src/pages/index.astro": "829e8fa6c696a69acae53cc57389a723e98a7ecb6ce09e57684c10d233665ac8",
+    "apps/landing/src/scripts/releases.ts": "14f49adca25bb2b820ceaafe92854163c63b8b4617e31b0ed38d6905a82ea288",
+    "apps/landing/src/styles/landing.css": "efa02d7e81b2b4888bf0ffdb5a77331f1ba1b22c6a22160d00561ea64df216a3",
+    "scripts/stage_landing.py": "6095dd8d419a8f427da8ad5a78bd7ff5a528e6f8ef23c78cad89713a776fa7ba"
+  },
+  "files": {
+    "_astro/SpectralFold.gA1-s_qx.js": "6df57dc65d995110e63c5af54a63d5b8845385556615573f4480681a1acceefe",
+    "_astro/client.C7WjD2Pw.js": "067ac8fb2aadbe933fd1f37b954908b1cc9e238237e348423486b105c320148f",
+    "_astro/fonts/96697e0b649e5210.woff2": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+    "_astro/fonts/ec7e638c79002668.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+    "_astro/index.BGx-Znsh.css": "d6ef2059bf2707c0f3361fe083176369c8d3cdb1a05c8d59a56ac99f487edf12",
+    "_astro/inline-036c5da4fd987224b309.css": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
+    "_astro/inline-508ac5a9c6a2b6303738.js": "508ac5a9c6a2b6303738a6bd98729a8e0dcdfb463bb56f7ecb4a374263057994",
+    "_astro/inline-6376c980a46fb4e717b1.css": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
+    "_astro/inline-9a065567da2812a326d3.js": "9a065567da2812a326d343985f11c7f27a8092bd881f54dfe97278fdda1b2e43",
+    "_astro/inline-beff48a0aa3b0522db59.css": "beff48a0aa3b0522db59c507af7b4d99f3559a6e4bffd09f9f61fa2cc93bfe8c",
+    "_astro/inline-c486ff3daec552c840bb.js": "c486ff3daec552c840bb88a1c2372161c429c8223c792f24b78d06a4e0180b3f",
+    "_astro/react.CvnImTBr.js": "7866ec6c62357fd6b4355d1306d143ca3b008b6ac0e77a37fd51196f21cf5afe",
+    "fonts/BodoniModa-Latin-OFL.txt": "6c64f717433eadd29b058d6254fe25c1ee2d249ce3772f843bb21f73285779c2",
+    "fonts/BodoniModa-Latin.woff2": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+    "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+    "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+    "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
+    "index.html": "64a8cb8aa40ddbf90b0b79d7417584288d727a2b1e5fa12a7c12e49e39ad9827"
+  }
+}

@@ -1,0 +1,70 @@
+---
+import { Font } from 'astro:assets';
+import SpectralFold from '../components/SpectralFold';
+import '../styles/landing.css';
+export interface Props {}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research / Mazze LeCzzare</title>
+    <meta name="description" content="Experiments on what models say, how behavior changes, and what the record actually supports. Study-specific instruments and public evidence." />
+    <link rel="canonical" href="https://research.mazzeleczzare.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Research / Mazze LeCzzare" />
+    <meta property="og:description" content="Question. Record. Reconsider. Working instruments for observable model behavior." />
+    <meta property="og:url" content="https://research.mazzeleczzare.com/" />
+    <meta name="twitter:card" content="summary" />
+    <Font cssVariable="--font-poster" preload />
+    <Font cssVariable="--font-reading" preload />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to research</a>
+    <header class="masthead">
+      <a class="wordmark" href="/" aria-label="Mazze LeCzzare Research home">MAZZE LECZZARE<span>RESEARCH</span></a>
+      <nav aria-label="Main">
+        <a href="#studies">Studies <span aria-hidden="true">↙</span></a>
+        <a href="#evidence">Evidence <span aria-hidden="true">↙</span></a>
+        <a href="/prepare.html">Analysis & writing <span aria-hidden="true">↗</span></a>
+        <a href="/console.html">Private console <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <div class="edition"><span>An inquiry in progress</span><span>Public evidence / Private controls</span><span>Independent research · 2026</span></div>
+      <section class="landing-hero" aria-labelledby="hero-title">
+        <div class="hero-type">
+          <p class="eyebrow">Observable behavior.<br />Accountable interpretation.</p>
+          <h1 id="hero-title"><span>Question.</span><span>Record.</span><span>Reconsider.</span></h1>
+          <div class="hero-bottom"><p>What models say.<br />What changes.<br /><strong>What the record supports.</strong></p><a class="text-link" href="#studies">Enter the studies <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <div class="hero-object"><SpectralFold id="research-fold" client:idle /><p class="object-note">A spectrum can be beautiful.<br />A finding still needs evidence.</p></div>
+      </section>
+      <section class="study-index" id="studies" aria-labelledby="studies-title">
+        <div class="section-label"><h2 id="studies-title">Working instruments</h2><span>02 / Study-specific methods</span></div>
+        <article class="study-row">
+          <span class="study-number">01</span>
+          <div class="study-name"><span class="eyebrow">Controlled generation / Factorial design</span><h3>Identity<br />Dissolution</h3></div>
+          <div class="study-description"><p>Self-reference, repetition and recovery. Compare prompt conditions, inspect raw turns, and preserve failed observations.</p><span class="capability">Recorded smoke evidence</span></div>
+          <a class="study-enter" href="/studies/identity-dissolution" aria-label="Enter Identity Dissolution">Enter the lab <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="study-row">
+          <span class="study-number">02</span>
+          <div class="study-name"><span class="eyebrow">Contextual reading / Categorical annotation</span><h3>Persona<br />Integrity</h3></div>
+          <div class="study-description"><p>Marked fiction, unmarked simulation, asserted self-description. Read in context; record alternatives and uncertainty.</p><span class="capability">Local scoring instrument</span></div>
+          <a class="study-enter" href="/studies/persona-integrity" aria-label="Open Persona Integrity">Open the study <span aria-hidden="true">↗</span></a>
+        </article>
+      </section>
+      <section class="evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-label"><span>Evidence / Reviewed public releases</span><a href="/method.html">Standards & limitations ↗</a></div>
+        <div class="evidence-intro"><h2 id="evidence-title">The record<br />comes first.</h2><div><p>Each release carries its methods, failures and limits. A smoke test verifies machinery; it is not a completed research pilot. A hash identifies bytes; it does not certify a claim.</p><a class="text-link" href="/prepare.html#share-title">Share and cite the evidence <span aria-hidden="true">↗</span></a></div></div>
+        <div id="notification" role="status"></div>
+        <div id="releases" class="release-list" aria-live="polite"><p>Reviewed releases are available from the <a href="/api/releases">public registry</a>.</p></div>
+        <noscript><p>The release list needs JavaScript. <a href="/api/releases">Read the public JSON index</a>.</p></noscript>
+      </section>
+      <footer><span>Mazze LeCzzare / Independent research</span><span>No inferred inner states.</span><a href="#main">Back to the question ↑</a></footer>
+    </main>
+    <script src="../scripts/releases.ts"></script>
+  </body>
+</html>

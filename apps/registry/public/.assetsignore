@@ -26,3 +26,26 @@
 !/fonts/Basteleur-Bold.woff2
 !/fonts/Basteleur-Moonlight.woff2
 !/fonts/Basteleur-OFL.txt
+
+# BEGIN generated landing assets
+!/_astro/
+!/_astro/fonts/
+!/fonts/
+!/_astro/SpectralFold.gA1-s_qx.js
+!/_astro/client.C7WjD2Pw.js
+!/_astro/fonts/96697e0b649e5210.woff2
+!/_astro/fonts/ec7e638c79002668.woff2
+!/_astro/index.BGx-Znsh.css
+!/_astro/inline-036c5da4fd987224b309.css
+!/_astro/inline-508ac5a9c6a2b6303738.js
+!/_astro/inline-6376c980a46fb4e717b1.css
+!/_astro/inline-9a065567da2812a326d3.js
+!/_astro/inline-beff48a0aa3b0522db59.css
+!/_astro/inline-c486ff3daec552c840bb.js
+!/_astro/react.CvnImTBr.js
+!/fonts/BodoniModa-Latin-OFL.txt
+!/fonts/BodoniModa-Latin.woff2
+!/fonts/Manrope-Latin-OFL.txt
+!/fonts/Manrope-Latin.woff2
+!/fonts/landing-provenance.json
+# END generated landing assets

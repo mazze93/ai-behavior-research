@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-10-16T05:11:13.949597+00:00",
+  "baseline_commit": "98dc820bbf578d85b892ba0329e2536cfc7d8d71",
+  "scope": "Local Worker and static asset preview; production not deployed",
+  "build": {
+    "astro": "7.4.0",
+    "react": "19.3.1",
+    "typescript_check": "0 errors, 0 warnings, 0 hints",
+    "fresh_npm_ci_ignore_scripts": "passed",
+    "npm_audit_known_vulnerabilities": 0,
+    "deterministic_staging": "repeated build and byte check passed",
+    "public_assets": 18,
+    "wrangler_dry_run": "passed; 68 total intentional public assets read"
+  },
+  "tests": {
+    "persona_importer": 5,
+    "local_runner": 4,
+    "registry": 26,
+    "analysis_export": 16,
+    "result": "all passed"
+  },
+  "browser": {
+    "desktop": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "page_width": 1265,
+      "horizontal_overflow": false
+    },
+    "mobile_390_override": {
+      "client_width": 375,
+      "page_width": 375,
+      "horizontal_overflow": false
+    },
+    "mobile_320_override": {
+      "client_width": 305,
+      "page_width": 305,
+      "horizontal_overflow": false
+    },
+    "typography": "Computed title uses self-hosted Bodoni Moda; both local font requests observed",
+    "pointer_response": "transform translation changed after pointer input over sculpture",
+    "keyboard": "Enter activated finite turn animation",
+    "reduced_motion": "turn changed -32 to 58 degrees immediately; button stayed enabled",
+    "javascript_disabled": "title and all 48 colored SVG contours remained rendered; disabled turn control and noscript guidance visible",
+    "external_https_blocked": "cold local page reload rendered and hydrated with all observed HTTP resources on loopback; no font service requests",
+    "console": "no captured browser errors or warnings",
+    "touch_device": "native touch dispatch unsupported by connected in-app browser; actual touch-device validation remains unverified",
+    "release_list": "local Worker has no production release database; explicit unavailable/retry state inspected, no fabricated releases injected"
+  },
+  "boundaries": {
+    "anonymous_persona_status": 303,
+    "anonymous_private_studies_status": 401,
+    "private_cache_control": "no-store",
+    "CSP": "same-origin policy preserved; no unsafe-inline exceptions",
+    "charcoal_porcelain_contrast_ratio": 14.02,
+    "negative_controls": {
+      "stale_source_rejected": true,
+      "tampered_public_bytes_rejected": true,
+      "manifest_traversal_rejected": true
+    }
+  },
+  "screenshots": [
+    "visuals/charcoal-porcelain-desktop.jpg",
+    "visuals/charcoal-porcelain-desktop-full.jpg",
+    "visuals/charcoal-porcelain-mobile.jpg"
+  ],
+  "font_license": "Unmodified OFL Latin subsets and license notices, pinned package versions and public byte provenance; Roslindale/Graphik remain design references"
+}

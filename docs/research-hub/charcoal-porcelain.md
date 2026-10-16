@@ -39,7 +39,7 @@ entry points, and the existing asset-response policy. Research protocols,
 execution APIs, private annotation flow, and evidence are outside this change.
 
 Verified assumption: the site is an existing Worker with static assets and
-strict same-origin CSP, not an Astro application. Astro 6 is a static compiler
+strict same-origin CSP, not an Astro application. Astro 7 is a static compiler
 for the landing page only; the existing Worker remains the Cloudflare adapter
 and owns auth/routing/headers. Introducing a second server adapter would
 duplicate that ownership. Staging externalizes Astro's inline bootstrap scripts

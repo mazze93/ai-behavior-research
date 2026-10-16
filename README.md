@@ -7,6 +7,7 @@ A private research monorepo for collecting reproducible model-behavior evidence,
 | Location | Purpose | Status |
 | --- | --- | --- |
 | [apps/registry](apps/registry) | Cloudflare web/API, queued inference, D1 migrations, R2 evidence, deployment configuration | Live at [research.mazzeleczzare.com](https://research.mazzeleczzare.com); technical smoke verified |
+| [apps/landing](apps/landing) | Static Astro landing, self-hosted typography and a progressive React illustration | Browser-verified local preview; production publication pending visual review |
 | [apps/workbench](apps/workbench) | Original brutalist static study workbench | Historical Sites publication; reproducible static build |
 | [studies/persona-integrity](studies/persona-integrity) | Frozen v0.2 rubric, scoring guide, schema and registry importer | Human scoring pending |
 | [studies/identity-dissolution](studies/identity-dissolution) | Local Ollama runner, protocol, tests, pilot config and synthetic fixtures | Exploratory local pilot tooling |
@@ -14,12 +15,13 @@ A private research monorepo for collecting reproducible model-behavior evidence,
 
 ## Develop and verify
 
-Requires Node.js 22+ and Python 3.10+. From the repository root:
+Requires Node.js 22.22+ and Python 3.10+. From the repository root:
 
 ```sh
 make install       # npm ci from the registry's committed lockfile
 make test          # all offline suites, TypeScript and tracked-file boundary check
 make workbench     # build/workbench, including a reproducible local-runner ZIP
+make landing       # check/build/stage the static landing for the existing Worker
 make registry-dev  # local Cloudflare development server
 ```
 
