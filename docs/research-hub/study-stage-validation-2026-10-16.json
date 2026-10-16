@@ -1,0 +1,86 @@
+{
+  "recorded_at": "2026-10-16T10:03:21.804372+00:00",
+  "baseline_commit": "3689dada3a91d9c3f5865db4ecc0304d32c87c3e",
+  "scope": "Study-responsive landing and compact header, served through local Worker; no production deployment",
+  "build": {
+    "astro_check": "7 files; zero errors, warnings or hints",
+    "make_test": "passed",
+    "tests": {
+      "persona_importer": 5,
+      "local_runner": 4,
+      "registry": 26,
+      "analysis_export": 16
+    },
+    "deterministic_staging": "18 exact assets; build comparison passed",
+    "wrangler_dry_run": "passed; 68 intentional public assets read"
+  },
+  "browser": {
+    "preview_url": "http://127.0.0.1:4318/",
+    "header": {
+      "previous_desktop_px": 110,
+      "current_desktop_px": 76,
+      "current_mobile_px": 98,
+      "nav_target_heights_px": [
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    "viewport_checks": [
+      {
+        "width": 745,
+        "client": 730,
+        "header": 76
+      },
+      {
+        "width": 1280,
+        "height": 900,
+        "client": 1265,
+        "scroll_width": 1265,
+        "header": 76
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "client": 375,
+        "scroll_width": 375,
+        "header": 98
+      },
+      {
+        "width": 320,
+        "height": 760,
+        "client": 305,
+        "scroll_width": 305,
+        "header": 98
+      }
+    ],
+    "hover": "Identity previews while Persona remains selected; pointer exit restores Persona",
+    "keyboard": "Focus previews Identity; focus exit restores Persona; Enter pins Identity",
+    "rapid_reversal": "Identity/Persona reversals settled at final Persona target; 48 paths with no NaN or Infinity; pinned Identity retained",
+    "native_entry": "Open Persona Integrity navigated to /studies/persona-integrity and its frozen public rubric",
+    "sticky_stage": "1280x720 index anchor inspection: top 19.257px, bottom 708.9px",
+    "mobile_selection_reduced_motion": {
+      "selected": "persona-integrity",
+      "active": "persona-integrity",
+      "focused_selector": "persona-integrity",
+      "stage_top_px": 15.921875,
+      "morphing": false,
+      "viewport_width": 390
+    },
+    "javascript_disabled": "SSR island retained 48 colored contours, study links and named headings; five preview buttons disabled; noscript guidance visible",
+    "console": "No captured errors or warnings",
+    "reference": "Inspected jacobmckee.com/index row-to-preview interaction; videos did not play; original SVG shapes used",
+    "touch_device": "Actual touch input remains unverified; connected browser does not support touch dispatch",
+    "release_list": "Local database has no production release snapshot; explicit unavailable/retry state inspected without fabricated evidence"
+  },
+  "screenshots": [
+    "visuals/compact-header.jpg",
+    "visuals/compact-header-mobile.jpg",
+    "visuals/study-stage-identity.jpg",
+    "visuals/study-stage-persona.jpg",
+    "visuals/study-stage-mobile-persona.jpg"
+  ],
+  "rollback": "Revert this iteration to baseline 3689dad; approved first design remains committed and pushed",
+  "prior_validation": "charcoal-porcelain-validation-2026-10-16.json records the earlier locked dependency install, font provenance, external-network-blocked local use and manifest negative controls; those controls were not rerun in this iteration"
+}

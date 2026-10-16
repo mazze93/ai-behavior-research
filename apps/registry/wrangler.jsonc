@@ -28,7 +28,7 @@
   "name": "identity-research-web",
   "main": "src/web.ts",
   "build": {
-    "command": "PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/check_explorer_gallery.py"
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/check_explorer_gallery.py && PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/stage_landing.py --verify-public"
   },
   "workers_dev": true,
   "assets": {

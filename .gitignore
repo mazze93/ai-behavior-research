@@ -1,5 +1,7 @@
 # Dependencies
 node_modules/
+apps/landing/.astro/
+apps/landing/dist/
 
 # Environment
 .env
