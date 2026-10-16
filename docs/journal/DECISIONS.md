@@ -46,3 +46,11 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
 - 2026-10-16: User invoked workspace:ship after source releases. Preflight found clean, pushed repositories and green CI; production still renders the older design. Deploy exact signed aee386e, keeping rollback ea04804c at hand. Current plain variables match reviewed config and current resource IDs match intended bindings. No runner/data/secrets changes. The initial local snapshot write used a relative path from apps/registry; it wrote no receipt. Corrected the root-relative path and re-read live metadata successfully before any deployment.
 
 - 2026-10-16: Shipped signed aee386e as 2a0ddd68-f483-44e8-b4e6-442d1da5361b at 100%. Before/after resource descriptors and configured variables agree; full tag/source annotation is correct. Fresh build/dry-run, all 18 landing and 36 static hash comparisons, unchanged public release hashes, unauthenticated guards and production browser interactions passed. Python urllib was blocked by Cloudflare 1010, while default curl and browser succeeded without policy changes. Browser-automation /mcp warnings are external to the application; no application errors observed. Keep rollback ea04804c and explicit physical-touch/owner-file-chooser limits. Source release tags are unchanged.
+
+- 2026-10-16: Implement the user's external-review request as explicit ethics and
+  provenance commitments, with current capabilities separated from future
+  protocol requirements. Model stop signals/refusals are observable behavior,
+  not validated consent or welfare measures. No existing frozen record is
+  retroactively labelled compliant. Keep private publishing sources out of
+  assets. Revert documentation commits if needed; deployment rollback is
+  2a0ddd68-f483-44e8-b4e6-442d1da5361b after live preflight confirms it.

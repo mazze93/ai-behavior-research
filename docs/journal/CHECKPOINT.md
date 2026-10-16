@@ -48,3 +48,11 @@ publication work. Study limitations remain in the release readiness record.
 Production version 2a0ddd68 at 100%; rollback ea04804c. Full IDs, bytes and
 validation boundaries are in docs/research-hub/deployment-landing-2026-10-16.json.
 Research source release and open Bearing PR #1 retain their prior scope.
+
+## 2026-10-16 — external review implementation
+
+- [x] Review/addendum and current method/source inspected; rollback recorded.
+- [ ] Ethics statement and method/study/landing navigation implemented.
+- [ ] Existing checks, static staging and deployment dry-run pass.
+- [ ] Public deployment and exact-byte/navigation/owner-guard readback.
+- [ ] Validation receipt, commit/push and private Box handoff complete.

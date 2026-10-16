@@ -33,3 +33,15 @@ staging and deployment dry-run. Exact scope is in the shipping plan. Current
 production and rollback version ea04804c is independently read back. Reconcile
 remote bindings/variables, verify live assets and browser interactions, then
 record the production receipt and update stale deployment status in the README.
+
+## 2026-10-16 — external review, ethics and provenance
+
+Implement essential research-method corrections from the Box addendum.
+Scope: public ethics page, method and study-page disclosures, landing footer,
+llms.txt, sitemap, generated landing assets, README and verification receipt.
+Assumption checked: no ethics statement exists in the current method or Persona
+page; author/annotation provenance and behavioral-only limits already exist.
+The private publishing revision lives in intentional-fragility; private reviews
+and transcripts do not become public assets. Build/stage and dry-run before any
+deployment; verify public bytes, navigation and owner guards afterwards.
+Rollback is the current production version 2a0ddd68-f483-44e8-b4e6-442d1da5361b.
