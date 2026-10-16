@@ -4,15 +4,15 @@ The research site, private study instruments and evidence registry for **observa
 
 [Research site](https://research.mazzeleczzare.com/) · [Release checkpoint](https://github.com/mazze93/ai-behavior-research/releases/tag/v0.1.0-rc.1) · [Canonical research workspace](https://github.com/mazze93/Research)
 
-![Local browser preview of the charcoal and porcelain research landing, with its compact header and original spectral illustration.](docs/research-hub/visuals/compact-header.jpg)
+![Production browser capture of the charcoal and porcelain research landing, with its compact header and original spectral illustration.](docs/research-hub/visuals/production-landing-2026-10-16.jpg)
 
-*Browser-verified local landing preview. This screenshot does not establish a production deployment.*
+*Production capture, 2026-10-16. Signed source `v0.1.0-rc.1` / `aee386e`; [deployment and byte verification](docs/research-hub/deployment-landing-2026-10-16.json).*
 
 ## What is here
 
 | Surface | Scope and evidence |
 | --- | --- |
-| [Landing](apps/landing) | Static Astro 7, self-hosted type and a React study illustration. Hover/focus previews; selection persists. [Local browser receipt](docs/research-hub/study-stage-validation-2026-10-16.json). |
+| [Landing](apps/landing) | Static Astro 7, self-hosted type and a React study illustration. Hover/focus previews; selection persists. [Production verification](docs/research-hub/deployment-landing-2026-10-16.json). |
 | [Registry](apps/registry) | Cloudflare web/API, private controls, queued inference and reviewed public releases. [Recorded deployment checks](docs/research-hub/deployment-persona-resume-2026-10-14.json); complete production file selection remains unverified. |
 | [Identity Dissolution](studies/identity-dissolution) | Local runner and study protocol. Public technical smoke releases exercise the pipeline; they do not establish scientific findings. |
 | [Persona Integrity](studies/persona-integrity) | Frozen v0.2 rubric, importer and contextual annotation instrument. Human scoring remains pending. |

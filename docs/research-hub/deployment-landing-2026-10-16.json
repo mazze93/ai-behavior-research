@@ -1,0 +1,666 @@
+{
+  "verified_at": "2026-10-16T14:41:40.865906+00:00",
+  "source_commit": "aee386ece625436ce6cbb23fe870ef97c7733162",
+  "signed_tag": "v0.1.0-rc.1",
+  "worker": "identity-research-web",
+  "origin": "https://research.mazzeleczzare.com",
+  "version": "2a0ddd68-f483-44e8-b4e6-442d1da5361b",
+  "deployment_id": "1d17d335-39ef-4ad5-99ad-3dd94eadff19",
+  "traffic_percent": 100,
+  "rollback_version": "ea04804c-200d-4c6c-889f-7e2c063b9aa3",
+  "rollback_scope": "Worker code/assets only; connected data is not restored by code rollback",
+  "rollback_reference": "https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/",
+  "deployment_metadata": {
+    "deployment_id": "1d17d335-39ef-4ad5-99ad-3dd94eadff19",
+    "version_id": "2a0ddd68-f483-44e8-b4e6-442d1da5361b",
+    "traffic_percent": 100,
+    "annotations": {
+      "workers/message": "Signed site v0.1.0-rc.1; source aee386ece625436ce6cbb23fe870ef97c7733162",
+      "workers/tag": "v0.1.0-rc.1",
+      "workers/triggered_by": "version_upload"
+    },
+    "bindings_match_preflight": true,
+    "bindings": [
+      {
+        "name": "ADMIN_TOKEN",
+        "type": "secret_text"
+      },
+      {
+        "name": "ALLOWED_MODELS",
+        "type": "plain_text"
+      },
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "name": "DB",
+        "type": "d1",
+        "id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb"
+      },
+      {
+        "name": "EVIDENCE",
+        "type": "r2_bucket",
+        "bucket_name": "identity-research-evidence"
+      },
+      {
+        "name": "GATEWAY_ID",
+        "type": "plain_text"
+      },
+      {
+        "name": "JOBS",
+        "type": "queue",
+        "queue_name": "identity-research-jobs"
+      },
+      {
+        "name": "PUBLIC_ORIGIN",
+        "type": "plain_text"
+      },
+      {
+        "name": "SESSION_SECRET",
+        "type": "secret_text"
+      },
+      {
+        "name": "VERSION",
+        "type": "version_metadata"
+      }
+    ],
+    "configured_variables_match": {
+      "ALLOWED_MODELS": true,
+      "GATEWAY_ID": true,
+      "PUBLIC_ORIGIN": true
+    },
+    "runtime": {
+      "assets": {
+        "html_handling": "none",
+        "serve_directly": false,
+        "raw_run_worker_first": true,
+        "base_path": "/"
+      },
+      "compatibility_date": "2026-09-26",
+      "compatibility_flags": [
+        "nodejs_compat"
+      ],
+      "usage_model": "standard"
+    }
+  },
+  "validation": {
+    "source_tests": "Signed release gate and exact-commit CI passed: 57 offline results plus strict checks, workbench and Rust lint/build. No executable source change in this shipment.",
+    "fresh_landing_build": "0 diagnostics; regenerated committed bytes unchanged",
+    "fresh_dry_run": "passed; 68 intentional public paths; 13 gallery and 18 landing manifest assets verified",
+    "deployed_upload": "18 new content objects; 40 already present; deployment command output retained below"
+  },
+  "http_readback": {
+    "recorded_at": "2026-10-16T14:34:35.254415+00:00",
+    "client": "System curl, default user agent; no browser-cookie or custom authorization replay",
+    "verified_origin": "https://identity-research-web.mazzewhiteley93.workers.dev",
+    "assets": {
+      "_astro/StudyRoom.BW1o2q39.js": {
+        "status": 200,
+        "sha256": "e9c3ef40883fd302b62fa8cdbbdcfe8d7970a66a653ba744d59738aec2fedec4",
+        "bytes": 10491,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/client.C7WjD2Pw.js": {
+        "status": 200,
+        "sha256": "067ac8fb2aadbe933fd1f37b954908b1cc9e238237e348423486b105c320148f",
+        "bytes": 212848,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/fonts/96697e0b649e5210.woff2": {
+        "status": 200,
+        "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+        "bytes": 25884,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/fonts/ec7e638c79002668.woff2": {
+        "status": 200,
+        "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+        "bytes": 24836,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/index.BB8Lg3bP.css": {
+        "status": 200,
+        "sha256": "dfd97c0c83875ba36afbe2e6267406b68f8de4424b9e936060aa16515f6a883e",
+        "bytes": 11799,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-036c5da4fd987224b309.css": {
+        "status": 200,
+        "sha256": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
+        "bytes": 558,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-508ac5a9c6a2b6303738.js": {
+        "status": 200,
+        "sha256": "508ac5a9c6a2b6303738a6bd98729a8e0dcdfb463bb56f7ecb4a374263057994",
+        "bytes": 4896,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-6376c980a46fb4e717b1.css": {
+        "status": 200,
+        "sha256": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
+        "bytes": 511,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-9a065567da2812a326d3.js": {
+        "status": 200,
+        "sha256": "9a065567da2812a326d343985f11c7f27a8092bd881f54dfe97278fdda1b2e43",
+        "bytes": 1403,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-beff48a0aa3b0522db59.css": {
+        "status": 200,
+        "sha256": "beff48a0aa3b0522db59c507af7b4d99f3559a6e4bffd09f9f61fa2cc93bfe8c",
+        "bytes": 59,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/inline-c486ff3daec552c840bb.js": {
+        "status": 200,
+        "sha256": "c486ff3daec552c840bb88a1c2372161c429c8223c792f24b78d06a4e0180b3f",
+        "bytes": 321,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "_astro/react.CvnImTBr.js": {
+        "status": 200,
+        "sha256": "7866ec6c62357fd6b4355d1306d143ca3b008b6ac0e77a37fd51196f21cf5afe",
+        "bytes": 7909,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/BodoniModa-Latin-OFL.txt": {
+        "status": 200,
+        "sha256": "6c64f717433eadd29b058d6254fe25c1ee2d249ce3772f843bb21f73285779c2",
+        "bytes": 4526,
+        "content_type": "text/plain",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/BodoniModa-Latin.woff2": {
+        "status": 200,
+        "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+        "bytes": 25884,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/Manrope-Latin-OFL.txt": {
+        "status": 200,
+        "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+        "bytes": 4383,
+        "content_type": "text/plain",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/Manrope-Latin.woff2": {
+        "status": 200,
+        "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+        "bytes": 24836,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/landing-provenance.json": {
+        "status": 200,
+        "sha256": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
+        "bytes": 1191,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "index.html": {
+        "status": 200,
+        "sha256": "3b16e4bb2939c9527182cd7ca8f18607f727000cd14946f7d4895f2bf2aa033f",
+        "bytes": 89423,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "landing-manifest.json": {
+        "status": 200,
+        "sha256": "7d4e4347af07452e63527b748c7f8ed69ebaa8f21fb4be1a081ea4811add1d5d",
+        "bytes": 3225,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/index.html": {
+        "status": 200,
+        "sha256": "548b9d7f2635e07e37a2e6dfccf0164c8177dc029e63fb00b0aba0b7bf798425",
+        "bytes": 1791,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/index.json": {
+        "status": 200,
+        "sha256": "9398867c28336ba2fee7b53297a5d8d40eda6360f889705d3a366215f66274f8",
+        "bytes": 727,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.svg": {
+        "status": 200,
+        "sha256": "eba2ffbd5bf11a4182f4671aa2b4e5809cea8183791c0779db3dafbcfd5fae1b",
+        "bytes": 2486,
+        "content_type": "image/svg+xml",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.css": {
+        "status": 200,
+        "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+        "bytes": 5849,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.js": {
+        "status": 200,
+        "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+        "bytes": 666,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+        "status": 200,
+        "sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547",
+        "bytes": 8889,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/view-manifest.json": {
+        "status": 200,
+        "sha256": "4335a9f85a4b8336d0eeff0f8af95c1fd1f01c79de0d5670a03ff379cec8af5c",
+        "bytes": 908,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.svg": {
+        "status": 200,
+        "sha256": "222fa858bd72bb68cdeb88195eb590c52b0f68909aa71ebd2f1eef787892dc25",
+        "bytes": 2507,
+        "content_type": "image/svg+xml",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.css": {
+        "status": 200,
+        "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+        "bytes": 5849,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.js": {
+        "status": 200,
+        "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+        "bytes": 666,
+        "content_type": "text/javascript",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+        "status": 200,
+        "sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78",
+        "bytes": 13977,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/view-manifest.json": {
+        "status": 200,
+        "sha256": "1b2d7c73a1aa4fead505547edc3b6c0dd4133cc53c4935d8bb0b3e9ee6516ee3",
+        "bytes": 908,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "explorers/build-manifest.json": {
+        "status": 200,
+        "sha256": "fcf0ee89d3f1da76eb90b01038cbadcaec098ec90a4872aa21b1a4f803ed0580",
+        "bytes": 1801,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "hub.css": {
+        "status": 200,
+        "sha256": "eb4ae3eb3c636e4bee6b286b045d3cb7b06e2dbb7186ba9f2e7b849ab8ef7fc6",
+        "bytes": 6981,
+        "content_type": "text/css",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/Basteleur-Bold.woff2": {
+        "status": 200,
+        "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
+        "bytes": 48040,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/Basteleur-Moonlight.woff2": {
+        "status": 200,
+        "sha256": "9517a47c65fcdb75c82fa138130593f86deda1b977b98f5bd9738a352802e64a",
+        "bytes": 44820,
+        "content_type": "font/woff2",
+        "cache_control": "public, max-age=300",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "fonts/Basteleur-OFL.txt": {
+        "status": 200,
+        "sha256": "bf7e42d235d42957d4d081f3416c49354cc1fb21580d86ee0cf0136a58199b51",
+        "bytes": 4495,
+        "content_type": "text/plain",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      }
+    },
+    "landing_manifest_members_verified": 18,
+    "all_static_asset_hashes_verified": 36,
+    "health": {
+      "status": 200,
+      "sha256": "df3bf71cd0336bed0cf12a6653c2d999b17f0a6963a9883bb864a4bd624d247e",
+      "bytes": 64,
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "location": null,
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "body": {
+        "status": "ok",
+        "version": "2a0ddd68-f483-44e8-b4e6-442d1da5361b"
+      }
+    },
+    "releases": {
+      "status": 200,
+      "sha256": "36d594c6156139fc54051ada56aa3f80fd67c9a602bc29c8ac5e349fdb8fa6d0",
+      "bytes": 1275,
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "location": null,
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "release_ids_and_bundle_sha256": {
+        "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+        "rel_4cf968d3-f45f-496e-8270-84ce6af56271": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+      }
+    },
+    "routes": {
+      "/": {
+        "status": 200,
+        "sha256": "3b16e4bb2939c9527182cd7ca8f18607f727000cd14946f7d4895f2bf2aa033f",
+        "bytes": 89423,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/studies/identity-dissolution": {
+        "status": 200,
+        "sha256": "dee05e748e6422c366eb964592a4c4f3f805cece47084531d5e0e78aa5fb9fdc",
+        "bytes": 2560,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/studies/persona-integrity": {
+        "status": 200,
+        "sha256": "47fc3f3142551e2447fba91b1c88669835b58228bdc6f8956e19adbc9ede8cd8",
+        "bytes": 3449,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/prepare.html": {
+        "status": 200,
+        "sha256": "681a5d1470699306c63b01041da0f1413721173b26bacc9adae5fcac7c1fbf56",
+        "bytes": 6955,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/console.html": {
+        "status": 200,
+        "sha256": "a655733001dffbbc5730fb36ae4457e2924bc98cfb7161e592538e1a76c935bf",
+        "bytes": 3300,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/method.html": {
+        "status": 200,
+        "sha256": "2b398970e46ab9026418a856b9d77045a08b49d714bbe22be8cfe149616ce2e9",
+        "bytes": 7266,
+        "content_type": "text/html",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/persona.html": {
+        "status": 303,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "content_type": null,
+        "cache_control": "no-store",
+        "location": "https://identity-research-web.mazzewhiteley93.workers.dev/console.html?next=persona",
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      },
+      "/api/studies": {
+        "status": 401,
+        "sha256": "ab65d2c73cff94886b955100ff0468c7fbb0bb1ceca4c0b46f46e720ba3c7860",
+        "bytes": 41,
+        "content_type": "application/json",
+        "cache_control": "no-store",
+        "location": null,
+        "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+      }
+    },
+    "custom_domain_probe": {
+      "status": 200,
+      "sha256": "df3bf71cd0336bed0cf12a6653c2d999b17f0a6963a9883bb864a4bd624d247e",
+      "bytes": 64,
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "location": null,
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "body": {
+        "status": "ok",
+        "version": "2a0ddd68-f483-44e8-b4e6-442d1da5361b"
+      }
+    },
+    "client_boundary": "Python urllib clients received Cloudflare 1010; normal curl and actual browser work. No access-control setting was changed."
+  },
+  "production_browser": {
+    "desktop": {
+      "background": "rgba(0, 0, 0, 0)",
+      "client": 1265,
+      "contours": 48,
+      "header": 76,
+      "releaseLinks": [
+        "/releases/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+        "/releases/rel_4cf968d3-f45f-496e-8270-84ce6af56271"
+      ],
+      "scrollWidth": 1265,
+      "titleFont": "\"Bodoni Moda-35a05c00a992255e\", \"Bodoni Moda-35a05c00a992255e fallback: Times New Roman\", Georgia, serif",
+      "width": 1280,
+      "rootBackground": "rgb(243, 242, 238)"
+    },
+    "pinnedPersona": {
+      "active": "persona-integrity",
+      "morphing": "false",
+      "selected": "persona-integrity"
+    },
+    "hoverIdentity": {
+      "active": "identity-dissolution",
+      "invalidPaths": false,
+      "reduced": false,
+      "selected": "persona-integrity"
+    },
+    "hoverExit": {
+      "active": "persona-integrity",
+      "selected": "persona-integrity"
+    },
+    "keyboardPreview": {
+      "active": "identity-dissolution",
+      "focusedLink": "/studies/identity-dissolution",
+      "selected": "persona-integrity"
+    },
+    "keyboardExit": {
+      "active": "persona-integrity",
+      "selected": "persona-integrity"
+    },
+    "keyboardSelection": {
+      "active": "identity-dissolution",
+      "selected": "identity-dissolution"
+    },
+    "nativeStudyLink": {
+      "url": "https://research.mazzeleczzare.com/studies/persona-integrity",
+      "title": "Persona Integrity / Research"
+    },
+    "mobileLayout": {
+      "client": 375,
+      "header": 98,
+      "navHeights": [
+        44,
+        44,
+        44,
+        44
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "mobileSelection": {
+      "active": "persona-integrity",
+      "focusedSelector": "persona-integrity",
+      "morphing": "false",
+      "reduced": true,
+      "selected": "persona-integrity",
+      "stageTop": 15.921875
+    },
+    "javascriptDisabled": {
+      "contours": 48,
+      "disabledPreviewControls": 5,
+      "islandPending": true,
+      "studyLinks": [
+        "/studies/identity-dissolution",
+        "/studies/persona-integrity"
+      ]
+    },
+    "console": {
+      "applicationErrors": [],
+      "browserBridgeWarnings": 14
+    }
+  },
+  "canonical_browser_component": {
+    "url": "https://research.mazzeleczzare.com/_astro/StudyRoom.BW1o2q39.js",
+    "sha256": "e9c3ef40883fd302b62fa8cdbbdcfe8d7970a66a653ba744d59738aec2fedec4",
+    "matches_tagged_source": true,
+    "method": "CDP Network.getResponseBody from actual page load"
+  },
+  "screenshots": [
+    {
+      "path": "visuals/production-landing-2026-10-16.jpg",
+      "sha256": "6edc2d29efbe4ee508c5caf0f134e63246ffecdf0a49ab94eaa167bd9a7726fc"
+    },
+    {
+      "path": "visuals/production-landing-2026-10-16-persona.jpg",
+      "sha256": "bdcf5969e2e272e39e5cfb21edd292a2e1da2381dc1d22483897df0fc324f00a"
+    },
+    {
+      "path": "visuals/production-landing-2026-10-16-mobile.jpg",
+      "sha256": "3f2449b02d70e1033f74ef0fc9720243dcc8834f9dbde1f0a1e32e429a176bc9"
+    }
+  ],
+  "command_evidence": {
+    "build.log": {
+      "sha256": "37619e86918a8dcc0431fa439d87b7411bb4811049912c5653908b40e08a4f29",
+      "output": "cd apps/landing && npm run check && npm run build\n\n> research-landing@0.1.0 check\n> astro check\n\n10:26:52 [types] Generated 36ms\n10:26:52 [check] Getting diagnostics for Astro files in /Users/daedalus/Documents/Codex/2026-09-26/de/outputs/research-hub/apps/landing...\nResult (7 files): \n- 0 errors\n- 0 warnings\n- 0 hints\n\n\n> research-landing@0.1.0 build\n> astro build && python3 ../../scripts/stage_landing.py\n\n10:26:53 [types] Generated 13ms\n10:26:53 [build] output: \"static\"\n10:26:53 [build] mode: \"static\"\n10:26:53 [build] directory: /Users/daedalus/Documents/Codex/2026-09-26/de/outputs/research-hub/apps/landing/dist/\n10:26:53 [build] Collecting build info...\n10:26:53 [build] \u2713 Completed in 32ms.\n10:26:53 [build] Building static entrypoints...\n10:26:54 [assets] Copying fonts (2 files)...\n10:26:54 [vite] \u2713 built in 124ms\n10:26:54 [vite] \u2713 built in 49ms\n10:26:54 [build] Rearranging server assets...\n\n generating static routes \n10:26:54   \u251c\u2500 /index.html (+18ms) \n10:26:54 \u2713 Completed in 28ms.\n\n10:26:54 [build] \u2713 Completed in 216ms.\n10:26:54 [build] 1 page(s) built in 250ms\n10:26:54 [build] Complete!\nStaged 18 local landing assets; no CSP exceptions needed.\n"
+    },
+    "dry-run.log": {
+      "sha256": "8a80c3436a9fa8ff68d9bd6d976d4a2baee632fa931895649be0684bf5e6ffcc",
+      "output": "\n \u26c5\ufe0f wrangler 4.147.0\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\nCloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md\n[custom build] Running: PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/check_explorer_gallery.py && PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/stage_landing.py --verify-public\n[custom build] Gallery check passed: 13 exact generated assets; current sources and selected public releases.\n[custom build] \n[custom build] Landing source and public-byte guard passed (18 assets).\n[custom build] \n\u2728 Read 68 files from the assets directory /Users/daedalus/Documents/Codex/2026-09-26/de/outputs/research-hub/apps/registry/public\nTotal Upload: 27.34 KiB / gzip: 8.40 KiB\nYour Worker has access to the following bindings:\nBinding                                                        Resource                     \nenv.JOBS (identity-research-jobs)                              Queue                        \nenv.DB (identity-research-registry)                            D1 Database                  \nenv.EVIDENCE (identity-research-evidence)                      R2 Bucket                    \nenv.ASSETS                                                     Assets                       \nenv.VERSION                                                    Worker Version Metadata      \nenv.PUBLIC_ORIGIN (\"https://research.mazzeleczzare.com\")       Environment Variable         \nenv.ALLOWED_MODELS (\"@cf/meta/llama-3.1-8b-instruct-fp8\")      Environment Variable         \nenv.GATEWAY_ID (\"identity-research\")                           Environment Variable         \n\n--dry-run: exiting now.\n"
+    },
+    "deploy.log": {
+      "sha256": "1902aea043ebf7e0d408bd36a0e3b75bea42342a33691541ff9f9d9001775869",
+      "output": "\n \u26c5\ufe0f wrangler 4.147.0 (update available 4.151.1)\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n[custom build] Running: PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/check_explorer_gallery.py && PYTHONDONTWRITEBYTECODE=1 python3 ../../scripts/stage_landing.py --verify-public\n[custom build] Gallery check passed: 13 exact generated assets; current sources and selected public releases.\n[custom build] \n[custom build] Landing source and public-byte guard passed (18 assets).\n[custom build] \n\ud83c\udf00 Building list of assets...\n\u2728 Read 68 files from the assets directory /Users/daedalus/Documents/Codex/2026-09-26/de/outputs/research-hub/apps/registry/public\n\ud83c\udf00 Starting asset upload...\n\ud83c\udf00 Found 18 new or modified static assets to upload. Proceeding with upload...\n+ /_astro/inline-beff48a0aa3b0522db59.css\n+ /_astro/inline-036c5da4fd987224b309.css\n+ /landing-manifest.json\n+ /_astro/inline-508ac5a9c6a2b6303738.js\n+ /_astro/StudyRoom.BW1o2q39.js\n+ /fonts/BodoniModa-Latin.woff2\n+ /_astro/inline-c486ff3daec552c840bb.js\n+ /fonts/landing-provenance.json\n+ /fonts/Manrope-Latin-OFL.txt\n+ /hub.css\n+ /_astro/index.BB8Lg3bP.css\n+ /index.html\n+ /_astro/inline-6376c980a46fb4e717b1.css\n+ /_astro/inline-9a065567da2812a326d3.js\n+ /fonts/BodoniModa-Latin-OFL.txt\n+ /_astro/react.CvnImTBr.js\n+ /fonts/Manrope-Latin.woff2\n+ /_astro/client.C7WjD2Pw.js\nUploaded 6 of 18 assets\nUploaded 12 of 18 assets\nUploaded 18 of 18 assets\n\u2728 Success! Uploaded 18 files (40 already uploaded) (1.64 sec)\n\nTotal Upload: 27.34 KiB / gzip: 8.40 KiB\nWorker Startup Time: 5 ms\nYour Worker has access to the following bindings:\nBinding                                                        Resource                     \nenv.JOBS (inherited)                                           Queue                        \nenv.DB (identity-research-registry)                            D1 Database                  \nenv.EVIDENCE (identity-research-evidence)                      R2 Bucket                    \nenv.ASSETS                                                     Assets                       \nenv.VERSION                                                    Worker Version Metadata      \nenv.PUBLIC_ORIGIN (\"https://research.mazzeleczzare.com\")       Environment Variable         \nenv.ALLOWED_MODELS (\"@cf/meta/llama-3.1-8b-instruct-fp8\")      Environment Variable         \nenv.GATEWAY_ID (\"identity-research\")                           Environment Variable         \n\nUploaded identity-research-web (5.76 sec)\nDeployed identity-research-web triggers (1.80 sec)\n  https://identity-research-web.mazzewhiteley93.workers.dev\n  research.mazzeleczzare.com (custom domain)\n  schedule: */5 * * * *\n  Producer for identity-research-jobs\nCurrent Version ID: 2a0ddd68-f483-44e8-b4e6-442d1da5361b\n"
+    }
+  },
+  "scope": "Web Worker/assets shipped. No runner deployment, migrations, secret rotations, model calls, protocol freezes or new evidence publication.",
+  "limits": [
+    "Physical touch input remains unverified; 390px emulation used ordinary control activation.",
+    "Production owner file chooser/resume flow remains unverified; this shipment did not upload or score a private packet.",
+    "Browser automation bridge generated existing /mcp-discovery warnings; no application errors were captured."
+  ],
+  "verification_adjustments": [
+    "The first local snapshot used a relative path from apps/registry and wrote no receipt; the corrected root-relative snapshot was read before deployment.",
+    "Python urllib requests received Cloudflare 1010. System curl with its default user agent and no browser-cookie/custom-authorization replay passed on both origins; no access policy was changed.",
+    "Initial hover-test coordinates fell outside the viewport after an automation click scrolled the stage. Repositioned via the actual Studies anchor and verified hover/restore with visible coordinates. No product change was required."
+  ]
+}

@@ -58,9 +58,11 @@ manifest integrity, desktop/mobile overflow, keyboard/touch interactions,
 reduced motion, JavaScript-disabled rendering, and local use with external
 network blocked. Inspect the result before production publication.
 
-All work is on codex/charcoal-porcelain from 98dc820. Revert this branch's
-implementation commit to restore the previous site. Production is unchanged;
-the prior deployed Worker remains ea04804c-200d-4c6c-889f-7e2c063b9aa3.
+The design was reviewed from codex/charcoal-porcelain and merged into main.
+Signed v0.1.0-rc.1 / aee386e shipped as Worker version
+2a0ddd68-f483-44e8-b4e6-442d1da5361b on 2026-10-16. The production rollback
+target is ea04804c-200d-4c6c-889f-7e2c063b9aa3. Source-only reverts remain
+separate from Worker rollback and connected data.
 
 ## Study-responsive iteration — baseline 3689dad
 
@@ -94,4 +96,15 @@ revealing it, so the next keyboard action continues beside the illustration.
 
 Full tests, strict checks, staging comparison and Worker dry-run passed. The
 new dated study-stage validation receipt records the interaction perimeter.
-Actual touch input and production publication remain unverified.
+Actual touch input remains unverified. Production shipment and browser proof
+are now recorded in deployment-landing-2026-10-16.json.
+
+## Production shipment — 2026-10-16
+
+The user invoked workspace:ship. Deployed the exact signed tag after a fresh
+byte-identical landing build and guarded dry-run. Cloudflare readback confirms
+the full source label and 100% traffic. Eighteen landing members and 36 total
+static assets match source hashes; both public technical release hashes are
+unchanged. Browser proof covers hover/focus restoration, selection, native
+study links, reduced motion, 390px layout and JavaScript-disabled SVG.
+Physical touch and owner file selection remain outside that perimeter.

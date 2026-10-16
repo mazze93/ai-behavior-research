@@ -6,9 +6,10 @@
 - [x] Commit/push review surface (codex/charcoal-porcelain).
 
 Read docs/research-hub/charcoal-porcelain.md and the dated validation receipt.
-Production publication is pending visual review; no production changes have
-been made. Local preview uses port 4318. Its release-list unavailable state
-reflects the absence of a production database in local development.
+Production shipped on 2026-10-16 from signed aee386e; see the deployment receipt.
+Local preview uses port 4318. Its release-list unavailable state reflects the
+absence of a production database in local development. The live release index
+was verified separately and retains both original technical smoke releases.
 
 ## Iteration 2
 
@@ -19,7 +20,8 @@ reflects the absence of a production database in local development.
 - [x] Commit/push iteration on PR #11.
 
 See docs/research-hub/study-stage-validation-2026-10-16.json. Actual touch
-input and production publication remain outside the verified perimeter.
+input remains outside the verified perimeter. Production was subsequently
+verified in deployment-landing-2026-10-16.json.
 
 ## 2026-10-16 — repository release
 
@@ -39,6 +41,10 @@ publication work. Study limitations remain in the release readiness record.
 ## 2026-10-16 — production shipment
 
 - [x] Current source/release/production state and rollback verified.
-- [ ] Exact tagged staging/build and deployment dry-run.
-- [ ] Web Worker deployment and live metadata/asset readback.
-- [ ] Browser proof, durable receipt, README status and pushed journal.
+- [x] Exact tagged staging/build and deployment dry-run.
+- [x] Web Worker deployment and live metadata/asset readback.
+- [x] Browser proof, durable receipt, README status and pushed journal.
+
+Production version 2a0ddd68 at 100%; rollback ea04804c. Full IDs, bytes and
+validation boundaries are in docs/research-hub/deployment-landing-2026-10-16.json.
+Research source release and open Bearing PR #1 retain their prior scope.
