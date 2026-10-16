@@ -754,16 +754,19 @@
   },
   "screenshots": [
     {
-      "path": "visuals/production-ethics-2026-10-16.png",
+      "path": "visuals/production-ethics-2026-10-16.jpg",
       "sha256": "e5dd751d5fd02d2bc149f73e4604b815974caa816d6747733c6b58aa26228178",
-      "width": 65536,
-      "height": 4292542531
+      "width": 1265,
+      "height": 712,
+      "mime_type": "image/jpeg"
     },
     {
-      "path": "visuals/production-method-audit-2026-10-16.png",
+      "path": "visuals/production-method-audit-2026-10-16.jpg",
       "sha256": "7e6409c84c61004802b3647b210f705cb4073880e2251e3cbb068d4af7d9365f",
-      "width": 65536,
-      "height": 4292542531
+      "width": 1265,
+      "height": 712,
+      "mime_type": "image/jpeg"
     }
-  ]
+  ],
+  "screenshot_correction": "Browser screenshot API returned JPEG bytes. Filenames and dimensions corrected using the actual decoder; payload bytes unchanged."
 }
