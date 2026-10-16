@@ -1,0 +1,33 @@
+{
+  "verified_at": "2026-10-14T19:47:06.355192+00:00",
+  "source_commit": "6c48cf9",
+  "version": "ea04804c-200d-4c6c-889f-7e2c063b9aa3",
+  "rollback_version": "cdfbc6b0-7394-4706-92ba-b045f0f45583",
+  "font_assets": {
+    "Basteleur-Bold.woff2": {
+      "status": 200,
+      "bytes": 48040,
+      "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300"
+    },
+    "Basteleur-Moonlight.woff2": {
+      "status": 200,
+      "bytes": 44820,
+      "sha256": "9517a47c65fcdb75c82fa138130593f86deda1b977b98f5bd9738a352802e64a",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300"
+    },
+    "Basteleur-OFL.txt": {
+      "status": 200,
+      "bytes": 4495,
+      "sha256": "bf7e42d235d42957d4d081f3416c49354cc1fb21580d86ee0cf0136a58199b51",
+      "content_type": "text/plain",
+      "cache_control": "no-store"
+    }
+  },
+  "local_visual_checks": "Guide Basteleur rendered; spectrum control passed; homepage at 375-width override measured 360 CSS client/page pixels with no overflow.",
+  "upload_correction": "Initial 046d28fb deployment omitted fonts due to asset allowlist. Corrected exact font/license allowlist and re-deployed.",
+  "annotation_note": "Wrangler message used an incorrect abbreviated source label; actual source is 6c48cf9 and asset bytes are independently checked above.",
+  "production_browser": "Homepage rendered Basteleur in Chrome; computed heading family Basteleur, Georgia, serif; public evidence releases still loaded."
+}

@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "test": "tsx --test tests/*.test.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.client.json --noEmit",
     "dev": "wrangler dev --config wrangler.jsonc",
-    "deploy": "wrangler deploy --config wrangler.jsonc"
+    "deploy": "wrangler deploy --config wrangler.jsonc",
+    "build:client": "tsc -p tsconfig.client.json"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "latest",

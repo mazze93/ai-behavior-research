@@ -20,3 +20,9 @@
 !/robots.txt
 !/sitemap.xml
 !/llms.txt
+
+# Unmodified self-hosted Basteleur and its required license; no broad font-directory upload.
+!/fonts/
+!/fonts/Basteleur-Bold.woff2
+!/fonts/Basteleur-Moonlight.woff2
+!/fonts/Basteleur-OFL.txt
