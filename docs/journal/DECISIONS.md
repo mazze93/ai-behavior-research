@@ -76,3 +76,12 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   the preflight. Production navigation and narrow emulation passed; screenshots
   and a reproducible read-only checker accompany the receipt. No inference,
   data migration, protocol freeze or private raw-source publication occurred.
+
+- 2026-10-16: cloudflare-repo-ship found PR #13 already merged at d42feaf,
+  with successful merge CI and application bytes identical to live 21a096e.
+  Rechecked 51 local tests, build/staging, workbench, strict 72-path dry-run,
+  zero reported advisories in both applications, 46 live assets, six canonical
+  authored pages, two evidence bundles, binding/runtime descriptors and owner
+  guards. Do not redeploy identical application content to relabel a commit.
+  Record a fresh shipping audit and retain previous browser/receipt limits.
+  Requested GitHub gateway is unavailable; authenticated CLI is the fallback.

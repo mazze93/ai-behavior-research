@@ -66,3 +66,18 @@ browser-bridge/edge-challenge insertions; do not call their raw HTML source-exac
 The exact comparison adjustments and raw hashes are recorded separately.
 Four private Box revisions and preserved originals are recorded on companion
 intentional-fragility PR #8. Site PR #13 preserves this implementation for review.
+
+## 2026-10-16 — cloudflare-repo-ship recheck
+
+- [x] PR #13 merged at d42feaf; exact merge CI passed.
+- [x] Merged application/staging source equals deployed 21a096e.
+- [x] Fresh checks, workbench, strict deployment dry-run and dependency audits.
+- [x] Live version/traffic, 46 asset hashes, six canonical authored comparisons,
+  two evidence bundles, binding/runtime preservation and anonymous guards.
+- [x] Canonical ethics page reloaded and visible commitments read back.
+
+Production remains ccc9e98b-5182-4fbb-bf8b-2a54d48edfff at 100%. No new
+deployment was needed. See docs/research-hub/shipping-audit-2026-10-16.md
+and its JSON receipt for next validations. Companion book PR #8 remains open;
+private source and working drafts remain private. The audit evidence is
+stored alongside the original deployment receipts.
