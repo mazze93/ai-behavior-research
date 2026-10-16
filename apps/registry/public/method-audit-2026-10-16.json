@@ -1,0 +1,117 @@
+{
+  "schema": "bearing-selected-audit/v1",
+  "at": "2026-10-16T18:32:17.514717+00:00",
+  "source_repository": "mazze93/intentional-fragility",
+  "source_commit": "807a1eea436ac83d5af5764d0c1236742d88b13e",
+  "source_visibility": "private",
+  "public_scope": "Selected audit output, not full source or an independently reproducible evidence archive.",
+  "execution_actor": "Codex in the author workspace; not independent peer review",
+  "software_checks": {
+    "tests_passed": 65,
+    "graph_validation": "passed",
+    "surface_freshness": "passed",
+    "book_rendering_gates": "five chapters drafted and READY; not scientific validation"
+  },
+  "runner_repair": "Standard recipe tabs replace .RECIPEPREFIX; scoring code and graph untouched.",
+  "selected_findings": {
+    "returning_surface": {
+      "head": {
+        "tier": "robust",
+        "robustness": 5,
+        "frames": [
+          "compass",
+          "method",
+          "philosophy-of-science",
+          "seam",
+          "wardrobe"
+        ]
+      },
+      "without_book_claim_frames": {
+        "tier": "robust",
+        "robustness": 2,
+        "frames": [
+          "method",
+          "philosophy-of-science"
+        ]
+      },
+      "dependency": "The remaining method check was run over an argument including the internal sub-claims; no new outside frame established."
+    },
+    "author_provenance": {
+      "counting": false,
+      "retracted_evidence_seqs": [
+        10,
+        14,
+        39
+      ],
+      "replacement_event_range": [
+        42,
+        47
+      ],
+      "count_change": "none; existing check support still supplied method frame",
+      "scope_note": "The author frame is non-counting. The foil method prompt has its declared exception under the forgetting frame (ADR-0009)."
+    }
+  },
+  "audit_warnings": [
+    {
+      "code": "unrun-check",
+      "target": "claim/context-is-the-only-real-test",
+      "check": "check/cross-context-rederivation"
+    },
+    {
+      "code": "unrun-check",
+      "target": "claim/integrity-is-a-returning-surface",
+      "check": "check/cross-context-rederivation"
+    },
+    {
+      "code": "unrun-check",
+      "target": "claim/the-failure-is-a-captured-field",
+      "check": "check/cross-context-rederivation"
+    },
+    {
+      "code": "unrun-check",
+      "target": "claim/the-seam-is-observable-not-interior",
+      "check": "check/downstream-behavior"
+    },
+    {
+      "code": "unverified-source",
+      "target": "source/gemini-3-flash-preview"
+    },
+    {
+      "code": "unverified-source",
+      "target": "source/grok"
+    },
+    {
+      "code": "dependency",
+      "target": "claim/fidelity-without-comprehension",
+      "ledger_note": 95
+    },
+    {
+      "code": "dependency",
+      "target": "claim/integrity-is-a-returning-surface",
+      "ledger_note": 96
+    }
+  ],
+  "reproduction": {
+    "source_access_required": true,
+    "commands": [
+      "make check",
+      "make audit",
+      "PYTHONPATH=engine/src python3 -m bearing fold --json",
+      "PYTHONPATH=engine/src python3 -m bearing fold --without compass seam wardrobe --json",
+      "PYTHONPATH=engine/src python3 -m bearing fold --loo claim/integrity-is-a-returning-surface --json",
+      "make status"
+    ],
+    "environment": {
+      "python": "Python 3.14.8",
+      "PyYAML": "6.0.3",
+      "pytest": "9.1.1"
+    },
+    "private_receipt_sha256": "8aa6d8ef1663efbe9ba59dc98e2a40923bd67cef39aca3de0b42b56f65e68dd4"
+  },
+  "limits": [
+    "Frame independence is authored and may be structurally dependent.",
+    "No new empirical run-check or model call occurred.",
+    "Append-only is a validated repository convention, not cryptographic immutability.",
+    "The original private corpus is not published here."
+  ]
+}

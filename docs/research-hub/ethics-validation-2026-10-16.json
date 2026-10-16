@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-16T18:49:53.425251+00:00",
+  "make_test": {
+    "exit_code": 0,
+    "persona_tests": 5,
+    "identity_tests": 4,
+    "registry_tests": 26,
+    "export_tests": 16,
+    "total_tests": 51,
+    "astro": "0 errors, 0 warnings, 0 hints",
+    "staged_assets": 18
+  },
+  "dry_run": {
+    "exit_code": 0,
+    "wrangler": "4.147.0",
+    "logical_asset_paths": 72
+  },
+  "local_document_checks": {
+    "pages": [
+      "ethics.html",
+      "method-audit.html",
+      "method.html",
+      "persona-about.html",
+      "identity.html",
+      "index.html"
+    ],
+    "links": "existing static files or explicitly known Worker routes",
+    "raw_source_exclusion": "passed (targeted check, not comprehensive secret scanning)",
+    "audit_projection": "65 tests, 8 warnings and 5-to-2 frames agree with private receipt"
+  },
+  "checker_correction": "The first one-off local link check mistook /api/releases for a static file; the known dynamic route was then explicitly included. Application code was unchanged.",
+  "public_file_sha256": {
+    "ethics.html": "8577efb340276a7e2a0ca08ed10b9c7ad2d72c711cd88ef582309fda52d24914",
+    "method-audit.html": "0745624a029c868b54ec3ffbb515c9766c229a9bb585945ac85ef3c6a5f95078",
+    "method.html": "a1ebc4dac4cf2b0193c9f86875c04ccdae224b0da1dbbfcce9abb1d240248435",
+    "persona-about.html": "aec0cfc72c0b2edb55c8bedddb244293792880071a1fc0f3f1fa89f666c5db73",
+    "identity.html": "dacd95f183c41dd959f9d095ce41a0bf059ccab3c5fdab6c771cd161fb50526c",
+    "index.html": "f408557a1e3bbd6c05447bdae389462bec90cd50579e3711ab5e76721ee80374",
+    "research-notes.css": "601c558330e7ec4fa3876fde3db59c5f07a8f30af71ec1ede03244d2a5d592f4",
+    "method-audit-2026-10-16.json": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"
+  }
+}

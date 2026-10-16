@@ -1,0 +1,95 @@
+{
+  "checked_at": "2026-10-16T18:49:01.764613+00:00",
+  "worker": "identity-research-web",
+  "deployment": {
+    "id": "1d17d335-39ef-4ad5-99ad-3dd94eadff19",
+    "created_on": "2026-10-16T14:27:53.049774Z",
+    "versions": [
+      {
+        "version_id": "2a0ddd68-f483-44e8-b4e6-442d1da5361b",
+        "percentage": 100
+      }
+    ],
+    "annotations": {
+      "workers/message": "Signed site v0.1.0-rc.1; source aee386ece625436ce6cbb23fe870ef97c7733162",
+      "workers/triggered_by": "deployment"
+    }
+  },
+  "version_id": "2a0ddd68-f483-44e8-b4e6-442d1da5361b",
+  "metadata": {
+    "created_on": "2026-10-16T14:27:52.27922Z",
+    "source": "wrangler",
+    "author_id": "cfbc07878913bc8943c42ef57e5fac27",
+    "author_email": "mazzewhiteley93@icloud.com",
+    "has_preview": true
+  },
+  "bindings": [
+    {
+      "name": "ADMIN_TOKEN",
+      "type": "secret_text"
+    },
+    {
+      "name": "ALLOWED_MODELS",
+      "type": "plain_text",
+      "text": "@cf/meta/llama-3.1-8b-instruct-fp8"
+    },
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    },
+    {
+      "name": "DB",
+      "type": "d1",
+      "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb"
+    },
+    {
+      "name": "EVIDENCE",
+      "type": "r2_bucket",
+      "bucket_name": "identity-research-evidence"
+    },
+    {
+      "name": "GATEWAY_ID",
+      "type": "plain_text",
+      "text": "identity-research"
+    },
+    {
+      "name": "JOBS",
+      "type": "queue",
+      "queue_name": "identity-research-jobs"
+    },
+    {
+      "name": "PUBLIC_ORIGIN",
+      "type": "plain_text",
+      "text": "https://research.mazzeleczzare.com"
+    },
+    {
+      "name": "SESSION_SECRET",
+      "type": "secret_text"
+    },
+    {
+      "name": "VERSION",
+      "type": "version_metadata"
+    }
+  ],
+  "script": {
+    "etag": "b3bf42aaf3a61b125551298cd1e89bde79b06823b45f7970a559dbc63feffd10",
+    "handlers": [
+      "fetch",
+      "scheduled"
+    ],
+    "last_deployed_from": "wrangler"
+  },
+  "script_runtime": {
+    "assets": {
+      "html_handling": "none",
+      "serve_directly": false,
+      "raw_run_worker_first": true,
+      "base_path": "/"
+    },
+    "compatibility_date": "2026-09-26",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "usage_model": "standard"
+  }
+}

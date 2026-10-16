@@ -6,7 +6,9 @@ The research site, private study instruments and evidence registry for **observa
 
 ![Production browser capture of the charcoal and porcelain research landing, with its compact header and original spectral illustration.](docs/research-hub/visuals/production-landing-2026-10-16.jpg)
 
-*Production capture, 2026-10-16. Signed source `v0.1.0-rc.1` / `aee386e`; [deployment and byte verification](docs/research-hub/deployment-landing-2026-10-16.json).*
+*Landing design checkpoint captured in production, 2026-10-16. Signed source `v0.1.0-rc.1` / `aee386e`; [design deployment and byte verification](docs/research-hub/deployment-landing-2026-10-16.json).*
+
+[Research ethics](https://research.mazzeleczzare.com/ethics.html) · [Selected method audit](https://research.mazzeleczzare.com/method-audit.html). Deployed from `21a096e` on 2026-10-16; [production verification](docs/research-hub/ethics-deployment-2026-10-16.json). These distinguish conduct commitments, implementation limits and software verification from empirical findings.
 
 ## What is here
 

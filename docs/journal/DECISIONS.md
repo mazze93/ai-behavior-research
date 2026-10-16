@@ -46,3 +46,33 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
 - 2026-10-16: User invoked workspace:ship after source releases. Preflight found clean, pushed repositories and green CI; production still renders the older design. Deploy exact signed aee386e, keeping rollback ea04804c at hand. Current plain variables match reviewed config and current resource IDs match intended bindings. No runner/data/secrets changes. The initial local snapshot write used a relative path from apps/registry; it wrote no receipt. Corrected the root-relative path and re-read live metadata successfully before any deployment.
 
 - 2026-10-16: Shipped signed aee386e as 2a0ddd68-f483-44e8-b4e6-442d1da5361b at 100%. Before/after resource descriptors and configured variables agree; full tag/source annotation is correct. Fresh build/dry-run, all 18 landing and 36 static hash comparisons, unchanged public release hashes, unauthenticated guards and production browser interactions passed. Python urllib was blocked by Cloudflare 1010, while default curl and browser succeeded without policy changes. Browser-automation /mcp warnings are external to the application; no application errors observed. Keep rollback ea04804c and explicit physical-touch/owner-file-chooser limits. Source release tags are unchanged.
+
+- 2026-10-16: Implement the user's external-review request as explicit ethics and
+  provenance commitments, with current capabilities separated from future
+  protocol requirements. Model stop signals/refusals are observable behavior,
+  not validated consent or welfare measures. No existing frozen record is
+  retroactively labelled compliant. Keep private publishing sources out of
+  assets. Revert documentation commits if needed; deployment rollback is
+  2a0ddd68-f483-44e8-b4e6-442d1da5361b after live preflight confirms it.
+
+- 2026-10-16: Public method audit is a selected export: 65 rerun engine tests,
+  eight warnings and five-to-two declared frames. It expressly requires private
+  source for full reproduction and does not expose the newly supplied PRIVATE
+  compaction transcript. The site’s 51 tests, type checks, strict Astro build,
+  generated assets, targeted links/data checks and 72-path deployment dry-run
+  passed. Local desktop/narrow-page browser inspection and keyboard navigation
+  passed. The initial one-off static-link check mistook the release API for a
+  file; its explicit dynamic-route mapping was corrected without changing app
+  code. Live preflight confirms rollback 2a0ddd68 and unchanged binding targets.
+
+- 2026-10-16: Deployed clean, pushed 21a096e after exact-head CI passed. Version
+  ccc9e98b is at 100%. The initial raw-hash check on the canonical domain found
+  transport-injected .webmcp bridge and edge challenge scripts. Re-gated and
+  verified all 46 selected assets byte-for-byte at the Worker origin. Six
+  canonical pages match authored bytes only after the explicitly recorded,
+  comparison-only removal of those two insertions; raw response hashes remain
+  distinct. No cookies, spoofed headers or security-policy changes were used.
+  Two public release bundles, binding targets, runtime and owner guards match
+  the preflight. Production navigation and narrow emulation passed; screenshots
+  and a reproducible read-only checker accompany the receipt. No inference,
+  data migration, protocol freeze or private raw-source publication occurred.
