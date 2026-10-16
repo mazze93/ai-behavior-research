@@ -16,12 +16,12 @@ button:focus-visible,a:focus-visible { outline: 2px solid currentColor; outline-
 ::selection { background: var(--charcoal); color: var(--porcelain); }
 .skip { position: absolute; z-index: 10; left: 2rem; top: -5rem; padding: 1rem; background: var(--porcelain); }
 .skip:focus { top: 1rem; }
-.masthead { margin: 0 3.2vw; min-height: 110px; padding: 1.5rem 0; border-bottom: 2px solid; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.masthead { margin: 0 3.2vw; min-height: 76px; padding: .5rem 0; border-bottom: 2px solid; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .wordmark { font-size: .7rem; font-weight: 800; line-height: 1.35; letter-spacing: .06em; text-decoration: none; }
 .wordmark span { display: block; font-size: 1.45rem; letter-spacing: -.06em; }
 nav { display: flex; gap: 2.5vw; flex-wrap: wrap; font-size: .75rem; font-weight: 700; }
-nav a { padding: .8rem 0; min-height: 44px; text-decoration: none; }
-nav a span { margin-left: .7rem; }
+nav a { padding: .6rem 0; min-height: 44px; display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; }
+.nav-compact { display: none; }
 nav a:hover,nav a:focus-visible,.text-link:hover,.text-link:focus-visible { text-decoration: underline; text-decoration-color: currentColor; text-shadow: 1.8px 0 var(--chromatic-cyan), -1.8px 0 var(--chromatic-pink); }
 main { max-width: 1800px; margin: auto; padding: 0 3.2vw; }
 .edition,.eyebrow,.section-label,.study-number,.capability,footer,.fold-label,.fold-instruction,.object-note,.hash {
@@ -67,6 +67,26 @@ h1 span { display: block; }
 .study-enter { display: flex; flex-direction: column-reverse; gap: 1.5rem; align-items: end; min-height: 110px; font-size: .68rem; font-weight: 700; text-decoration: none; }
 .study-enter span { font-size: 2.7rem; font-weight: 400; line-height: 1; }
 .study-row:hover .study-enter span,.study-enter:focus-visible span { text-shadow: 3px 0 var(--chromatic-cyan),-3px 0 var(--chromatic-pink); transform: translate(2px,-2px); }
+.study-room { align-items: start; row-gap: 3rem; }
+.study-room .hero-type { grid-column: 1; min-height: min(48vw,680px); display: flex; flex-direction: column; justify-content: center; }
+.study-room .hero-object { grid-column: 2; grid-row: 1 / span 2; position: sticky; top: 1.25rem; align-self: start; scroll-margin-top: 1rem; }
+.study-room .fold-surface { max-height: calc(100svh - 16rem); }
+.study-room .study-index { grid-column: 1; grid-row: 2; }
+.study-room .study-row { grid-template-columns: 1rem 1fr auto; gap: 1rem 1.2rem; padding: 2rem 0; }
+.study-room .study-name { grid-column: 2; }
+.study-room .study-name h3 { font-size: clamp(1.8rem,3.25vw,3.2rem); }
+.study-room .study-description { grid-column: 2; }
+.study-room .study-description p { max-width: 44ch; }
+.study-room .study-enter { grid-column: 3; grid-row: 1 / span 2; min-height: 0; align-self: center; }
+.study-preview { display: inline-block; min-height: 44px; border: 0; padding: 0; background: transparent; color: inherit; font: inherit; letter-spacing: inherit; line-height: inherit; text-transform: inherit; text-align: left; cursor: pointer; }
+.study-preview:disabled { cursor: default; }
+.study-row[data-active="true"] .study-preview { text-shadow: 1.5px 0 var(--chromatic-cyan),-1.5px 0 var(--chromatic-pink); }
+.study-row[data-active="true"] .study-number { font-weight: bold; border-top: 2px solid; padding-top: .25rem; }
+.study-switcher { display: grid; grid-template-columns: repeat(3,1fr); background: var(--charcoal); padding: 0 1.2rem 1rem; gap: .4rem; }
+.study-switcher button { min-height: 44px; padding: .5rem .2rem; border: 1px solid var(--muted); background: transparent; color: var(--porcelain); font: .58rem/1.4 'Courier New',monospace; text-transform: uppercase; cursor: pointer; }
+.study-switcher button:hover,.study-switcher button:focus-visible,.study-switcher button[aria-pressed="true"] { background: var(--spectrum); color: var(--charcoal); border-color: transparent; }
+.study-switcher button:disabled { cursor: default; }
+.fold-surface stop { transition: stop-color 260ms ease; }
 .evidence-section { background: var(--charcoal); color: var(--porcelain); padding: .5rem 2.5vw 2.5rem; margin: 1.2rem -3.2vw 0; position: relative; isolation: isolate; scroll-margin-top: 1rem; }
 .evidence-section::before { position: absolute; content: ''; inset: 0; background-image: var(--grain); opacity: .15; pointer-events: none; z-index: -1; }
 .evidence-section .section-label { border-bottom: 1px solid var(--muted); }
@@ -98,12 +118,13 @@ footer a { min-height: 44px; display: inline-flex; align-items: flex-start; }
 }
 @media(max-width:680px) {
   main { padding: 0 5vw; }
-  .masthead { margin: 0 5vw; align-items: start; gap: .5rem; min-height: 130px; }
-  nav { max-width: 205px; justify-content: end; gap: 0 1rem; font-size: .62rem; }
-  nav a { padding: .65rem 0; }
-  nav a span { margin-left: .2rem; }
-  .wordmark { font-size: .52rem; padding-top: .5rem; }
-  .wordmark span { font-size: 1.15rem; }
+  .masthead { margin: 0 5vw; gap: .7rem; min-height: 98px; padding: .25rem 0; }
+  nav { display: grid; grid-template-columns: repeat(2,max-content); gap: 0 .8rem; font-size: .6rem; }
+  nav a { padding: .25rem 0; gap: .35rem; justify-content: space-between; }
+  .nav-wide { display: none; }
+  .nav-compact { display: inline; }
+  .wordmark { font-size: .48rem; }
+  .wordmark span { font-size: 1.05rem; }
   .edition { font-size: .5rem; padding: 1rem 0; }
   .edition span:nth-child(2) { text-align: right; max-width: 23ch; }
   .landing-hero { display: block; padding: 1.8rem 0 2.8rem; }
@@ -113,6 +134,12 @@ footer a { min-height: 44px; display: inline-flex; align-items: flex-start; }
   .hero-bottom p { font-size: .72rem; }
   .hero-bottom .text-link { font-size: .65rem; gap: .6rem; }
   .hero-object { margin-top: 2rem; padding: 0; }
+  .study-room .hero-type { min-height: 0; display: block; }
+  .study-room .hero-object { position: static; }
+  .study-room .fold-surface { max-height: none; }
+  .study-room .study-index { margin-top: 2.8rem; }
+  .study-room .study-row { grid-template-columns: 1rem 1fr; }
+  .study-room .study-enter { grid-column: 2; grid-row: auto; align-self: auto; }
   .fold-label { font-size: .52rem; }
   .fold-label span:last-child { max-width: none; }
   .fold-instruction { display: inline; }

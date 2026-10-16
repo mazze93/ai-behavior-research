@@ -61,3 +61,37 @@ network blocked. Inspect the result before production publication.
 All work is on codex/charcoal-porcelain from 98dc820. Revert this branch's
 implementation commit to restore the previous site. Production is unchanged;
 the prior deployed Worker remains ea04804c-200d-4c6c-889f-7e2c063b9aa3.
+
+## Study-responsive iteration — baseline 3689dad
+
+The user accepted the first visual result and requested the index-to-preview
+mechanism seen at https://jacobmckee.com/index. Live inspection showed a stable
+preview field controlled by project-row hover, with non-active rows receding.
+Its video content did not play in the connected browser; no footage is copied.
+
+One React study room now owns the existing title, the visual stage and the two
+existing study rows. The original index fold is preserved. Identity Dissolution
+uses cool, dispersing ribbon contours; Persona Integrity uses warm, paired
+contours. These are authored visual identities, not representations of results.
+
+Hover/focus gives a temporary preview. Preview buttons pin a selection; moving
+away restores it. The figure's compact selector gives touch and keyboard users
+the same choices. Explicit study-entry links keep their native navigation.
+The desktop figure remains sticky alongside the index; on mobile, selecting
+the explicitly named preview button brings the figure into view. No scroll is
+captured or redirected merely by hovering. Reduced motion switches the shape
+immediately. Ordinary transitions morph from the current contour positions,
+so rapid reversals cancel the prior frame loop instead of queuing animations.
+
+Rollback this iteration alone to 3689dad; it retains the approved first pass.
+
+The user requested a shorter header during preview. The desktop masthead is
+76px instead of 110px. Mobile uses a 98px two-row link grid with shorter visible
+Analysis/Console labels, full accessible names and 44px targets. Browser checks
+at 320/390 and 745/1280 widths preserve navigation and avoid overflow. The
+mobile preview action transfers focus to the selected stage control before
+revealing it, so the next keyboard action continues beside the illustration.
+
+Full tests, strict checks, staging comparison and Worker dry-run passed. The
+new dated study-stage validation receipt records the interaction perimeter.
+Actual touch input and production publication remain unverified.

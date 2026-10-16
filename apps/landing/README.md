@@ -18,6 +18,8 @@ Inline Astro hydration bootstrap and font styles become same-origin assets;
 the current CSP remains intact. The deployment guard checks source fingerprints
 and all public asset hashes, and refuses a stale or modified landing build.
 Generated public files are committed for reproducible Worker deployment.
+Restart the local registry preview after rebuilding the landing: Wrangler's
+development asset index needs to pick up the newly hashed asset filenames.
 
 Fonts are local OFL-1.1 packages (Bodoni Moda and Manrope). The local font
 provider, lockfile, public provenance JSON and included licenses retain their

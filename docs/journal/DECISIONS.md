@@ -19,3 +19,18 @@
   connected browser, so actual touch-device behavior is unverified. The local
   API has no production release data; inspect its unavailable state without
   injecting invented records. Preserve this limitation in the receipt.
+- 2026-10-16: User approved the visual result and explicitly requested a safe
+  checkpoint before a study-responsive iteration. Verified local/upstream
+  3689dad, clean tree, open PR #11 and passing checks; push confirmed up to date.
+  Inspected jacobmckee.com/index: hovering a row emphasizes it and activates a
+  separate preview field (its media did not play in the connected browser).
+  Translate the interaction with original SVG profiles, never copied media.
+  Retain an explicit entry link distinct from click-to-preview controls.
+
+- 2026-10-16: User found the header too tall during visual review. Reduce the
+  desktop masthead from 110px to 76px; mobile uses a 98px two-row navigation
+  grid with 44px links and compact visible labels. Full accessible labels and
+  native routes remain. Measured at 745/1280 and 320/390 widths, with no
+  horizontal overflow at the tested desktop/mobile sizes. The study selector
+  returns focus to the chosen visual control when revealing the mobile stage.
+  Full repository checks, deterministic staging and Worker dry-run passed.
