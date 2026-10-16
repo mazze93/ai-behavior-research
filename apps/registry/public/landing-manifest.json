@@ -8,7 +8,7 @@
     "apps/landing/src/components/SpectralFold.tsx": "fed058cf0ca904d9e4d947a09c05f123ce19e7625c506bcb6e9ea6a1b042dd49",
     "apps/landing/src/components/StudyRoom.tsx": "6383206670a72c080911e0e2d1a088c49743a9e360eb28c411bff7ba05523eda",
     "apps/landing/src/components/spectral-profiles.ts": "12aaa4098f6b57de002aa6bb78689fb4c3600a258ceb2cbc8c5e0196b5e647b0",
-    "apps/landing/src/pages/index.astro": "04610784ef7c4811743d4ab92b9f1744a85fde7e4dc6375930d2212ac294c67f",
+    "apps/landing/src/pages/index.astro": "5bd3e59ee2e49efcef983737067cd2b2fd0523deae0ce9ab2077f4094091b444",
     "apps/landing/src/scripts/releases.ts": "14f49adca25bb2b820ceaafe92854163c63b8b4617e31b0ed38d6905a82ea288",
     "apps/landing/src/styles/landing.css": "c474f212bfad11d441534e477ce43a432f545c8a9b3da3956a34b4a1b64e4506",
     "scripts/stage_landing.py": "6095dd8d419a8f427da8ad5a78bd7ff5a528e6f8ef23c78cad89713a776fa7ba"
@@ -31,6 +31,6 @@
     "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
     "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
-    "index.html": "3b16e4bb2939c9527182cd7ca8f18607f727000cd14946f7d4895f2bf2aa033f"
+    "index.html": "f408557a1e3bbd6c05447bdae389462bec90cd50579e3711ab5e76721ee80374"
   }
 }

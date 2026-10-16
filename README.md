@@ -8,6 +8,8 @@ The research site, private study instruments and evidence registry for **observa
 
 *Production capture, 2026-10-16. Signed source `v0.1.0-rc.1` / `aee386e`; [deployment and byte verification](docs/research-hub/deployment-landing-2026-10-16.json).*
 
+[Research ethics](apps/registry/public/ethics.html) · [Selected method audit](apps/registry/public/method-audit.html). These distinguish conduct commitments, existing implementation limits and software verification from empirical findings.
+
 ## What is here
 
 | Surface | Scope and evidence |

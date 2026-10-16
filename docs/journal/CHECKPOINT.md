@@ -52,7 +52,7 @@ Research source release and open Bearing PR #1 retain their prior scope.
 ## 2026-10-16 — external review implementation
 
 - [x] Review/addendum and current method/source inspected; rollback recorded.
-- [ ] Ethics statement and method/study/landing navigation implemented.
-- [ ] Existing checks, static staging and deployment dry-run pass.
+- [x] Ethics statement and method/study/landing navigation implemented.
+- [x] Existing checks, static staging and deployment dry-run pass (51 tests, 72 paths).
 - [ ] Public deployment and exact-byte/navigation/owner-guard readback.
 - [ ] Validation receipt, commit/push and private Box handoff complete.
