@@ -1,0 +1,68 @@
+{
+  "verified_at": "2026-10-14T19:22:23.895407+00:00",
+  "source_commit": "3b3f443",
+  "version": "cdfbc6b0-7394-4706-92ba-b045f0f45583",
+  "rollback_version": "d70c1367-04de-45a4-a187-18af17d58c81",
+  "checks": {
+    "/api/health:public": {
+      "status": 200,
+      "cache_control": "no-store",
+      "location": null,
+      "health": {
+        "status": "ok",
+        "version": "cdfbc6b0-7394-4706-92ba-b045f0f45583"
+      }
+    },
+    "/persona.html:public": {
+      "status": 303,
+      "cache_control": "no-store",
+      "location": "https://research.mazzeleczzare.com/console.html?next=persona"
+    },
+    "/api/studies:public": {
+      "status": 401,
+      "cache_control": "no-store",
+      "location": null
+    },
+    "/persona.html:owner": {
+      "status": 200,
+      "cache_control": "no-store",
+      "location": null,
+      "exact_source_bytes": false,
+      "resume_control_present": true,
+      "html_note": "Custom-domain edge transformations prevent exact HTML-byte equivalence, as observed in previous deployment."
+    },
+    "/persona.js:owner": {
+      "status": 200,
+      "cache_control": "no-store",
+      "location": null,
+      "exact_source_bytes": true,
+      "sha256": "8089a9235f2670cec97d7c1a78c984db0494035fa141d55828087a54f92901ea"
+    },
+    "/persona-core.js:owner": {
+      "status": 200,
+      "cache_control": "no-store",
+      "location": null,
+      "exact_source_bytes": true,
+      "sha256": "76296afc150c46c206615f7814162ed1d158a9ae27377f0b7d68c9ebbf5b31dc"
+    }
+  },
+  "production_browser": "Owner sign-in and resumed-file control render; automated file chooser blocked by extension file-access permission. Full production browser resume not verified.",
+  "deployed_core_real_packet_check": {
+    "source": "checksum-verified public technical smoke bundle converted through actual importer",
+    "packet_responses": 5,
+    "original_annotation_preserved": true,
+    "parent_hash_verified": true,
+    "continued_records": 2,
+    "actor": "automated-workflow-check",
+    "interpretation": "Test-only placeholder labels; not human research observations"
+  },
+  "traffic_percent": 100,
+  "bindings": "D1, R2, queue, assets, variables and schedule preserved by deployment",
+  "validation": {
+    "registry_tests": 26,
+    "typecheck": "passed",
+    "wrangler_dry_run": "passed",
+    "gallery_assets": 13,
+    "original_rubric": "unchanged"
+  }
+}

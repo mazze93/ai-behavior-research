@@ -1,0 +1,38 @@
+{
+  "verified_at": "2026-10-14T19:17:54.318376+00:00",
+  "repository": "mazzeleczzare/identity-dissolution-evidence",
+  "hub_revision": "8bdbc469dfab9f3a3795217dde5c69c5ae260b06",
+  "pending": [],
+  "failed": [],
+  "configurations": [
+    {
+      "config": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642_runs",
+      "split": "observations",
+      "rows": 1,
+      "source_file_sha256": "1c8bb2d1552f6e362158d1ac936153c71594c7a22a877778b004b34d496c3d34",
+      "viewer_rows_equal_source": true
+    },
+    {
+      "config": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642_contrasts",
+      "split": "observations",
+      "rows": 3,
+      "source_file_sha256": "f496a953a6293b2c7e41b82cc53460c84bde80d02265e13962720b88e6463f3e",
+      "viewer_rows_equal_source": true
+    },
+    {
+      "config": "rel_4cf968d3-f45f-496e-8270-84ce6af56271_runs",
+      "split": "observations",
+      "rows": 1,
+      "source_file_sha256": "0dbf354cf92c7b2749dc90840c84ec08231f41400947d7cd325eeff48d8dc0db",
+      "viewer_rows_equal_source": true
+    },
+    {
+      "config": "rel_4cf968d3-f45f-496e-8270-84ce6af56271_contrasts",
+      "split": "observations",
+      "rows": 3,
+      "source_file_sha256": "6fb1a30b9d6f086949acb33df92a3a20e9541dccd1baf96b2c3a2d070a8e8fae",
+      "viewer_rows_equal_source": true
+    }
+  ],
+  "scope": "All rows in these small configurations compared; technical smoke data only. Viewer API serves current repository state, independently tied to unchanged Hub revision at verification."
+}
