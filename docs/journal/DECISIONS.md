@@ -64,3 +64,15 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   passed. The initial one-off static-link check mistook the release API for a
   file; its explicit dynamic-route mapping was corrected without changing app
   code. Live preflight confirms rollback 2a0ddd68 and unchanged binding targets.
+
+- 2026-10-16: Deployed clean, pushed 21a096e after exact-head CI passed. Version
+  ccc9e98b is at 100%. The initial raw-hash check on the canonical domain found
+  transport-injected .webmcp bridge and edge challenge scripts. Re-gated and
+  verified all 46 selected assets byte-for-byte at the Worker origin. Six
+  canonical pages match authored bytes only after the explicitly recorded,
+  comparison-only removal of those two insertions; raw response hashes remain
+  distinct. No cookies, spoofed headers or security-policy changes were used.
+  Two public release bundles, binding targets, runtime and owner guards match
+  the preflight. Production navigation and narrow emulation passed; screenshots
+  and a reproducible read-only checker accompany the receipt. No inference,
+  data migration, protocol freeze or private raw-source publication occurred.
