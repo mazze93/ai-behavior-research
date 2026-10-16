@@ -1,0 +1,15 @@
+<!-- @dsCard group="Data" height=620 subtitle="Live · claims and their checks" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement, AWA = /*@data:awa-ledger.json*/null;
+function App() {
+  var [demo, setDemo] = React.useState(false);
+  var claims = AWA.claims.map((c, i) => demo && i === 1 ? Object.assign({}, c, { checks: c.checks.map(k => Object.assign({}, k, { status: 'run' })) }) : c);
+  return h('div', null,
+    h('div', { style: { padding: '8px 0' } }, h(CP.Button, { variant: 'outline', 'aria-pressed': demo, onClick: () => setDemo(!demo) }, 'Show a check that has run (illustrative)')),
+    h(CP.EvidenceLedger, { title: 'Preregistered claims and the checks attached to them', kicker: 'Authority Without Assertion / Bearing ledger',
+      provenance: demo ? 'illustrative' : 'recorded', source: AWA.source, claims,
+      note: 'Every hypothesis enters as a candidate with its check attached but unrun. Supports or contradicts relations are appended only after results are inspected.' }));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

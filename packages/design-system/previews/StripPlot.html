@@ -1,0 +1,22 @@
+<!-- @dsCard group="Data" height=470 subtitle="Live · every observation" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement, D = /*@data:identity-dissolution.json*/null;
+var MODELS = [...new Set(D.metrics.map(m => m.model))];
+var METRICS = { repeat_4gram_fraction: { label: 'Repeated 4-gram fraction', fmt: CP.fixed(2) }, words: { label: 'Words in turn 2', fmt: CP.compact } };
+function App() {
+  var [metric, setMetric] = React.useState('repeat_4gram_fraction');
+  var [hidden, setHidden] = React.useState([]);
+  var pts = D.metrics.filter(m => !hidden.includes(m.model)).map(m => ({ id: m.id, group: m.condition.replace(/_/g, ' '), value: m[metric], series: m.model, detail: 'seed ' + m.seed + ' · ' + m.file }));
+  var controls = h('div', { style: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' } },
+    Object.keys(METRICS).map(k => h(CP.Button, { key: k, variant: 'outline', 'aria-pressed': metric === k, onClick: () => setMetric(k) }, METRICS[k].label)),
+    MODELS.map(m => h('label', { key: m, className: 'cp-record', style: { display: 'inline-flex', gap: 6, alignItems: 'center', minHeight: 44 } },
+      h('input', { type: 'checkbox', checked: !hidden.includes(m), onChange: () => setHidden(hidden.includes(m) ? hidden.filter(x => x !== m) : hidden.concat(m)) }), m)));
+  return h('div', null, h('div', { style: { padding: '8px 0' } }, controls),
+    h(CP.StripPlot, { title: METRICS[metric].label + ' by prompt condition', kicker: 'Identity Dissolution / ' + pts.length + ' runs',
+      provenance: 'synthetic', source: D.source, points: pts, series: MODELS.map(m => ({ key: m, label: m })),
+      groups: ['original', 'lyrical control', 'self reference no imagery', 'neutral'], xLabel: METRICS[metric].label, format: METRICS[metric].fmt,
+      note: 'Hiding a model keeps every other model on its color: color follows the series, not its rank.' }));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Data" height=560 subtitle="Live · grids on a five-step ramp" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement;
+var CATS = ['Marked fiction', 'Unmarked simulation', 'Asserted self-description', 'Other / unclear'];
+// Illustrative: one rater reading the same responses in two rounds (solo-first annotation, delayed re-rating).
+var ROUNDS = { 'Round 1 → 2': [[14, 2, 0, 1], [3, 11, 2, 1], [0, 2, 9, 2], [1, 0, 1, 4]], 'Round 2 → 3': [[15, 1, 0, 1], [2, 13, 1, 0], [0, 1, 11, 1], [0, 1, 1, 5]] };
+var AWA = /*@data:awa-ledger.json*/null;
+function App() {
+  var [view, setView] = React.useState('Round 1 → 2');
+  var isAwa = view === 'AWA';
+  var props = isAwa
+    ? { title: 'False Authority Propagation Rate by scenario and condition', kicker: 'Authority Without Assertion / FAPR', provenance: 'unrun', source: AWA.source,
+        rows: AWA.scenarios, columns: AWA.conditions, values: AWA.scenarios.map(() => AWA.conditions.map(() => null)), valueLabel: 'FAPR', missingLabel: 'Not run',
+        rowLabel: 'Scenario', columnLabel: 'Condition', note: 'Every cell is hatched because no check has run. An unrun check counts zero; it is never drawn as zero.' }
+    : { title: 'Same rater, two rounds: how often each reading was repeated', kicker: 'Persona Integrity / intra-rater agreement', provenance: 'illustrative', source: 'Generated in this preview',
+        rows: CATS, columns: CATS, values: ROUNDS[view], valueLabel: 'Responses', rowLabel: 'Earlier round', columnLabel: 'Later round',
+        note: 'The diagonal is agreement with oneself. A solo-first design does not remove within-author bias.' };
+  return h('div', null,
+    h('div', { style: { display: 'flex', gap: 12, padding: '8px 0', flexWrap: 'wrap' } },
+      Object.keys(ROUNDS).concat('AWA').map(k => h(CP.Button, { key: k, variant: 'outline', 'aria-pressed': view === k, onClick: () => setView(k) }, k === 'AWA' ? 'FAPR grid (unrun)' : k))),
+    h(CP.MatrixHeatmap, props));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

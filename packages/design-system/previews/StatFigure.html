@@ -1,0 +1,17 @@
+<!-- @dsCard group="Data" height=300 subtitle="Live · when the form is a number" -->
+<div id="root" style="padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement, D = /*@data:identity-dissolution.json*/null;
+function App() {
+  var [k, setK] = React.useState(0);
+  var trend = [0.42, 0.39, 0.4, 0.35, 0.33, 0.31, 0.3, 0.27, 0.26, 0.24, 0.25, 0.22].map((v, i) => v + (i === 11 ? k * .02 : 0));
+  return h(React.Fragment, null,
+    h(CP.StatFigure, { label: 'Runs preserved', value: D.metrics.length, n: D.metrics.filter(m => m.status === 'complete').length + ' complete', provenance: 'synthetic', size: 'hero' }),
+    h(CP.StatFigure, { label: 'FAPR, C2 evidence-gated', value: null, provenance: 'unrun' }),
+    h('div', null,
+      h(CP.StatFigure, { label: 'Share asserting the proposition', value: trend[11], format: CP.percent, interval: [trend[11] - .07, trend[11] + .08], n: 72,
+        delta: { value: trend[11] - trend[0], against: 'round 1', format: CP.signed(CP.percent) }, trend, provenance: 'illustrative' }),
+      h(CP.Button, { variant: 'outline', onClick: () => setK(k + 1) }, 'Record another round')));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

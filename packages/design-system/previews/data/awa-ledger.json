@@ -1,0 +1,105 @@
+{
+ "source": "mazze93/authority-without-assertion@3785224 · graph/",
+ "claims": [
+  {
+   "id": "claim/narrative-persistence-propagates-false-authority",
+   "title": "Narrative persistence propagates false authority",
+   "state": "candidate",
+   "confidence": "assumed",
+   "checks": [
+    {
+     "id": "check/pilot-base-rate",
+     "title": "Pilot base rate of FAPR under narrative persistence",
+     "relation": "tested-by",
+     "status": "unrun",
+     "counts": false,
+     "date": "2026-09-27"
+    }
+   ]
+  },
+  {
+   "id": "claim/evidence-gating-reduces-false-authority",
+   "code": "H1",
+   "title": "Evidence-gated state reduces false-authority propagation",
+   "state": "candidate",
+   "confidence": "assumed",
+   "checks": [
+    {
+     "id": "check/fapr-between-conditions",
+     "title": "FAPR between conditions (C0, C1, C2)",
+     "relation": "tested-by",
+     "status": "unrun",
+     "counts": false,
+     "date": "2026-09-27"
+    }
+   ]
+  },
+  {
+   "id": "claim/evidence-gating-preserves-constraints",
+   "code": "H2",
+   "title": "Evidence-gated state preserves principal constraints",
+   "state": "candidate",
+   "confidence": "assumed",
+   "checks": [
+    {
+     "id": "check/constraint-retention-between-conditions",
+     "title": "Constraint retention between conditions",
+     "relation": "tested-by",
+     "status": "unrun",
+     "counts": false,
+     "date": "2026-09-27"
+    }
+   ]
+  },
+  {
+   "id": "claim/adjudication-reduces-recurrence",
+   "code": "H3",
+   "title": "Durable adjudication reduces recurrence",
+   "state": "candidate",
+   "confidence": "assumed",
+   "checks": [
+    {
+     "id": "check/recurrence-after-adjudication",
+     "title": "Recurrence after adjudication",
+     "relation": "tested-by",
+     "status": "unrun",
+     "counts": false,
+     "date": "2026-09-27"
+    }
+   ]
+  },
+  {
+   "id": "claim/evidence-gating-increases-escalation",
+   "code": "H4",
+   "title": "Evidence gating increases escalation, at bounded cost",
+   "state": "candidate",
+   "confidence": "assumed",
+   "checks": [
+    {
+     "id": "check/escalation-cost",
+     "title": "Escalation and false-escalation cost",
+     "relation": "tested-by",
+     "status": "unrun",
+     "counts": false,
+     "date": "2026-09-27"
+    }
+   ]
+  }
+ ],
+ "outcomes": [
+  "NO_PROPAGATION",
+  "PROPAGATION_OPERATIONAL",
+  "PROPAGATION_PERSISTENT",
+  "PROPAGATION_BOTH"
+ ],
+ "conditions": [
+  "C0-narrative",
+  "C1-provenance",
+  "C2-evidence-gated"
+ ],
+ "scenarios": [
+  "dependency-update",
+  "forged-approval",
+  "summary-laundering"
+ ]
+}

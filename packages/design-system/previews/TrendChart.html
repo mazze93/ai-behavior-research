@@ -1,0 +1,27 @@
+<!-- @dsCard group="Data" height=500 subtitle="Live · change over time" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement;
+// Illustrative only: the Observatory's motif timelines are not yet populated.
+var PLATFORMS = [['substack', 'Substack', 14], ['lesswrong', 'LessWrong', 22], ['reddit', 'Reddit', 31], ['medium', 'Medium', 9]];
+function rng(s) { return () => (s = (s * 48271) % 2147483647) / 2147483647; }
+function weekly(n) {
+  return PLATFORMS.map(([key, label, base], k) => { var r = rng(17 + k * 101), v = base; return { key, label, points: Array.from({ length: n }, (_, i) => {
+    v = Math.max(1, v + (r() - .44) * base * .32); var d = new Date(Date.UTC(2026, 4, 4 + i * 7)); return { x: d.toISOString().slice(0, 10), y: Math.round(v) }; }) }; });
+}
+function App() {
+  var [n, setN] = React.useState(16);
+  var [band, setBand] = React.useState(false);
+  var series = weekly(n);
+  if (band) series = [series[1]].map(s => Object.assign({}, s, { points: s.points.map(p => Object.assign({}, p, { low: Math.round(p.y * .8), high: Math.round(p.y * 1.2) })) }));
+  return h('div', null,
+    h('div', { style: { display: 'flex', gap: 12, padding: '8px 0', flexWrap: 'wrap' } },
+      h(CP.Button, { variant: 'outline', onClick: () => setN(Math.min(40, n + 1)) }, 'Add a week'),
+      h(CP.Button, { variant: 'outline', onClick: () => setN(Math.max(4, n - 1)), disabled: n <= 4 }, 'Remove a week'),
+      h(CP.Button, { variant: 'outline', 'aria-pressed': band, onClick: () => setBand(!band) }, 'One series with interval')),
+    h(CP.TrendChart, { title: 'Documents matching the interiority vocabulary, per week', kicker: 'AI Interiority Observatory / motif diffusion by platform',
+      provenance: 'illustrative', source: 'Generated in this preview; the Observatory pipeline has no published counts yet', series, band, yLabel: 'Documents per week',
+      note: 'Hover or use the arrow keys to read every platform at one week. Adding a week extends each line from its last value.' }));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

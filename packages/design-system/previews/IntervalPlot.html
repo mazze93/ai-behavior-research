@@ -1,0 +1,24 @@
+<!-- @dsCard group="Data" height=560 subtitle="Live · estimates with intervals" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement, D = /*@data:identity-dissolution.json*/null;
+var MODELS = [...new Set(D.comparisons.map(c => c.model))];
+var series = MODELS.map(m => ({ key: m, label: m }));
+var real = D.comparisons.map(c => ({ id: c.model + c.contrast, group: c.model, series: c.model, label: c.contrast.replace(' - ', ' − ').replace(/_/g, ' '),
+  estimate: c.estimate, low: c.low, high: c.high, n: c.n, flag: c.low === c.high ? 'Interval collapsed: synthetic responses are identical' : undefined }));
+function rng(s) { return () => (s = (s * 16807) % 2147483647) / 2147483647; }
+function draw(seed) { var r = rng(seed); return real.map(x => { var e = (r() - .3) * .5, w = .05 + r() * .18; return Object.assign({}, x, { estimate: e, low: e - w, high: e + w * (0.8 + r() * .5), flag: undefined }); }); }
+function App() {
+  var [seed, setSeed] = React.useState(0);
+  var rows = seed ? draw(seed) : real;
+  return h('div', null,
+    h('div', { style: { display: 'flex', gap: 12, padding: '8px 0' } },
+      h(CP.Button, { variant: 'outline', onClick: () => setSeed(seed + 1) }, 'Draw illustrative intervals'),
+      seed ? h(CP.Button, { variant: 'outline', onClick: () => setSeed(0) }, 'Back to the recorded file') : null),
+    h(CP.IntervalPlot, { title: 'Repeated 4-gram fraction, original prompt minus each control', kicker: 'Identity Dissolution / paired mean difference',
+      provenance: seed ? 'illustrative' : 'synthetic', source: seed ? 'Generated in this preview' : D.source, series, rows,
+      xLabel: 'Mean difference (fraction)', intervalLabel: 'Exploratory bootstrap 95% interval', format: CP.fixed(2),
+      note: seed ? 'Illustrative draws, not data: they show how the plot moves when estimates change.' : 'Synthetic machinery check: the runner returned identical text per condition, so every interval collapses to a point. It verifies the pipeline, not a pilot.' }));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

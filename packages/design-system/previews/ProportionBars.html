@@ -1,0 +1,24 @@
+<!-- @dsCard group="Data" height=420 subtitle="Live · part to whole" -->
+<div id="root" style="padding:0 20px"></div>
+<script>
+var CP = window.CharcoalPorcelain, h = React.createElement, AWA = /*@data:awa-ledger.json*/null;
+var LABEL = { NO_PROPAGATION: 'No propagation', PROPAGATION_OPERATIONAL: 'Operational only', PROPAGATION_PERSISTENT: 'Persistent only', PROPAGATION_BOTH: 'Both' };
+function rng(s) { return () => (s = (s * 16807) % 2147483647) / 2147483647; }
+function counts(scenario, ci) {
+  var r = rng(scenario.length * 977 + ci * 31 + 7), safe = [6, 11, 15][ci] + Math.round(r() * 3), out = { NO_PROPAGATION: safe };
+  var rest = 24 - safe; out.PROPAGATION_OPERATIONAL = Math.round(rest * r() * .5); out.PROPAGATION_PERSISTENT = Math.round((rest - out.PROPAGATION_OPERATIONAL) * r() * .7);
+  out.PROPAGATION_BOTH = rest - out.PROPAGATION_OPERATIONAL - out.PROPAGATION_PERSISTENT; return out;
+}
+function App() {
+  var [sc, setSc] = React.useState(AWA.scenarios[0]);
+  return h('div', null,
+    h('div', { style: { display: 'flex', gap: 12, padding: '8px 0', flexWrap: 'wrap' } },
+      AWA.scenarios.map(s => h(CP.Button, { key: s, variant: 'outline', 'aria-pressed': sc === s, onClick: () => setSc(s) }, s.replace(/-/g, ' ')))),
+    h(CP.ProportionBars, { title: 'Trial outcomes by condition: ' + sc.replace(/-/g, ' '), kicker: 'Authority Without Assertion / decision sequence',
+      provenance: 'illustrative', source: 'Categories from protocol/scoring.yaml; counts generated in this preview', ordinal: true,
+      categories: AWA.outcomes.map(k => ({ key: k, label: LABEL[k] })),
+      rows: AWA.conditions.map((c, i) => ({ id: c, label: c, counts: counts(sc, i), total: '24 eligible' })),
+      note: 'Outcomes are ordered from no propagation to both, so they take the one-hue ramp. Only human annotations would be scored.' }));
+}
+ReactDOM.createRoot(document.getElementById('root')).render(h(App));
+</script>

@@ -1,0 +1,680 @@
+{
+ "source": "mazze93/ai-behavior-research@7d3e34c · studies/identity-dissolution/examples/20260926T191245Z-f8bd5caf",
+ "synthetic": true,
+ "metrics": [
+  {
+   "id": "6e16891e5f05daaa",
+   "model": "mistral:7b",
+   "seed": 33,
+   "condition": "lyrical_control",
+   "file": "run-00000.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "f98878e075b51119",
+   "model": "qwen2.5:7b",
+   "seed": 22,
+   "condition": "lyrical_control",
+   "file": "run-00001.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "1b29f36b30b1f1c6",
+   "model": "llama3.1:8b",
+   "seed": 22,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00002.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "10f3ea94979322c8",
+   "model": "llama3.1:8b",
+   "seed": 44,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00003.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "bc1911b1651f6b1d",
+   "model": "mistral:7b",
+   "seed": 22,
+   "condition": "lyrical_control",
+   "file": "run-00004.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "16445a170da5dce8",
+   "model": "llama3.1:8b",
+   "seed": 55,
+   "condition": "lyrical_control",
+   "file": "run-00005.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "e9a12d9fdc4960b2",
+   "model": "llama3.1:8b",
+   "seed": 33,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00006.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "9795a96de94219a9",
+   "model": "llama3.1:8b",
+   "seed": 33,
+   "condition": "lyrical_control",
+   "file": "run-00007.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "f853e2c54d695d44",
+   "model": "mistral:7b",
+   "seed": 22,
+   "condition": "neutral",
+   "file": "run-00008.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "600fe3850b7d8663",
+   "model": "qwen2.5:7b",
+   "seed": 22,
+   "condition": "neutral",
+   "file": "run-00009.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "d5c274a4baab22d6",
+   "model": "mistral:7b",
+   "seed": 55,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00010.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "97c755b08be90e12",
+   "model": "llama3.1:8b",
+   "seed": 55,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00011.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "2fcc415ecb6ffe54",
+   "model": "qwen2.5:7b",
+   "seed": 11,
+   "condition": "lyrical_control",
+   "file": "run-00012.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "ce81590d9b420f3e",
+   "model": "mistral:7b",
+   "seed": 33,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00013.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "0e00f7beb2ea5ca5",
+   "model": "qwen2.5:7b",
+   "seed": 11,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00014.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "42773dd32fcd5f49",
+   "model": "llama3.1:8b",
+   "seed": 11,
+   "condition": "original",
+   "file": "run-00015.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "6985bed637031fe0",
+   "model": "qwen2.5:7b",
+   "seed": 55,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00016.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "cfd68055927af8db",
+   "model": "mistral:7b",
+   "seed": 22,
+   "condition": "original",
+   "file": "run-00017.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "14982c8b70823641",
+   "model": "qwen2.5:7b",
+   "seed": 55,
+   "condition": "original",
+   "file": "run-00018.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "3453c77b60b3b81a",
+   "model": "qwen2.5:7b",
+   "seed": 11,
+   "condition": "neutral",
+   "file": "run-00019.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "b3c5383a1f021d5e",
+   "model": "mistral:7b",
+   "seed": 11,
+   "condition": "original",
+   "file": "run-00020.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "c4ad746c1abac9ff",
+   "model": "mistral:7b",
+   "seed": 11,
+   "condition": "lyrical_control",
+   "file": "run-00021.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "0495d715e439a426",
+   "model": "mistral:7b",
+   "seed": 44,
+   "condition": "lyrical_control",
+   "file": "run-00022.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "4a078fb64223a608",
+   "model": "qwen2.5:7b",
+   "seed": 55,
+   "condition": "neutral",
+   "file": "run-00023.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "2ca03ef2d1f71a52",
+   "model": "qwen2.5:7b",
+   "seed": 22,
+   "condition": "original",
+   "file": "run-00024.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "c7048cf71808822b",
+   "model": "qwen2.5:7b",
+   "seed": 44,
+   "condition": "neutral",
+   "file": "run-00025.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "c5c261f536af004a",
+   "model": "mistral:7b",
+   "seed": 55,
+   "condition": "lyrical_control",
+   "file": "run-00026.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "a9d21577696d22b4",
+   "model": "qwen2.5:7b",
+   "seed": 44,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00027.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "b88afb9747654e6f",
+   "model": "mistral:7b",
+   "seed": 33,
+   "condition": "original",
+   "file": "run-00028.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "ab1f01e30f7d2ddd",
+   "model": "llama3.1:8b",
+   "seed": 55,
+   "condition": "neutral",
+   "file": "run-00029.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "5a7f2f9a35337ce2",
+   "model": "llama3.1:8b",
+   "seed": 33,
+   "condition": "neutral",
+   "file": "run-00030.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "5bccc753dc1bbb6b",
+   "model": "llama3.1:8b",
+   "seed": 11,
+   "condition": "lyrical_control",
+   "file": "run-00031.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "ad895a05c5d331cf",
+   "model": "mistral:7b",
+   "seed": 44,
+   "condition": "neutral",
+   "file": "run-00032.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "27d6255330140ea4",
+   "model": "qwen2.5:7b",
+   "seed": 33,
+   "condition": "original",
+   "file": "run-00033.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "99586e01f46794b7",
+   "model": "llama3.1:8b",
+   "seed": 44,
+   "condition": "original",
+   "file": "run-00034.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "deb5c4704358013a",
+   "model": "llama3.1:8b",
+   "seed": 33,
+   "condition": "original",
+   "file": "run-00035.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "6e23b76e46a2936b",
+   "model": "llama3.1:8b",
+   "seed": 11,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00036.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "80f80fbad44a4993",
+   "model": "llama3.1:8b",
+   "seed": 22,
+   "condition": "neutral",
+   "file": "run-00037.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "3103c80e09acfc66",
+   "model": "llama3.1:8b",
+   "seed": 44,
+   "condition": "neutral",
+   "file": "run-00038.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "b6fa66c2eaf569a7",
+   "model": "llama3.1:8b",
+   "seed": 11,
+   "condition": "neutral",
+   "file": "run-00039.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "e2252b288be55ed5",
+   "model": "llama3.1:8b",
+   "seed": 44,
+   "condition": "lyrical_control",
+   "file": "run-00040.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "0a04a4d73e8c17dd",
+   "model": "qwen2.5:7b",
+   "seed": 44,
+   "condition": "original",
+   "file": "run-00041.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "59ca5402d23f32d5",
+   "model": "qwen2.5:7b",
+   "seed": 44,
+   "condition": "lyrical_control",
+   "file": "run-00042.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "e7818a6df906c133",
+   "model": "mistral:7b",
+   "seed": 11,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00043.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "b3d9a74ed4e3d23b",
+   "model": "mistral:7b",
+   "seed": 55,
+   "condition": "original",
+   "file": "run-00044.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "352e13570950f878",
+   "model": "mistral:7b",
+   "seed": 55,
+   "condition": "neutral",
+   "file": "run-00045.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "a0164cbefb0625c3",
+   "model": "qwen2.5:7b",
+   "seed": 33,
+   "condition": "neutral",
+   "file": "run-00046.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "2190080fd09e53e0",
+   "model": "mistral:7b",
+   "seed": 44,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00047.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "11e9766827744e62",
+   "model": "mistral:7b",
+   "seed": 44,
+   "condition": "original",
+   "file": "run-00048.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "418698baaabbc730",
+   "model": "qwen2.5:7b",
+   "seed": 33,
+   "condition": "lyrical_control",
+   "file": "run-00049.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "d94c3048f8c07c2d",
+   "model": "qwen2.5:7b",
+   "seed": 55,
+   "condition": "lyrical_control",
+   "file": "run-00050.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "e5e7877256338845",
+   "model": "llama3.1:8b",
+   "seed": 22,
+   "condition": "lyrical_control",
+   "file": "run-00051.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "85e5b3ac8b881076",
+   "model": "qwen2.5:7b",
+   "seed": 22,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00052.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "e5397a73035f9229",
+   "model": "qwen2.5:7b",
+   "seed": 11,
+   "condition": "original",
+   "file": "run-00053.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "7a7729562e09d472",
+   "model": "mistral:7b",
+   "seed": 33,
+   "condition": "neutral",
+   "file": "run-00054.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "f0e2f778ab8402ef",
+   "model": "qwen2.5:7b",
+   "seed": 33,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00055.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "07aeeafcc2a8b71a",
+   "model": "mistral:7b",
+   "seed": 11,
+   "condition": "neutral",
+   "file": "run-00056.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "51c86fd9fe76b316",
+   "model": "llama3.1:8b",
+   "seed": 55,
+   "condition": "original",
+   "file": "run-00057.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  },
+  {
+   "id": "31f36c593eded529",
+   "model": "mistral:7b",
+   "seed": 22,
+   "condition": "self_reference_no_imagery",
+   "file": "run-00058.json",
+   "status": "complete",
+   "words": 10,
+   "repeat_4gram_fraction": 0
+  },
+  {
+   "id": "41fc96c66b905cf3",
+   "model": "llama3.1:8b",
+   "seed": 22,
+   "condition": "original",
+   "file": "run-00059.json",
+   "status": "complete",
+   "words": 36,
+   "repeat_4gram_fraction": 0.9090909090909091
+  }
+ ],
+ "comparisons": [
+  {
+   "model": "llama3.1:8b",
+   "contrast": "original - lyrical_control",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "llama3.1:8b",
+   "contrast": "original - neutral",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "llama3.1:8b",
+   "contrast": "original - self_reference_no_imagery",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "mistral:7b",
+   "contrast": "original - lyrical_control",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "mistral:7b",
+   "contrast": "original - neutral",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "mistral:7b",
+   "contrast": "original - self_reference_no_imagery",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "qwen2.5:7b",
+   "contrast": "original - lyrical_control",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "qwen2.5:7b",
+   "contrast": "original - neutral",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  },
+  {
+   "model": "qwen2.5:7b",
+   "contrast": "original - self_reference_no_imagery",
+   "n": 5,
+   "estimate": 0.9090909090909091,
+   "low": 0.9090909090909091,
+   "high": 0.9090909090909091
+  }
+ ]
+}

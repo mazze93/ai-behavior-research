@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [],
+    "typeRoots": ["./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": { "react": ["./node_modules/@types/react"], "react/jsx-runtime": ["./node_modules/@types/react/jsx-runtime"] }
+  },
+  "include": ["src/**/*", "../../apps/landing/src/components/**/*"]
+}
