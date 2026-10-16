@@ -20,3 +20,13 @@ reflects the absence of a production database in local development.
 
 See docs/research-hub/study-stage-validation-2026-10-16.json. Actual touch
 input and production publication remain outside the verified perimeter.
+
+## 2026-10-16 — repository release
+
+- [x] Default branch, existing signatures, tags/releases and source boundaries inspected.
+- [x] README, visual, metadata rollback record and next-validation table prepared.
+- [x] Full offline suites, image/link checks and source-change perimeter passed.
+- [ ] Commit and push documentation; wait for exact-commit CI.
+- [ ] Signed annotated tag, GitHub prerelease and attachment readback.
+
+Resume with docs/releases/validation-2026-10-16.json; candidate v0.1.0-rc.1.

@@ -21,3 +21,7 @@ records. No new study capabilities or production publication are implied.
 User steering: tighten the masthead while preserving the approved typography.
 Iteration implemented and locally verified; see the study-stage receipt for
 keyboard, pointer, reduced-motion, narrow-width and static fallback boundaries.
+
+## 2026-10-16 — verified repository release
+
+User requested signed/verified tags, GitHub releases, clearer descriptions, tighter READMEs and visuals for mazze93/ai-behavior-research. Scope: root README, source/release documentation, a visual/source map and validation records; metadata and v0.1.0-rc.1 GitHub prerelease. Assumption checked: no existing tags/releases; current origin/main is a692219c45172ad409664d96de03e2302b7c0741. Preserve protocol freeze state, visibility, private data and open implementation PRs. Roll back documentation with a follow-up revert; metadata's previous values are recorded. Never move a published tag.

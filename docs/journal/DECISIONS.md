@@ -34,3 +34,9 @@
   horizontal overflow at the tested desktop/mobile sizes. The study selector
   returns focus to the chosen visual control when revealing the mobile stage.
   Full repository checks, deterministic staging and Worker dry-run passed.
+
+## 2026-10-16 — verified repository release
+
+User requested signed/verified tags, GitHub releases, clearer descriptions, tighter READMEs and visuals for mazze93/ai-behavior-research. Scope: root README, source/release documentation, a visual/source map and validation records; metadata and v0.1.0-rc.1 GitHub prerelease. Assumption checked: no existing tags/releases; current origin/main is a692219c45172ad409664d96de03e2302b7c0741. Preserve protocol freeze state, visibility, private data and open implementation PRs. Roll back documentation with a follow-up revert; metadata's previous values are recorded. Never move a published tag.
+
+- 2026-10-16: Release candidate offline checks passed; executable source matches the named main baseline. Descriptions read back correctly and private visibility is retained. Release records distinguish signed source identity, historical browser/deployment evidence and remaining study boundaries. Corrections use a new tag; no published tag is moved.

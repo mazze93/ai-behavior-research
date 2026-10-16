@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-16",
+  "repository": "mazze93/ai-behavior-research",
+  "baseline_commit": "a692219c45172ad409664d96de03e2302b7c0741",
+  "description_before": "Corpus-scoped rubric for persona integrity under sustained elicitation pressure",
+  "description_requested": "Research site, private study instruments and evidence registry for observable model behavior. Astro + Cloudflare, with provenance-linked releases.",
+  "homepage_before": "",
+  "homepage_requested": "https://research.mazzeleczzare.com/",
+  "visibility": "private; unchanged",
+  "rollback": "Restore description_before/homepage_before; revert documentation commit. Published release corrections get a new tag, never a moved tag.",
+  "applied_and_read_back": true,
+  "description_read_back": "Research site, private study instruments and evidence registry for observable model behavior. Astro + Cloudflare, with provenance-linked releases.",
+  "homepage_read_back": "https://research.mazzeleczzare.com/"
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-16",
+  "repository": "mazze93/ai-behavior-research",
+  "baseline_commit": "a692219c45172ad409664d96de03e2302b7c0741",
+  "scope": "Documentation/metadata release; executable source unchanged from baseline",
+  "tests": {
+    "importer": 5,
+    "local_runner": 4,
+    "registry": 26,
+    "analysis_export": 16,
+    "rust_explorer": 4,
+    "cross_language_roundtrip": 2
+  },
+  "commands": [
+    "mise exec -- make test workbench",
+    "rustup run 1.98.1 cargo fmt/clippy/test/build (locked; warnings denied)",
+    "mise exec -- python3 tools/evidence-explorer/tests/package_roundtrip.py",
+    "wrangler deploy --dry-run"
+  ],
+  "docs": {
+    "relative_links_and_images": 27,
+    "result": "passed",
+    "readme_size": {
+      "README.md": {
+        "before_words": 531,
+        "after_words": 415
+      }
+    },
+    "visual": "Existing local browser screenshot"
+  },
+  "metadata": "Descriptions and site homepage applied and read back; both repositories remain private",
+  "source_boundary": "Merged landing code is locally browser-verified; no deployment performed",
+  "signature_plan": "Signed annotated tag binds exact committed source and release attachment SHA256SUMS; actual verification receipt attached at publication",
+  "limitations": [
+    "No new model calls, trial data, protocol freeze or production deployment",
+    "Actual physical touch-device validation remains unverified"
+  ],
+  "environment_attempt": {
+    "initial": "Full application tests passed; subsequent cargo command was missing from shell PATH",
+    "correction": "Re-ran full gate with installed Rust 1.98.1 toolchain directory in PATH; all checks passed",
+    "failed_log": "tests-attempt-1.log retained with release attachments"
+  },
+  "live_probe": {
+    "url": "https://research.mazzeleczzare.com/api/health",
+    "status": 403,
+    "interpretation": "Current production state not verified by this anonymous request"
+  }
+}

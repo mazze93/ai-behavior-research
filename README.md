@@ -1,42 +1,43 @@
 # AI Behavior Research
 
-A private research monorepo for collecting reproducible model-behavior evidence, developing annotation methods, and publishing reviewed research releases. These studies concern observable outputs, not internal beliefs, consciousness or persistent identity.
+The research site, private study instruments and evidence registry for **observable model behavior**. Maintained by Mazze LeCzzare Frazer.
 
-## Project map
+[Research site](https://research.mazzeleczzare.com/) · [Release checkpoint](https://github.com/mazze93/ai-behavior-research/releases/tag/v0.1.0-rc.1) · [Canonical research workspace](https://github.com/mazze93/Research)
 
-| Location | Purpose | Status |
-| --- | --- | --- |
-| [apps/registry](apps/registry) | Cloudflare web/API, queued inference, D1 migrations, R2 evidence, deployment configuration | Live at [research.mazzeleczzare.com](https://research.mazzeleczzare.com); technical smoke verified |
-| [apps/landing](apps/landing) | Static Astro landing, self-hosted typography and a progressive React illustration | Browser-verified local preview; production publication pending visual review |
-| [apps/workbench](apps/workbench) | Original brutalist static study workbench | Historical Sites publication; reproducible static build |
-| [studies/persona-integrity](studies/persona-integrity) | Frozen v0.2 rubric, scoring guide, schema and registry importer | Human scoring pending |
-| [studies/identity-dissolution](studies/identity-dissolution) | Local Ollama runner, protocol, tests, pilot config and synthetic fixtures | Exploratory local pilot tooling |
-| [provenance](provenance) | Source inventory, historical reference material and public release pointers | Reference-only; not execution instructions |
+![Local browser preview of the charcoal and porcelain research landing, with its compact header and original spectral illustration.](docs/research-hub/visuals/compact-header.jpg)
 
-## Develop and verify
+*Browser-verified local landing preview. This screenshot does not establish a production deployment.*
 
-Requires Node.js 22.22+ and Python 3.10+. From the repository root:
+## What is here
+
+| Surface | Scope and evidence |
+| --- | --- |
+| [Landing](apps/landing) | Static Astro 7, self-hosted type and a React study illustration. Hover/focus previews; selection persists. [Local browser receipt](docs/research-hub/study-stage-validation-2026-10-16.json). |
+| [Registry](apps/registry) | Cloudflare web/API, private controls, queued inference and reviewed public releases. [Recorded deployment checks](docs/research-hub/deployment-persona-resume-2026-10-14.json); complete production file selection remains unverified. |
+| [Identity Dissolution](studies/identity-dissolution) | Local runner and study protocol. Public technical smoke releases exercise the pipeline; they do not establish scientific findings. |
+| [Persona Integrity](studies/persona-integrity) | Frozen v0.2 rubric, importer and contextual annotation instrument. Human scoring remains pending. |
+| [Evidence tools](tools/evidence-explorer) | Source-linked Rust figures, [RustPress briefs](docs/research-hub/rustpress-integration.md) and [Hugging Face projections](docs/research-hub/huggingface-integration.md). |
+
+The canonical research workspace is [mazze93/Research](https://github.com/mazze93/Research). This repository owns the evolving site application and its deployment instructions; included protocols retain their own versions and provenance. The two repositories are not automatically mirrored.
+
+## Run locally
+
+Use the versions pinned in `mise.toml`, or Node.js 22.22+ and Python 3.10+. The evidence explorer is checked with Rust 1.98.1.
 
 ```sh
-make install       # npm ci from the registry's committed lockfile
-make test          # all offline suites, TypeScript and tracked-file boundary check
-make workbench     # build/workbench, including a reproducible local-runner ZIP
-make landing       # check/build/stage the static landing for the existing Worker
-make registry-dev  # local Cloudflare development server
+mise exec -- make install
+mise exec -- make test workbench
+mise exec -- make registry-dev
 ```
 
-The two study protocols are distinct. The local runner has a sequential recovery turn; the Cloudflare runner uses three independent recovery branches. Do not combine their observations as equivalent experiments. Persona A–E labels are human annotations and are not derived from registry metrics.
+`make test` includes the landing build and source/asset integrity check. After a landing rebuild, restart the local registry preview so it sees the new asset names. See [landing development](apps/landing/README.md) and [registry setup](apps/registry/README.md) for the separate build and infrastructure steps.
 
-## Version and evidence policy
+## Read the evidence at its actual scope
 
-This repository is the source of truth for application code, research protocols, migrations, test fixtures and build/deployment instructions. Deploy from a clean commit and record both its SHA and the resulting Cloudflare Worker version. Study protocols retain their own frozen versions; a monorepo change does not revise a frozen rubric.
+The local runner uses a sequential recovery turn; the Cloudflare runner uses independent recovery branches. Their observations are not interchangeable. Persona labels are human annotations, not metrics inferred by the registry. Private transcripts, credentials, production databases and real run exports stay outside Git.
 
-Live D1/R2 state, credentials, private transcripts and real run exports are not Git assets. Git tracks their identifiers, hashes and reviewed release references. Synthetic examples are explicitly labeled and may be tracked. See [repository architecture](docs/architecture.md) and [source inventory](provenance/README.md).
+The [public evidence dataset](https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence/tree/8bdbc469dfab9f3a3795217dde5c69c5ae260b06) is a derived projection of two technical smoke releases. [Publication byte checks](docs/research-hub/huggingface-publication-2026-10-12.json) and [Viewer row comparisons](docs/research-hub/huggingface-viewer-2026-10-14.json) are dated records, not new experimental results.
 
-Infrastructure commands are manual and require the owner's Cloudflare login. CI runs offline validation only; it does not deploy, launch paid inference, publish evidence or receive production secrets. See [registry setup](apps/registry/README.md).
+[Release readiness and next validations](docs/releases/v0.1.0-rc.1.md) · [Tag and artifact verification](docs/releases/README.md) · [Architecture](docs/architecture.md) · [Source inventory](provenance/README.md)
 
-The monorepo consolidation does not change existing service URLs or republish the original Sites workbench. The repository remains private. No new blanket license is granted; study and source-material licensing decisions remain pending.
-
-## Share and reproduce evidence
-
-The [Rust evidence explorer](tools/evidence-explorer) renders source-linked coverage and effect views. The [RustPress bridge](docs/research-hub/rustpress-integration.md) prepares a reviewed editorial brief. The [Hugging Face exporter](docs/research-hub/huggingface-integration.md) prepares dataset cards and release-specific JSONL tables from explicitly selected, checksum-verified public evidence, with CC BY 4.0 for rights-controlled projections/documentation and explicit third-party exclusions. The source bundles and private repository code are not relicensed. These offline exports do not run models or publish automatically. The [public evidence dataset](https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence) is published at pinned Hub revision `8bdbc469dfab9f3a3795217dde5c69c5ae260b06`; all eight files passed unauthenticated byte-for-byte readback. Dataset Viewer ingestion remains pending. These two smoke releases demonstrate the pipeline, not scientific findings.
+GitHub releases checkpoint source and validation. They do not deploy the site, freeze a study protocol, launch inference or publish private evidence. Licensing remains scoped to individual components and artifacts; no blanket license is granted.
