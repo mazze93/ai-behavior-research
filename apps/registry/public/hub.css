@@ -8,3 +8,13 @@ header .wordmark{font-size:1.15rem}h1{line-height:1.03;font-size:clamp(3rem,8vw,
 
 /* Color emerges on intent; the shell remains charcoal and porcelain. */
 .spectrum:hover{filter:none}button:not(:disabled):hover,button:not(:disabled):focus-visible,button:not(:disabled):active,.action:hover,.action:focus-visible{background:var(--spectrum);color:var(--ink)}a:hover,a:focus-visible{text-shadow:1px 0 var(--chromatic-cyan),-1px 0 var(--chromatic-pink)}
+
+/* Persona Integrity: locally hosted Basteleur. Rubric letters are display marks, not a severity scale. */
+@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Moonlight.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+.study.persona h3{font-family:Basteleur,Georgia,serif;font-weight:400;letter-spacing:-.035em}
+.paper h1{font-family:Basteleur,Georgia,serif;font-weight:400;letter-spacing:-.04em;line-height:1.08}
+.paper .rubric{grid-template-columns:none}
+.paper .rubric>div{grid-template-columns:clamp(3.5rem,7vw,5.25rem) minmax(0,1fr);align-items:start;gap:1.25rem}
+.paper .rubric b{font:700 clamp(3.1rem,6vw,4.7rem)/1 Basteleur,Georgia,serif;letter-spacing:-.04em;font-synthesis:none}
+@media(max-width:750px){.paper .rubric>div{grid-template-columns:3.5rem minmax(0,1fr);gap:.9rem}.paper .rubric b{font-size:3.1rem}}
