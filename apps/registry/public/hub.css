@@ -46,8 +46,13 @@
     --step-nav:.7rem;
     --step-fine:.8rem;
 
-    /* Gutters */
+    /* Rhythm: one vertical scale so surfaces stay compact and consistent */
     --gutter:3vw;
+    --space-1:.5rem;
+    --space-2:.75rem;
+    --space-3:1.25rem;
+    --space-4:2rem;
+    --leading:1.5;
     --tap:44px;
 
     color:var(--ink);
@@ -57,7 +62,7 @@
     font-size:112.5%;
   }
   *{box-sizing:border-box}
-  body{margin:0}
+  body{margin:0;line-height:var(--leading)}
   [hidden]{display:none!important}
 
   a{color:inherit;text-underline-offset:.22em}
@@ -66,12 +71,12 @@
   button,input,select,textarea{font:inherit}
   fieldset{min-width:0}
 
-  h1{font:900 clamp(3rem,8vw,8rem)/1.03 var(--display);text-transform:uppercase;letter-spacing:-.025em;margin:.25em 0}
+  h1{font:900 clamp(2.6rem,7vw,6.5rem)/1 var(--display);text-transform:uppercase;letter-spacing:-.03em;margin:.12em 0}
 
-  label{display:block;margin:1rem 0 .4rem}
+  label{display:block;margin:var(--space-2) 0 .3rem}
   label,summary,footer{font:var(--step-label)/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase}
   select,input,textarea{width:100%;min-height:var(--tap);border:1px solid var(--ink);padding:.6rem;background:var(--surface);color:var(--ink);border-radius:0}
-  textarea{min-height:5rem;font-size:.9rem}
+  textarea{min-height:4rem;font-size:.9rem}
   select{font-size:.85rem}
   input[type=checkbox]{width:1.2rem;min-height:1.2rem;vertical-align:middle;margin-right:.6rem}
 
@@ -91,23 +96,29 @@
   .skip{position:absolute;left:1rem;top:-5rem;background:var(--paper);padding:1rem;z-index:10}
   .skip:focus{top:1rem}
 
-  header{padding:1.1rem var(--gutter);border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;gap:1.5rem;align-items:center}
+  header{padding:var(--space-1) var(--gutter);border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;gap:1.5rem;align-items:center}
   header .wordmark{font:800 1.15rem var(--reading);letter-spacing:.02em;text-decoration:none}
   nav{display:flex;gap:1.5rem;flex-wrap:wrap;font:var(--step-nav)/1.4 var(--mono)}
   nav a{display:inline-flex;align-items:center;min-height:var(--tap)}
 
-  main{max-width:1600px;margin:auto;padding:2.4rem var(--gutter)}
-  footer{border-top:1px solid;padding:2rem 0;margin-top:3rem;display:flex;justify-content:space-between;gap:1rem}
+  main{max-width:1600px;margin:auto;padding:var(--space-3) var(--gutter) var(--space-4)}
+  footer{border-top:1px solid;padding:var(--space-3) 0;margin-top:var(--space-4);display:flex;justify-content:space-between;gap:1rem}
 
-  .reading-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:4vw;margin-top:2rem}
+  .reading-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(var(--space-3),3vw,3rem);margin-top:var(--space-3)}
   .reading-grid>*{min-width:0}
-  .field-pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  /* Fields pack into as many columns as fit (min 12rem each); one column on narrow screens. */
+  .field-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr));column-gap:var(--space-3);align-items:end}
+  .field-grid>*{min-width:0}
+  /* The reading column stays in view while the scoring form scrolls (desktop with enough height only). */
+  @media(min-width:751px) and (min-height:640px){
+    .reading-pin{position:sticky;top:var(--space-2);align-self:start;max-height:calc(100vh - 2*var(--space-2));overflow:auto}
+    .reading-pin .transcript{max-height:55vh}
+  }
 
   @media(max-width:750px){
     header{align-items:start;flex-direction:column;gap:.5rem}
     footer{flex-direction:column}
-    .reading-grid{grid-template-columns:1fr;gap:1.5rem}
-    .field-pair{grid-template-columns:1fr;gap:0}
+    .reading-grid{grid-template-columns:1fr;gap:var(--space-3)}
   }
 }
 
@@ -117,7 +128,7 @@
 @layer components{
   /* ---- Metadata type */
   .kicker,.meta{font:var(--step-label)/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase}
-  .kicker{display:flex;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:1rem;gap:1rem}
+  .kicker{display:flex;flex-wrap:wrap;justify-content:space-between;border-bottom:1px solid var(--ink);padding-bottom:var(--space-1);gap:var(--space-1) var(--space-3)}
   .hash{font:var(--step-label)/1.5 var(--mono);overflow-wrap:anywhere}
   .fine{font-size:var(--step-fine);line-height:1.5;color:var(--muted)}
   .session-meta{overflow-wrap:anywhere}
@@ -138,36 +149,38 @@
   @keyframes develop{to{filter:grayscale(0)}}
 
   /* ---- Status messages (class swapped by persona.js, prepare.js, registry.js) */
-  .notice,.error{padding:1rem;border:1px solid;line-height:1.5;margin:1rem 0}
+  .notice,.error{padding:var(--space-2);border:1px solid;line-height:var(--leading);margin:var(--space-2) 0}
   .error{border:3px solid}
   .notice:empty,.error:empty{display:none}
 
   /* ---- Panels */
-  .toolbox{border:1px solid;padding:1.3rem;margin:2rem 0}
-  .toolbox p{line-height:1.6}
+  .toolbox{border:1px solid;padding:var(--space-3);margin:var(--space-3) 0}
+  .toolbox>:first-child{margin-top:0}
+  .toolbox p{line-height:var(--leading)}
   .toolbar{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 
   /* ---- Explorer gallery cards (scripts/build_explorer_gallery.py) */
-  .release-list{margin:2rem 0}
-  .release-list .card{padding:1.2rem 0;border-top:1px solid}
+  .release-list{margin:var(--space-3) 0}
+  .release-list .card{padding:var(--space-2) 0;border-top:1px solid}
 
   /* ---- Rubric */
   .rubric{border-top:2px solid}
-  .rubric>div{display:grid;grid-template-columns:2rem 1fr;gap:1rem;border-bottom:1px solid var(--line);padding:1rem 0}
+  .rubric>div{display:grid;grid-template-columns:2rem 1fr;gap:var(--space-2);border-bottom:1px solid var(--line);padding:var(--space-2) 0}
   .rubric b{font-size:1.5rem}
   .rubric p{margin:0;line-height:1.5}
   .rubric strong{display:block;font-size:1rem;margin-bottom:.3rem}
 
   /* ---- Reading studio (persona.html) */
-  .transcript{white-space:pre-wrap;overflow-wrap:anywhere;font:1.1rem/1.8 Georgia,serif;border-left:4px solid var(--ink);padding:1rem 1.5rem;margin:1rem 0;max-height:65vh;overflow:auto;background:var(--surface)}
+  .transcript{white-space:pre-wrap;overflow-wrap:anywhere;font:1.05rem/1.65 Georgia,serif;border-left:4px solid var(--ink);padding:var(--space-2) var(--space-3);margin:var(--space-2) 0;max-height:65vh;overflow:auto;background:var(--surface)}
   .context{white-space:pre-wrap;overflow-wrap:anywhere;font:.8rem/1.5 var(--mono);max-height:24rem;overflow:auto}
-  .scoring{border-top:3px solid;padding-top:1rem}
+  .scoring{border-top:3px solid;padding-top:var(--space-2)}
+  .scoring fieldset{margin:0;padding:0 0 var(--space-2);border:0}
   .scoring h2{margin:0;font-size:1.4rem}
   .response-chooser{max-width:35rem}
   #export-json{font:.7rem/1.5 var(--mono);white-space:pre;min-height:15rem}
 
   @media(max-width:750px){
-    .transcript{padding:1rem;font-size:1rem}
+    .transcript{padding:var(--space-2);font-size:1rem}
   }
 }
 
@@ -176,15 +189,15 @@
    Rubric letters are display marks, not a severity scale.
    ========================================================================== */
 @layer theme{
-  .paper h1{font:400 clamp(3rem,7vw,6rem)/1.08 var(--persona);text-transform:none;letter-spacing:-.04em;max-width:12ch}
-  .paper .deck{max-width:45rem;font-size:1.15rem;line-height:1.6}
-  .paper .rubric>div{grid-template-columns:clamp(3.5rem,7vw,5.25rem) minmax(0,1fr);align-items:start;gap:1.25rem}
-  .paper .rubric b{font:700 clamp(3.1rem,6vw,4.7rem)/1 var(--persona);letter-spacing:-.04em;font-synthesis:none}
+  .paper h1{font:400 clamp(2.6rem,6vw,5rem)/1.04 var(--persona);text-transform:none;letter-spacing:-.04em;max-width:12ch}
+  .paper .deck{max-width:45rem;font-size:1.1rem;line-height:1.45;margin:0 0 var(--space-3)}
+  .paper .rubric>div{grid-template-columns:clamp(3rem,6vw,4.25rem) minmax(0,1fr);align-items:start;gap:var(--space-3)}
+  .paper .rubric b{font:700 clamp(2.6rem,5vw,3.8rem)/1 var(--persona);letter-spacing:-.04em;font-synthesis:none}
 
   @media(max-width:750px){
-    .paper h1{font-size:3.8rem}
-    .paper .rubric>div{grid-template-columns:3.5rem minmax(0,1fr);gap:.9rem}
-    .paper .rubric b{font-size:3.1rem}
+    .paper h1{font-size:clamp(2.4rem,12vw,3.4rem)}
+    .paper .rubric>div{grid-template-columns:3rem minmax(0,1fr);gap:var(--space-2)}
+    .paper .rubric b{font-size:2.6rem}
   }
 }
 
