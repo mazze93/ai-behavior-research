@@ -10,7 +10,7 @@
     "apps/landing/src/components/spectral-profiles.ts": "12aaa4098f6b57de002aa6bb78689fb4c3600a258ceb2cbc8c5e0196b5e647b0",
     "apps/landing/src/pages/index.astro": "5bd3e59ee2e49efcef983737067cd2b2fd0523deae0ce9ab2077f4094091b444",
     "apps/landing/src/scripts/releases.ts": "14f49adca25bb2b820ceaafe92854163c63b8b4617e31b0ed38d6905a82ea288",
-    "apps/landing/src/styles/landing.css": "c474f212bfad11d441534e477ce43a432f545c8a9b3da3956a34b4a1b64e4506",
+    "apps/landing/src/styles/landing.css": "27f08629bcfdaef7bc67ca34df13a736fd34dfdd2846432cf394d7e06babe17e",
     "scripts/stage_landing.py": "6095dd8d419a8f427da8ad5a78bd7ff5a528e6f8ef23c78cad89713a776fa7ba"
   },
   "files": {
@@ -18,7 +18,7 @@
     "_astro/client.C7WjD2Pw.js": "067ac8fb2aadbe933fd1f37b954908b1cc9e238237e348423486b105c320148f",
     "_astro/fonts/96697e0b649e5210.woff2": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
     "_astro/fonts/ec7e638c79002668.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
-    "_astro/index.BB8Lg3bP.css": "dfd97c0c83875ba36afbe2e6267406b68f8de4424b9e936060aa16515f6a883e",
+    "_astro/index.Bob5jLOA.css": "f52745784a307a7ce8537bc61d71e46b06023111d8b7dfd14a4a55eb5beaa05e",
     "_astro/inline-036c5da4fd987224b309.css": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
     "_astro/inline-508ac5a9c6a2b6303738.js": "508ac5a9c6a2b6303738a6bd98729a8e0dcdfb463bb56f7ecb4a374263057994",
     "_astro/inline-6376c980a46fb4e717b1.css": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
@@ -31,6 +31,6 @@
     "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
     "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
-    "index.html": "f408557a1e3bbd6c05447bdae389462bec90cd50579e3711ab5e76721ee80374"
+    "index.html": "19239db1c322dba25321f01b3c4f19a12d5bf6a33f09594b2e81d7e44bf97b4d"
   }
 }
