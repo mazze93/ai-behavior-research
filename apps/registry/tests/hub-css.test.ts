@@ -6,6 +6,7 @@ import test from 'node:test';
 
 const PUBLIC = join(import.meta.dirname, '..', 'public');
 const css = readFileSync(join(PUBLIC, 'hub.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+const typeCss = readFileSync(join(PUBLIC, 'type.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
 
 /**
  * Exact class tokens that hub.css consumers can apply: class attributes in pages that load hub.css
@@ -32,7 +33,7 @@ test('root font size is relative so it follows the reader default', () => {
 });
 
 test('every custom property used is defined', () => {
-  const defined = new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]));
+  const defined = new Set([...(css + typeCss).matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]));
   const used = new Set([...css.matchAll(/var\((--[\w-]+)/g)].map((m) => m[1]));
   for (const name of used) assert.ok(defined.has(name), `${name} is used but never defined`);
 });
@@ -49,4 +50,19 @@ test('every class selector is used by a page, script or the gallery generator', 
   const selectors = css.replace(/@font-face\{[^}]*\}/g, '').match(/[^{}]+(?=\{)/g) ?? [];
   const classes = new Set(selectors.flatMap((s) => [...s.matchAll(/\.([a-zA-Z][\w-]*)/g)].map((m) => m[1])));
   for (const name of classes) assert.ok(tokens.has(name), `.${name} has no consumer`);
+});
+
+test('every page using hub.css or style.css loads type.css first', () => {
+  for (const name of readdirSync(PUBLIC).filter((n) => n.endsWith('.html'))) {
+    const html = readFileSync(join(PUBLIC, name), 'utf8');
+    const page = html.search(/href="\/(hub|style)\.css"/);
+    if (page < 0) continue;
+    const type = html.indexOf('href="/type.css"');
+    assert.ok(type >= 0 && type < page, `${name} must link /type.css before its page stylesheet`);
+  }
+});
+
+test('style.css takes every family from type.css tokens', () => {
+  const style = readFileSync(join(PUBLIC, 'style.css'), 'utf8');
+  assert.doesNotMatch(style, /Impact|Arial|Helvetica|ui-monospace|@font-face/);
 });

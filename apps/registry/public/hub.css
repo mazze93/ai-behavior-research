@@ -1,6 +1,6 @@
 /* ==========================================================================
    Research hub stylesheet
-   Served directly (no build step) to persona.html, persona-about.html,
+   Served directly (no build step), after type.css, to persona.html, persona-about.html,
    prepare.html, method-audit.html, ethics.html and the generated explorer
    gallery (scripts/build_explorer_gallery.py).
 
@@ -13,11 +13,7 @@
 
 @layer base, layout, components, theme;
 
-/* ---- Fonts (self-hosted; paths are allowlisted in src/response-policy.ts) */
-@font-face{font-family:'Bodoni Moda';src:url('/fonts/BodoniModa-Latin.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
-@font-face{font-family:Manrope;src:url('/fonts/Manrope-Latin.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
-@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Moonlight.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+/* Fonts and family tokens (--display, --reading, --persona, --mono) come from type.css. */
 
 /* ==========================================================================
    Base: tokens, element defaults, interaction states
@@ -34,12 +30,6 @@
     --chromatic-cyan:#66f0dd;
     --chromatic-pink:#f292da;
     --spectrum:linear-gradient(100deg,#bcff00,#16ddbd 25%,#64c6ff 45%,#f29ad5 65%,#ff9670 85%,#ffda31);
-
-    /* Type families */
-    --display:'Bodoni Moda',Georgia,serif;
-    --reading:Manrope,Arial,sans-serif;
-    --persona:Basteleur,Georgia,serif;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 
     /* Type steps (rem, so they follow the reader's browser default) */
     --step-label:.65rem;

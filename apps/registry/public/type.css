@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Shared type system for every registry page (hub.css and style.css pages
+   and the generated explorer gallery). Linked before the page stylesheet.
+   Font files are self-hosted and allowlisted in src/response-policy.ts and
+   public/.assetsignore; the Astro landing ships the same two families.
+   ========================================================================== */
+
+@font-face{font-family:'Bodoni Moda';src:url('/fonts/BodoniModa-Latin.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:Manrope;src:url('/fonts/Manrope-Latin.woff2') format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Moonlight.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Basteleur;src:url('/fonts/Basteleur-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+
+:root{
+  --display:'Bodoni Moda',Georgia,serif;   /* titles */
+  --reading:Manrope,Arial,sans-serif;      /* body, headings, controls */
+  --persona:Basteleur,Georgia,serif;       /* Persona Integrity theme only */
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;  /* labels, hashes, code */
+}
