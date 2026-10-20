@@ -2,6 +2,10 @@ name: Research omnibus
 on: [push, pull_request]
 permissions:
   contents: read
+# Superseded pushes to the same ref are cancelled; only the latest gets a full run.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -16,6 +20,21 @@ jobs:
       - run: make install
       - run: make test
       - run: make workbench
+      # Report known high/critical advisories without gating, like the container
+      # template's Docker Scout step. Flip continue-on-error to make it a gate.
+      - name: Dependency advisories (report, non-blocking)
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          status=0
+          for app in apps/registry apps/landing; do
+            echo "::group::npm audit $app"
+            (cd "$app" && npm audit --audit-level=high) || status=1
+            echo "::endgroup::"
+          done
+          if [[ $status -ne 0 ]]; then echo "::warning::npm audit reported high/critical advisories"; fi
+          exit $status
   rust-explorer:
     runs-on: ubuntu-latest
     steps:

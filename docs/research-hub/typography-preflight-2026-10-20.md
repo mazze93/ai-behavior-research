@@ -78,12 +78,12 @@ The reference standards are `mazze93/secure-container-template` @ `f42f1fd`, `ma
 | Server-side IP rate limits | user directive | `/api/login` has no throttle in code; tokens are high-entropy and compared with `timingSafeEqual`; a Cloudflare WAF rate-limit rule may exist outside the repo | unverified |
 | Strict transport and headers | user directive | CSP `default-src 'self'`, `frame-ancestors 'none'`, nosniff, `no-referrer`, Permissions-Policy, HSTS 1 year (no `includeSubDomains`) | met |
 
-### Proposed changes (not yet applied)
+### Applied in #26
 
-1. `.github/dependabot.yml`: add `ignore` for semver-major in every ecosystem and for the documented landing pins. Add `commit-message.prefix: chore`, plus `time` and `timezone`.
-2. `.github/workflows/registry.yml`: add a `concurrency` group and a non-blocking `npm audit --audit-level=high` step for both npm packages (the template's report-don't-gate default). Optionally add `cargo audit`.
-3. `SECURITY.md`: a repo-specific policy built from the skill 06 template. Scope covers authentication bypass, session forgery, evidence-integrity tampering and private-transcript exposure. It defers SLAs and safe harbor to the account policy.
-4. `CHANGELOG.md` + `VERSION`: start the release ritual at `0.1.0`. Tag this release `v0.1.0-rc.2`; it must be signed with your key, which this session cannot do.
-5. CodeQL (JavaScript/TypeScript, Python), pinned by SHA: a separate change, because it adds alert triage work.
+1. `.github/dependabot.yml`: ignores semver-major in every ecosystem and the documented landing pins; adds the `chore` prefix and a Monday 09:00 America/New_York schedule.
+2. `.github/workflows/registry.yml`: adds a `concurrency` group and a non-blocking `npm audit --audit-level=high` step for both npm packages. `cargo audit` is not added, because it would install an unpinned tool on every run.
+3. `SECURITY.md`: scoped to this service; defers SLAs, disclosure and safe harbor to the account policy. No email contact was invented, because the README lists none.
+4. `VERSION` (`0.1.0-rc.2`) and `CHANGELOG.md`. Tag this release `v0.1.0-rc.2`, signed with your key.
+5. `.github/workflows/codeql.yml`: JavaScript/TypeScript, Python and Actions scanning, with `github/codeql-action` pinned to the v4.38.3 commit `24c5418`.
 
 Settings only you can change: the branch ruleset (skill 01), private vulnerability reporting (skill 06), repo settings (skill 05), and a Cloudflare rate-limit rule on `/api/login`.

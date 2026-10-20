@@ -1,4 +1,6 @@
-
+# Aligned with mazze93/github-hardening-skills skill 02: weekly, Monday 09:00
+# America/New_York, conventional `chore` prefix, and semver-major bumps ignored
+# for review by hand. Security updates still open PRs regardless of `ignore`.
 version: 2
 
 updates:
@@ -7,34 +9,72 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+      # Pinned together; see apps/landing/README.md. The React integration's
+      # Vite plugin needs oxc-transform-react 0.145.0, and the next plugin patch
+      # requires an incompatible compiler peer. Bump both by hand.
+      - dependency-name: "oxc-transform-react"
+      - dependency-name: "@vitejs/plugin-react"
 
   - package-ecosystem: "npm"
     directory: "/apps/registry"
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
+  # Cargo.lock is part of the explorer renderer fingerprint
+  # (scripts/gallery_inputs.py): merging these makes the deployed gallery stale.
   - package-ecosystem: "cargo"
     directory: "/tools/evidence-explorer"
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
-
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "09:00"
+      timezone: "America/New_York"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
