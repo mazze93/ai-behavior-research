@@ -55,24 +55,24 @@ Deploy `edfc3fb` before merging any open Dependabot PR (#19–#25), so this rele
 
 ## Alignment with the account security standards
 
-The reference standards are `mazze93/secure-container-template` @ `f42f1fd`, `mazze93/github-hardening-skills` @ `923d5f3` and the account policy `mazze93/.github/SECURITY.md` v2.0.0. They are written for containers and Node repos, so this section translates them for a Cloudflare Worker with static assets. Items are marked **met**, **gap** or **unverified**. Unverified means the setting lives in repository or Cloudflare settings that this checkout cannot read.
+The reference standards are `mazze93/secure-container-template` @ `f42f1fd`, `mazze93/github-hardening-skills` @ `923d5f3` and the account policy `mazze93/.github/SECURITY.md` v2.0.0. They are written for containers and Node repos, so this section translates them for a Cloudflare Worker with static assets. Items are marked **met**, **partial**, **gap** or **unverified**. Ruleset and private-reporting rows were read from the public GitHub API on 2026-10-20. Unverified means the setting is not publicly readable (secret scanning) or lives in Cloudflare.
 
 | Standard | Source | This repo | Status |
 |---|---|---|---|
 | Actions pinned to full commit SHAs | template README, org policy | `checkout`, `setup-node` and `setup-python` are SHA-pinned; Rust is installed with `rustup` at a fixed toolchain | met |
 | Least-privilege workflow token | template `ci.yml`, skill 04/05 | `permissions: contents: read` at workflow level | met |
-| CI concurrency group | template `ci.yml`, skill 04 | none; superseded pushes run to completion | gap |
-| Named required status checks on `main` | template README, skill 01 | jobs `verify`, `rust-explorer`; whether a ruleset requires them is not visible here | unverified |
-| Branch ruleset: signed commits, linear history, no force pushes, conversation resolution | skill 01 | #16 was squash-merged (linear); other settings not visible | unverified |
-| Dependabot ignores semver-major; majors reviewed by hand | skill 02 template | no `ignore` block; #18 (checkout 4→7), #19, #20 and #25 are majors | gap |
-| Dependabot `commit-message.prefix`, schedule time and timezone | skill 02 template | absent | gap |
-| Documented pins excluded from Dependabot | `apps/landing/README.md` | `oxc-transform-react` / `@vitejs/plugin-react` are not ignored; #24 contradicts the pin | gap |
-| Repo-specific `SECURITY.md` (scope, channel, SLA) | skill 06 | none; the account default in `mazze93/.github` applies (GHSA first, 72 h acknowledgement) | gap: this is a production service with auth and an evidence registry, so skill 06 recommends its own scope |
-| Private vulnerability reporting enabled | skill 06 | not visible | unverified |
-| Vulnerability reporting in CI (template: Docker Scout, non-blocking) | template `ci.yml` | no `npm audit` / `cargo audit` step | gap |
-| Code scanning (CodeQL) | org policy "Security Features and Controls" | no workflow | gap |
+| CI concurrency group | template `ci.yml`, skill 04 | `ci-${{ github.ref }}`, cancel in progress | met (#26) |
+| Named required status checks on `main` | template README, skill 01 | the active ruleset has **no** `required_status_checks` rule, so `verify`, `rust-explorer` and CodeQL `Analyze (...)` can fail without blocking a merge | gap |
+| Branch ruleset on `main` | skill 01 | ruleset "branch rules" (id 25463147, active): **met:** signed commits, linear history, force pushes blocked, deletion blocked, PR required (0 approvals, solo); plus an extra approval for unattributed (agent-pushed) changes. **Gaps against skill 01:** conversation resolution off; stale-approval dismissal and last-push approval off; `merge` still an allowed method (skill 05 disables merge commits); bypass list holds the Repository admin role and five integrations, all `always`, where skill 01 says empty, and never admin | partial |
+| Dependabot ignores semver-major; majors reviewed by hand | skill 02 template | `ignore` semver-major in all four ecosystems; open majors #19, #20, #25 predate it | met (#26) |
+| Dependabot `commit-message.prefix`, schedule time and timezone | skill 02 template | `chore` + scope; Monday 09:00 America/New_York | met (#26) |
+| Documented pins excluded from Dependabot | `apps/landing/README.md` | `oxc-transform-react` and `@vitejs/plugin-react` ignored; close #24 by hand | met (#26) |
+| Repo-specific `SECURITY.md` (scope, channel, SLA) | skill 06 | scoped to this service; SLAs and disclosure defer to the account policy | met (#26) |
+| Private vulnerability reporting enabled | skill 06 | **off** (`GET /repos/.../private-vulnerability-reporting` → `enabled: false`); the "Report a vulnerability" button the new `SECURITY.md` points to does not exist until it is enabled | gap |
+| Vulnerability reporting in CI (template: Docker Scout, non-blocking) | template `ci.yml` | non-blocking `npm audit --audit-level=high` for both npm packages; no `cargo audit` | met (#26), cargo pending |
+| Code scanning (CodeQL) | org policy "Security Features and Controls" | JavaScript/TypeScript, Python, Actions; SHA-pinned v4.38.3; first run passed | met (#26) |
 | Secret scanning | org policy | GitHub-native for public repos; `check_repository.py` blocks tracked secrets by name pattern only | unverified |
-| SemVer `VERSION` + `CHANGELOG` + signed tag per release | template release ritual | signed tag `v0.1.0-rc.1` exists; there is no `VERSION` or `CHANGELOG`, and this release has no tag | gap |
+| SemVer `VERSION` + `CHANGELOG` + signed tag per release | template release ritual | `VERSION` 0.1.0-rc.2 and `CHANGELOG.md` added; the signed `v0.1.0-rc.2` tag is still to be made by the maintainer | partial (#26) |
 | Provenance for shipped artifacts | template (SBOM + provenance) | `landing-manifest.json` and the gallery `build-manifest.json` pin hashes; `verify_release.py` proves served bytes equal the source; no SLSA attestation | partial |
 | HttpOnly cookies, parameterized queries, same-origin writes | user directive | `HttpOnly; Secure; SameSite=Strict`; D1 `.bind()` throughout; non-GET requires same `Origin` or `Authorization` | met |
 | Server-side IP rate limits | user directive | `/api/login` has no throttle in code; tokens are high-entropy and compared with `timingSafeEqual`; a Cloudflare WAF rate-limit rule may exist outside the repo | unverified |
@@ -86,4 +86,10 @@ The reference standards are `mazze93/secure-container-template` @ `f42f1fd`, `ma
 4. `VERSION` (`0.1.0-rc.2`) and `CHANGELOG.md`. Tag this release `v0.1.0-rc.2`, signed with your key.
 5. `.github/workflows/codeql.yml`: JavaScript/TypeScript, Python and Actions scanning, with `github/codeql-action` pinned to the v4.38.3 commit `24c5418`.
 
-Settings only you can change: the branch ruleset (skill 01), private vulnerability reporting (skill 06), repo settings (skill 05), and a Cloudflare rate-limit rule on `/api/login`.
+Settings only you can change, in priority order:
+
+1. **Enable private vulnerability reporting.** `SECURITY.md` depends on it.
+2. **Add a `required_status_checks` rule** to the "branch rules" ruleset: `verify`, `rust-explorer`, `Analyze (javascript-typescript)`, `Analyze (python)`, `Analyze (actions)`.
+3. **Shrink the bypass list.** Remove the Repository admin role and any integration with no documented need.
+4. **Turn on conversation resolution, and disallow merge commits**, so the allowed methods match the linear-history rule.
+5. **Add a Cloudflare rate-limit rule** on `/api/login`.
