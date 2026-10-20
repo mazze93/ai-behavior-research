@@ -17,7 +17,17 @@ Production is not yet updated. The last recorded deployment is `ccc9e98b-5182-4f
 ## Required before deploy
 
 1. **Rebuild the explorer gallery.** `wrangler.jsonc` runs `check_explorer_gallery.py` as its build step, and that guard fingerprints `scripts/build_explorer_gallery.py`. #16 changed the builder (the gallery page now links `/type.css`), so any gallery built before #16 is refused. Rebuild into an empty directory as documented in `tools/evidence-explorer/README.md`. Do not hand-edit the old `index.html`: without `type.css` the gallery loses its fonts and family tokens.
-2. **Write a verifier for this release.** `verify_ethics_deployment.py` hard-codes the 2026-10-16 asset list. It would request `_astro/index.BB8Lg3bP.css`, which this build replaces with `_astro/index.Bob5jLOA.css`, and it never checks `type.css`, `prepare.css` or `prepare.html`. Derive the asset set from `landing-manifest.json` plus the root `.html`/`.css` files instead of copying the list forward.
+2. **Snapshot production with the new verifier.** `verify_ethics_deployment.py` hard-codes the 2026-10-16 asset list. It would request `_astro/index.BB8Lg3bP.css`, which this build replaces with `_astro/index.Bob5jLOA.css`, and it never checks `type.css`. Use `scripts/verify_release.py` instead. It reads the asset set from `apps/registry/public/.assetsignore` (the same rules Wrangler uploads by) and mirrors `response-policy.ts` for the expected cache headers:
+
+   ```sh
+   python3 scripts/verify_release.py inventory     # offline; confirm the gallery is present
+   python3 scripts/verify_release.py preflight --output docs/research-hub/typography-preflight-2026-10-20.json
+   # deploy with a message naming the source commit, then:
+   python3 scripts/verify_release.py verify --version <new-version-id> --source <commit> \
+     --preflight docs/research-hub/typography-preflight-2026-10-20.json \
+     --scope "Typography and layout only; no evidence, protocol or binding changes" \
+     --output docs/research-hub/deployment-typography-2026-10-20.json
+   ```
 
 ## Sequencing
 
@@ -39,7 +49,6 @@ Deploy `edfc3fb` before merging any open Dependabot PR (#19–#25), so this rele
 
 ## After deploy
 
-- Health endpoint version matches the new version on both origins.
-- Public assets byte-match the source, including `type.css`, `hub.css`, `style.css`, `prepare.css`, `research-notes.css` and the new landing CSS.
+- `verify` checks: the health version on both origins, byte equality for all 49 public assets, the cache and CSP headers, canonical HTML, anonymous gating of `persona.html` and `/api/studies`, and unchanged evidence releases.
 - Owner smoke test of the private surfaces (item 3).
-- Record the outcome in `docs/research-hub/deployment-typography-2026-10-20.json`, following the existing records.
+- `verify_release.py verify` writes `docs/research-hub/deployment-typography-2026-10-20.json`. Browser readback stays a separate, manual step.
