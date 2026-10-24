@@ -74,11 +74,11 @@ def generate():
         return f'<link rel="stylesheet" href="/{name}">'
 
     html = re.sub(r'<(script|style)\b([^>]*)>(.*?)</\1>', externalize, html, flags=re.S)
-    if re.search(r'<style\b|\sstyle\s*=|<script(?![^>]*\bsrc=)[^>]*>\s*\S', html):
+    if re.search(r'<style\b|\sstyle\s*=|<script(?![^>]*\bsrc=)[^>]*>\s*\S', html, flags=re.IGNORECASE):
         raise ValueError('Inline styling or script escaped externalization')
-    if re.search(r'(?:src|href)=["\']https?://', html):
+    if re.search(r'(?:src|href)=["\']https?://', html, flags=re.IGNORECASE):
         # Canonical/OG URLs are metadata; content dependencies must remain local.
-        links = re.findall(r'<(?:script|link)[^>]+(?:src|href)=["\'](https?://[^"\']+)', html)
+        links = re.findall(r'<(?:script|link)[^>]+(?:src|href)=["\'](https?://[^"\']+)', html, flags=re.IGNORECASE)
         if any(link != 'https://research.mazzeleczzare.com/' for link in links):
             raise ValueError('Unexpected remote dependency')
     files['index.html'] = html.encode()
