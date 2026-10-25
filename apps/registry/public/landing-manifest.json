@@ -14,7 +14,7 @@
     "apps/landing/src/pages/index.astro": "81a11af9384ae5f9f9186894df9e3585e93f02dc3c946c80caf7f4ffa5766945",
     "apps/landing/src/scripts/cabinet.ts": "6f9b29975e5dbc0107b85996f5fa6ae1f1328ef88b5743f788b8a0bd2d0a0cf9",
     "apps/landing/src/scripts/releases.ts": "c38ec224e6942158728ecf1f5832aa77da496add6b0b8f06283087b524bd5d0b",
-    "apps/landing/src/styles/cabinet.css": "c6fa231320fd0bbf904afadf3716ca3eaff80f729a95cafbd180a938371f6133",
+    "apps/landing/src/styles/cabinet.css": "540a7dd9ea40a021d257e036fe5951412785b7b6bdeb18d5eb3de8f19bef8215",
     "apps/landing/src/styles/landing.css": "27f08629bcfdaef7bc67ca34df13a736fd34dfdd2846432cf394d7e06babe17e",
     "apps/landing/src/styles/research-index.css": "a71c966610a4a4599a291cd6f54bd23965d4a432a1043df554357181fd8cdd29",
     "scripts/stage_landing.py": "0a6cdff3978104c8508a41fe26b7b700ed270d9013ffdc55abedd5591f0789aa",
@@ -25,7 +25,7 @@
     "_astro/fonts/2b39e74be6e452f5.woff2": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
     "_astro/fonts/96697e0b649e5210.woff2": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
     "_astro/fonts/ec7e638c79002668.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
-    "_astro/index.OFQ4DjWD.css": "bbc31efa869a7e7bb81673297f8110de34d2697869ae572a48e8146eb9efac0f",
+    "_astro/index.D2YFudZ4.css": "55adaa6e133885a452ba29a12f1f75ebe36f116a4512d61ab25ada800424118d",
     "_astro/inline-036c5da4fd987224b309.css": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
     "_astro/inline-6376c980a46fb4e717b1.css": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
     "_astro/inline-a69490fd227ad613c6b9.js": "a69490fd227ad613c6b9ec2874f9afe10b3a6e056b90482c96be16e13424f43e",
@@ -36,6 +36,6 @@
     "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
     "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
-    "index.html": "f477f766db361bdbc4c840ed5c62bf41de410b1ecf2928fca2d48b11395139f7"
+    "index.html": "ff5bc5ad6c1f3a97da85f3d799f613335d92319932b8af0af0888ff48f3695ab"
   }
 }
