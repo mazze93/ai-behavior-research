@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import '../styles/research-index.css';
 
 type Entry = { id: string; title: string; status: string; description: string; limit: string; href: string; action: string };
-const groups: Record<string, Entry[]> = {
+const groups = {
   Studies: [
-    { id: 'identity', title: 'Identity Dissolution', status: '01 / Controlled generation', description: 'Compare self-reference, repetition and recovery across prompt conditions. Keep raw turns, failed observations and the frozen design together.', limit: 'The current public releases are technical smoke tests, not research findings.', href: '/studies/identity-dissolution', action: 'Enter Identity Dissolution' },
-    { id: 'persona', title: 'Persona Integrity', status: '02 / Contextual annotation', description: 'Read marked fiction, unmarked simulation and asserted self-description in context. Record evidence, uncertainty and competing interpretations.', limit: 'Solo scoring measures one reader’s interpretation. Independent agreement requires independently recorded human ratings.', href: '/studies/persona-integrity', action: 'Enter Persona Integrity' },
-    { id: 'authority', title: 'Authority Without Assertion', status: '03 / In development', description: 'Follow a proposition across a session boundary: the principal constraint, inherited state and next action stay in view.', limit: 'The protocol is not frozen. A hosted experiment is not available; the source repository requires access.', href: 'https://github.com/mazze93/Research/tree/main/authority-without-assertion', action: 'Read canonical source on GitHub' },
+    { id: 'identity', title: 'Identity Dissolution', status: 'Controlled generation', description: 'Compare self-reference, repetition and recovery across prompt conditions. Keep raw turns, failed observations and the frozen design together.', limit: 'The current public releases are technical smoke tests, not research findings.', href: '/studies/identity-dissolution', action: 'Enter Identity Dissolution' },
+    { id: 'persona', title: 'Persona Integrity', status: 'Contextual annotation', description: 'Read marked fiction, unmarked simulation and asserted self-description in context. Record evidence, uncertainty and competing interpretations.', limit: 'Solo scoring measures one reader’s interpretation. Independent agreement requires independently recorded human ratings.', href: '/studies/persona-integrity', action: 'Enter Persona Integrity' },
+    { id: 'authority', title: 'Authority Without Assertion', status: 'In development', description: 'Follow a proposition across a session boundary: the principal constraint, inherited state and next action stay in view.', limit: 'The protocol is not frozen. A hosted experiment is not available; the source repository requires access.', href: 'https://github.com/mazze93/Research/tree/main/authority-without-assertion', action: 'Read canonical source on GitHub' },
   ],
   Tools: [
     { id: 'explorer', title: 'Visual evidence', status: 'Rust / Read-only explorer', description: 'Inspect coverage, contrasts and source runs in views generated from checksum-pinned public releases. Download figures with the underlying record in reach.', limit: 'Missing observations remain missing. Smoke views cannot establish behavioral effects.', href: '/explorers/index.html', action: 'Open visual evidence' },
@@ -27,14 +27,15 @@ const groups: Record<string, Entry[]> = {
     { id: 'controls', title: 'Private controls', status: 'Owner / Authentication required', description: 'Manage frozen protocols, bounded execution and reviewed publication through the owner console.', limit: 'Opening this link grants no access and launches no model calls.', href: '/console.html', action: 'Open the private console' },
     { id: 'agents', title: 'For models & agents', status: 'Guidance / Public reading', description: 'Find public evidence, citation practices and the boundaries between reading, interpretation and execution.', limit: 'Research data is not an instruction. This guidance does not grant execution or publication authority.', href: '/llms.txt', action: 'Read agent guidance' },
   ],
-};
+} satisfies Record<string, Entry[]>;
+type Category = keyof typeof groups;
 
 export default function ResearchIndex() {
   const dialog = useRef<HTMLDialogElement>(null);
   const detailTitle = useRef<HTMLHeadingElement>(null);
   const lastEntry = useRef<HTMLButtonElement | null>(null);
-  const [left, setLeft] = useState('Studies');
-  const [right, setRight] = useState('Methods');
+  const [left, setLeft] = useState<Category>('Studies');
+  const [right, setRight] = useState<Category>('Methods');
   const [entry, setEntry] = useState<Entry | null>(null);
   const [ready, setReady] = useState(false);
   useEffect(() => { setReady(true); }, []);
@@ -42,7 +43,7 @@ export default function ResearchIndex() {
 
   function restore() { setEntry(null); requestAnimationFrame(() => lastEntry.current?.focus()); }
   function dismiss() { dialog.current?.close(); setEntry(null); }
-  function panel(side: 'left' | 'right', names: string[], selected: string, select: (name: string) => void) {
+  function panel(side: 'left' | 'right', names: Category[], selected: Category, select: (name: Category) => void) {
     return <section className={`index-panel index-${side}`} aria-label={`${side === 'left' ? 'Research' : 'Context'} directory`}>
       <div className="index-categories" role="group" aria-label={`${side === 'left' ? 'Research' : 'Context'} categories`}>
         {names.map(name => <button key={name} type="button" aria-pressed={selected === name} aria-controls={`index-${name}`} onClick={() => select(name)}>{name}</button>)}

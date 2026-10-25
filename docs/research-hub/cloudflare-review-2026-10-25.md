@@ -26,3 +26,11 @@ Main contains typography and dependency updates newer than production. The previ
 - Authenticated Persona file selection remains a separate end-to-end validation boundary; no new claim of its completion is made here.
 
 Official references checked: https://developers.cloudflare.com/workers/wrangler/configuration/ and https://developers.cloudflare.com/workers/observability/issues/. Release and browser receipts will record the actual deployed version separately.
+
+## Dependency corrections
+
+Fresh full audits (including development tools) identified `fast-uri` 3.1.8 beneath the landing language server and `undici` 7.29.1 beneath Miniflare. The initial production-only registry audit had zero findings because these are development dependencies; it did not cover this tooling graph.
+
+The landing lockfile now selects `fast-uri` 3.1.9 without changing its parent ranges. The registry pins an override of Undici 7.30.1, the same-major security patch, while retaining Wrangler 4.151.2. Miniflare pins the older exact version, so an ordinary transitive update cannot select the patch. Revisit the override when Miniflare adopts a fixed release. Installation used the public npm registry, lockfile integrity checks and disabled install scripts. This is dependency remediation, not evidence of an exploited production vulnerability.
+
+Maintainer advisories: https://github.com/fastify/fast-uri/security/advisories/GHSA-w74x-v6f9-j3xg and https://github.com/nodejs/undici/security/advisories/GHSA-4qv8-2p9j-2685. The audit also associates Undici's patched range with subresource integrity and excessive content-encoding advisories. Fresh post-patch audit and Wrangler compatibility checks are recorded in the release receipt.
