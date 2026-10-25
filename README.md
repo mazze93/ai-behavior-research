@@ -4,19 +4,19 @@ The research site, private study instruments and evidence registry for **observa
 
 [Research site](https://research.mazzeleczzare.com/) · [Release checkpoint](https://github.com/mazze93/ai-behavior-research/releases/tag/v0.1.0-rc.1) · [Canonical research workspace](https://github.com/mazze93/Research)
 
-![Production browser capture of the charcoal and porcelain research landing, with its compact header and original spectral illustration.](docs/research-hub/visuals/production-landing-2026-10-16.jpg)
+![Production research cabinet: dense instrument cards, self-hosted Basteleur and chromatic visual apertures.](docs/research-hub/visuals/production-cabinet-2026-10-25.png)
 
-*Landing design checkpoint captured in production, 2026-10-16. Signed source `v0.1.0-rc.1` / `aee386e`; [design deployment and byte verification](docs/research-hub/deployment-landing-2026-10-16.json).*
+*Research cabinet captured in production, 2026-10-25. [Visual guide](docs/research-hub/cabinet-visual-guide-2026-10-25.md) · [production readback](docs/research-hub/cabinet-deployment-final-2026-10-25.json). The earlier signed `v0.1.0-rc.1` checkpoint is unchanged.*
 
 [Research ethics](https://research.mazzeleczzare.com/ethics.html) · [Selected method audit](https://research.mazzeleczzare.com/method-audit.html). Deployed from `21a096e` on 2026-10-16; [production verification](docs/research-hub/ethics-deployment-2026-10-16.json). These distinguish conduct commitments, implementation limits and software verification from empirical findings.
 
-[Merged-source shipping audit and next validations](docs/research-hub/shipping-audit-2026-10-16.md): production matches merged PR #13; fresh checks passed without a redundant deployment.
+[Current cabinet design and verification](docs/research-hub/cabinet-release-2026-10-25.md). Earlier [shipping audit and next validations](docs/research-hub/shipping-audit-2026-10-16.md) retain their dated scope.
 
 ## What is here
 
 | Surface | Scope and evidence |
 | --- | --- |
-| [Landing](apps/landing) | Static Astro 7, self-hosted type and a React study illustration. Hover/focus previews; selection persists. [Production verification](docs/research-hub/deployment-landing-2026-10-16.json). |
+| [Landing](apps/landing) | Static Astro 7 research cabinet with self-hosted type, inline instrument briefs, visual apertures and live evidence. [Production verification](docs/research-hub/cabinet-deployment-final-2026-10-25.json). |
 | [Registry](apps/registry) | Cloudflare web/API, private controls, queued inference and reviewed public releases. [Recorded deployment checks](docs/research-hub/deployment-persona-resume-2026-10-14.json); complete production file selection remains unverified. |
 | [Identity Dissolution](studies/identity-dissolution) | Local runner and study protocol. Public technical smoke releases exercise the pipeline; they do not establish scientific findings. |
 | [Persona Integrity](studies/persona-integrity) | Frozen v0.2 rubric, importer and contextual annotation instrument. Human scoring remains pending. |

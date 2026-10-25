@@ -1,0 +1,25 @@
+---
+export interface Props { kind: 'identity' | 'persona' | 'authority' | 'bearing'; }
+const { kind } = Astro.props;
+const lines = Array.from({ length: 26 }, (_, i) => {
+  const y = 20 + i * 8;
+  return `M-30 ${y} C90 ${y - 140},160 ${y + 155},260 ${y - 18} S400 ${y - 85},460 ${y + 38}`;
+});
+---
+<svg class={`instrument-visual visual-${kind}`} viewBox="0 0 420 280" aria-hidden="true" focusable="false">
+  <g class="visual-grid"><path d="M0 70H420M0 140H420M0 210H420M105 0V280M210 0V280M315 0V280" /></g>
+  {kind === 'identity' && <g class="visual-wave">{lines.map((d,i) => <path class={`chromatic-${i % 4}`} d={d} />)}</g>}
+  {kind === 'persona' && <g class="visual-persona">
+    {Array.from({length:14},(_,i)=><ellipse class={`chromatic-${i%4}`} cx={170+i*4} cy="140" rx={37+i*7} ry={35+i*6} />)}
+    <path class="visual-cut" d="M210 0V280" />
+  </g>}
+  {kind === 'authority' && <g class="visual-handoff">
+    {Array.from({length:10},(_,i)=><path class={`chromatic-${i%4}`} d={`M${30+i*9} 220V${45+i*8}H${270+i*9}V${210-i*8}H${155+i*5}`} />)}
+    <path class="visual-cut" d="M210 0V280" />
+  </g>}
+  {kind === 'bearing' && <g class="visual-bearing">
+    <path d="M70 190L150 65L240 140L340 50M70 190L240 140L325 230L340 50M150 65L325 230" />
+    {[[70,190],[150,65],[240,140],[340,50],[325,230]].map(([cx,cy],i)=><g><circle class={`node chromatic-${i%4}`} cx={cx} cy={cy} r={i===2?26:13}/><circle cx={cx} cy={cy} r={i===2?37:22}/></g>)}
+  </g>}
+  <g class="visual-register"><path d="M12 20H28M20 12V28M392 260H408M400 252V268"/><circle cx="210" cy="140" r="3" /></g>
+</svg>

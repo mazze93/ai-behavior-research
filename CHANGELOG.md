@@ -7,6 +7,7 @@ mazze93/secure-container-template). `VERSION` holds the version being prepared.
 ## [0.1.0-rc.2] - unreleased
 
 ### Added
+- Inline research cabinet superseding the landing modal: visual apertures, native multi-brief reading, local filters and in-place citations.
 - Split research index with independent panels, contextual reading surfaces and a server-rendered directory fallback.
 - Version-controlled Worker issue grouping and a dated domain/gateway review.
 - Research ethics statement and a bounded public method audit (#13).

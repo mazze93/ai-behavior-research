@@ -1,15 +1,21 @@
 import { defineConfig, fontProviders } from 'astro/config';
-import react from '@astrojs/react';
 
 // Static composition only: the existing registry Worker owns Cloudflare routing.
 export default defineConfig({
   site: 'https://research.mazzeleczzare.com',
   output: 'static',
   publicDir: './public',
-  integrations: [react()],
   build: { inlineStylesheets: 'never' },
   devToolbar: { enabled: false },
   fonts: [
+    {
+      name: 'Basteleur', cssVariable: '--font-cabinet',
+      provider: fontProviders.local(), fallbacks: ['Georgia', 'serif'],
+      options: { variants: [{
+        src: ['../registry/public/fonts/Basteleur-Bold.woff2'],
+        weight: '700', style: 'normal',
+      }] },
+    },
     {
       name: 'Bodoni Moda', cssVariable: '--font-poster',
       provider: fontProviders.local(), fallbacks: ['Georgia', 'serif'],
