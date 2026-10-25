@@ -6,7 +6,10 @@
     "nodejs_compat"
   ],
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "issues": {
+      "enabled": true
+    }
   },
   "d1_databases": [
     {
