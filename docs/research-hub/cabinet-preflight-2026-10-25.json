@@ -81,5 +81,5 @@
     "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
     "rel_4cf968d3-f45f-496e-8270-84ce6af56271": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
   },
-  "client": "Default curl; no cookies, credentials, spoofed headers or access-policy changes."
+  "client": "System curl over HTTP/1.1 with two bounded transport retries; no cookies, credentials, spoofed headers or access-policy changes."
 }
