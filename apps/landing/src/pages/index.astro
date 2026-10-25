@@ -1,6 +1,7 @@
 ---
 import { Font } from 'astro:assets';
 import StudyRoom from '../components/StudyRoom';
+import ResearchIndex, { groups } from '../components/ResearchIndex';
 import '../styles/landing.css';
 export interface Props {}
 ---
@@ -30,6 +31,7 @@ export interface Props {}
         <a href="/prepare.html" aria-label="Analysis & writing"><span class="nav-wide">Analysis & writing</span><span class="nav-compact" aria-hidden="true">Analysis</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
         <a href="/console.html" aria-label="Private console"><span class="nav-wide">Private console</span><span class="nav-compact" aria-hidden="true">Console</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
       </nav>
+      <ResearchIndex client:load />
     </header>
     <main id="main">
       <div class="edition"><span>An inquiry in progress</span><span>Public evidence / Private controls</span><span>Independent research · 2026</span></div>
@@ -40,6 +42,10 @@ export interface Props {}
         <div id="notification" role="status"></div>
         <div id="releases" class="release-list" aria-live="polite"><p>Reviewed releases are available from the <a href="/api/releases">public registry</a>.</p></div>
         <noscript><p>The release list needs JavaScript. <a href="/api/releases">Read the public JSON index</a>.</p></noscript>
+      </section>
+      <section class="research-directory" id="research-directory" aria-labelledby="directory-title">
+        <h2 id="directory-title">Research directory</h2>
+        <div class="directory-links">{Object.values(groups).flat().map(entry => <a href={entry.href}>{entry.title} ↗</a>)}</div>
       </section>
       <footer><span>Mazze LeCzzare Frazer / Independent research</span><a href="/ethics.html">Research ethics</a><a href="/method-audit.html">Method audit</a><a href="#main">Back to the question ↑</a></footer>
     </main>

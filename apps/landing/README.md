@@ -1,6 +1,7 @@
 # Research landing
 
-Static Astro 7 composition, strict TypeScript, one React `client:idle` island.
+Static Astro 7 composition, strict TypeScript, a study illustration island and a
+research-index island.
 The existing registry Worker owns Cloudflare routing, authentication and
 security headers. There is no second server adapter or new backend.
 
@@ -37,3 +38,12 @@ The React integration's Vite React plugin is pinned to 6.1.1: its optional
 compiler peer matches oxc-transform-react 0.145.0 required by the integration.
 The next plugin patch requires an incompatible optional compiler peer. Fresh
 `npm ci --ignore-scripts`, build and audit were checked with this resolved graph.
+
+The research index is a second React island (`client:load`). A native dialog
+contains independently selected and scrolled research/context panels; entry
+reading preserves both panels and restores focus on return. Escape returns from
+an entry, then dismisses the index. The plain server-rendered directory remains
+available when JavaScript is disabled. Directory data includes explicit status
+and limits, with real destinations and no embedded controls or model calls.
+See `docs/research-hub/navigation-guide-2026-10-25.md` for the bounded reference
+study and acceptance criteria.

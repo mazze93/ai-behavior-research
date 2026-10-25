@@ -7,6 +7,8 @@ mazze93/secure-container-template). `VERSION` holds the version being prepared.
 ## [0.1.0-rc.2] - unreleased
 
 ### Added
+- Split research index with independent panels, contextual reading surfaces and a server-rendered directory fallback.
+- Version-controlled Worker issue grouping and a dated domain/gateway review.
 - Research ethics statement and a bounded public method audit (#13).
 - Shared `type.css`: one self-hosted type system (Bodoni Moda, Manrope, Basteleur, one monospace stack) for every hub and registry page and the explorer gallery (#16).
 - `hub-css` guard tests: layer order, relative root size, defined tokens, used keyframes, no dead selectors, `type.css` linked first (#16).
@@ -21,6 +23,7 @@ mazze93/secure-container-template). `VERSION` holds the version being prepared.
 - `actions/checkout` 4.4.0 → 7.0.1 (#18).
 
 ### Fixed
+- Gateway automatic retry defaults aligned with single-attempt research collection; patched fast-uri and Undici tooling dependencies.
 - Horizontal overflow at 320–390px on the persona studio and analysis desk; disabled buttons taking the hover gradient; mobile header nav hiding links off-screen (#16).
 
 ## [0.1.0-rc.1] - 2026-10-16
