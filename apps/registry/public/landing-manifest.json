@@ -12,7 +12,7 @@
     "apps/landing/src/components/StudyRoom.tsx": "6383206670a72c080911e0e2d1a088c49743a9e360eb28c411bff7ba05523eda",
     "apps/landing/src/components/spectral-profiles.ts": "12aaa4098f6b57de002aa6bb78689fb4c3600a258ceb2cbc8c5e0196b5e647b0",
     "apps/landing/src/pages/index.astro": "81a11af9384ae5f9f9186894df9e3585e93f02dc3c946c80caf7f4ffa5766945",
-    "apps/landing/src/scripts/cabinet.ts": "4a7daa97a4e2e7438fb928f6d9c53e967080460ecf349ac4c682aa6d3d6665fa",
+    "apps/landing/src/scripts/cabinet.ts": "41f3f4a82e0790a89333a720cad652c123c35f597869659da36c199e05a99b68",
     "apps/landing/src/scripts/releases.ts": "c38ec224e6942158728ecf1f5832aa77da496add6b0b8f06283087b524bd5d0b",
     "apps/landing/src/styles/cabinet.css": "f736607b494fefb0f72dbcfb0b138a8878518509174932c18fa5c9d2fea0201b",
     "apps/landing/src/styles/landing.css": "27f08629bcfdaef7bc67ca34df13a736fd34dfdd2846432cf394d7e06babe17e",
@@ -27,15 +27,15 @@
     "_astro/fonts/ec7e638c79002668.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "_astro/index.CVLEmwU-.css": "a7c77911a7f2e752801953bd84eb229e28329f3c75acf7646af20d86008502e5",
     "_astro/inline-036c5da4fd987224b309.css": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
-    "_astro/inline-1e4ad6c280c3beea9e34.js": "1e4ad6c280c3beea9e346a5ca6648fae3c2a58041ef71dbb404c99f02c342adf",
     "_astro/inline-6376c980a46fb4e717b1.css": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
     "_astro/inline-a69490fd227ad613c6b9.js": "a69490fd227ad613c6b9ec2874f9afe10b3a6e056b90482c96be16e13424f43e",
+    "_astro/inline-f2a364cc7cd38865f195.js": "f2a364cc7cd38865f195aa8ded3e374028ee45d49b9c30349c04d21f343e9d7e",
     "_astro/inline-ffc56c1833aa5bbcdb6b.css": "ffc56c1833aa5bbcdb6bc7941d9c94eeb8f2becdf8d87cd369e324b009922f59",
     "fonts/BodoniModa-Latin-OFL.txt": "6c64f717433eadd29b058d6254fe25c1ee2d249ce3772f843bb21f73285779c2",
     "fonts/BodoniModa-Latin.woff2": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
     "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
     "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
-    "index.html": "f1140d18c8f38ed63f8979f5f1103bdc3ae0e01a4f9325f976aeb7b30d9f2bfc"
+    "index.html": "df46781c70d2a0c14f5dde50e7976de8ce237b4e726af1b54a2618d29b1467a1"
   }
 }

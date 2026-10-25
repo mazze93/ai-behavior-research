@@ -7,8 +7,10 @@ const empty = document.querySelector<HTMLElement>('#instrument-empty');
 const trail = document.querySelector<HTMLElement>('#trail-current');
 const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
 let kind = 'all';
+let activeBrief: HTMLDetailsElement | undefined;
 function restoreTrail() {
-  if (trail) trail.textContent = cards.findLast(card => card.open && !card.hidden)?.dataset.title ?? 'The working field';
+  const current = activeBrief?.open && !activeBrief.hidden ? activeBrief : cards.findLast(card => card.open && !card.hidden);
+  if (trail) trail.textContent = current?.dataset.title ?? 'The working field';
 }
 function expansionState() {
   const visible = cards.filter(card => !card.hidden);
@@ -31,7 +33,10 @@ expand?.addEventListener('click', () => {
   expansionState(); restoreTrail();
 });
 for (const card of cards) {
-  card.addEventListener('toggle', () => { expansionState(); restoreTrail(); });
+  card.addEventListener('toggle', () => {
+    if (card.open) activeBrief = card;
+    expansionState(); restoreTrail();
+  });
   const summary = card.querySelector('summary');
   summary?.addEventListener('click', () => requestAnimationFrame(() => {
     if (card.open) card.scrollIntoView({block:'start', behavior:
