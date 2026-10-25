@@ -16,7 +16,7 @@ The research site, private study instruments and evidence registry for **observa
 
 | Surface | Scope and evidence |
 | --- | --- |
-| [Landing](apps/landing) | Static Astro 7, self-hosted type and a React study illustration. Hover/focus previews; selection persists. [Production verification](docs/research-hub/deployment-landing-2026-10-16.json). |
+| [Landing](apps/landing) | Static Astro 7 research cabinet with self-hosted type, inline instrument briefs, visual apertures and live evidence. [Production verification](docs/research-hub/deployment-landing-2026-10-16.json). |
 | [Registry](apps/registry) | Cloudflare web/API, private controls, queued inference and reviewed public releases. [Recorded deployment checks](docs/research-hub/deployment-persona-resume-2026-10-14.json); complete production file selection remains unverified. |
 | [Identity Dissolution](studies/identity-dissolution) | Local runner and study protocol. Public technical smoke releases exercise the pipeline; they do not establish scientific findings. |
 | [Persona Integrity](studies/persona-integrity) | Frozen v0.2 rubric, importer and contextual annotation instrument. Human scoring remains pending. |

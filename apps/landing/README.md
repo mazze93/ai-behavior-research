@@ -1,9 +1,10 @@
 # Research landing
 
-Static Astro 7 composition, strict TypeScript, a study illustration island and a
-research-index island.
-The existing registry Worker owns Cloudflare routing, authentication and
-security headers. There is no second server adapter or new backend.
+Static Astro 7 composition with strict TypeScript and native HTML disclosures.
+The registry Worker owns routing, authentication and security headers. The
+current cabinet landing mounts no React islands and adds no dependencies.
+Earlier React illustration/index components remain in source as previous designs;
+they are not part of the current landing's client bundle.
 
 From the repository root:
 
@@ -13,37 +14,34 @@ make landing
 make registry-dev
 ```
 
-`make landing` builds into ignored `dist/`, then stages only manifest-listed
+`make landing` checks and builds the page, then stages only manifest-listed
 HTML, CSS, JavaScript, WOFF2 and license files into `apps/registry/public`.
-Inline Astro hydration bootstrap and font styles become same-origin assets;
-the current CSP remains intact. The deployment guard checks source fingerprints
-and all public asset hashes, and refuses a stale or modified landing build.
-Generated public files are committed for reproducible Worker deployment.
-Restart the local registry preview after rebuilding the landing: Wrangler's
-development asset index needs to pick up the newly hashed asset filenames.
+Astro's inline font styles become same-origin assets; the existing CSP remains
+intact. The deployment guard checks source fingerprints, including the existing
+Basteleur font/license used by the local font provider, and every staged asset.
+Generated public files are committed. Restart a local registry preview after a
+rebuild so Wrangler indexes the newly hashed asset names.
 
-Fonts are local OFL-1.1 packages (Bodoni Moda and Manrope). The local font
-provider, lockfile, public provenance JSON and included licenses retain their
-origins. No font API or CDN is contacted at runtime. Roslindale and Graphik are
-design references; these are disclosed approximations. Basteleur remains only
-in the earlier Authority/Bearing guide.
+Fonts are self-hosted Basteleur Bold, Manrope and Bodoni Moda. Astro's local
+font provider preloads them without runtime font APIs or external stylesheets.
+The existing Basteleur OFL license and source record are retained; Fontsource
+package versions, provenance and OFL licenses accompany the other two families.
 
-The sculpture is complete SVG before hydration. Its finite interaction can be
-operated with a pointer, keyboard, or touch; reduced motion changes orientation
-instantly. The shell and illustration work when served locally without external
-network access. The live release list requires the registry API and has an
-explicit unavailable state. No service worker caches private research.
+The cabinet puts all four instrument briefs directly on the landing. Native
+`details` controls work with keyboard, touch and JavaScript disabled. Multiple
+briefs can stay open. Small TypeScript modules add instrument filtering,
+search, expansion controls, direct fragment entry, breadcrumb context and a
+bounded scroll entrance. Hover/focus/open states uncover original SVG method
+specimens, explicitly labeled non-data. Reduced motion disables transitions
+and animations without removing content. No modal or internal scroll panels
+are mounted.
 
-The React integration's Vite React plugin is pinned to 6.1.1: its optional
-compiler peer matches oxc-transform-react 0.145.0 required by the integration.
-The next plugin patch requires an incompatible optional compiler peer. Fresh
-`npm ci --ignore-scripts`, build and audit were checked with this resolved graph.
+The live release list uses the same-origin registry and has an unavailable/retry
+state. Source hashes, citations, raw-bundle links and citation copying are on the
+landing. Copying requires a clipboard-capable secure context; failure directs
+the reader to the visible citation. The page does not run inference or publish
+records. No service worker caches private research.
 
-The research index is a second React island (`client:load`). A native dialog
-contains independently selected and scrolled research/context panels; entry
-reading preserves both panels and restores focus on return. Escape returns from
-an entry, then dismisses the index. The plain server-rendered directory remains
-available when JavaScript is disabled. Directory data includes explicit status
-and limits, with real destinations and no embedded controls or model calls.
-See `docs/research-hub/navigation-guide-2026-10-25.md` for the bounded reference
-study and acceptance criteria.
+See `docs/research-hub/cabinet-visual-guide-2026-10-25.md` for the reference study,
+composition and acceptance criteria. Existing React dependency pins are retained
+for the preserved components; no framework migration was introduced.

@@ -22,6 +22,7 @@ def source_inputs():
                ['package.json', 'package-lock.json', 'astro.config.mjs', 'tsconfig.json']]
     sources += sorted((ROOT / 'apps/landing/src').rglob('*'))
     sources += [Path(__file__).resolve()]
+    sources += [PUBLIC / 'fonts/Basteleur-Bold.woff2', PUBLIC / 'fonts/Basteleur-OFL.txt']
     return {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in sources if p.is_file()}
 

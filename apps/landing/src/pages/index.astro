@@ -1,8 +1,7 @@
 ---
 import { Font } from 'astro:assets';
-import StudyRoom from '../components/StudyRoom';
-import ResearchIndex, { groups } from '../components/ResearchIndex';
-import '../styles/landing.css';
+import ResearchCabinet from '../components/ResearchCabinet.astro';
+import '../styles/cabinet.css';
 export interface Props {}
 ---
 <!doctype html>
@@ -18,6 +17,7 @@ export interface Props {}
     <meta property="og:description" content="Question. Record. Reconsider. Working instruments for observable model behavior." />
     <meta property="og:url" content="https://research.mazzeleczzare.com/" />
     <meta name="twitter:card" content="summary" />
+    <Font cssVariable="--font-cabinet" preload />
     <Font cssVariable="--font-poster" preload />
     <Font cssVariable="--font-reading" preload />
   </head>
@@ -25,30 +25,40 @@ export interface Props {}
     <a class="skip" href="#main">Skip to research</a>
     <header class="masthead">
       <a class="wordmark" href="/" aria-label="Mazze LeCzzare Research home">MAZZE LECZZARE<span>RESEARCH</span></a>
-      <nav aria-label="Main">
-        <a href="#studies">Studies <span class="nav-arrow" aria-hidden="true">↙</span></a>
-        <a href="#evidence">Evidence <span class="nav-arrow" aria-hidden="true">↙</span></a>
-        <a href="/prepare.html" aria-label="Analysis & writing"><span class="nav-wide">Analysis & writing</span><span class="nav-compact" aria-hidden="true">Analysis</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
-        <a href="/console.html" aria-label="Private console"><span class="nav-wide">Private console</span><span class="nav-compact" aria-hidden="true">Console</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
-      </nav>
-      <ResearchIndex client:load />
+      <nav aria-label="Main"><a href="#instruments">Instruments ↙</a><a href="#evidence">The record ↙</a><a href="#methods">Methods ↙</a><a href="/console.html">Private controls ↗</a></nav>
     </header>
     <main id="main">
-      <div class="edition"><span>An inquiry in progress</span><span>Public evidence / Private controls</span><span>Independent research · 2026</span></div>
-      <StudyRoom id="research-fold" client:idle />
-      <section class="evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-label"><span>Evidence / Reviewed public releases</span><a href="/method.html">Standards & limitations ↗</a></div>
-        <div class="evidence-intro"><h2 id="evidence-title">The record<br />comes first.</h2><div><p>Each release carries its methods, failures and limits. A smoke test verifies machinery; it is not a completed research pilot. A hash identifies bytes; it does not certify a claim.</p><a class="text-link" href="/prepare.html#share-title">Share and cite the evidence <span aria-hidden="true">↗</span></a></div></div>
+      <ResearchCabinet />
+      <section id="evidence" aria-labelledby="evidence-title">
+        <header class="cabinet-section-head"><h2 id="evidence-title"><span>02</span> The public record</h2><p>Reviewed releases / Source first</p></header>
+        <div class="record-intro"><h2>Show your<br/>working.</h2><div><p>The pinned technical smoke releases verify machinery. They are not behavioral findings. Read the citation and source hash here; open the raw record or Rust-generated view when you need the detail.</p><a href="/explorers/index.html">Browse visual evidence ↗</a> · <a href="/prepare.html">Prepare analysis & writing ↗</a></div></div>
         <div id="notification" role="status"></div>
-        <div id="releases" class="release-list" aria-live="polite"><p>Reviewed releases are available from the <a href="/api/releases">public registry</a>.</p></div>
-        <noscript><p>The release list needs JavaScript. <a href="/api/releases">Read the public JSON index</a>.</p></noscript>
+        <div id="releases" class="release-list" aria-live="polite"><p><a href="/api/releases">Read the public release registry ↗</a>. Each record includes its citation and SHA-256 value.</p></div>
+        <noscript><p><a href="/api/releases">Public JSON index</a> · <a href="/explorers/index.html">Pinned visual evidence</a>. Loading the live list here requires JavaScript.</p></noscript>
+        <p class="record-note">Frozen record ≠ external preregistration · Hash agreement ≠ independent notarization · Missing observations ≠ zero</p>
       </section>
-      <section class="research-directory" id="research-directory" aria-labelledby="directory-title">
-        <h2 id="directory-title">Research directory</h2>
-        <div class="directory-links">{Object.values(groups).flat().map(entry => <a href={entry.href}>{entry.title} ↗</a>)}</div>
-      </section>
-      <footer><span>Mazze LeCzzare Frazer / Independent research</span><a href="/ethics.html">Research ethics</a><a href="/method-audit.html">Method audit</a><a href="#main">Back to the question ↑</a></footer>
+      <div class="context-grid">
+        <section class="context-section" id="methods" aria-labelledby="methods-title">
+          <header class="cabinet-section-head"><h2 id="methods-title"><span>03</span> Methods, in reach</h2><p>Read before interpreting</p></header>
+          <h2>Keep the limits<br/>in the frame.</h2>
+          <article class="context-item" id="method-provenance"><span>01</span><div><h3>Provenance before a conclusion</h3><p>A citable release keeps the frozen protocol, raw request/response pairs, exclusions and source hashes together. A hash identifies bytes; it cannot certify an interpretation.</p><a href="/method.html">Full standards & limitations ↗</a></div></article>
+          <article class="context-item"><span>02</span><div><h3>Pressure, disclosure & stopping</h3><p>Preserve failures and budget limits. Keep the study's stopping commitments and their implementation limits visible before collecting more observations.</p><a href="/ethics.html">Research ethics ↗</a></div></article>
+          <article class="context-item"><span>03</span><div><h3>Interpretation needs another reading</h3><p>Solo ratings are attributed to one reader. Independent human agreement, model assessments and agent contributions are distinct kinds of evidence.</p><a href="/method-audit.html">Selected public method audit ↗</a></div></article>
+        </section>
+        <section class="context-section" id="connections" aria-labelledby="connections-title">
+          <header class="cabinet-section-head"><h2 id="connections-title"><span>04</span> Carry it forward</h2><p>Tools / Archives / Publication</p></header>
+          <p class="editorial">A useful record should have<br/>somewhere to go.</p>
+          <div class="context-links">
+            <article class="context-item"><div><h3>Analysis desk</h3><p>Verify release identity. Prepare a reproducible package, figure or publication brief.</p><a href="/prepare.html">Prepare the work ↗</a></div></article>
+            <article class="context-item"><div><h3>Hugging Face</h3><p>A pinned snapshot of two technical smoke releases, with scoped reuse terms.</p><a href="https://huggingface.co/datasets/mazzeleczzare/identity-dissolution-evidence/tree/8bdbc469dfab9f3a3795217dde5c69c5ae260b06">Inspect the snapshot ↗</a></div></article>
+            <article class="context-item"><div><h3>The press</h3><p>The companion publishing space. Editorial work and evidence releases retain separate review boundaries.</p><a href="https://press.mazzeleczzare.com">Visit the press ↗</a></div></article>
+            <article class="context-item"><div><h3>Models & agents</h3><p>Public reading and citation guidance. Reading evidence grants no execution or publication authority.</p><a href="/llms.txt">Read agent guidance ↗</a></div></article>
+          </div>
+        </section>
+      </div>
+      <footer class="landing-footer"><span>Mazze LeCzzare Frazer / Independent research</span><a href="/api/releases">Public registry ↗</a><a href="/console.html">Owner console ↗</a><a href="#main">Back to the field ↑</a></footer>
     </main>
+    <script src="../scripts/cabinet.ts"></script>
     <script src="../scripts/releases.ts"></script>
   </body>
 </html>
