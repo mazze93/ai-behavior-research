@@ -10,7 +10,7 @@ The gateway's default automatic retry setting was enabled for three retries with
 
 ## Version-controlled monitoring improvement
 
-The web Worker configuration now enables `observability.issues.enabled`, retaining existing logs. This groups production errors without adding an application dependency. The dashboard initially offered “Enable issue detection”, confirming it was absent. This change takes effect on the next successful deployment; source configuration alone is not live verification. Cloudflare describes Issues as free during open beta: https://developers.cloudflare.com/workers/observability/issues/. Pricing may change after beta.
+The web Worker configuration now enables `observability.issues.enabled`, retaining existing logs. This groups production errors without adding an application dependency. The dashboard initially offered “Enable issue detection”, confirming it was absent. This setting is now deployed in version `c10f0190-2dc9-4086-a0d7-0c44dd241f07`. Dashboard readback shows the active Issues view with zero active issues, rather than the earlier enablement prompt. Cloudflare describes Issues as free during open beta: https://developers.cloudflare.com/workers/observability/issues/. Pricing may change after beta.
 
 ## Build gap resolved locally
 
