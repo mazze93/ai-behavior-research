@@ -1,19 +1,19 @@
 {
-  "verified_at": "2026-10-25T21:41:48.280398+00:00",
-  "source_commit": "2ba3c0e0288bbc5ec20222ccbd8964cfa44bc105",
+  "verified_at": "2026-10-25T21:49:07.020058+00:00",
+  "source_commit": "8e8ec279529e87ae3e263321be451f22f8ea50b2",
   "worker": "identity-research-web",
   "verified_byte_origin": "https://identity-research-web.mazzewhiteley93.workers.dev",
   "canonical_origin": "https://research.mazzeleczzare.com",
-  "version": "42dec481-c04d-4d0f-aaa6-a32171045373",
-  "deployment_id": "994f4399-507a-42de-88b2-ea71265befed",
+  "version": "2b6018a4-0126-4739-9a0f-926aeefeb306",
+  "deployment_id": "84e49705-4b98-4379-91ea-723233d230a7",
   "traffic": [
     {
-      "version_id": "42dec481-c04d-4d0f-aaa6-a32171045373",
+      "version_id": "2b6018a4-0126-4739-9a0f-926aeefeb306",
       "percentage": 100
     }
   ],
   "annotations": {
-    "workers/message": "Native research cabinet and settled inline reading; source 2ba3c0e0288bbc5ec20222ccbd8964cfa44bc105",
+    "workers/message": "Native research cabinet accessibility polish; source 8e8ec279529e87ae3e263321be451f22f8ea50b2",
     "workers/triggered_by": "deployment"
   },
   "rollback_version": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
@@ -113,10 +113,10 @@
       "location": null,
       "matches_source": true
     },
-    "_astro/index.D2YFudZ4.css": {
+    "_astro/index.CVLEmwU-.css": {
       "status": 200,
-      "bytes": 17337,
-      "sha256": "55adaa6e133885a452ba29a12f1f75ebe36f116a4512d61ab25ada800424118d",
+      "bytes": 17438,
+      "sha256": "a7c77911a7f2e752801953bd84eb229e28329f3c75acf7646af20d86008502e5",
       "content_type": "text/css",
       "cache_control": "public, max-age=300",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -446,7 +446,7 @@
     "index.html": {
       "status": 200,
       "bytes": 22680,
-      "sha256": "687698931f4fb60405e9fddefe5bf96e6b74b14bbb426f609f5ce94571623b61",
+      "sha256": "f1140d18c8f38ed63f8979f5f1103bdc3ae0e01a4f9325f976aeb7b30d9f2bfc",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -456,7 +456,7 @@
     "landing-manifest.json": {
       "status": 200,
       "bytes": 3873,
-      "sha256": "ac4c45f716dcb2f2cde220aea2ecf829d73bfbfc7d1050b5879b2c1c649a06a7",
+      "sha256": "b649c9e77682b8e891c88e4d8563e04320964d957c398d1dc61095bf40928cc3",
       "content_type": "application/json",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -679,7 +679,7 @@
     "console.html": {
       "status": 200,
       "bytes": 3983,
-      "sha256": "f48db303d8bde70c9f790321be32fcbf58bba7afbd76736fa0e109fa8a00652c",
+      "sha256": "34fec1b1df4582d48aaa5931b7639c0750644ad1ee1d30c77b5d33a908e8094a",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -694,7 +694,7 @@
     "ethics.html": {
       "status": 200,
       "bytes": 6182,
-      "sha256": "be3bf0ee5028ece12f41bc69b93dc77f35549a902c70a13a0ca128dacad44b23",
+      "sha256": "15f9de76065fa9754b1640075db2a37893d741dfa4e283b00431d559b1e0bf68",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -709,7 +709,7 @@
     "explorers/index.html": {
       "status": 200,
       "bytes": 2456,
-      "sha256": "8d70bca92251b073eec0610bc5b49a072765a1cc2825b3bef051eac182455c5c",
+      "sha256": "f6216484f50c3870d9c14c5f38684e4931cacf81e2081e78828f3b24aff95c55",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -724,7 +724,7 @@
     "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
       "status": 200,
       "bytes": 9514,
-      "sha256": "f3cf1a9a8d01c93094e3fa5c195300433e1c270336b5a9ccc372dd0b105ee0e0",
+      "sha256": "96ad38fddf2e4436dc472f27f1da6001f7b8f82313d20a844db7469a5172759e",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -739,7 +739,7 @@
     "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
       "status": 200,
       "bytes": 14602,
-      "sha256": "fc0dc41d7f287b872407c66b9d0fc52bb96a81c964fb2f27fe546c57b9f831d9",
+      "sha256": "4e0353ad66a5166cd997aacf802ef63777030dc1d20bc52a1b44c6f85adf03f9",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -754,7 +754,7 @@
     "identity.html": {
       "status": 200,
       "bytes": 3596,
-      "sha256": "7f6047a3d34f0f61ac252e68b4ea5226b85379479ae741ec6aa23058f3aaf3a3",
+      "sha256": "408bc3ae917d118c17ceca5b22cee151990019b9a9b1c3b4770056b7cd60c376",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -769,7 +769,7 @@
     "index.html": {
       "status": 200,
       "bytes": 23305,
-      "sha256": "d3e51d527b97b7074210dd0180024268ecdfd7c62ffe7e93fa431fcadf1ec2eb",
+      "sha256": "e64ce74864ac2a61da31772ea451aaa66e64e625241efaf0d17813f908a936ea",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -779,12 +779,12 @@
         "browser_bridge": 1,
         "edge_challenge": 1
       },
-      "comparison_sha256": "687698931f4fb60405e9fddefe5bf96e6b74b14bbb426f609f5ce94571623b61"
+      "comparison_sha256": "f1140d18c8f38ed63f8979f5f1103bdc3ae0e01a4f9325f976aeb7b30d9f2bfc"
     },
     "method-audit.html": {
       "status": 200,
       "bytes": 6196,
-      "sha256": "ecf17bcf04df1b6f0e41050c3cb3cf7497aa1e4118356ea88b95c6a068410816",
+      "sha256": "2714923ddf0125ec1430f8a20cd1f773818cb5820aad0caf5088ac6eead411b0",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -799,7 +799,7 @@
     "method.html": {
       "status": 200,
       "bytes": 9850,
-      "sha256": "4c32356f8e375d52f8a9c2d6f844a288c1146fb04e854b914b899007b7296cca",
+      "sha256": "a1f22e68c1de3f3bc9ab31c0f0d06cf198744cc8d1f7126e02a339e8309231fa",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -814,7 +814,7 @@
     "persona-about.html": {
       "status": 200,
       "bytes": 4699,
-      "sha256": "653dd35dc545ff512c8b120348422ff0e697c94e3ed7741f74d081df9a8e248c",
+      "sha256": "700f168c9d91747b159dca185fa6ee3e8c733d15e1445e871d71542b3940ca18",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -829,7 +829,7 @@
     "prepare.html": {
       "status": 200,
       "bytes": 7620,
-      "sha256": "e5c5c4c3fd18e8e0ca102e1ec45303de92918114c89ed916265acc5ba9948ac1",
+      "sha256": "7a9f2272b75145442e257e51edbb9d51370326e1ead975e64d3e9ff1b61763ea",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -844,7 +844,7 @@
     "release.html": {
       "status": 200,
       "bytes": 1556,
-      "sha256": "b7503654029630207aab7bb2a32384c6c29435fdded4a0cf5cf33870eb84d690",
+      "sha256": "a7748806c6f33848e4da412dc664a80a90ebf164da083df764714711c7499d72",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -859,7 +859,7 @@
     "review.html": {
       "status": 200,
       "bytes": 2336,
-      "sha256": "a1197ef5ee4133c5d4eb97dc0e3f52bab435c71fe1a4f507974d804946d7c2e9",
+      "sha256": "88e4db7241147d3e4999b6530167adeb4fbe625881f2e2bd11a8208a5e7c87ee",
       "content_type": "text/html",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
@@ -876,22 +876,22 @@
     "https://identity-research-web.mazzewhiteley93.workers.dev": {
       "status": 200,
       "bytes": 64,
-      "sha256": "4057b37f10bedf417d41981c8002d2d1aec72a74ed64761a7284a2de4810323a",
+      "sha256": "fcd55a94fed4cad6718c25a4e65f362feda408b0e5ec1ffedfa3e33f58482cb8",
       "content_type": "application/json",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
       "location": null,
-      "version": "42dec481-c04d-4d0f-aaa6-a32171045373"
+      "version": "2b6018a4-0126-4739-9a0f-926aeefeb306"
     },
     "https://research.mazzeleczzare.com": {
       "status": 200,
       "bytes": 64,
-      "sha256": "4057b37f10bedf417d41981c8002d2d1aec72a74ed64761a7284a2de4810323a",
+      "sha256": "fcd55a94fed4cad6718c25a4e65f362feda408b0e5ec1ffedfa3e33f58482cb8",
       "content_type": "application/json",
       "cache_control": "no-store",
       "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
       "location": null,
-      "version": "42dec481-c04d-4d0f-aaa6-a32171045373"
+      "version": "2b6018a4-0126-4739-9a0f-926aeefeb306"
     }
   },
   "public_releases_unchanged": {
@@ -927,34 +927,7 @@
       "location": null
     }
   },
-  "client": "System curl over HTTP/1.1 with two bounded transport retries; no cookies, credentials, spoofed headers or access-policy changes.",
-  "scope": "Native inline research cabinet, original method specimens, local filters and in-place citations; no experiment, authentication, evidence or binding changes. HTTP/1.1 system curl with bounded transport retries.",
-  "browser": {
-    "origin": "https://research.mazzeleczzare.com/",
-    "live_checks": [
-      "Pointer hover reveals chromatic specimen and updates breadcrumb",
-      "Persona brief opens on the landing and settles at 64px below the breadcrumb bar",
-      "No modal elements are mounted",
-      "Two live release cards render",
-      "Citation disclosure opens on the landing; both raw-bundle links are present"
-    ],
-    "local_checks": [
-      "Two briefs remain open simultaneously",
-      "Tools filter shows only Bearing",
-      "Search empty state and expand/fold controls work",
-      "Direct #bearing fragment opens its brief",
-      "390px and 320px emulated layouts have no horizontal overflow",
-      "All four question/illustration labels are non-overlapping at 320px after correction",
-      "Reduced motion reports animation none and transition 0s while the brief opens",
-      "Native Identity disclosure opens after page reload with script execution disabled; scripting restored afterwards"
-    ],
-    "bounds": "Responsive checks are browser emulation, not physical-device tests. The browser screenshot transport did not faithfully reflect narrow emulation; saved images are normal desktop views. Clipboard copying was not exercised against the user clipboard. No comprehensive assistive-technology audit."
-  },
-  "screenshots": [
-    "visuals/production-cabinet-2026-10-25.png",
-    "visuals/production-cabinet-brief-2026-10-25.png"
-  ],
-  "requested_client_javascript_bytes_uncompressed": 4426,
-  "mounted_react_islands": 0,
-  "pull_request": 35
+  "client": "Default curl; no cookies, credentials, spoofed headers or access-policy changes.",
+  "scope": "Native research cabinet with inline briefs and accessibility polish; no experiment, authentication, evidence or binding changes. System curl HTTP/1.1 with bounded transport retries.",
+  "browser": "pending production readback"
 }

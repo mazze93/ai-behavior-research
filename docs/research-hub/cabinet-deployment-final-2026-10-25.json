@@ -1,0 +1,966 @@
+{
+  "verified_at": "2026-10-25T21:52:14.584750+00:00",
+  "source_commit": "b9d27982268de9e59d71fc06da08bfd6ef9cf816",
+  "worker": "identity-research-web",
+  "verified_byte_origin": "https://identity-research-web.mazzewhiteley93.workers.dev",
+  "canonical_origin": "https://research.mazzeleczzare.com",
+  "version": "e9ec6940-e5f9-44f1-bd11-fe3bfd4c636d",
+  "deployment_id": "491e6d41-03b1-4c0f-b3b2-bdd4026e8da6",
+  "traffic": [
+    {
+      "version_id": "e9ec6940-e5f9-44f1-bd11-fe3bfd4c636d",
+      "percentage": 100
+    }
+  ],
+  "annotations": {
+    "workers/message": "Native research cabinet and current-reading breadcrumbs; source b9d27982268de9e59d71fc06da08bfd6ef9cf816",
+    "workers/triggered_by": "deployment"
+  },
+  "rollback_version": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
+  "preflight": "docs/research-hub/cabinet-preflight-2026-10-25.json",
+  "bindings_match_preflight": true,
+  "bindings": [
+    {
+      "name": "ADMIN_TOKEN",
+      "type": "secret_text"
+    },
+    {
+      "name": "ALLOWED_MODELS",
+      "type": "plain_text",
+      "text": "@cf/meta/llama-3.1-8b-instruct-fp8"
+    },
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    },
+    {
+      "name": "DB",
+      "type": "d1",
+      "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb"
+    },
+    {
+      "name": "EVIDENCE",
+      "type": "r2_bucket",
+      "bucket_name": "identity-research-evidence"
+    },
+    {
+      "name": "GATEWAY_ID",
+      "type": "plain_text",
+      "text": "identity-research"
+    },
+    {
+      "name": "JOBS",
+      "type": "queue",
+      "queue_name": "identity-research-jobs"
+    },
+    {
+      "name": "PUBLIC_ORIGIN",
+      "type": "plain_text",
+      "text": "https://research.mazzeleczzare.com"
+    },
+    {
+      "name": "SESSION_SECRET",
+      "type": "secret_text"
+    },
+    {
+      "name": "VERSION",
+      "type": "version_metadata"
+    }
+  ],
+  "runtime_match_preflight": true,
+  "runtime": {
+    "assets": {
+      "html_handling": "none",
+      "serve_directly": false,
+      "raw_run_worker_first": true,
+      "base_path": "/"
+    },
+    "compatibility_date": "2026-09-26",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "usage_model": "standard"
+  },
+  "inventory_source": "apps/registry/public/.assetsignore",
+  "assets": {
+    "_astro/fonts/2b39e74be6e452f5.woff2": {
+      "status": 200,
+      "bytes": 48040,
+      "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/fonts/96697e0b649e5210.woff2": {
+      "status": 200,
+      "bytes": 25884,
+      "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/fonts/ec7e638c79002668.woff2": {
+      "status": 200,
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/index.CVLEmwU-.css": {
+      "status": 200,
+      "bytes": 17438,
+      "sha256": "a7c77911a7f2e752801953bd84eb229e28329f3c75acf7646af20d86008502e5",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-036c5da4fd987224b309.css": {
+      "status": 200,
+      "bytes": 558,
+      "sha256": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-6376c980a46fb4e717b1.css": {
+      "status": 200,
+      "bytes": 511,
+      "sha256": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-a69490fd227ad613c6b9.js": {
+      "status": 200,
+      "bytes": 2120,
+      "sha256": "a69490fd227ad613c6b9ec2874f9afe10b3a6e056b90482c96be16e13424f43e",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-f2a364cc7cd38865f195.js": {
+      "status": 200,
+      "bytes": 2351,
+      "sha256": "f2a364cc7cd38865f195aa8ded3e374028ee45d49b9c30349c04d21f343e9d7e",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-ffc56c1833aa5bbcdb6b.css": {
+      "status": 200,
+      "bytes": 560,
+      "sha256": "ffc56c1833aa5bbcdb6bc7941d9c94eeb8f2becdf8d87cd369e324b009922f59",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "analysis.py": {
+      "status": 200,
+      "bytes": 3495,
+      "sha256": "5779398e84f1463d86c4da4dbc3a4026b6d580b39cd6818c2efa9f105e978653",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "console.html": {
+      "status": 200,
+      "bytes": 3358,
+      "sha256": "eb0d629532270593979aff2bb2ffbd69d291b7ae134ef6066520d56b2f29467f",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "design-guide.js": {
+      "status": 200,
+      "bytes": 533,
+      "sha256": "13656d1718034ecaaaf05a8b7d921b38dca1e685254c6e855c85282c5306cf7d",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "ethics.html": {
+      "status": 200,
+      "bytes": 5557,
+      "sha256": "aac1e91855d6f2ffa15a66b94cc1325c80436d8a401db1fdbfbf7fe8fe7d9d29",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/build-manifest.json": {
+      "status": 200,
+      "bytes": 1801,
+      "sha256": "76e6c48e21c5d1503bdee47eb397bbed330f75f7d07c6bdec7d8ec43d25c7e2a",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/index.html": {
+      "status": 200,
+      "bytes": 1831,
+      "sha256": "e941f2b3362173e80295487c66f525ab0a7f4aa531f9a6bb8fde8589da3801dd",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/index.json": {
+      "status": 200,
+      "bytes": 727,
+      "sha256": "9398867c28336ba2fee7b53297a5d8d40eda6360f889705d3a366215f66274f8",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.svg": {
+      "status": 200,
+      "bytes": 2486,
+      "sha256": "eba2ffbd5bf11a4182f4671aa2b4e5809cea8183791c0779db3dafbcfd5fae1b",
+      "content_type": "image/svg+xml",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.css": {
+      "status": 200,
+      "bytes": 5849,
+      "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.js": {
+      "status": 200,
+      "bytes": 666,
+      "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+      "status": 200,
+      "bytes": 8889,
+      "sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/view-manifest.json": {
+      "status": 200,
+      "bytes": 908,
+      "sha256": "3456daab8eb5a69161c88660371fe42f3854a3d564bc293d84a0b8c082a2749e",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.svg": {
+      "status": 200,
+      "bytes": 2507,
+      "sha256": "222fa858bd72bb68cdeb88195eb590c52b0f68909aa71ebd2f1eef787892dc25",
+      "content_type": "image/svg+xml",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.css": {
+      "status": 200,
+      "bytes": 5849,
+      "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.js": {
+      "status": 200,
+      "bytes": 666,
+      "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+      "status": 200,
+      "bytes": 13977,
+      "sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/view-manifest.json": {
+      "status": 200,
+      "bytes": 908,
+      "sha256": "d74441f3054c7277cf1d183dc434b0cfcc591e5959ce285eb18c95226c56f3d5",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-Bold.woff2": {
+      "status": 200,
+      "bytes": 48040,
+      "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-Moonlight.woff2": {
+      "status": 200,
+      "bytes": 44820,
+      "sha256": "9517a47c65fcdb75c82fa138130593f86deda1b977b98f5bd9738a352802e64a",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-OFL.txt": {
+      "status": 200,
+      "bytes": 4495,
+      "sha256": "bf7e42d235d42957d4d081f3416c49354cc1fb21580d86ee0cf0136a58199b51",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/BodoniModa-Latin-OFL.txt": {
+      "status": 200,
+      "bytes": 4526,
+      "sha256": "6c64f717433eadd29b058d6254fe25c1ee2d249ce3772f843bb21f73285779c2",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/BodoniModa-Latin.woff2": {
+      "status": 200,
+      "bytes": 25884,
+      "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Manrope-Latin-OFL.txt": {
+      "status": 200,
+      "bytes": 4383,
+      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Manrope-Latin.woff2": {
+      "status": 200,
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/landing-provenance.json": {
+      "status": 200,
+      "bytes": 1191,
+      "sha256": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "hub.css": {
+      "status": 200,
+      "bytes": 10510,
+      "sha256": "75d7918b537c3be545c88bbafa22643276fe5d817ea3b74d6556d8a4f5d85801",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "identity.html": {
+      "status": 200,
+      "bytes": 2971,
+      "sha256": "0d1f93015b815d110431f9816a792421a7013d1640313b1dd487d1fa6a6de39d",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "index.html": {
+      "status": 200,
+      "bytes": 22680,
+      "sha256": "df46781c70d2a0c14f5dde50e7976de8ce237b4e726af1b54a2618d29b1467a1",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "landing-manifest.json": {
+      "status": 200,
+      "bytes": 3873,
+      "sha256": "ea4434a438082a512ce016c579aed19d1beda53ff2fa57aa8f5e556572ccf4c4",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "llms.txt": {
+      "status": 200,
+      "bytes": 2880,
+      "sha256": "132f3f6c4fe138fb6cd023536f6153082f1805521a5c6bd4571e46ee6c1cbb2d",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method-audit-2026-10-16.json": {
+      "status": 200,
+      "bytes": 3733,
+      "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method-audit.html": {
+      "status": 200,
+      "bytes": 5571,
+      "sha256": "67e8e438383a15733aa8394a474b1e80d808876ff82bdbd312a5ceaac0f8fbf6",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method.html": {
+      "status": 200,
+      "bytes": 9225,
+      "sha256": "7e0dd50c5ca8481cddd9ba4d91db32b460f44a702d9a9c0c3e879a32e7b89425",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona-about.html": {
+      "status": 200,
+      "bytes": 4074,
+      "sha256": "dab7a8f487f71025043a00137f2d019d8f01e2d34df0e610f9c6349156e88ff9",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona-core.js": {
+      "status": 200,
+      "bytes": 7829,
+      "sha256": "76296afc150c46c206615f7814162ed1d158a9ae27377f0b7d68c9ebbf5b31dc",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona.js": {
+      "status": 200,
+      "bytes": 6515,
+      "sha256": "8089a9235f2670cec97d7c1a78c984db0494035fa141d55828087a54f92901ea",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.css": {
+      "status": 200,
+      "bytes": 481,
+      "sha256": "c1aae70c2145ed261b384507b1aadc7bb76aecb3b55947c525563bc213267e9d",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.html": {
+      "status": 200,
+      "bytes": 6995,
+      "sha256": "b59be2f031fdbc7976ebe6c7f54cf8d92085a8013b3412cc03acca2dd75311b3",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.js": {
+      "status": 200,
+      "bytes": 2543,
+      "sha256": "eea5d98fde666a7f8bd936dfdf5be9bae74aa6b54f8a158cc57f51b6f750b713",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "protocol-template.json": {
+      "status": 200,
+      "bytes": 13083,
+      "sha256": "16a8bce9aaa057023dd5b4e44ca33c1c96d9b02ef9b1e9f983868d681230fefe",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "registry.js": {
+      "status": 200,
+      "bytes": 12672,
+      "sha256": "2592070fb65f90fb2c9f9cc6e66181d4fca7d9557a4247c41428e1bb92d8e0a2",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "release.html": {
+      "status": 200,
+      "bytes": 931,
+      "sha256": "5a20bfa6436bddb037b365f32909b6fdb2acd722af5ef0dad2f8da22d3a0e5d0",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "research-notes.css": {
+      "status": 200,
+      "bytes": 1069,
+      "sha256": "457ee852e32166465ebc4ac907940fb67fcfc578eec1903bf8e9d13a4cfaf97a",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "research_package.py": {
+      "status": 200,
+      "bytes": 18459,
+      "sha256": "6f0c495711c2cc81a3b78e91a4ac12807b474a4e4898642d5c9c8c50bbf5eabe",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "review.html": {
+      "status": 200,
+      "bytes": 1711,
+      "sha256": "79380a95610bf861b94a3f7ba308a6f68531c696a5352e95d44c1b5d71ac7230",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "robots.txt": {
+      "status": 200,
+      "bytes": 166,
+      "sha256": "ae8fe917c86540e7d354c9e00eebcd281070acb7c48a4b7474b32b0d7008c002",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "sitemap.xml": {
+      "status": 200,
+      "bytes": 689,
+      "sha256": "328cf451b011b89a2aae00c25f22a1abbaba8939d6de5ce077042c6cacab898f",
+      "content_type": "application/xml",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "smoke-template.json": {
+      "status": 200,
+      "bytes": 2235,
+      "sha256": "511c0148fe613a5389c9fdd51789e0273f0dfd44cf80d85f850816dcc204c17c",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "style.css": {
+      "status": 200,
+      "bytes": 10848,
+      "sha256": "b93139fd8e51aeac3762e7ce3ea6123f736e68935500dc981dafa2f53cbdbd5c",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "type.css": {
+      "status": 200,
+      "bytes": 1347,
+      "sha256": "be6b38cfb68af4a46985a47d01319665219507a2df6649af66d5dd58f21aa109",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    }
+  },
+  "assets_verified": 59,
+  "canonical_html": {
+    "console.html": {
+      "status": 200,
+      "bytes": 3983,
+      "sha256": "beea448c7efc118c2fb25089d32b5d2eaff615c8a2f5b38b5980178553b1f635",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "eb0d629532270593979aff2bb2ffbd69d291b7ae134ef6066520d56b2f29467f"
+    },
+    "ethics.html": {
+      "status": 200,
+      "bytes": 6182,
+      "sha256": "43fa7a22fbffa8f66e38baf93f14debf26cc8f258eefbfc457318821a3c2f278",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "aac1e91855d6f2ffa15a66b94cc1325c80436d8a401db1fdbfbf7fe8fe7d9d29"
+    },
+    "explorers/index.html": {
+      "status": 200,
+      "bytes": 2456,
+      "sha256": "532ceffe2289dd6fb1068083a1c8fc2e348ea115af100fc003cfda120ce2d73c",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "e941f2b3362173e80295487c66f525ab0a7f4aa531f9a6bb8fde8589da3801dd"
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+      "status": 200,
+      "bytes": 9514,
+      "sha256": "f3ccae694d94e88eba5fa7ea3f837a372d7090aad9b14a65fdbd69fc07007dfb",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547"
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+      "status": 200,
+      "bytes": 14602,
+      "sha256": "f402c90ea77b02fdaf76736c06e4f412714a01d179559cbd677df219c460356d",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78"
+    },
+    "identity.html": {
+      "status": 200,
+      "bytes": 3596,
+      "sha256": "2a2755975ce5f772ba51b6d77c26efcee69345e01fccb9a683bd68e36c718f37",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "0d1f93015b815d110431f9816a792421a7013d1640313b1dd487d1fa6a6de39d"
+    },
+    "index.html": {
+      "status": 200,
+      "bytes": 23305,
+      "sha256": "fb88e4cc0db993ed99f6ba545d9a23ac1f2d708aa792f35d481ffd37bc19a166",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "df46781c70d2a0c14f5dde50e7976de8ce237b4e726af1b54a2618d29b1467a1"
+    },
+    "method-audit.html": {
+      "status": 200,
+      "bytes": 6196,
+      "sha256": "5c4092f4491805f80e8a7fcdd36a0bfc7399e07496757df062ed9d3b28b91c37",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "67e8e438383a15733aa8394a474b1e80d808876ff82bdbd312a5ceaac0f8fbf6"
+    },
+    "method.html": {
+      "status": 200,
+      "bytes": 9850,
+      "sha256": "672630560d6d2bda76f97f56b76cec49a6cf0d00e47fa2aa9551f40e8548088a",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "7e0dd50c5ca8481cddd9ba4d91db32b460f44a702d9a9c0c3e879a32e7b89425"
+    },
+    "persona-about.html": {
+      "status": 200,
+      "bytes": 4699,
+      "sha256": "10f24fda1caec3779fb9f99a2151a56931185e7f2ec94993f6886fd30c7ea51c",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "dab7a8f487f71025043a00137f2d019d8f01e2d34df0e610f9c6349156e88ff9"
+    },
+    "prepare.html": {
+      "status": 200,
+      "bytes": 7620,
+      "sha256": "99f4a0499e32ba0a0f18ce515e19a73f207d71e60e28ab9109d8c523e34d7087",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "b59be2f031fdbc7976ebe6c7f54cf8d92085a8013b3412cc03acca2dd75311b3"
+    },
+    "release.html": {
+      "status": 200,
+      "bytes": 1556,
+      "sha256": "8c1feb80637c8ceca7524d3894ef6e039d4675c727a2410af83796be9e036701",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "5a20bfa6436bddb037b365f32909b6fdb2acd722af5ef0dad2f8da22d3a0e5d0"
+    },
+    "review.html": {
+      "status": 200,
+      "bytes": 2336,
+      "sha256": "cf405cf2d27c0f5d41df22b1bc53c3f8640d845d1e5e508766464923b05d573b",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "79380a95610bf861b94a3f7ba308a6f68531c696a5352e95d44c1b5d71ac7230"
+    }
+  },
+  "health": {
+    "https://identity-research-web.mazzewhiteley93.workers.dev": {
+      "status": 200,
+      "bytes": 64,
+      "sha256": "1a8aefe4970e1e215f474132fb6b3abe728f063d972dde8a27e1d1b70e657172",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "version": "e9ec6940-e5f9-44f1-bd11-fe3bfd4c636d"
+    },
+    "https://research.mazzeleczzare.com": {
+      "status": 200,
+      "bytes": 64,
+      "sha256": "1a8aefe4970e1e215f474132fb6b3abe728f063d972dde8a27e1d1b70e657172",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "version": "e9ec6940-e5f9-44f1-bd11-fe3bfd4c636d"
+    }
+  },
+  "public_releases_unchanged": {
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+  },
+  "unauthenticated_routes": {
+    "/persona.html": {
+      "status": 303,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": "https://research.mazzeleczzare.com/console.html?next=persona"
+    },
+    "/%70ersona.html": {
+      "status": 303,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": "https://research.mazzeleczzare.com/console.html?next=persona"
+    },
+    "/api/studies": {
+      "status": 401,
+      "bytes": 41,
+      "sha256": "ab65d2c73cff94886b955100ff0468c7fbb0bb1ceca4c0b46f46e720ba3c7860",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null
+    }
+  },
+  "client": "System curl over HTTP/1.1 with two bounded transport retries; no cookies, credentials, spoofed headers or access-policy changes.",
+  "scope": "Native inline research cabinet with current-reading breadcrumb context; no experiment, authentication, evidence or binding changes. System curl HTTP/1.1 with bounded transport retries.",
+  "browser": {
+    "origin": "https://research.mazzeleczzare.com/",
+    "live_checks": [
+      "Pointer hover reveals chromatic specimen and updates breadcrumb",
+      "Persona brief opens on the landing and settles at 64px below the breadcrumb bar",
+      "No modal elements are mounted",
+      "Two live release cards render",
+      "Citation disclosure opens on the landing; both raw-bundle links are present",
+      "Most recently opened Identity is named while Persona remains open; closing Identity restores Persona context",
+      "Decorative apertures have pointer-events none; home link target height is 44px"
+    ],
+    "local_checks": [
+      "Two briefs remain open simultaneously",
+      "Tools filter shows only Bearing",
+      "Search empty state and expand/fold controls work",
+      "Direct #bearing fragment opens its brief",
+      "390px and 320px emulated layouts have no horizontal overflow",
+      "All four question/illustration labels are non-overlapping at 320px after correction",
+      "Reduced motion reports animation none and transition 0s while the brief opens",
+      "Native Identity disclosure opens after page reload with script execution disabled; scripting restored afterwards"
+    ],
+    "bounds": "Responsive checks are browser emulation, not physical-device tests. The browser screenshot transport did not faithfully reflect narrow emulation; saved images are normal desktop views. Clipboard copying was not exercised against the user clipboard. No comprehensive assistive-technology audit."
+  },
+  "screenshots": [
+    "visuals/production-cabinet-2026-10-25.png",
+    "visuals/production-cabinet-brief-2026-10-25.png"
+  ],
+  "mounted_react_islands": 0,
+  "pull_request": 35,
+  "requested_client_javascript_bytes_uncompressed": 4471,
+  "intermediate_receipts": [
+    "cabinet-deployment-reading-2026-10-25.json",
+    "cabinet-deployment-2026-10-25.json"
+  ]
+}
