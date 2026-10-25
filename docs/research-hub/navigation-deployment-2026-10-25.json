@@ -1,0 +1,1046 @@
+{
+  "verified_at": "2026-10-25T12:06:20.711436+00:00",
+  "source_commit": "0911ca2d71d71f05b5887775ca0d791fd155149b",
+  "worker": "identity-research-web",
+  "verified_byte_origin": "https://identity-research-web.mazzewhiteley93.workers.dev",
+  "canonical_origin": "https://research.mazzeleczzare.com",
+  "version": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
+  "deployment_id": "dcb7ab36-8868-4ca7-8107-43083a88b1dc",
+  "traffic": [
+    {
+      "version_id": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
+      "percentage": 100
+    }
+  ],
+  "annotations": {
+    "workers/message": "Split research navigation, issue grouping, patched tooling; source 0911ca2d71d71f05b5887775ca0d791fd155149b",
+    "workers/triggered_by": "deployment"
+  },
+  "rollback_version": "ccc9e98b-5182-4fbb-bf8b-2a54d48edfff",
+  "preflight": "docs/research-hub/navigation-preflight-2026-10-25.json",
+  "bindings_match_preflight": true,
+  "bindings": [
+    {
+      "name": "ADMIN_TOKEN",
+      "type": "secret_text"
+    },
+    {
+      "name": "ALLOWED_MODELS",
+      "type": "plain_text",
+      "text": "@cf/meta/llama-3.1-8b-instruct-fp8"
+    },
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    },
+    {
+      "name": "DB",
+      "type": "d1",
+      "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb"
+    },
+    {
+      "name": "EVIDENCE",
+      "type": "r2_bucket",
+      "bucket_name": "identity-research-evidence"
+    },
+    {
+      "name": "GATEWAY_ID",
+      "type": "plain_text",
+      "text": "identity-research"
+    },
+    {
+      "name": "JOBS",
+      "type": "queue",
+      "queue_name": "identity-research-jobs"
+    },
+    {
+      "name": "PUBLIC_ORIGIN",
+      "type": "plain_text",
+      "text": "https://research.mazzeleczzare.com"
+    },
+    {
+      "name": "SESSION_SECRET",
+      "type": "secret_text"
+    },
+    {
+      "name": "VERSION",
+      "type": "version_metadata"
+    }
+  ],
+  "runtime_match_preflight": true,
+  "runtime": {
+    "assets": {
+      "html_handling": "none",
+      "serve_directly": false,
+      "raw_run_worker_first": true,
+      "base_path": "/"
+    },
+    "compatibility_date": "2026-09-26",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "usage_model": "standard"
+  },
+  "inventory_source": "apps/registry/public/.assetsignore",
+  "assets": {
+    "_astro/ResearchIndex.BRv5bMAf.js": {
+      "status": 200,
+      "bytes": 8915,
+      "sha256": "39dc45b489c170e79522d6dcc54db56b30c63d75627073ce1d860db6c2f3b5fe",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/StudyRoom.DjH_XLSN.js": {
+      "status": 200,
+      "bytes": 10213,
+      "sha256": "1631892ea9933eded46f35c82dfac55d51cb20e23be34d9150d9ee222c5fd165",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/client.C7WjD2Pw.js": {
+      "status": 200,
+      "bytes": 212848,
+      "sha256": "067ac8fb2aadbe933fd1f37b954908b1cc9e238237e348423486b105c320148f",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/fonts/96697e0b649e5210.woff2": {
+      "status": 200,
+      "bytes": 25884,
+      "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/fonts/ec7e638c79002668.woff2": {
+      "status": 200,
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/index.B09TVSvB.css": {
+      "status": 200,
+      "bytes": 16586,
+      "sha256": "ccbc683b3f3ca08fd2feeb2cd29e8678e048800cdf914609946ed2a873b882d7",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-036c5da4fd987224b309.css": {
+      "status": 200,
+      "bytes": 558,
+      "sha256": "036c5da4fd987224b3091590702f249948309170162bb4dbf0572140799765df",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-508ac5a9c6a2b6303738.js": {
+      "status": 200,
+      "bytes": 4896,
+      "sha256": "508ac5a9c6a2b6303738a6bd98729a8e0dcdfb463bb56f7ecb4a374263057994",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-6376c980a46fb4e717b1.css": {
+      "status": 200,
+      "bytes": 511,
+      "sha256": "6376c980a46fb4e717b18d67759ab6a243ff659a1c0a0ea66e5bc0b3570a03b0",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-9a065567da2812a326d3.js": {
+      "status": 200,
+      "bytes": 1403,
+      "sha256": "9a065567da2812a326d343985f11c7f27a8092bd881f54dfe97278fdda1b2e43",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-beff48a0aa3b0522db59.css": {
+      "status": 200,
+      "bytes": 59,
+      "sha256": "beff48a0aa3b0522db59c507af7b4d99f3559a6e4bffd09f9f61fa2cc93bfe8c",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-c486ff3daec552c840bb.js": {
+      "status": 200,
+      "bytes": 321,
+      "sha256": "c486ff3daec552c840bb88a1c2372161c429c8223c792f24b78d06a4e0180b3f",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/inline-d41bc35562ebdd0082db.js": {
+      "status": 200,
+      "bytes": 135,
+      "sha256": "d41bc35562ebdd0082db4b878540e2dbb783155269935b8c40918858a524b362",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/jsx-runtime.DjlYrHq-.js": {
+      "status": 200,
+      "bytes": 380,
+      "sha256": "ef886839b913fbf4cf553664eccf2bd79a8ec3ad17779197831cb6fde73637cb",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "_astro/react.CvnImTBr.js": {
+      "status": 200,
+      "bytes": 7909,
+      "sha256": "7866ec6c62357fd6b4355d1306d143ca3b008b6ac0e77a37fd51196f21cf5afe",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "analysis.py": {
+      "status": 200,
+      "bytes": 3495,
+      "sha256": "5779398e84f1463d86c4da4dbc3a4026b6d580b39cd6818c2efa9f105e978653",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "console.html": {
+      "status": 200,
+      "bytes": 3358,
+      "sha256": "eb0d629532270593979aff2bb2ffbd69d291b7ae134ef6066520d56b2f29467f",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "design-guide.js": {
+      "status": 200,
+      "bytes": 533,
+      "sha256": "13656d1718034ecaaaf05a8b7d921b38dca1e685254c6e855c85282c5306cf7d",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "ethics.html": {
+      "status": 200,
+      "bytes": 5557,
+      "sha256": "aac1e91855d6f2ffa15a66b94cc1325c80436d8a401db1fdbfbf7fe8fe7d9d29",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/build-manifest.json": {
+      "status": 200,
+      "bytes": 1801,
+      "sha256": "76e6c48e21c5d1503bdee47eb397bbed330f75f7d07c6bdec7d8ec43d25c7e2a",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/index.html": {
+      "status": 200,
+      "bytes": 1831,
+      "sha256": "e941f2b3362173e80295487c66f525ab0a7f4aa531f9a6bb8fde8589da3801dd",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/index.json": {
+      "status": 200,
+      "bytes": 727,
+      "sha256": "9398867c28336ba2fee7b53297a5d8d40eda6360f889705d3a366215f66274f8",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/contrasts.svg": {
+      "status": 200,
+      "bytes": 2486,
+      "sha256": "eba2ffbd5bf11a4182f4671aa2b4e5809cea8183791c0779db3dafbcfd5fae1b",
+      "content_type": "image/svg+xml",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.css": {
+      "status": 200,
+      "bytes": 5849,
+      "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/explorer.js": {
+      "status": 200,
+      "bytes": 666,
+      "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+      "status": 200,
+      "bytes": 8889,
+      "sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/view-manifest.json": {
+      "status": 200,
+      "bytes": 908,
+      "sha256": "3456daab8eb5a69161c88660371fe42f3854a3d564bc293d84a0b8c082a2749e",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/contrasts.svg": {
+      "status": 200,
+      "bytes": 2507,
+      "sha256": "222fa858bd72bb68cdeb88195eb590c52b0f68909aa71ebd2f1eef787892dc25",
+      "content_type": "image/svg+xml",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.css": {
+      "status": 200,
+      "bytes": 5849,
+      "sha256": "3c41e48baf1f101f5b97d4b5574f6a4d8a2014060ab407ded251393a8d9a8f07",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/explorer.js": {
+      "status": 200,
+      "bytes": 666,
+      "sha256": "59b3654da2793d659d55cedab9f8fda7678dd92cf918d8532f53dee4bb07eea3",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+      "status": 200,
+      "bytes": 13977,
+      "sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/view-manifest.json": {
+      "status": 200,
+      "bytes": 908,
+      "sha256": "d74441f3054c7277cf1d183dc434b0cfcc591e5959ce285eb18c95226c56f3d5",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-Bold.woff2": {
+      "status": 200,
+      "bytes": 48040,
+      "sha256": "2a43b63af007450e81a19fb184a8bb19f4a72e9a9d8461694fd495087ce3d4af",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-Moonlight.woff2": {
+      "status": 200,
+      "bytes": 44820,
+      "sha256": "9517a47c65fcdb75c82fa138130593f86deda1b977b98f5bd9738a352802e64a",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Basteleur-OFL.txt": {
+      "status": 200,
+      "bytes": 4495,
+      "sha256": "bf7e42d235d42957d4d081f3416c49354cc1fb21580d86ee0cf0136a58199b51",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/BodoniModa-Latin-OFL.txt": {
+      "status": 200,
+      "bytes": 4526,
+      "sha256": "6c64f717433eadd29b058d6254fe25c1ee2d249ce3772f843bb21f73285779c2",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/BodoniModa-Latin.woff2": {
+      "status": 200,
+      "bytes": 25884,
+      "sha256": "192ae876c21d9258d096a526dad5bddf37f0daa69cfe943cae5f6be5a52adda2",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Manrope-Latin-OFL.txt": {
+      "status": 200,
+      "bytes": 4383,
+      "sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/Manrope-Latin.woff2": {
+      "status": 200,
+      "bytes": 24836,
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "content_type": "font/woff2",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "fonts/landing-provenance.json": {
+      "status": 200,
+      "bytes": 1191,
+      "sha256": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "hub.css": {
+      "status": 200,
+      "bytes": 10510,
+      "sha256": "75d7918b537c3be545c88bbafa22643276fe5d817ea3b74d6556d8a4f5d85801",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "identity.html": {
+      "status": 200,
+      "bytes": 2971,
+      "sha256": "0d1f93015b815d110431f9816a792421a7013d1640313b1dd487d1fa6a6de39d",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "index.html": {
+      "status": 200,
+      "bytes": 99019,
+      "sha256": "dbbeb6ce718e3861f284d162b8bad457f159b2c5dd032d3c85dbd660996b7d89",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "landing-manifest.json": {
+      "status": 200,
+      "bytes": 3791,
+      "sha256": "123f01ba38fe51068008901a73c83494dd0d9fd677e11acd3ac5b4977d7f2293",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "llms.txt": {
+      "status": 200,
+      "bytes": 2880,
+      "sha256": "132f3f6c4fe138fb6cd023536f6153082f1805521a5c6bd4571e46ee6c1cbb2d",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method-audit-2026-10-16.json": {
+      "status": 200,
+      "bytes": 3733,
+      "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method-audit.html": {
+      "status": 200,
+      "bytes": 5571,
+      "sha256": "67e8e438383a15733aa8394a474b1e80d808876ff82bdbd312a5ceaac0f8fbf6",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "method.html": {
+      "status": 200,
+      "bytes": 9225,
+      "sha256": "7e0dd50c5ca8481cddd9ba4d91db32b460f44a702d9a9c0c3e879a32e7b89425",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona-about.html": {
+      "status": 200,
+      "bytes": 4074,
+      "sha256": "dab7a8f487f71025043a00137f2d019d8f01e2d34df0e610f9c6349156e88ff9",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona-core.js": {
+      "status": 200,
+      "bytes": 7829,
+      "sha256": "76296afc150c46c206615f7814162ed1d158a9ae27377f0b7d68c9ebbf5b31dc",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "persona.js": {
+      "status": 200,
+      "bytes": 6515,
+      "sha256": "8089a9235f2670cec97d7c1a78c984db0494035fa141d55828087a54f92901ea",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.css": {
+      "status": 200,
+      "bytes": 481,
+      "sha256": "c1aae70c2145ed261b384507b1aadc7bb76aecb3b55947c525563bc213267e9d",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.html": {
+      "status": 200,
+      "bytes": 6995,
+      "sha256": "b59be2f031fdbc7976ebe6c7f54cf8d92085a8013b3412cc03acca2dd75311b3",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "prepare.js": {
+      "status": 200,
+      "bytes": 2543,
+      "sha256": "eea5d98fde666a7f8bd936dfdf5be9bae74aa6b54f8a158cc57f51b6f750b713",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "protocol-template.json": {
+      "status": 200,
+      "bytes": 13083,
+      "sha256": "16a8bce9aaa057023dd5b4e44ca33c1c96d9b02ef9b1e9f983868d681230fefe",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "registry.js": {
+      "status": 200,
+      "bytes": 12672,
+      "sha256": "2592070fb65f90fb2c9f9cc6e66181d4fca7d9557a4247c41428e1bb92d8e0a2",
+      "content_type": "text/javascript",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "release.html": {
+      "status": 200,
+      "bytes": 931,
+      "sha256": "5a20bfa6436bddb037b365f32909b6fdb2acd722af5ef0dad2f8da22d3a0e5d0",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "research-notes.css": {
+      "status": 200,
+      "bytes": 1069,
+      "sha256": "457ee852e32166465ebc4ac907940fb67fcfc578eec1903bf8e9d13a4cfaf97a",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "research_package.py": {
+      "status": 200,
+      "bytes": 18459,
+      "sha256": "6f0c495711c2cc81a3b78e91a4ac12807b474a4e4898642d5c9c8c50bbf5eabe",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "review.html": {
+      "status": 200,
+      "bytes": 1711,
+      "sha256": "79380a95610bf861b94a3f7ba308a6f68531c696a5352e95d44c1b5d71ac7230",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "robots.txt": {
+      "status": 200,
+      "bytes": 166,
+      "sha256": "ae8fe917c86540e7d354c9e00eebcd281070acb7c48a4b7474b32b0d7008c002",
+      "content_type": "text/plain",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "sitemap.xml": {
+      "status": 200,
+      "bytes": 689,
+      "sha256": "328cf451b011b89a2aae00c25f22a1abbaba8939d6de5ce077042c6cacab898f",
+      "content_type": "application/xml",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "smoke-template.json": {
+      "status": 200,
+      "bytes": 2235,
+      "sha256": "511c0148fe613a5389c9fdd51789e0273f0dfd44cf80d85f850816dcc204c17c",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "style.css": {
+      "status": 200,
+      "bytes": 10848,
+      "sha256": "b93139fd8e51aeac3762e7ce3ea6123f736e68935500dc981dafa2f53cbdbd5c",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    },
+    "type.css": {
+      "status": 200,
+      "bytes": 1347,
+      "sha256": "be6b38cfb68af4a46985a47d01319665219507a2df6649af66d5dd58f21aa109",
+      "content_type": "text/css",
+      "cache_control": "public, max-age=300",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "matches_source": true
+    }
+  },
+  "assets_verified": 65,
+  "canonical_html": {
+    "console.html": {
+      "status": 200,
+      "bytes": 3983,
+      "sha256": "3e215b22809327595350bf7231e1b3852e9d559acfbe0f4df67f3a4e04295eed",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "eb0d629532270593979aff2bb2ffbd69d291b7ae134ef6066520d56b2f29467f"
+    },
+    "ethics.html": {
+      "status": 200,
+      "bytes": 6182,
+      "sha256": "d2a6657c3858f6487dbbf9aaab49b2f90fa021216044db931059903b9bed3207",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "aac1e91855d6f2ffa15a66b94cc1325c80436d8a401db1fdbfbf7fe8fe7d9d29"
+    },
+    "explorers/index.html": {
+      "status": 200,
+      "bytes": 2456,
+      "sha256": "263f28dfceb5fa1433769c94159f504db3a436f43f5745ab4999af31a9acc161",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "e941f2b3362173e80295487c66f525ab0a7f4aa531f9a6bb8fde8589da3801dd"
+    },
+    "explorers/rel_4cf968d3-f45f-496e-8270-84ce6af56271/index.html": {
+      "status": 200,
+      "bytes": 9514,
+      "sha256": "39fc07cc8d5a147f51df13e00c829a6f8249fad91f3d0681fa0f60e80e45b8b8",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "baa09422624663c5ee285334011a435ccd97d9139051543f12e2f51e36b4b547"
+    },
+    "explorers/rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642/index.html": {
+      "status": 200,
+      "bytes": 14602,
+      "sha256": "075c1cca6cb3eac7a1a835d6ec994ffdfcd504daa2fb5cdafa759716393d9842",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "99156dc32c98666e1ea5e14c3d08a9912712cdbef9b59f24960c451f296d7d78"
+    },
+    "identity.html": {
+      "status": 200,
+      "bytes": 3596,
+      "sha256": "bc351734bbb64c346c425ec8a13d51b6042ea1d0c2e14275b6658b4361e6d781",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "0d1f93015b815d110431f9816a792421a7013d1640313b1dd487d1fa6a6de39d"
+    },
+    "index.html": {
+      "status": 200,
+      "bytes": 99644,
+      "sha256": "5859e7ac658841f0ae827f0b536a5b5fd9fdfcfe76e7828a82cb224a753aa29b",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "dbbeb6ce718e3861f284d162b8bad457f159b2c5dd032d3c85dbd660996b7d89"
+    },
+    "method-audit.html": {
+      "status": 200,
+      "bytes": 6196,
+      "sha256": "c6babd1ff311de70154cfc29d76a9b390411cde98b4bc8aedd855c344c06fe07",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "67e8e438383a15733aa8394a474b1e80d808876ff82bdbd312a5ceaac0f8fbf6"
+    },
+    "method.html": {
+      "status": 200,
+      "bytes": 9850,
+      "sha256": "7f3f794393c221e162877e01a469bf9bf6d8f408efbfb4e0006e55dd59a92673",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "7e0dd50c5ca8481cddd9ba4d91db32b460f44a702d9a9c0c3e879a32e7b89425"
+    },
+    "persona-about.html": {
+      "status": 200,
+      "bytes": 4699,
+      "sha256": "a9eb0879592a5dce60709a0142985f2291cb5aa0848de900482887b8dfe7a084",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "dab7a8f487f71025043a00137f2d019d8f01e2d34df0e610f9c6349156e88ff9"
+    },
+    "prepare.html": {
+      "status": 200,
+      "bytes": 7620,
+      "sha256": "6d5a4b4d0bef8c124bfa981b9badf8a30e15f14339103d29bd514e189026f2b7",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "b59be2f031fdbc7976ebe6c7f54cf8d92085a8013b3412cc03acca2dd75311b3"
+    },
+    "release.html": {
+      "status": 200,
+      "bytes": 1556,
+      "sha256": "2ae74e3d162506165415e9323d6858e0f2837594d68bf9aa2719443ddba9ef62",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "5a20bfa6436bddb037b365f32909b6fdb2acd722af5ef0dad2f8da22d3a0e5d0"
+    },
+    "review.html": {
+      "status": 200,
+      "bytes": 2336,
+      "sha256": "3e4bce504ada68212f939e1706c6323952a1d749c36722c5dcea1efe52f90ef4",
+      "content_type": "text/html",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "raw_bytes_match_source": false,
+      "comparison_only_insertions_removed": {
+        "browser_bridge": 1,
+        "edge_challenge": 1
+      },
+      "comparison_sha256": "79380a95610bf861b94a3f7ba308a6f68531c696a5352e95d44c1b5d71ac7230"
+    }
+  },
+  "health": {
+    "https://identity-research-web.mazzewhiteley93.workers.dev": {
+      "status": 200,
+      "bytes": 64,
+      "sha256": "eca808be98117914bb9d00865aa71561b680b83ac9f0a0777a6a89adb874ceaf",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "version": "c10f0190-2dc9-4086-a0d7-0c44dd241f07"
+    },
+    "https://research.mazzeleczzare.com": {
+      "status": 200,
+      "bytes": 64,
+      "sha256": "eca808be98117914bb9d00865aa71561b680b83ac9f0a0777a6a89adb874ceaf",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null,
+      "version": "c10f0190-2dc9-4086-a0d7-0c44dd241f07"
+    }
+  },
+  "public_releases_unchanged": {
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+  },
+  "unauthenticated_routes": {
+    "/persona.html": {
+      "status": 303,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": "https://research.mazzeleczzare.com/console.html?next=persona"
+    },
+    "/%70ersona.html": {
+      "status": 303,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content_type": null,
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": "https://research.mazzeleczzare.com/console.html?next=persona"
+    },
+    "/api/studies": {
+      "status": 401,
+      "bytes": 41,
+      "sha256": "ab65d2c73cff94886b955100ff0468c7fbb0bb1ceca4c0b46f46e720ba3c7860",
+      "content_type": "application/json",
+      "cache_control": "no-store",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+      "location": null
+    }
+  },
+  "client": "System /usr/bin/curl using HTTP/1.1 and two bounded transport retries; no cookies, credentials, spoofed headers or access-policy changes.",
+  "scope": "Split research navigation and Worker issue grouping; no experiment, authentication, evidence or resource-binding changes. Verification uses system curl with HTTP/1.1 after a default HTTP/2 transport failure.",
+  "browser": {
+    "origin": "https://research.mazzeleczzare.com",
+    "verified": [
+      "Pre-hydration fallback reaches server-rendered directory",
+      "Hydrated native dialog opens",
+      "Tools and Evidence categories selected independently",
+      "Expanded Visual evidence reading surface has real destination",
+      "Escape restores selected entry",
+      "Explorer destination renders both pinned smoke releases"
+    ],
+    "screenshots": [
+      "visuals/production-index-2026-10-25.png",
+      "visuals/production-reading-2026-10-25.png"
+    ],
+    "bounds": "320px geometry checked locally through browser emulation, not on physical hardware. Focus restoration verified; no comprehensive assistive-technology audit or authenticated Persona file-selection test."
+  },
+  "transport": {
+    "reason": "Initial default curl failed with HTTP/2 transport error (exit 16) on prepare.js; all assertions rerun with HTTP/1.1.",
+    "wrapper_sha256": "4fb29a8261c74747b14a0cfaad8c537652134586001f61587b5705b09c947fce",
+    "changes_response_or_authentication": false
+  },
+  "cloudflare_dashboard": {
+    "issues_enabled": true,
+    "active_issues_at_readback": 0,
+    "gateway": "identity-research",
+    "gateway_retries_enabled": false,
+    "response_cache_enabled": false,
+    "gateway_authentication_enabled": true,
+    "request_limit_per_minute": 50
+  },
+  "ci": {
+    "pull_request": 33,
+    "merged_commit": "43644aa4114243be355a0e0add901380847aecf2",
+    "head_checked": "0911ca2d71d71f05b5887775ca0d791fd155149b",
+    "checks": "verify, rust-explorer and CodeQL checks all passed before merge"
+  },
+  "npm_audits": {
+    "landing": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "registry": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  }
+}
