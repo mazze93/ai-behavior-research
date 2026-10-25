@@ -1,12 +1,10 @@
 import { defineConfig, fontProviders } from 'astro/config';
-import react from '@astrojs/react';
 
 // Static composition only: the existing registry Worker owns Cloudflare routing.
 export default defineConfig({
   site: 'https://research.mazzeleczzare.com',
   output: 'static',
   publicDir: './public',
-  integrations: [react()],
   build: { inlineStylesheets: 'never' },
   devToolbar: { enabled: false },
   fonts: [

@@ -24,7 +24,7 @@ const instruments = [
         <div class="card-topline"><span class="card-number">{item.number}</span><span class="card-category">{item.kind} / {item.short}</span><span class="card-state">{item.state}</span></div>
         <h3>{item.name}</h3>
         <div class="card-question"><span class="micro-label">The question</span><p>{item.question}</p></div>
-        <figure class="card-specimen"><InstrumentVisual kind={item.id}/><figcaption>Method specimen / non-data</figcaption></figure>
+        <figure class="card-specimen" aria-hidden="true"><InstrumentVisual kind={item.id}/></figure><p class="specimen-label">Illustration / non-data</p>
         <div class="card-bottomline"><span>{item.method}</span><span class="unfold-label">Read the brief <b aria-hidden="true">＋</b></span></div>
       </summary>
       <div class="card-brief">

@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-10-25T21:24:48.162987+00:00",
+  "worker": "identity-research-web",
+  "deployment": {
+    "id": "dcb7ab36-8868-4ca7-8107-43083a88b1dc",
+    "created_on": "2026-10-25T11:49:11.128771Z",
+    "versions": [
+      {
+        "version_id": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
+        "percentage": 100
+      }
+    ],
+    "annotations": {
+      "workers/message": "Split research navigation, issue grouping, patched tooling; source 0911ca2d71d71f05b5887775ca0d791fd155149b",
+      "workers/triggered_by": "deployment"
+    }
+  },
+  "version_id": "c10f0190-2dc9-4086-a0d7-0c44dd241f07",
+  "bindings": [
+    {
+      "name": "ADMIN_TOKEN",
+      "type": "secret_text"
+    },
+    {
+      "name": "ALLOWED_MODELS",
+      "type": "plain_text",
+      "text": "@cf/meta/llama-3.1-8b-instruct-fp8"
+    },
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    },
+    {
+      "name": "DB",
+      "type": "d1",
+      "database_id": "f6ea5c0d-5c13-4e9f-a4a2-2a05d1ffbaeb"
+    },
+    {
+      "name": "EVIDENCE",
+      "type": "r2_bucket",
+      "bucket_name": "identity-research-evidence"
+    },
+    {
+      "name": "GATEWAY_ID",
+      "type": "plain_text",
+      "text": "identity-research"
+    },
+    {
+      "name": "JOBS",
+      "type": "queue",
+      "queue_name": "identity-research-jobs"
+    },
+    {
+      "name": "PUBLIC_ORIGIN",
+      "type": "plain_text",
+      "text": "https://research.mazzeleczzare.com"
+    },
+    {
+      "name": "SESSION_SECRET",
+      "type": "secret_text"
+    },
+    {
+      "name": "VERSION",
+      "type": "version_metadata"
+    }
+  ],
+  "script_runtime": {
+    "assets": {
+      "html_handling": "none",
+      "serve_directly": false,
+      "raw_run_worker_first": true,
+      "base_path": "/"
+    },
+    "compatibility_date": "2026-09-26",
+    "compatibility_flags": [
+      "nodejs_compat"
+    ],
+    "usage_model": "standard"
+  },
+  "public_releases": {
+    "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d",
+    "rel_4cf968d3-f45f-496e-8270-84ce6af56271": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+  },
+  "client": "Default curl; no cookies, credentials, spoofed headers or access-policy changes."
+}
