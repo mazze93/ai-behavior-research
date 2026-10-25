@@ -33,6 +33,10 @@ expand?.addEventListener('click', () => {
 for (const card of cards) {
   card.addEventListener('toggle', () => { expansionState(); restoreTrail(); });
   const summary = card.querySelector('summary');
+  summary?.addEventListener('click', () => requestAnimationFrame(() => {
+    if (card.open) card.scrollIntoView({block:'start', behavior:
+      matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+  }));
   summary?.addEventListener('pointerenter', () => { if (trail) trail.textContent = card.dataset.title ?? ''; });
   summary?.addEventListener('pointerleave', restoreTrail);
   card.addEventListener('focusin', () => { if (trail) trail.textContent = card.dataset.title ?? ''; });

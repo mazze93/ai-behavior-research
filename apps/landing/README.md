@@ -31,7 +31,8 @@ The cabinet puts all four instrument briefs directly on the landing. Native
 `details` controls work with keyboard, touch and JavaScript disabled. Multiple
 briefs can stay open. Small TypeScript modules add instrument filtering,
 search, expansion controls, direct fragment entry, breadcrumb context and a
-bounded scroll entrance. Hover/focus/open states uncover original SVG method
+bounded scroll entrance. Opening one brief settles it below the breadcrumb bar;
+collective expansion leaves the reading position alone. Hover/focus/open states uncover original SVG method
 specimens, explicitly labeled non-data. Reduced motion disables transitions
 and animations without removing content. No modal or internal scroll panels
 are mounted.
