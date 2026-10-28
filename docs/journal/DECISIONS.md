@@ -85,3 +85,13 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   guards. Do not redeploy identical application content to relabel a commit.
   Record a fresh shipping audit and retain previous browser/receipt limits.
   Requested GitHub gateway is unavailable; authenticated CLI is the fallback.
+
+- 2026-10-28: Reviewed the submitted Informed-Consent Intercept Hook spec v1.0.0
+  (docs/reviews/informed-consent-intercept-hook/). Touchstone verdict: did not
+  hold — wrangler rejects its config and KV commands, the Worker forwards to its
+  own URL instead of targetUrl, signature and self-reported dissonance checks
+  pass forged/missing input, refusals do not latch, and a toy policy fakes the
+  §2 entropy signal 99.1% of the time. Decision: do not build v1.0; rebuild §3
+  as a policy enforcement point consuming a harness-signed Stele integrity
+  envelope (ADR-0005), latched per session; detach §2 as an untested training
+  hypothesis. Reverse if the target agent class is scoped to honest reporters.
