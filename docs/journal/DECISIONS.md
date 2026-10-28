@@ -120,3 +120,14 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   stele-core has no relay route. Recorded in spec v1.1 §15 as open pending a
   pointer from the owner. Lesson: a dated ADR status is a claim about its date;
   verify against history and the live surface before repeating it.
+
+- 2026-10-28: Owner clarified that the Stele ADR-0004 credential boundary is
+  planned, not built: adaptive-response as key owner, or preferably no API
+  keys, via an MCP gateway in the github-mcp-gateway / checkmate pattern.
+  Verified the candidates from source: adaptive-response holds the Anthropic
+  key server-side but authenticates callers with static bearer keys (a browser
+  caller would still hold a key); kairos-mcp, github-mcp-gateway, checkmate and
+  git-forensics-agent hold no model key. Recommended the no-key route with the
+  gate kept ahead of the model (gate → stele-core → MCP prompt → tool-returned
+  patch scanned server-side → browser confirm). Recorded in spec v1.1 §16,
+  with a service-binding option for the hook's own signer.

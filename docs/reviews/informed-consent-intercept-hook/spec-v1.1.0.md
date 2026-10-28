@@ -39,6 +39,7 @@ closed) and replaces the mechanism with the one Stele already uses.
 13. [Known limits](#13-known-limits)
 14. [Open questions](#14-open-questions)
 15. [Corrections](#15-corrections)
+16. [Credential direction](#16-credential-direction)
 - [Appendix A — the training hypothesis (formerly §2)](#appendix-a--the-training-hypothesis-formerly-2)
 
 ---
@@ -446,10 +447,10 @@ clean on both 1.98.1 and 1.97.0.
   natural home for one (verified 2026-10-28, see §15). What's missing is a
   signing route and a key held as a Workers secret. Until then, the only
   signer is the test script.
-- **Stele's model-credential boundary (ADR-0004) is still open.** This
-  doesn't block the hook, which never touches the Anthropic key. But a
-  harness whose own credential sits in the browser is a weaker decision point
-  than this spec assumes (§15).
+- **Stele's model-credential boundary (ADR-0004) is still open.** It is
+  planned, not built (§16). This doesn't block the hook, which never touches
+  the Anthropic key. But a harness whose own credential sits in the browser
+  is a weaker decision point than this spec assumes.
 - **`audit_head` is carried but not checked.** It ties hook transitions to
   the harness's own chain for later cross-audit. Nothing verifies that link
   yet.
@@ -472,6 +473,9 @@ clean on both 1.98.1 and 1.97.0.
 3. **Agent class.** Honest-but-mistaken or adversarial? This spec assumes
    adversarial.
 4. **Appendix A.** Keep it in this program as a study, or drop it?
+5. **Signer or service binding?** Should the harness reach the hook through
+   a Cloudflare service binding, removing the signing key (§16), or keep the
+   Ed25519 envelope so non-Cloudflare harnesses can attest too?
 
 ## 15. Corrections
 
@@ -504,6 +508,81 @@ another domain, or an unpushed branch — this finding should be amended to
 point at it. What does exist is a different credential boundary: the
 `stele-core` ledger perimeter (an `API_SECRET` admin token plus per-session
 tokens, constant-time compared). That one is real and deployed.
+
+**Owner clarification, 2026-10-28:** the ADR-0004 boundary is planned, not
+built. §16 records the intended direction.
+
+## 16. Credential direction
+
+**The owner's intent (2026-10-28).** Model credentials should either be
+owned by `adaptive-response`, or, preferably, there should be no API keys at
+all. The preferred route is a secure gateway serving MCP, like `kairos-mcp`
+or `github-mcp-gateway`, which is how `git-forensics-agent` and `checkmate`
+already handle their calls.
+
+### 16.1 What the code shows
+
+Checked 2026-10-28 from each repository's default branch and the Cloudflare
+account's Worker list.
+
+| Project | Model credential | Caller credential | Deployed on this account |
+|---|---|---|---|
+| `adaptive-response` | `ANTHROPIC_API_KEY` as a Workers secret | Static bearer keys (`API_KEYS`) on `/v1/respond` and `/mcp` | Not listed |
+| `kairos-mcp` | None; it makes no model call | None; CORS `*` | Not listed |
+| `github-mcp-gateway` | None | OAuth 2.1 with PKCE, a GitHub App, and a login allowlist; tokens held server-side in KV | Yes |
+| `checkmate` | None | Cloudflare Access JWT; the principal is set server-side; MCP is agent-only | Yes |
+| `git-forensics-agent` | None | The agent never runs git; a local collector supplies evidence | Yes |
+
+### 16.2 What I recommend
+
+**Take the no-key route.** It's the stronger of the two options. Moving the
+key to `adaptive-response` puts the Anthropic key server-side, but then the
+browser has to hold an `adaptive-response` bearer key instead. A key would
+still live in the browser; it would just be a different one.
+
+The gateway pattern removes model keys entirely: the user's own Claude
+client is the model, and the gateway holds identity, not a key. But it
+reverses Stele's flow. Today Stele calls the model; under MCP, the model
+calls Stele. Done naively, that breaks the ordering ADR-0004 constraint 1
+relies on: today `gate()` runs before the model ever reads a paste. If the
+user pastes into Claude and Claude then calls a Stele tool, the model has
+already read the raw text, and the gate can only check what comes back.
+
+The flow that keeps the ordering:
+
+1. **Gate in the browser, unchanged.** The browser stores the gated paste in
+   `stele-core` under the session, using the per-session tokens that already
+   exist.
+2. **Serve it to the model.** A Stele MCP gateway exposes the gated paste as
+   an MCP prompt or resource. The user's Claude client only ever reads
+   content that has already been gated. Authentication follows
+   `github-mcp-gateway` (OAuth plus an allowlist) or `checkmate` (Access).
+3. **Scan where the response lands.** The model returns the patch through a
+   tool (for example `stele_submit_patch`). The gateway runs the
+   YUGAMI/TESSITURA scan and `LOCKED_FIELDS` before storing it, which
+   satisfies ADR-0004 constraint 2.
+4. **Confirm in the browser.** The browser fetches the validated patch and
+   runs the per-field confirmation and `LOCKED_FIELDS` again, which satisfies
+   constraint 3.
+
+The result is no Anthropic key anywhere. The cost is that extraction no
+longer works from `bundle.html` offline: ADR-0002's "offline is a feature"
+would then cover detection but not extraction. That trade belongs in a Stele
+ADR. `adaptive-response` stays a reasonable fit for server-to-server callers,
+where a bearer can be held server-side, but not for the browser.
+
+### 16.3 What this means for the hook
+
+The same principle applies to this spec's own credential, the harness
+signing key. `stele-core` and the hook are both Workers on one account, so
+the harness could reach the hook through a **service binding** instead of
+signing envelopes. `checkmate`'s CI gateway already uses one
+(`wrangler.ci.jsonc`: `services: [{ binding: "CHECKMATE" }]`). `/attest`
+would then stop being a public route, and the key would disappear.
+
+The Ed25519 envelope would still be worth keeping for harnesses that aren't
+on Cloudflare (§14, question 5). I haven't built or tested a service-binding
+path from `workers-rs`; this is a design option, not a verified one.
 
 ---
 
