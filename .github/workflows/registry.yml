@@ -48,3 +48,17 @@ jobs:
       - run: cargo +1.98.1 test --manifest-path tools/evidence-explorer/Cargo.toml --locked
       - run: cargo +1.98.1 build --manifest-path tools/evidence-explorer/Cargo.toml --locked
       - run: PYTHONDONTWRITEBYTECODE=1 python3 tools/evidence-explorer/tests/package_roundtrip.py
+  # Reference implementation for the intercept-hook spec v1.1 (docs/reviews/…).
+  # Core is tested natively; the Workers adapter is linted for wasm32. The e2e
+  # smoke (reference/e2e/smoke.py) needs wrangler dev and is run by hand.
+  icih-reference:
+    runs-on: ubuntu-latest
+    env:
+      MANIFEST: docs/reviews/informed-consent-intercept-hook/reference/Cargo.toml
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy --target wasm32-unknown-unknown
+      - run: cargo +1.98.1 fmt --manifest-path "$MANIFEST" --all -- --check
+      - run: cargo +1.98.1 test --manifest-path "$MANIFEST" --locked -p icih-core
+      - run: cargo +1.98.1 clippy --manifest-path "$MANIFEST" --locked -p icih-core --all-targets -- -D warnings
+      - run: cargo +1.98.1 clippy --manifest-path "$MANIFEST" --locked -p icih-worker --target wasm32-unknown-unknown -- -D warnings

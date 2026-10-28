@@ -85,3 +85,49 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   guards. Do not redeploy identical application content to relabel a commit.
   Record a fresh shipping audit and retain previous browser/receipt limits.
   Requested GitHub gateway is unavailable; authenticated CLI is the fallback.
+
+- 2026-10-28: Reviewed the submitted Informed-Consent Intercept Hook spec v1.0.0
+  (docs/reviews/informed-consent-intercept-hook/). Touchstone verdict: did not
+  hold — wrangler rejects its config and KV commands, the Worker forwards to its
+  own URL instead of targetUrl, signature and self-reported dissonance checks
+  pass forged/missing input, refusals do not latch, and a toy policy fakes the
+  §2 entropy signal 99.1% of the time. Decision: do not build v1.0; rebuild §3
+  as a policy enforcement point consuming a harness-signed Stele integrity
+  envelope (ADR-0005), latched per session; detach §2 as an untested training
+  hypothesis. Reverse if the target agent class is scoped to honest reporters.
+
+- 2026-10-28: Drafted the intercept-hook spec v1.1.0 in Rust with a reference
+  implementation (docs/reviews/informed-consent-intercept-hook/reference/):
+  pure icih-core (29 tests: unit + one regression per v1.0 touchstone finding)
+  and an icih-worker Workers adapter (wasm32, clippy-clean, deploy dry-run
+  passes). The real Worker passed 21/21 e2e checks under local wrangler dev.
+  The first e2e run was 19/20: local workerd rejects unknown verbs with 501
+  before the Worker runs, so the assertion named the wrong layer; corrected to
+  assert "never forwarded" and added OPTIONS to exercise the hook's own path.
+  Building it surfaced two fail-open SDK defaults not in the v1.0 touchstone:
+  fetch follows redirects (now manual), and worker::Method::from maps unknown
+  verbs to GET (raw method string used instead). Not deployed. Reverse the
+  Rust choice if workers-rs proves unable to track platform features the hook
+  needs; the canonical envelope + test vector keep the TS harness side
+  language-independent either way.
+
+- 2026-10-28: Correction. The intercept-hook review and spec v1.1 called
+  stele-core undeployed, taken from Stele ADR-0004 (2026-08-04) without
+  checking later history. It was deployed by Stele #91 (a12e33b, 2026-09-24);
+  verified via the Cloudflare account listing and a live /health 200. Re-checked
+  the ADR-0004 model-credential boundary at the same time: still browser-direct
+  on Stele main (extractor.ts:41-47) and in the live app bundle; the deployed
+  stele-core has no relay route. Recorded in spec v1.1 §15 as open pending a
+  pointer from the owner. Lesson: a dated ADR status is a claim about its date;
+  verify against history and the live surface before repeating it.
+
+- 2026-10-28: Owner clarified that the Stele ADR-0004 credential boundary is
+  planned, not built: adaptive-response as key owner, or preferably no API
+  keys, via an MCP gateway in the github-mcp-gateway / checkmate pattern.
+  Verified the candidates from source: adaptive-response holds the Anthropic
+  key server-side but authenticates callers with static bearer keys (a browser
+  caller would still hold a key); kairos-mcp, github-mcp-gateway, checkmate and
+  git-forensics-agent hold no model key. Recommended the no-key route with the
+  gate kept ahead of the model (gate → stele-core → MCP prompt → tool-returned
+  patch scanned server-side → browser confirm). Recorded in spec v1.1 §16,
+  with a service-binding option for the hook's own signer.
