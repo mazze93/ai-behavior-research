@@ -95,3 +95,18 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   as a policy enforcement point consuming a harness-signed Stele integrity
   envelope (ADR-0005), latched per session; detach §2 as an untested training
   hypothesis. Reverse if the target agent class is scoped to honest reporters.
+
+- 2026-10-28: Drafted the intercept-hook spec v1.1.0 in Rust with a reference
+  implementation (docs/reviews/informed-consent-intercept-hook/reference/):
+  pure icih-core (29 tests: unit + one regression per v1.0 touchstone finding)
+  and an icih-worker Workers adapter (wasm32, clippy-clean, deploy dry-run
+  passes). The real Worker passed 21/21 e2e checks under local wrangler dev.
+  The first e2e run was 19/20: local workerd rejects unknown verbs with 501
+  before the Worker runs, so the assertion named the wrong layer; corrected to
+  assert "never forwarded" and added OPTIONS to exercise the hook's own path.
+  Building it surfaced two fail-open SDK defaults not in the v1.0 touchstone:
+  fetch follows redirects (now manual), and worker::Method::from maps unknown
+  verbs to GET (raw method string used instead). Not deployed. Reverse the
+  Rust choice if workers-rs proves unable to track platform features the hook
+  needs; the canonical envelope + test vector keep the TS harness side
+  language-independent either way.

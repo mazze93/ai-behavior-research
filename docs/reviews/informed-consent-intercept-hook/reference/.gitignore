@@ -1,0 +1,4 @@
+target/
+icih-worker/build/
+icih-worker/.wrangler/
+__pycache__/
