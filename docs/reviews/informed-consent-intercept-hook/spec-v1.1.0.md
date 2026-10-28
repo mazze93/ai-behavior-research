@@ -38,6 +38,7 @@ closed) and replaces the mechanism with the one Stele already uses.
 12. [Verification performed](#12-verification-performed)
 13. [Known limits](#13-known-limits)
 14. [Open questions](#14-open-questions)
+15. [Corrections](#15-corrections)
 - [Appendix A — the training hypothesis (formerly §2)](#appendix-a--the-training-hypothesis-formerly-2)
 
 ---
@@ -435,9 +436,14 @@ wrong layer.
   natural next addition.
 - **Audit storage grows without bound** over a long-lived, heavily audited
   session. There is no retention policy yet.
-- **There is no harness signer yet.** Stele's ADR-0004 trust boundary and a
-  deployed `stele-core` are prerequisites for the PDP side. Until then, the
-  only signer is the test script.
+- **There is no harness signer yet.** `stele-core` is deployed and is the
+  natural home for one (verified 2026-10-28, see §15). What's missing is a
+  signing route and a key held as a Workers secret. Until then, the only
+  signer is the test script.
+- **Stele's model-credential boundary (ADR-0004) is still open.** This
+  doesn't block the hook, which never touches the Anthropic key. But a
+  harness whose own credential sits in the browser is a weaker decision point
+  than this spec assumes (§15).
 - **`audit_head` is carried but not checked.** It ties hook transitions to
   the harness's own chain for later cross-audit. Nothing verifies that link
   yet.
@@ -460,6 +466,38 @@ wrong layer.
 3. **Agent class.** Honest-but-mistaken or adversarial? This spec assumes
    adversarial.
 4. **Appendix A.** Keep it in this program as a study, or drop it?
+
+## 15. Corrections
+
+**2026-10-28: `stele-core` is deployed.** An earlier draft of this spec and
+the review called `stele-core` undeployed. That came from Stele ADR-0004
+(2026-08-04) without checking later history; Stele #91 (`a12e33b`,
+2026-09-24) deployed it. Verified directly, read-only:
+
+- The Cloudflare account lists Worker `stele-core`, created 2026-09-25 and
+  last modified 2026-10-17.
+- `GET https://stele-core.mazzewhiteley93.workers.dev/health` returns
+  `200 {"status":"ok","service":"stele-core",…}`.
+- The live app at `stele.mazzeleczzare.com/app/` writes its ledger there.
+
+**Checked at the same time: the ADR-0004 model-credential boundary.** It is
+not closed in anything I could inspect:
+
+- On Stele `main` (`3d3a959`), `src/lib/extractor.ts:41-47` posts to
+  `api.anthropic.com` with `x-api-key` and
+  `anthropic-dangerous-direct-browser-access: true`.
+- The README's perimeter section still says "not yet fixed".
+- The deployed `stele-core` bundle contains no Anthropic call and no relay
+  route. Its routes are `/api/sessions`, `/api/projects`, `/api/drift` and
+  `/health`.
+- The live app bundle served at `stele.mazzeleczzare.com/app/` on 2026-10-28
+  contains the same browser-direct call.
+
+If the boundary exists somewhere these checks can't see — another repo,
+another domain, or an unpushed branch — this finding should be amended to
+point at it. What does exist is a different credential boundary: the
+`stele-core` ledger perimeter (an `API_SECRET` admin token plus per-session
+tokens, constant-time compared). That one is real and deployed.
 
 ---
 

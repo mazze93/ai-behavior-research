@@ -141,6 +141,11 @@ ADR-0005 already names the joint: Stele as a *policy decision point* exposing
 - The PDP/PEP split assumes a harness exists that can sign envelopes. Stele
   today is a browser artifact with an undeployed `stele-core`; ADR-0004/0005
   say that tier is not built yet. v1.1 has a dependency, not just a design.
+  - *Correction, 2026-10-28:* `stele-core` **is** deployed (Stele #91,
+    verified live; see [spec v1.1 §15](spec-v1.1.0.md#15-corrections)). The
+    sentence above relied on ADR-0004's dated status without checking later
+    history. The ADR-0004 model-key boundary was re-checked at the same time
+    and is still open on `main` and in the live app bundle.
 - The recommendation adds state (a Durable Object per session) to what was a
   stateless Worker. That is the point, but it is cost and operational surface.
 

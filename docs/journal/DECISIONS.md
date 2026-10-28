@@ -110,3 +110,13 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   Rust choice if workers-rs proves unable to track platform features the hook
   needs; the canonical envelope + test vector keep the TS harness side
   language-independent either way.
+
+- 2026-10-28: Correction. The intercept-hook review and spec v1.1 called
+  stele-core undeployed, taken from Stele ADR-0004 (2026-08-04) without
+  checking later history. It was deployed by Stele #91 (a12e33b, 2026-09-24);
+  verified via the Cloudflare account listing and a live /health 200. Re-checked
+  the ADR-0004 model-credential boundary at the same time: still browser-direct
+  on Stele main (extractor.ts:41-47) and in the live app bundle; the deployed
+  stele-core has no relay route. Recorded in spec v1.1 §15 as open pending a
+  pointer from the owner. Lesson: a dated ADR status is a claim about its date;
+  verify against history and the live surface before repeating it.
