@@ -416,6 +416,12 @@ wrong layer.
   path is exercised.
 - So the e2e suite now has 21 checks, not 20.
 
+**A second one, in CI.** The first CI run of `icih-reference` failed. Clippy
+on the pinned 1.98.1 toolchain has a lint (`chunks_exact_to_as_chunks`) that
+the 1.97 toolchain I'd been running locally doesn't have. I reproduced it on
+1.98.1 and fixed `hex.rs` to use `as_chunks`. Format, tests and clippy are now
+clean on both 1.98.1 and 1.97.0.
+
 ## 13. Known limits
 
 - **In-flight window.** The latch is read at decision time. A request already

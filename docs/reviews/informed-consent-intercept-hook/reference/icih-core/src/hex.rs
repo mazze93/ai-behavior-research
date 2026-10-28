@@ -18,9 +18,11 @@ pub fn decode_array<const N: usize>(text: &str) -> Option<[u8; N]> {
     if raw.len() != N * 2 {
         return None;
     }
+    // Length is exactly 2N (checked above), so the remainder is empty.
+    let (pairs, _) = raw.as_chunks::<2>();
     let mut out = [0u8; N];
-    for (slot, pair) in out.iter_mut().zip(raw.chunks_exact(2)) {
-        *slot = (nibble(pair[0])? << 4) | nibble(pair[1])?;
+    for (slot, [high, low]) in out.iter_mut().zip(pairs) {
+        *slot = (nibble(*high)? << 4) | nibble(*low)?;
     }
     Some(out)
 }
