@@ -131,3 +131,12 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   gate kept ahead of the model (gate → stele-core → MCP prompt → tool-returned
   patch scanned server-side → browser confirm). Recorded in spec v1.1 §16,
   with a service-binding option for the hook's own signer.
+
+- 2026-10-28: Compared praxis-api with the intercept hook
+  (docs/reviews/informed-consent-intercept-hook/praxis-comparison_v1.0.0.md).
+  Praxis enforces tool calls, the hook enforces network egress; recommended
+  one decision point (Stele) and two enforcement points. Fixed three
+  fail-open bugs in praxis-api#2 (unset admin key accepted "Bearer undefined";
+  caller tokens with missing or non-numeric exp never expired), each shown
+  failing on the original source. Left open as design questions: caller-chosen
+  trigger and request_id, unused unlock nonce, undocumented caller-token signer.

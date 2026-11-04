@@ -7,6 +7,7 @@
 | [review_stele-mapping_v1.0.0.md](review_stele-mapping_v1.0.0.md) | Opinionated review and mapping onto Stele's ZANSHIN→EPOCHÉ state machine |
 | [probes/](probes/) | Runnable probes behind every executed v1.0 finding |
 | [spec-v1.1.0.md](spec-v1.1.0.md) | **Draft v1.1** — the hook rebuilt as a policy enforcement point, in Rust |
+| [praxis-comparison_v1.0.0.md](praxis-comparison_v1.0.0.md) | Praxis (`praxis-api`) compared with the hook: two enforcement layers, one decision point; three fail-open bugs fixed in praxis-api#2 |
 | [reference/](reference/) | v1.1 reference implementation: `icih-core` (pure, tested), `icih-worker` (Cloudflare Workers adapter), `e2e/smoke.py` |
 
 Status: v1.1 is built and tested locally (29 core tests, 21/21 end-to-end
