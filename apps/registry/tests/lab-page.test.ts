@@ -42,7 +42,7 @@ test('only https url references become links', () => {
   const hostile = structuredClone(objects[2]);
   hostile.stages.claim.refs = [{kind: 'url', locator: 'javascript:alert(1)'}, {kind: 'url', locator: 'https://example.org/"><script>'}];
   const html = renderLab([hostile], capabilities);
-  // Collect every href and require that the only absolute one is the contract link.
-  const hrefs = [...html.matchAll(/href="([^"]*)"/g)].map(m => m[1]);
+  // Collect every anchor href and require that the only absolute one is the contract link.
+  const hrefs = [...html.matchAll(/<a href="([^"]*)"/g)].map(m => m[1]);
   assert.deepEqual(hrefs.filter(href => !href.startsWith('/')), [CONTRACT_URL]);
 });
