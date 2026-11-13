@@ -81,3 +81,26 @@ deployment was needed. See docs/research-hub/shipping-audit-2026-10-16.md
 and its JSON receipt for next validations. Companion book PR #8 remains open;
 private source and working drafts remain private. The audit evidence is
 stored alongside the original deployment receipts.
+
+## 2026-11-13 — research lifecycle infrastructure
+
+Last updated: 2026-11-13, pre-flight. Plan is the 2026-11-13 section of PLAN.md.
+
+- [x] Phase 0: pre-flight written and committed; waiting for go-ahead.
+- [ ] Phase 1: research-object contract, schema and tests.
+- [ ] Phase 2: method-audit corrections.
+- [ ] Phase 3: book mechanical publishability and author review packet.
+- [ ] Phase 4: lifecycle site structure.
+- [ ] Phase 5: Bearing Table staged as the companion surface.
+- [ ] Phase 6: one lifecycle path end to end on Identity Dissolution.
+- [ ] Phase 7: verification, draft PRs and hand-off.
+
+To resume: read this section, then the 2026-11-13 section of PLAN.md, then the
+2026-11-13 entries in DECISIONS.md. The book is a second clone at
+`/home/user/intentional-fragility` (private; re-attach it in a new session).
+Continue at the first unchecked phase.
+
+Needs the author: whether chapter prose may be drafted by the assistant
+(default no); D6 attribution of AI-sourced material; Grok and Gemini
+transcript attestation (A8); production deployment; any public release of the
+book; scope and compliance review before accounts or workspaces are built.

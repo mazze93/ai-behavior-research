@@ -140,3 +140,31 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   caller tokens with missing or non-numeric exp never expired), each shown
   failing on the original source. Left open as design questions: caller-chosen
   trigger and request_id, unused unlock nonce, undocumented caller-token signer.
+
+- 2026-11-13: Pre-flight for the lifecycle-infrastructure plan. Load-bearing
+  assumption: that *The Intentional Fragility* is blocked on execution, so
+  engineering work can bring it to "publishable pending the author's review".
+  Checked against intentional-fragility at 4373bea: `make status` reports all
+  six chapters drafted and READY, but at 27.7k of 54k target words (Compass
+  7427/10000, Seam 6303/10000, Returning Surface 5079/12000, Wardrobe
+  4650/10000, Forgetting 3809/12000). The roadmap's definition of publishable
+  has three open items: audit warnings not yet named in the prose (8 at head),
+  D6 on AI-sourced material, and target length in the author's own voice plus
+  one outside reader. The assumption holds for the mechanical items and fails
+  for the editorial ones, which are authorship. Decision: this plan does not
+  write or lengthen chapter prose; it prepares a review packet instead.
+  Reverse by an explicit instruction from the author to draft in the chapters.
+- 2026-11-13: Checked whether the research object already exists. The registry
+  schema already has protocol versioning with `parent_id` and `amendment`
+  (a fork path), runs with `excluded_reason`, append-only events, raters,
+  assignments, annotations, adjudications and hashed releases. The book's
+  `bearing` engine already has claims, frames, checks with outcomes,
+  retraction and a fold over an append-only ledger. Missing as typed objects:
+  question, hypothesis, analysis, review and publication, and any link from a
+  registry release to a claim. Decision: define the contract over what exists
+  and treat `bearing` as the claim-to-evidence layer, not build a new one.
+  Reverse if the two ledgers prove incompatible in phase 1.
+- 2026-11-13: The ROADMAP in intentional-fragility is dated 2026-09-26 at
+  v0.10.2 and predates the November typesetting work and the 8-warning audit
+  (it says 6). Treat `make status` and `make audit` as current, the roadmap as
+  a record of its date. No licence files exist yet despite ADR-0012.
