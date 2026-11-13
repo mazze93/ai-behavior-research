@@ -206,3 +206,20 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   A first layout used a four-column table that was unreadable at phone width;
   replaced with a grid that stacks. Reverse by deleting the page, its two
   scripts, the bundle and the three links.
+
+- 2026-11-13: Phase 5 changed. The plan said to stage the Bearing Table into
+  the registry asset tree. It is already public at
+  mazzeleczzare.com/signal/bearing-table/ (Worker `signal-bearing-table`), and
+  its live `data.js` and `fold.js` are byte-identical to the book repository
+  at 4373bea. The live `index.html` differs from the repository's (27,586
+  against 33,337 bytes), so the page there is older than the source. Decision:
+  link it from the book's research object; do not publish a second copy. This
+  also corrected a line of mine that called the claim graph non-public: the
+  claims and ledger are public there; the manuscript, sources and author
+  corpus are not. Reverse by removing the `url` reference from the example.
+- 2026-11-13: Phase 6 narrowed. "One lifecycle path end to end" became the
+  one missing link that could be built and tested without touching production
+  routes: a pure builder from registry rows to a research object. Not done:
+  a route that serves it, a public fork flow, a review record, a publication
+  decision. The builder found that the registry stores no question and no
+  author. Reverse by deleting the module and its test.

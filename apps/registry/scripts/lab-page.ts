@@ -5,7 +5,7 @@
  * The page states what the infrastructure does today; it is generated so that
  * its status cannot drift from the objects the contract tests check.
  */
-import { GRADES, STAGES, gradeCeiling, type ResearchObject, type Stage, type Status } from '../src/research-object';
+import { GRADES, STAGES, gradeCeiling, type Ref, type ResearchObject, type Stage, type Status } from '../src/research-object';
 
 // ---- Types ----------------------------------------------------------------
 
@@ -40,6 +40,12 @@ export function escapeHtml(value: unknown): string {
 const e = escapeHtml;
 const title = (word: string): string => word.charAt(0).toUpperCase() + word.slice(1);
 
+/** Links for `url` references. Only https addresses are linked; anything else is dropped. */
+function publicLinks(refs: Ref[]): string {
+  const urls = refs.filter(r => r.kind === 'url' && /^https:\/\/[^\s"<>]+$/.test(r.locator));
+  return urls.map(r => ` <a href="${e(r.locator)}">${e(new URL(r.locator).hostname + new URL(r.locator).pathname)}</a>`).join('');
+}
+
 // ---- Sections -------------------------------------------------------------
 
 /** One part of the lab. Stacked on narrow screens, three columns on wide ones (research-notes.css). */
@@ -57,7 +63,8 @@ function stageItem(stage: Stage, o: ResearchObject): string {
   const record = o.stages[stage];
   const when = record.at ? `, ${e(record.at.slice(0, 10))}` : '';
   const notes = [record.reason, ...(record.limits ?? [])].filter(Boolean).map(n => e(n)).join(' ');
-  return `<li><span aria-hidden="true">${STATUS_MARK[record.status]}</span> <strong>${title(stage)}:</strong> ${STATUS_WORD[record.status]}${when}.${notes ? ' ' + notes : ''}</li>`;
+  const links = publicLinks(record.refs ?? []);
+  return `<li><span aria-hidden="true">${STATUS_MARK[record.status]}</span> <strong>${title(stage)}:</strong> ${STATUS_WORD[record.status]}${when}.${notes ? ' ' + notes : ''}${links}</li>`;
 }
 
 function claimItem(claim: ResearchObject['claims'][number]): string {

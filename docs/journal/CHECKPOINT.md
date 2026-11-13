@@ -84,15 +84,15 @@ stored alongside the original deployment receipts.
 
 ## 2026-11-13 — research lifecycle infrastructure
 
-Last updated: 2026-11-13, phases 1 to 4 committed. Plan is the 2026-11-13 section of PLAN.md.
+Last updated: 2026-11-13, phases 1 to 6 committed. Plan is the 2026-11-13 section of PLAN.md.
 
 - [x] Phase 0: pre-flight written and committed; waiting for go-ahead.
 - [x] Phase 1: research-object contract, schema and tests.
 - [x] Phase 2: method-audit corrections.
 - [x] Phase 3: book mechanical publishability and author review packet (intentional-fragility PR #19).
 - [x] Phase 4: lifecycle site structure (/lab.html, generated).
-- [ ] Phase 5: Bearing Table staged as the companion surface.
-- [ ] Phase 6: one lifecycle path end to end on Identity Dissolution.
+- [x] Phase 5: Bearing Table linked as the companion surface (already live; not staged again).
+- [x] Phase 6: registry rows to research object (pure builder; no route yet).
 - [ ] Phase 7: verification, draft PRs and hand-off.
 
 To resume: read this section, then the 2026-11-13 section of PLAN.md, then the

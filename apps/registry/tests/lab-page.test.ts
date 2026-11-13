@@ -35,3 +35,12 @@ test('every internal link on the lab page resolves to a public file or a Worker 
   const routes = new Set(['/', '/api/releases', '/explorers/index.html']);
   for (const [, href] of html.matchAll(/href="(\/[^"#]*)"/g)) assert(routes.has(href) || fs.existsSync('public' + href), href);
 });
+
+test('only https url references become links', () => {
+  const {objects, capabilities} = loadInputs();
+  assert(renderLab(objects, capabilities).includes('<a href="https://mazzeleczzare.com/signal/bearing-table/">'));
+  const hostile = structuredClone(objects[2]);
+  hostile.stages.claim.refs = [{kind: 'url', locator: 'javascript:alert(1)'}, {kind: 'url', locator: 'https://example.org/"><script>'}];
+  const html = renderLab([hostile], capabilities);
+  assert(!html.includes('javascript:') && !html.includes('example.org'));
+});

@@ -250,10 +250,15 @@
               "kind": "repo",
               "locator": "apps/registry/public/method-audit-2026-10-16.json",
               "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"
+            },
+            {
+              "kind": "url",
+              "locator": "https://mazzeleczzare.com/signal/bearing-table/"
             }
           ],
           "limits": [
-            "A selected public export at private source commit 807a1ee; the full graph is not public."
+            "A selected export at private source commit 807a1ee.",
+            "The claims and the ledger are public in the Bearing Table. The manuscript, the sources and the author's corpus are not."
           ]
         },
         "review": {

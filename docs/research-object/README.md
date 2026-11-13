@@ -125,8 +125,9 @@ These came out of mapping the three objects and are open design questions.
 4. **The claim graph has its own, richer ledger.** The book's `bearing` engine
    tracks frames, retraction, checks with outcomes and leave-one-out
    survival. The contract's flat list of claims with evidence and limits loses
-   all of that. For now a claim-graph object cites an export; the contract
-   should instead accept a `bearing` fold as the claim stage's record.
+   all of that. For now a claim-graph object cites an export and links the
+   public Bearing Table; the contract should instead accept a `bearing` fold
+   as the claim stage's record.
 5. **Human annotation has stages of its own.** Rater assignment, independent
    annotation, adjudication and agreement all sit inside "observation" and
    "analysis" here. Persona Integrity will test whether that is enough when
@@ -135,13 +136,29 @@ These came out of mapping the three objects and are open design questions.
    already carries a `phase` field with these values. The grade should be
    derived from it when an object is built from registry rows.
 
+## Building an object from registry rows
+
+`apps/registry/src/research-object-registry.ts` builds an object from a study
+row, its runs and its releases. It is a pure function with tests. No route
+calls it, so the registry does not yet publish research objects.
+
+It addresses two of the gaps above. Stage dates come from the registry's own
+records: a protocol is frozen when the study row was stored, and execution
+begins at the first run's start time. The grade is the weaker of the
+protocol's declared phase and what the stages support.
+
+It also found a new gap. The registry stores no research question and no
+author. The caller must supply both, and an object built without a question
+fails the contract. Analysis, claims, review and publication all happen
+outside the registry, so an object built this way can reach `pilot` at most.
+
 ## What exists outside this contract
 
 The registry already stores most of the execution half: protocol versions
 with `parent_id` and `amendment`, runs with exclusion reasons, an append-only
 event table, raters, assignments, annotations, adjudications and hashed
 releases. The contract adds the stages around them and the rules that connect
-them. Building an object from registry rows is not implemented.
+them.
 
 ## Changing this contract
 
