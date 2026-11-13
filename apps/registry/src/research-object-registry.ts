@@ -27,7 +27,6 @@ export type RegistryInput = {
 };
 
 const ABSENT: StageRecord = { status: 'absent' };
-const STARTED = ['complete', 'failed', 'interrupted'];
 
 /** Registry ids contain underscores; object ids allow lowercase, digits and hyphens. */
 const objectId = (studyId: string): string => studyId.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -37,12 +36,14 @@ const weaker = (a: Grade, b: Grade): Grade => (GRADES.indexOf(a) <= GRADES.index
 /** Counts are reported separately so a failed or excluded run is never read as a zero. */
 function runCounts(runs: RunRow[]): string {
   const count = (test: (r: RunRow) => boolean) => runs.filter(test).length;
-  return `${runs.length} planned, ${count(r => r.status === 'complete')} complete, `
+  return `${runs.length} planned, ${count(r => r.status === 'complete')} complete, ${count(r => r.status === 'running')} in progress, `
     + `${count(r => ['failed', 'interrupted'].includes(r.status))} failed or interrupted, ${count(r => !!r.excluded_reason)} excluded.`;
 }
 
 function executionStages(input: RegistryInput, studyRef: Ref): Pick<ResearchObject['stages'], 'execution' | 'observation'> {
-  const started = input.runs.filter(r => STARTED.includes(r.status) && r.started_at);
+  // The runner writes `started_at` when a run becomes `running`, so a start time is what
+  // marks execution as begun, whatever the run's current status.
+  const started = input.runs.filter(r => !!r.started_at);
   if (started.length === 0) return { execution: ABSENT, observation: ABSENT };
   const releases: Ref[] = input.releases.map(r => ({ kind: 'release', locator: r.id, sha256: r.sha256 }));
   const execution: StageRecord = { status: 'recorded', at: earliest(started.map(r => r.started_at)), refs: [studyRef], limits: [runCounts(input.runs)] };

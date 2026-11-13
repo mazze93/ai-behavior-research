@@ -38,7 +38,7 @@ test('stage dates come from run records, and failures are counted apart from res
   const o = fromRegistry(base({runs, releases: [{id: 'rel_1', study_id: 'study_ABC-1', created_at: '2026-10-03T00:00:00.000Z', sha256: HASH}]}));
   assert.deepEqual(checkResearchObject(o), []);
   assert.equal(o.stages.execution.at, '2026-10-02T10:01:00.000Z');
-  assert.equal(o.stages.execution.limits![0], '4 planned, 2 complete, 1 failed or interrupted, 1 excluded.');
+  assert.equal(o.stages.execution.limits![0], '4 planned, 2 complete, 0 in progress, 1 failed or interrupted, 1 excluded.');
   assert.equal(o.stages.observation.limits![0], '1 of 4 planned runs produced an analysable record.');
   assert.deepEqual(o.stages.observation.refs, [{kind: 'release', locator: 'rel_1', sha256: HASH}]);
   assert.equal(o.evidence_grade, 'pilot');
@@ -60,4 +60,14 @@ test('a derived study names its parent and the kind of derivation', () => {
 test('a study with no stated question does not pass the contract', () => {
   const findings = checkResearchObject(fromRegistry(base({question: undefined})));
   assert(findings.length > 0 && findings.every(f => f.code === 'stage-order'));
+});
+
+test('a study whose runs are still in progress has begun execution', () => {
+  const o = fromRegistry(base({runs: [run(1, 'running'), run(2, 'pending')]}));
+  assert.deepEqual(checkResearchObject(o), []);
+  assert.equal(o.stages.execution.status, 'recorded');
+  assert.equal(o.stages.execution.at, '2026-10-02T10:01:00.000Z');
+  assert.equal(o.stages.execution.limits![0], '2 planned, 0 complete, 1 in progress, 0 failed or interrupted, 0 excluded.');
+  assert.equal(o.stages.observation.status, 'absent');
+  assert.equal(o.evidence_grade, 'pilot');
 });
