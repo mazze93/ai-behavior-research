@@ -168,3 +168,27 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   v0.10.2 and predates the November typesetting work and the 8-warning audit
   (it says 6). Treat `make status` and `make audit` as current, the roadmap as
   a record of its date. No licence files exist yet despite ADR-0012.
+
+- 2026-11-13: Go-ahead received as "continue from where you left off" after a
+  usage-limit pause. Proceeding on the stated defaults: no production
+  deployment and no edits to chapter prose.
+- 2026-11-13: Research-object contract v0.1 (docs/research-object/README.md).
+  Stage dependencies are a graph, not a strict line: claims rest on the
+  question, so a claim-graph object can make claims with nothing executed, and
+  the evidence grade (`none` for the book) is what keeps that visible. A first
+  draft used a strict order and would have forced the book to mark execution
+  "not applicable", which is false: its checks are applicable and unrun. Added
+  grade `none` below `smoke` for the same reason. Six places the contract does
+  not fit are listed in its README. Reverse by bumping the schema version.
+- 2026-11-13: `apps/registry/public/landing-manifest.json` was stale on main.
+  Dependabot changed `apps/landing/package.json` and its lockfile without a
+  restage, and CI builds before it checks, so the drift was never caught. The
+  rebuilt manifest differs only in those two input hashes; committed
+  separately. Not fixed here: the check cannot detect this class of drift.
+- 2026-11-13: method-audit.html: corrected the meta description and added a
+  dated note for the missing leave-one-out output and the "robust" label at
+  two frames. The leave-one-out result itself is not published; that would be
+  a new release of private-source output and is the author's action.
+- 2026-11-13: Tests ran under Node 22.23.4 and Python 3.13.18 in this
+  container, not the pinned Node 26.10.0 and Python 3.14.8 (mise is not
+  installed here). CI runs the pinned versions and is the authority.

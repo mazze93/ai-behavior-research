@@ -84,11 +84,11 @@ stored alongside the original deployment receipts.
 
 ## 2026-11-13 — research lifecycle infrastructure
 
-Last updated: 2026-11-13, pre-flight. Plan is the 2026-11-13 section of PLAN.md.
+Last updated: 2026-11-13, phases 1 and 2 committed. Plan is the 2026-11-13 section of PLAN.md.
 
 - [x] Phase 0: pre-flight written and committed; waiting for go-ahead.
-- [ ] Phase 1: research-object contract, schema and tests.
-- [ ] Phase 2: method-audit corrections.
+- [x] Phase 1: research-object contract, schema and tests.
+- [x] Phase 2: method-audit corrections.
 - [ ] Phase 3: book mechanical publishability and author review packet.
 - [ ] Phase 4: lifecycle site structure.
 - [ ] Phase 5: Bearing Table staged as the companion surface.
