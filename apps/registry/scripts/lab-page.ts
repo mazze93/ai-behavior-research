@@ -17,7 +17,7 @@ export type Capabilities = { schema: string; statuses: Record<string, string>; s
 
 // ---- Constants ------------------------------------------------------------
 
-const CONTRACT_URL = 'https://github.com/mazze93/ai-behavior-research/blob/main/docs/research-object/README.md';
+export const CONTRACT_URL = 'https://github.com/mazze93/ai-behavior-research/blob/main/docs/research-object/README.md';
 
 /** Status is always carried by a word; the mark is decoration and hidden from assistive technology. */
 const STATUS_MARK: Record<Status, string> = { absent: '○', draft: '◐', recorded: '●', frozen: '■', 'not-applicable': '–' };

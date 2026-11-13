@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {escapeHtml, renderLab} from '../scripts/lab-page';
+import {CONTRACT_URL, escapeHtml, renderLab} from '../scripts/lab-page';
 import {loadInputs, outputs} from '../scripts/build-lab';
 
 test('the published lab page and object bundle match their sources', () => {
@@ -42,5 +42,7 @@ test('only https url references become links', () => {
   const hostile = structuredClone(objects[2]);
   hostile.stages.claim.refs = [{kind: 'url', locator: 'javascript:alert(1)'}, {kind: 'url', locator: 'https://example.org/"><script>'}];
   const html = renderLab([hostile], capabilities);
-  assert(!html.includes('javascript:') && !html.includes('example.org'));
+  // Collect every href and require that the only absolute one is the contract link.
+  const hrefs = [...html.matchAll(/href="([^"]*)"/g)].map(m => m[1]);
+  assert.deepEqual(hrefs.filter(href => !href.startsWith('/')), [CONTRACT_URL]);
 });
