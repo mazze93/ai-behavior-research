@@ -1,0 +1,56 @@
+{
+  "schema": "research-object/v0.1",
+  "id": "intentional-fragility",
+  "title": "The Intentional Fragility: integrity as a returning surface",
+  "module": "claim-graph",
+  "version": "selected-export-2026-10-16",
+  "evidence_grade": "none",
+  "authors": [
+    {"name": "Mazze LeCzzare Frazer", "kind": "human", "role": "author"}
+  ],
+  "stages": {
+    "question": {
+      "status": "recorded",
+      "at": "2026-10-16",
+      "refs": [{"kind": "repo", "locator": "apps/registry/public/method-audit.html"}]
+    },
+    "hypothesis": {
+      "status": "not-applicable",
+      "reason": "The book adjudicates claims by a fold over a ledger of sources; it registers no prediction tested by a run."
+    },
+    "protocol": {
+      "status": "draft",
+      "refs": [{"kind": "private", "locator": "mazze93/intentional-fragility: graph/checks/downstream-behavior.yml"}],
+      "limits": ["Two empirical checks are specified and have never been run."]
+    },
+    "execution": {"status": "absent"},
+    "observation": {"status": "absent"},
+    "analysis": {"status": "absent"},
+    "claim": {
+      "status": "recorded",
+      "at": "2026-10-16",
+      "refs": [{"kind": "repo", "locator": "apps/registry/public/method-audit-2026-10-16.json", "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"}],
+      "limits": ["A selected public export at private source commit 807a1ee; the full graph is not public."]
+    },
+    "review": {
+      "status": "draft",
+      "limits": ["An external model review was read on 2026-10-16. No outside human reader has reviewed the argument."]
+    },
+    "publication": {"status": "absent"}
+  },
+  "claims": [
+    {
+      "id": "integrity-is-a-returning-surface",
+      "statement": "Integrity is a returning surface: what keeps coming back to the same bearing across changing contexts.",
+      "evidence": [
+        {"kind": "repo", "locator": "apps/registry/public/method-audit-2026-10-16.json", "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"}
+      ],
+      "limits": [
+        "Five declared frames become two without the book's own claims, and one of those two is a method check run over the same argument.",
+        "Frame independence is authored and may be structurally dependent.",
+        "The cross-context rederivation check attached to this claim has never been run."
+      ]
+    }
+  ],
+  "external_events": []
+}
