@@ -1,8 +1,8 @@
 {
   "generator": "Astro static landing + stage_landing.py",
   "source_inputs": {
-    "apps/landing/package.json": "e4e1048316aad7e26c5277afd6592020e3adc9d9adc05f9b539de5a3a964124c",
-    "apps/landing/package-lock.json": "93c0a3bef05c6a2238cc99cdda720d41915b82bd170ae8707c228204103cf7d7",
+    "apps/landing/package.json": "adabff781c9c2498aa39ddc67d1cf41077117e3ed3f529b18595af7fed0e8273",
+    "apps/landing/package-lock.json": "e3bc58bd339d8cdd8fd32e2a91045ab5acda024c091a57979428ee3d09969154",
     "apps/landing/astro.config.mjs": "5e0a05f6c39389616bfbdd3d4811e878298528d528269c012689a2a212a05b7f",
     "apps/landing/tsconfig.json": "e196c41d5366edcbe50512213e8672976f2dc4a140619b85d417d936f02f8234",
     "apps/landing/src/components/InstrumentVisual.astro": "2f6652c85c3a9b5cf8123ccb0f2dd5ab11fff738ecd529f603753e17883dd804",
