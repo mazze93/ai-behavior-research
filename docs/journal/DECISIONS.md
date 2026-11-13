@@ -223,3 +223,33 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   a route that serves it, a public fork flow, a review record, a publication
   decision. The builder found that the registry stores no question and no
   author. Reverse by deleting the module and its test.
+
+- 2026-11-13: Burst 2. The owner wrote "approved all" and asked for
+  autonomous work. Read as approving what was pending with them: merging both
+  PRs and the production deployment. Not read as changing who writes the
+  book's chapters, or as waiving the compliance review before accounts are
+  built. PR #50 merged as 117ab0d and intentional-fragility PR #19 as f8bf361,
+  both by merge commit with CI green on the merged heads.
+- 2026-11-13: Burst 2 pre-flight. Load-bearing assumption: that the site can
+  be deployed from this container. Checked: no Cloudflare credential is
+  present; the explorer gallery the deploy guard requires is not built; the
+  pinned Rust 1.98.1 is not installed (1.97.0 is). The config in
+  `wrangler.jsonc` is fully declarative, so a deploy needs only the API
+  credential. The assumption is false until the gallery is built and the owner
+  supplies a credential through the secure form. Only the web Worker is
+  deployed; the runner, D1 migrations and secrets are untouched. Reverse a
+  deployment by rolling back to the version recorded before it.
+
+- 2026-11-13: Deployment attempted once and failed; production unchanged.
+  Preparation passed in full (gallery, `make test`, dry-run, and a byte
+  comparison showing only PR #50's 8 files differ from live). `wrangler
+  deploy` then got 401 on every asset upload and created no version. Likely
+  cause, unconfirmed: the session proxy overwrites the `Authorization` header
+  on api.cloudflare.com with the saved API token, and the asset upload needs
+  its own upload token in that header. Decision: stop, do not retry, and do
+  not hand-roll the deployment through raw API calls against a production
+  Worker. The owner deploys from a machine with its own login. An attempt to
+  install `mise` by piping a script from the web was refused by the session's
+  permission policy, so the checks ran on the container's Node and Python.
+  The API token saved on the "mazzeleczzare.com" environment is still there;
+  the owner can remove it in the environment's settings.

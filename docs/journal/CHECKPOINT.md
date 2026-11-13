@@ -116,3 +116,18 @@ still returns 404 for it.
 Next, in order: review and merge PR #50; build the gallery and deploy by the
 documented manual procedure; then decide whether a route should serve
 research objects built from registry rows.
+
+## 2026-11-13, burst 2 — merge and ship
+
+Last updated: 2026-11-13, burst 2 closed with deployment blocked.
+
+- [x] Phase 1: PR #50 merged (117ab0d); intentional-fragility PR #19 merged (f8bf361).
+- [x] Phase 2: deployment preparation (toolchain, gallery, tests, dry-run).
+- [ ] Phase 3: deploy the web Worker. **Blocked**: one attempt failed at asset upload (401); production unchanged at e9ec6940.
+- [ ] Phase 4: live verification.
+- [x] Phase 5: preflight record, release note and close-out (no deployment receipt, because nothing deployed).
+
+To resume: phases 3 and 4 need a machine with its own Wrangler login. Follow
+docs/research-hub/lifecycle-release-2026-11-13.md. Do not retry from a cloud
+session: the asset upload fails there.
+
