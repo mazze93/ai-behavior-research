@@ -20,6 +20,7 @@ The research site, private study instruments and evidence registry for **observa
 | [Registry](apps/registry) | Cloudflare web/API, private controls, queued inference and reviewed public releases. [Recorded deployment checks](docs/research-hub/deployment-persona-resume-2026-10-14.json); complete production file selection remains unverified. |
 | [Identity Dissolution](studies/identity-dissolution) | Local runner and study protocol. Public technical smoke releases exercise the pipeline; they do not establish scientific findings. |
 | [Persona Integrity](studies/persona-integrity) | Frozen v0.2 rubric, importer and contextual annotation instrument. Human scoring remains pending. |
+| [Research object](docs/research-object) | Contract v0.1 for one investigation from question to publication, with a pure checker and three worked records. `/lab.html` is generated from them. Nothing in the Worker enforces the contract yet. |
 | [Evidence tools](tools/evidence-explorer) | Source-linked Rust figures, [RustPress briefs](docs/research-hub/rustpress-integration.md) and [Hugging Face projections](docs/research-hub/huggingface-integration.md). |
 
 The canonical research workspace is [mazze93/Research](https://github.com/mazze93/Research). This repository owns the evolving site application and its deployment instructions; included protocols retain their own versions and provenance. The two repositories are not automatically mirrored.

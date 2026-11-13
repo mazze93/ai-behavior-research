@@ -1,0 +1,290 @@
+{
+  "schema": "research-object-bundle/v0.1",
+  "objects": [
+    {
+      "schema": "research-object/v0.1",
+      "id": "identity-dissolution",
+      "title": "Identity Dissolution: self-reference, style and imagery",
+      "module": "factorial-model-experiment",
+      "version": "registry-0.2.0",
+      "evidence_grade": "smoke",
+      "authors": [
+        {
+          "name": "Mazze LeCzzare Frazer",
+          "kind": "human",
+          "role": "investigator"
+        }
+      ],
+      "stages": {
+        "question": {
+          "status": "recorded",
+          "at": "2026-09-27",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "studies/identity-dissolution/README.md"
+            }
+          ]
+        },
+        "hypothesis": {
+          "status": "draft",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "studies/identity-dissolution/PROTOCOL.md"
+            }
+          ],
+          "limits": [
+            "H1 to H3 are written down but not frozen or externally registered."
+          ]
+        },
+        "protocol": {
+          "status": "recorded",
+          "at": "2026-09-27",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "apps/registry/public/protocol-template.json",
+              "sha256": "16a8bce9aaa057023dd5b4e44ca33c1c96d9b02ef9b1e9f983868d681230fefe"
+            },
+            {
+              "kind": "repo",
+              "locator": "studies/identity-dissolution/PROTOCOL.md"
+            }
+          ],
+          "limits": [
+            "The date is the last commit to the template, not a freeze.",
+            "The local pilot protocol and the registry factorial template are different designs."
+          ]
+        },
+        "execution": {
+          "status": "recorded",
+          "at": "2026-10-04",
+          "refs": [
+            {
+              "kind": "release",
+              "locator": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642",
+              "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"
+            },
+            {
+              "kind": "release",
+              "locator": "rel_4cf968d3-f45f-496e-8270-84ce6af56271",
+              "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"
+            }
+          ],
+          "limits": [
+            "Two technical smoke releases of one planned run each; they exercise the pipeline.",
+            "The date is when the releases were read back, not when the runs happened."
+          ]
+        },
+        "observation": {
+          "status": "recorded",
+          "at": "2026-10-04",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "docs/research-hub/explorer-releases.json"
+            }
+          ],
+          "limits": [
+            "One release has one analysed run; the other has none."
+          ]
+        },
+        "analysis": {
+          "status": "recorded",
+          "at": "2026-10-04",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "docs/research-hub/analysis-validation-2026-10-04.json"
+            }
+          ],
+          "limits": [
+            "The analysis package was reproduced on smoke releases only; it produced no finding."
+          ]
+        },
+        "claim": {
+          "status": "absent"
+        },
+        "review": {
+          "status": "absent"
+        },
+        "publication": {
+          "status": "absent"
+        }
+      },
+      "claims": [],
+      "external_events": []
+    },
+    {
+      "schema": "research-object/v0.1",
+      "id": "persona-integrity",
+      "title": "Persona Integrity Probe",
+      "module": "human-annotation",
+      "version": "v0.2",
+      "evidence_grade": "none",
+      "authors": [
+        {
+          "name": "Mazze LeCzzare Frazer",
+          "kind": "human",
+          "role": "investigator"
+        }
+      ],
+      "stages": {
+        "question": {
+          "status": "recorded",
+          "at": "2026-07-29",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "studies/persona-integrity/README.md"
+            }
+          ]
+        },
+        "hypothesis": {
+          "status": "not-applicable",
+          "reason": "v0.2 defines a categorical rubric for a construct; it registers no directional prediction."
+        },
+        "protocol": {
+          "status": "frozen",
+          "at": "2026-07-29",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "studies/persona-integrity/docs/protocol-v0.2.md"
+            },
+            {
+              "kind": "repo",
+              "locator": "studies/persona-integrity/docs/scoring-guide-v0.2.md"
+            },
+            {
+              "kind": "repo",
+              "locator": "studies/persona-integrity/schema/annotation.schema.json"
+            }
+          ],
+          "limits": [
+            "The date is the first commit of the v0.2 file.",
+            "A study freeze is not an external preregistration."
+          ]
+        },
+        "execution": {
+          "status": "absent",
+          "limits": [
+            "Human scoring of real corpus runs is pending."
+          ]
+        },
+        "observation": {
+          "status": "absent"
+        },
+        "analysis": {
+          "status": "absent"
+        },
+        "claim": {
+          "status": "absent"
+        },
+        "review": {
+          "status": "absent"
+        },
+        "publication": {
+          "status": "absent"
+        }
+      },
+      "claims": [],
+      "external_events": []
+    },
+    {
+      "schema": "research-object/v0.1",
+      "id": "intentional-fragility",
+      "title": "The Intentional Fragility: integrity as a returning surface",
+      "module": "claim-graph",
+      "version": "selected-export-2026-10-16",
+      "evidence_grade": "none",
+      "authors": [
+        {
+          "name": "Mazze LeCzzare Frazer",
+          "kind": "human",
+          "role": "author"
+        }
+      ],
+      "stages": {
+        "question": {
+          "status": "recorded",
+          "at": "2026-10-16",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "apps/registry/public/method-audit.html"
+            }
+          ]
+        },
+        "hypothesis": {
+          "status": "not-applicable",
+          "reason": "The book adjudicates claims by a fold over a ledger of sources; it registers no prediction tested by a run."
+        },
+        "protocol": {
+          "status": "draft",
+          "refs": [
+            {
+              "kind": "private",
+              "locator": "mazze93/intentional-fragility: graph/checks/downstream-behavior.yml"
+            }
+          ],
+          "limits": [
+            "Two empirical checks are specified and have never been run."
+          ]
+        },
+        "execution": {
+          "status": "absent"
+        },
+        "observation": {
+          "status": "absent"
+        },
+        "analysis": {
+          "status": "absent"
+        },
+        "claim": {
+          "status": "recorded",
+          "at": "2026-10-16",
+          "refs": [
+            {
+              "kind": "repo",
+              "locator": "apps/registry/public/method-audit-2026-10-16.json",
+              "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"
+            }
+          ],
+          "limits": [
+            "A selected public export at private source commit 807a1ee; the full graph is not public."
+          ]
+        },
+        "review": {
+          "status": "draft",
+          "limits": [
+            "An external model review was read on 2026-10-16. No outside human reader has reviewed the argument."
+          ]
+        },
+        "publication": {
+          "status": "absent"
+        }
+      },
+      "claims": [
+        {
+          "id": "integrity-is-a-returning-surface",
+          "statement": "Integrity is a returning surface: what keeps coming back to the same bearing across changing contexts.",
+          "evidence": [
+            {
+              "kind": "repo",
+              "locator": "apps/registry/public/method-audit-2026-10-16.json",
+              "sha256": "a817cd6b5ffad350661afe84ec8a0c7aa73c1ea07c35e701b2bdb4fe161ee20b"
+            }
+          ],
+          "limits": [
+            "Five declared frames become two without the book's own claims, and one of those two is a method check run over the same argument.",
+            "Frame independence is authored and may be structurally dependent.",
+            "The cross-context rederivation check attached to this claim has never been run."
+          ]
+        }
+      ],
+      "external_events": []
+    }
+  ]
+}

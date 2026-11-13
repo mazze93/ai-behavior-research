@@ -192,3 +192,17 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
 - 2026-11-13: Tests ran under Node 22.23.4 and Python 3.13.18 in this
   container, not the pinned Node 26.10.0 and Python 3.14.8 (mise is not
   installed here). CI runs the pinned versions and is the authority.
+
+- 2026-11-13: Phase 3 done in intentional-fragility PR #19. Found at head:
+  the gates pass, EPUB and PDF build, and seven of eight audit warnings are
+  already named in the prose (the roadmap said one). Plan line corrected: no
+  licence files, because ADR-0012 places them in the engine-split commit.
+- 2026-11-13: Phase 4. The lifecycle surface is a new generated page,
+  `/lab.html`, not a rewrite of the landing. The landing is an approved
+  design and gets one link. The page is rendered by
+  `apps/registry/scripts/build-lab.ts` from the checked example objects and
+  `docs/research-object/capabilities.json`; a test fails if it is stale. Five
+  of seven parts are labelled owner-only or limited, which is the true state.
+  A first layout used a four-column table that was unreadable at phone width;
+  replaced with a grid that stacks. Reverse by deleting the page, its two
+  scripts, the bundle and the three links.
