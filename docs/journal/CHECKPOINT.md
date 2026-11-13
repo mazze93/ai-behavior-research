@@ -116,3 +116,17 @@ still returns 404 for it.
 Next, in order: review and merge PR #50; build the gallery and deploy by the
 documented manual procedure; then decide whether a route should serve
 research objects built from registry rows.
+
+## 2026-11-13, burst 2 — merge and ship
+
+Last updated: 2026-11-13, burst 2 pre-flight.
+
+- [x] Phase 1: PR #50 merged (117ab0d); intentional-fragility PR #19 merged (f8bf361).
+- [ ] Phase 2: deployment preparation (toolchain, gallery, tests, dry-run).
+- [ ] Phase 3: deploy the web Worker; record the rollback version.
+- [ ] Phase 4: live verification.
+- [ ] Phase 5: receipt, README status and close-out.
+
+To resume: continue at the first unchecked phase. Needs the owner: a
+Cloudflare API credential entered in the secure form for api.cloudflare.com.
+

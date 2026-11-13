@@ -103,3 +103,25 @@ Phases (each ends in a commit and a ticked checkbox):
    Implement only the missing links found in phase 1.
 7. **Verification and hand-off.** `make test`, both repos' CI, deploy dry-run,
    draft PRs, and a list of the human-only actions that remain.
+
+## 2026-11-13, burst 2 — merge and ship the lifecycle surface
+
+Ask, restated: with everything approved and autonomy granted, take the merged
+lifecycle work to production: merge both PRs, deploy the web Worker by the
+documented manual procedure so `/lab.html` is live, verify it, and record the
+receipt. Chapter prose and accounts stay out, for the reasons already logged.
+
+Paths this burst may modify: `docs/journal/`, a dated deployment receipt and
+note in `docs/research-hub/`, `README.md` status lines. The generated
+`apps/registry/public/explorers/` gallery is built locally and is ignored.
+Outside Git: one deployment of `identity-research-web`.
+
+Phases:
+
+1. Merge PR #50 and intentional-fragility PR #19 (done before this entry).
+2. Deployment preparation: pinned Rust toolchain, explorer gallery from the
+   two checksum-verified public releases, `make test`, guarded dry-run.
+3. Deploy the web Worker only; record the previous version as rollback.
+4. Live verification: new page and bundle, existing pages, release registry,
+   anonymous refusals on private routes.
+5. Receipt, README status, journal close-out.
