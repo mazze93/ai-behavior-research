@@ -1,0 +1,67 @@
+{
+  "schema": "lab-capabilities/v0.1",
+  "statuses": {
+    "working": "Working",
+    "limited": "Working, one study",
+    "owner-only": "Owner only",
+    "not-built": "Not built"
+  },
+  "sections": [
+    {
+      "id": "explore",
+      "name": "Explore",
+      "status": "working",
+      "today": "Browse the two studies, read every public release with its citation and SHA-256, and open the generated evidence views. No sign-in.",
+      "missing": "Search, collections and any study that is not the author's.",
+      "links": [{"href": "/", "label": "Research index"}, {"href": "/api/releases", "label": "Release registry (JSON)"}, {"href": "/explorers/index.html", "label": "Visual evidence"}]
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "status": "owner-only",
+      "today": "Download the factorial protocol template. The registry validates a protocol's design, models and budget before it will store it, and records the parent of an amended study.",
+      "missing": "A way for anyone but the owner to fork a design. Templates for other kinds of study.",
+      "links": [{"href": "/protocol-template.json", "label": "Protocol template"}]
+    },
+    {
+      "id": "laboratory",
+      "name": "Laboratory",
+      "status": "owner-only",
+      "today": "The owner can run a bounded experiment: at most 96 conversations and 100,000 output tokens per study. Failures and interruptions are recorded, never retried silently.",
+      "missing": "Workspaces, budgets and permissions for other researchers. Importing observations collected elsewhere.",
+      "links": [{"href": "/method.html", "label": "Protocol and evidence standards"}]
+    },
+    {
+      "id": "analyze",
+      "name": "Analyze",
+      "status": "limited",
+      "today": "Verify a released Identity Dissolution bundle and reproduce its analysis package from the published script. Failed runs stay missing; they are not counted as zero.",
+      "missing": "Analysis for annotation data. Any declared link between a kind of evidence and the methods that are valid for it.",
+      "links": [{"href": "/prepare.html", "label": "Analysis desk"}, {"href": "/analysis.py", "label": "Analysis script"}]
+    },
+    {
+      "id": "collaborate",
+      "name": "Collaborate",
+      "status": "owner-only",
+      "today": "The owner can create rater accounts and assign runs for annotation. A rater sees only what is assigned.",
+      "missing": "Invitations, reviewer and contributor roles, and any record of who a contributor is beyond a name.",
+      "links": [{"href": "/ethics.html", "label": "Research ethics"}]
+    },
+    {
+      "id": "publish",
+      "name": "Publish",
+      "status": "owner-only",
+      "today": "The owner can release a study's evidence as a hashed bundle with a citation. Each release is its own reviewed action.",
+      "missing": "A review record, a recorded publication decision, corrections, and DOI deposition. Persona material has no release path.",
+      "links": [{"href": "/api/releases", "label": "Release registry (JSON)"}]
+    },
+    {
+      "id": "learn",
+      "name": "Learn",
+      "status": "working",
+      "today": "Read the evidence standards, the ethics commitments, a public audit of the author's own argument, and the research-object contract.",
+      "missing": "Guided paths for someone designing a first study. Teaching material on statistics and uncertainty.",
+      "links": [{"href": "/method.html", "label": "Method"}, {"href": "/ethics.html", "label": "Ethics"}, {"href": "/method-audit.html", "label": "Method audit"}]
+    }
+  ]
+}

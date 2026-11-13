@@ -1,8 +1,8 @@
 {
   "generator": "Astro static landing + stage_landing.py",
   "source_inputs": {
-    "apps/landing/package.json": "e4e1048316aad7e26c5277afd6592020e3adc9d9adc05f9b539de5a3a964124c",
-    "apps/landing/package-lock.json": "93c0a3bef05c6a2238cc99cdda720d41915b82bd170ae8707c228204103cf7d7",
+    "apps/landing/package.json": "adabff781c9c2498aa39ddc67d1cf41077117e3ed3f529b18595af7fed0e8273",
+    "apps/landing/package-lock.json": "e3bc58bd339d8cdd8fd32e2a91045ab5acda024c091a57979428ee3d09969154",
     "apps/landing/astro.config.mjs": "5e0a05f6c39389616bfbdd3d4811e878298528d528269c012689a2a212a05b7f",
     "apps/landing/tsconfig.json": "e196c41d5366edcbe50512213e8672976f2dc4a140619b85d417d936f02f8234",
     "apps/landing/src/components/InstrumentVisual.astro": "2f6652c85c3a9b5cf8123ccb0f2dd5ab11fff738ecd529f603753e17883dd804",
@@ -11,7 +11,7 @@
     "apps/landing/src/components/SpectralFold.tsx": "fed058cf0ca904d9e4d947a09c05f123ce19e7625c506bcb6e9ea6a1b042dd49",
     "apps/landing/src/components/StudyRoom.tsx": "6383206670a72c080911e0e2d1a088c49743a9e360eb28c411bff7ba05523eda",
     "apps/landing/src/components/spectral-profiles.ts": "12aaa4098f6b57de002aa6bb78689fb4c3600a258ceb2cbc8c5e0196b5e647b0",
-    "apps/landing/src/pages/index.astro": "81a11af9384ae5f9f9186894df9e3585e93f02dc3c946c80caf7f4ffa5766945",
+    "apps/landing/src/pages/index.astro": "bd80b9e3cb4edd9687b6a92a07757b262c3e4078409dc7babd83750c0e9ee7b3",
     "apps/landing/src/scripts/cabinet.ts": "41f3f4a82e0790a89333a720cad652c123c35f597869659da36c199e05a99b68",
     "apps/landing/src/scripts/releases.ts": "c38ec224e6942158728ecf1f5832aa77da496add6b0b8f06283087b524bd5d0b",
     "apps/landing/src/styles/cabinet.css": "f736607b494fefb0f72dbcfb0b138a8878518509174932c18fa5c9d2fea0201b",
@@ -36,6 +36,6 @@
     "fonts/Manrope-Latin-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
     "fonts/Manrope-Latin.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
     "fonts/landing-provenance.json": "ab0408dba8b30a0bd7d3c35821676520e791d54fc16f4092a0e0a5f1d4e67e65",
-    "index.html": "df46781c70d2a0c14f5dde50e7976de8ce237b4e726af1b54a2618d29b1467a1"
+    "index.html": "6370c567794e4981313083c8960108a11a6c7da6530e7df86d6f0776ed1a291d"
   }
 }

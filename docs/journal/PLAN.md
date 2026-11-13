@@ -53,3 +53,53 @@ Scope: README, shipping audit/receipt and existing journal files only. Fresh
 source comparison confirms merged d42feaf and live 21a096e have identical
 application/staging content. Preserve production ccc9e98b; documentation rollback
 is a follow-up revert. Keep the companion private book draft PR open.
+
+## 2026-11-13 — research lifecycle infrastructure and the book's companion surface
+
+Ask, restated: reorganise research.mazzeleczzare.com from a site about two
+studies into the public face of an open research infrastructure built around a
+versioned research object (Question → Hypothesis → Protocol → Execution →
+Observation → Analysis → Claim → Review → Publication), with Identity
+Dissolution and Persona Integrity as reference implementations. In parallel,
+bring *The Intentional Fragility* (private `mazze93/intentional-fragility`) to
+a state where the only remaining publication steps are the author's own, and
+ship its public surface alongside the site so the two read as one argument.
+
+Repositories and paths this work may modify:
+
+- `mazze93/ai-behavior-research` (branch `claude/method-audit-ur72ow`):
+  `docs/journal/`, a new `docs/research-object/` contract, `apps/landing/`,
+  `apps/registry/public/` authored pages, `apps/registry/src` and `tests` only
+  where a phase names them, `scripts/stage_landing.py` manifest, README.
+- `mazze93/intentional-fragility` (new branch, same name): `docs/00-overview/
+  ROADMAP.md`, `docs/journal/`, licence files, `surfaces/`, engine tooling.
+  Chapter prose in `manuscript/chapters/` is not edited; proposed sentences go
+  in a separate review packet.
+
+Not in scope for this plan: multi-user accounts and workspaces, third-party
+execution budgets, human-subject study templates, DOI deposition, production
+deployment, public release of the book. Each needs its own decision.
+
+Phases (each ends in a commit and a ticked checkbox):
+
+1. **Research-object contract.** Typed stages, permitted transitions and
+   evidence grades (smoke, pilot, exploratory, confirmatory, replicated) as a
+   versioned schema with tests; map both studies and the book onto it and
+   record where each one does not fit.
+2. **Method-audit corrections.** Fix the meta description that overstates
+   independence; add a dated note for the unpublished leave-one-out result.
+3. **Book: mechanical publishability.** Reproduce `make check` and
+   `make release`; refresh the stale roadmap; land the ADR-0012 licence files;
+   write the author's review packet (unnamed audit warnings, D6, front matter,
+   length gap) without touching chapter prose.
+4. **Lifecycle site structure.** Landing and navigation organised by
+   Explore, Design, Laboratory, Analyze, Collaborate, Publish and Learn. Every
+   capability is labelled as working, specified or not built.
+5. **Bearing Table as the companion surface.** Review its data for private
+   material, then stage it through the reviewed-manifest path as the
+   claim-to-evidence view for the book and the site.
+6. **One lifecycle path end to end** on Identity Dissolution: fork, bounded
+   configuration, evidence package, analysis, publication package manifest.
+   Implement only the missing links found in phase 1.
+7. **Verification and hand-off.** `make test`, both repos' CI, deploy dry-run,
+   draft PRs, and a list of the human-only actions that remain.
