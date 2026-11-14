@@ -140,3 +140,116 @@ User requested signed/verified tags, GitHub releases, clearer descriptions, tigh
   caller tokens with missing or non-numeric exp never expired), each shown
   failing on the original source. Left open as design questions: caller-chosen
   trigger and request_id, unused unlock nonce, undocumented caller-token signer.
+
+- 2026-11-13: Pre-flight for the lifecycle-infrastructure plan. Load-bearing
+  assumption: that *The Intentional Fragility* is blocked on execution, so
+  engineering work can bring it to "publishable pending the author's review".
+  Checked against intentional-fragility at 4373bea: `make status` reports all
+  six chapters drafted and READY, but at 27.7k of 54k target words (Compass
+  7427/10000, Seam 6303/10000, Returning Surface 5079/12000, Wardrobe
+  4650/10000, Forgetting 3809/12000). The roadmap's definition of publishable
+  has three open items: audit warnings not yet named in the prose (8 at head),
+  D6 on AI-sourced material, and target length in the author's own voice plus
+  one outside reader. The assumption holds for the mechanical items and fails
+  for the editorial ones, which are authorship. Decision: this plan does not
+  write or lengthen chapter prose; it prepares a review packet instead.
+  Reverse by an explicit instruction from the author to draft in the chapters.
+- 2026-11-13: Checked whether the research object already exists. The registry
+  schema already has protocol versioning with `parent_id` and `amendment`
+  (a fork path), runs with `excluded_reason`, append-only events, raters,
+  assignments, annotations, adjudications and hashed releases. The book's
+  `bearing` engine already has claims, frames, checks with outcomes,
+  retraction and a fold over an append-only ledger. Missing as typed objects:
+  question, hypothesis, analysis, review and publication, and any link from a
+  registry release to a claim. Decision: define the contract over what exists
+  and treat `bearing` as the claim-to-evidence layer, not build a new one.
+  Reverse if the two ledgers prove incompatible in phase 1.
+- 2026-11-13: The ROADMAP in intentional-fragility is dated 2026-09-26 at
+  v0.10.2 and predates the November typesetting work and the 8-warning audit
+  (it says 6). Treat `make status` and `make audit` as current, the roadmap as
+  a record of its date. No licence files exist yet despite ADR-0012.
+
+- 2026-11-13: Go-ahead received as "continue from where you left off" after a
+  usage-limit pause. Proceeding on the stated defaults: no production
+  deployment and no edits to chapter prose.
+- 2026-11-13: Research-object contract v0.1 (docs/research-object/README.md).
+  Stage dependencies are a graph, not a strict line: claims rest on the
+  question, so a claim-graph object can make claims with nothing executed, and
+  the evidence grade (`none` for the book) is what keeps that visible. A first
+  draft used a strict order and would have forced the book to mark execution
+  "not applicable", which is false: its checks are applicable and unrun. Added
+  grade `none` below `smoke` for the same reason. Six places the contract does
+  not fit are listed in its README. Reverse by bumping the schema version.
+- 2026-11-13: `apps/registry/public/landing-manifest.json` was stale on main.
+  Dependabot changed `apps/landing/package.json` and its lockfile without a
+  restage, and CI builds before it checks, so the drift was never caught. The
+  rebuilt manifest differs only in those two input hashes; committed
+  separately. Not fixed here: the check cannot detect this class of drift.
+- 2026-11-13: method-audit.html: corrected the meta description and added a
+  dated note for the missing leave-one-out output and the "robust" label at
+  two frames. The leave-one-out result itself is not published; that would be
+  a new release of private-source output and is the author's action.
+- 2026-11-13: Tests ran under Node 22.23.4 and Python 3.13.18 in this
+  container, not the pinned Node 26.10.0 and Python 3.14.8 (mise is not
+  installed here). CI runs the pinned versions and is the authority.
+
+- 2026-11-13: Phase 3 done in intentional-fragility PR #19. Found at head:
+  the gates pass, EPUB and PDF build, and seven of eight audit warnings are
+  already named in the prose (the roadmap said one). Plan line corrected: no
+  licence files, because ADR-0012 places them in the engine-split commit.
+- 2026-11-13: Phase 4. The lifecycle surface is a new generated page,
+  `/lab.html`, not a rewrite of the landing. The landing is an approved
+  design and gets one link. The page is rendered by
+  `apps/registry/scripts/build-lab.ts` from the checked example objects and
+  `docs/research-object/capabilities.json`; a test fails if it is stale. Five
+  of seven parts are labelled owner-only or limited, which is the true state.
+  A first layout used a four-column table that was unreadable at phone width;
+  replaced with a grid that stacks. Reverse by deleting the page, its two
+  scripts, the bundle and the three links.
+
+- 2026-11-13: Phase 5 changed. The plan said to stage the Bearing Table into
+  the registry asset tree. It is already public at
+  mazzeleczzare.com/signal/bearing-table/ (Worker `signal-bearing-table`), and
+  its live `data.js` and `fold.js` are byte-identical to the book repository
+  at 4373bea. The live `index.html` differs from the repository's (27,586
+  against 33,337 bytes), so the page there is older than the source. Decision:
+  link it from the book's research object; do not publish a second copy. This
+  also corrected a line of mine that called the claim graph non-public: the
+  claims and ledger are public there; the manuscript, sources and author
+  corpus are not. Reverse by removing the `url` reference from the example.
+- 2026-11-13: Phase 6 narrowed. "One lifecycle path end to end" became the
+  one missing link that could be built and tested without touching production
+  routes: a pure builder from registry rows to a research object. Not done:
+  a route that serves it, a public fork flow, a review record, a publication
+  decision. The builder found that the registry stores no question and no
+  author. Reverse by deleting the module and its test.
+
+- 2026-11-13: Burst 2. The owner wrote "approved all" and asked for
+  autonomous work. Read as approving what was pending with them: merging both
+  PRs and the production deployment. Not read as changing who writes the
+  book's chapters, or as waiving the compliance review before accounts are
+  built. PR #50 merged as 117ab0d and intentional-fragility PR #19 as f8bf361,
+  both by merge commit with CI green on the merged heads.
+- 2026-11-13: Burst 2 pre-flight. Load-bearing assumption: that the site can
+  be deployed from this container. Checked: no Cloudflare credential is
+  present; the explorer gallery the deploy guard requires is not built; the
+  pinned Rust 1.98.1 is not installed (1.97.0 is). The config in
+  `wrangler.jsonc` is fully declarative, so a deploy needs only the API
+  credential. The assumption is false until the gallery is built and the owner
+  supplies a credential through the secure form. Only the web Worker is
+  deployed; the runner, D1 migrations and secrets are untouched. Reverse a
+  deployment by rolling back to the version recorded before it.
+
+- 2026-11-13: Deployment attempted once and failed; production unchanged.
+  Preparation passed in full (gallery, `make test`, dry-run, and a byte
+  comparison showing only PR #50's 8 files differ from live). `wrangler
+  deploy` then got 401 on every asset upload and created no version. Likely
+  cause, unconfirmed: the session proxy overwrites the `Authorization` header
+  on api.cloudflare.com with the saved API token, and the asset upload needs
+  its own upload token in that header. Decision: stop, do not retry, and do
+  not hand-roll the deployment through raw API calls against a production
+  Worker. The owner deploys from a machine with its own login. An attempt to
+  install `mise` by piping a script from the web was refused by the session's
+  permission policy, so the checks ran on the container's Node and Python.
+  The API token saved on the "mazzeleczzare.com" environment is still there;
+  the owner can remove it in the environment's settings.

@@ -1,0 +1,43 @@
+{
+  "schema": "research-object/v0.1",
+  "id": "persona-integrity",
+  "title": "Persona Integrity Probe",
+  "module": "human-annotation",
+  "version": "v0.2",
+  "evidence_grade": "none",
+  "authors": [
+    {"name": "Mazze LeCzzare Frazer", "kind": "human", "role": "investigator"}
+  ],
+  "stages": {
+    "question": {
+      "status": "recorded",
+      "at": "2026-07-29",
+      "refs": [{"kind": "repo", "locator": "studies/persona-integrity/README.md"}]
+    },
+    "hypothesis": {
+      "status": "not-applicable",
+      "reason": "v0.2 defines a categorical rubric for a construct; it registers no directional prediction."
+    },
+    "protocol": {
+      "status": "frozen",
+      "at": "2026-07-29",
+      "refs": [
+        {"kind": "repo", "locator": "studies/persona-integrity/docs/protocol-v0.2.md"},
+        {"kind": "repo", "locator": "studies/persona-integrity/docs/scoring-guide-v0.2.md"},
+        {"kind": "repo", "locator": "studies/persona-integrity/schema/annotation.schema.json"}
+      ],
+      "limits": [
+        "The date is the first commit of the v0.2 file.",
+        "A study freeze is not an external preregistration."
+      ]
+    },
+    "execution": {"status": "absent", "limits": ["Human scoring of real corpus runs is pending."]},
+    "observation": {"status": "absent"},
+    "analysis": {"status": "absent"},
+    "claim": {"status": "absent"},
+    "review": {"status": "absent"},
+    "publication": {"status": "absent"}
+  },
+  "claims": [],
+  "external_events": []
+}

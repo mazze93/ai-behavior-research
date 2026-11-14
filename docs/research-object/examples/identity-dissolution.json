@@ -1,0 +1,64 @@
+{
+  "schema": "research-object/v0.1",
+  "id": "identity-dissolution",
+  "title": "Identity Dissolution: self-reference, style and imagery",
+  "module": "factorial-model-experiment",
+  "version": "registry-0.2.0",
+  "evidence_grade": "smoke",
+  "authors": [
+    {"name": "Mazze LeCzzare Frazer", "kind": "human", "role": "investigator"}
+  ],
+  "stages": {
+    "question": {
+      "status": "recorded",
+      "at": "2026-09-27",
+      "refs": [{"kind": "repo", "locator": "studies/identity-dissolution/README.md"}]
+    },
+    "hypothesis": {
+      "status": "draft",
+      "refs": [{"kind": "repo", "locator": "studies/identity-dissolution/PROTOCOL.md"}],
+      "limits": ["H1 to H3 are written down but not frozen or externally registered."]
+    },
+    "protocol": {
+      "status": "recorded",
+      "at": "2026-09-27",
+      "refs": [
+        {"kind": "repo", "locator": "apps/registry/public/protocol-template.json", "sha256": "16a8bce9aaa057023dd5b4e44ca33c1c96d9b02ef9b1e9f983868d681230fefe"},
+        {"kind": "repo", "locator": "studies/identity-dissolution/PROTOCOL.md"}
+      ],
+      "limits": [
+        "The date is the last commit to the template, not a freeze.",
+        "The local pilot protocol and the registry factorial template are different designs."
+      ]
+    },
+    "execution": {
+      "status": "recorded",
+      "at": "2026-10-04",
+      "refs": [
+        {"kind": "release", "locator": "rel_eb5c703f-d012-4f4e-ab1d-cea28ba48642", "sha256": "323076f506e34a9daa19f8525e463932a104d756765a666628130d05a352a50d"},
+        {"kind": "release", "locator": "rel_4cf968d3-f45f-496e-8270-84ce6af56271", "sha256": "4104a64d892722255a2bb76727971ddb7ec84b1a6260cc0e2d27f0b7bc40c1fd"}
+      ],
+      "limits": [
+        "Two technical smoke releases of one planned run each; they exercise the pipeline.",
+        "The date is when the releases were read back, not when the runs happened."
+      ]
+    },
+    "observation": {
+      "status": "recorded",
+      "at": "2026-10-04",
+      "refs": [{"kind": "repo", "locator": "docs/research-hub/explorer-releases.json"}],
+      "limits": ["One release has one analysed run; the other has none."]
+    },
+    "analysis": {
+      "status": "recorded",
+      "at": "2026-10-04",
+      "refs": [{"kind": "repo", "locator": "docs/research-hub/analysis-validation-2026-10-04.json"}],
+      "limits": ["The analysis package was reproduced on smoke releases only; it produced no finding."]
+    },
+    "claim": {"status": "absent"},
+    "review": {"status": "absent"},
+    "publication": {"status": "absent"}
+  },
+  "claims": [],
+  "external_events": []
+}

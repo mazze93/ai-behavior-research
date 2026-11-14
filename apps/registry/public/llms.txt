@@ -6,6 +6,7 @@
 - [Research hub](https://research.mazzeleczzare.com/): instruments and current research scope.
 - [Methods](https://research.mazzeleczzare.com/method.html): provenance, design and interpretation limits.
 - [Research ethics](https://research.mazzeleczzare.com/ethics.html): source disclosure, pressure and stopping commitments, with current implementation limits.
+- [Research lifecycle](https://research.mazzeleczzare.com/lab.html): what the infrastructure does today and where three investigations stand, generated from checked records; the same records as JSON are at https://research.mazzeleczzare.com/research-objects.json. Not a research finding.
 - [Method audit](https://research.mazzeleczzare.com/method-audit.html): selected public export of the author’s claim-graph audit; full reproduction still requires private source access.
 - [Identity Dissolution](https://research.mazzeleczzare.com/studies/identity-dissolution): factorial generation instrument.
 - [Persona Integrity](https://research.mazzeleczzare.com/studies/persona-integrity): separate categorical annotation instrument.
