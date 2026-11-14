@@ -81,3 +81,53 @@ deployment was needed. See docs/research-hub/shipping-audit-2026-10-16.md
 and its JSON receipt for next validations. Companion book PR #8 remains open;
 private source and working drafts remain private. The audit evidence is
 stored alongside the original deployment receipts.
+
+## 2026-11-13 — research lifecycle infrastructure
+
+Last updated: 2026-11-13, all seven phases committed; nothing deployed. Plan is the 2026-11-13 section of PLAN.md.
+
+- [x] Phase 0: pre-flight written and committed; waiting for go-ahead.
+- [x] Phase 1: research-object contract, schema and tests.
+- [x] Phase 2: method-audit corrections.
+- [x] Phase 3: book mechanical publishability and author review packet (intentional-fragility PR #19).
+- [x] Phase 4: lifecycle site structure (/lab.html, generated).
+- [x] Phase 5: Bearing Table linked as the companion surface (already live; not staged again).
+- [x] Phase 6: registry rows to research object (pure builder; no route yet).
+- [x] Phase 7: verification, draft PRs and hand-off.
+
+To resume: read this section, then the 2026-11-13 section of PLAN.md, then the
+2026-11-13 entries in DECISIONS.md. The book is a second clone at
+`/home/user/intentional-fragility` (private; re-attach it in a new session).
+Continue at the first unchecked phase.
+
+Needs the author: whether chapter prose may be drafted by the assistant
+(default no); D6 attribution of AI-sourced material; Grok and Gemini
+transcript attestation (A8); production deployment; any public release of the
+book; scope and compliance review before accounts or workspaces are built.
+
+State at close, 2026-11-13: site work is on draft PR #50; book work is on
+intentional-fragility draft PR #19. `make test` passes here (52 registry
+tests) under Node 22 and Python 3.13. The deploy dry-run did not complete in
+the container: its pre-build guard refuses without the generated explorer
+gallery, which needs the release bundles and the Rust tool. The landing
+public-byte guard passed (15 assets). `/lab.html` is not live; production
+still returns 404 for it.
+
+Next, in order: review and merge PR #50; build the gallery and deploy by the
+documented manual procedure; then decide whether a route should serve
+research objects built from registry rows.
+
+## 2026-11-13, burst 2 — merge and ship
+
+Last updated: 2026-11-13, burst 2 closed with deployment blocked.
+
+- [x] Phase 1: PR #50 merged (117ab0d); intentional-fragility PR #19 merged (f8bf361).
+- [x] Phase 2: deployment preparation (toolchain, gallery, tests, dry-run).
+- [ ] Phase 3: deploy the web Worker. **Blocked**: one attempt failed at asset upload (401); production unchanged at e9ec6940.
+- [ ] Phase 4: live verification.
+- [x] Phase 5: preflight record, release note and close-out (no deployment receipt, because nothing deployed).
+
+To resume: phases 3 and 4 need a machine with its own Wrangler login. Follow
+docs/research-hub/lifecycle-release-2026-11-13.md. Do not retry from a cloud
+session: the asset upload fails there.
+
